@@ -184,6 +184,7 @@ section {
   flex-wrap: wrap;
 }
 
+/* одинаковая ширина кнопок */
 .portfolio-tab {
   padding: 0.75rem 1.5rem;
   background: var(--glass-bg);
@@ -192,7 +193,8 @@ section {
   cursor: pointer;
   border-radius: 25px;
   font-size: 0.95rem;
-  min-width: 200px;
+  min-width: 210px;
+  text-align: center;
   transition: all 0.3s ease;
 }
 
@@ -349,7 +351,7 @@ section {
   backdrop-filter: blur(20px);
 }
 
-/* КОНТАКТЫ */
+/* КОНТАКТЫ (как в исходной версии) */
 
 .contact-section {
   padding-top: var(--section-gap);
@@ -473,9 +475,9 @@ section {
   }
 
   .portfolio-tab {
-    min-width: 135px;
-    padding: 0.45rem 0.9rem;
-    font-size: 0.78rem;
+    min-width: 160px;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
   }
 
   .portfolio-grid {
@@ -519,6 +521,6 @@ section {
   }
 
   .portfolio-tab {
-    min-width: 130px;
+    min-width: 140px;
   }
 }
