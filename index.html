@@ -1,51 +1,120 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
+<html lang="en">
+
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фотограф</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Fotonerv</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>FOTONERV</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="#hero">FOTONERV</a>
-        </div>
-        <nav class="nav-links">
-            <a href="#about">Обо мне</a>
-            <a href="#portfolio">Портфолио</a>
-            <a href="#prices">Цены</a>
-            <a href="#contact">Контакты</a>
-        </nav>
-    </header>
+<header>
+  <div class="logo"><a href="#about">F</a></div>
+  <nav class="nav-links">
+    <a href="#home">Fotonerv</a>
+    <a href="#about">Обо мне</a>
+    <a href="#portfolio">Портфолио</a>
+    <a href="#prices">Цены</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+</header>
 
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <div class="hero-logo">
-                <a href="#hero">Фотограф</a>
-            </div>
-            <p class="hero-subtitle">
-                <a href="#about">Опираясь на многолетний опыт, создаю впечатляющие визуальные образы в разных жанрах, специализируясь на портретной, репортажной и пейзажной фотографии.</a>
-            </p>
-        </div>
-    </section>
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1 class="hero-logo"><a href="#about">FOTONERV</a></h1>
+    <p class="hero-subtitle"><a href="#about">Фотограф Макс Карпович</a></p>
+  </div>
+</section>
 
-    <section class="about-section" id="about">
-        <div class="about-inner">
-            <div class="about-photo">
-                <img src="https://raw.githubusercontent.com/mconerv/fotonerv.art/main/cover.jpeg" alt="Фотограф">
-            </div>
-            <div class="about-content">
-                <h2>Фотограф</h2>
-                <p class="about-role">Профессиональный фотограф</p>
-                <p class="about-text">Опираясь на многолетний опыт, создаю впечатляющие визуальные образы в разных жанрах, специализируясь на портретной, репортажной и пейзажной фотографии.</p>
-            </div>
-        </div>
-    </section>
+<section id="about" class="about-section">
+  <div class="about-inner">
+    <div class="about-photo">
+      <img src="https://raw.githubusercontent.com/mconerv/fotonerv.art/e88b295e4e1e5880bd80a03ce6a05dcc39f040b7/aboutme.jpeg" alt="Max Karpovich">
+    </div>
 
-    <section class="portfolio-section" id="portfolio">
-        <h2>Портфолио</h2>
-        <div class="portfolio-tabs">
-            <button class="portfolio-tab" data-category="prt">Портреты</button>
-            <button class="portfolio-tab" data-category="rep">Репортажи</button>
-            <button class="portfolio-tab" data-category="nat">Пейзаж
+    <div class="about-content">
+      <h2>Макс Карпович</h2>
+      <p class="about-role">Фотограф</p>
+      <p class="about-text">Опираясь на многолетний опыт, создаю впечатляющие визуальные образы в разных жанрах, специализируясь на портретной, репортажной и пейзажной фотографии.</p>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="portfolio-section">
+  <h2>Портфолио</h2>
+  <div class="portfolio-tabs">
+    <button class="portfolio-tab active" data-category="prt">Портреты</button>
+    <button class="portfolio-tab" data-category="rep">Репортаж</button>
+    <button class="portfolio-tab" data-category="nat">Пейзажи</button>
+    <button class="portfolio-tab" data-category="arc">Архитектура + интерьеры</button>
+  </div>
+  <div class="portfolio-description" id="portfolioDescription"></div>
+  <div class="portfolio-grid" id="portfolioGrid"></div>
+</section>
+
+<section id="prices" class="prices-section">
+  <h2>Цены</h2>
+  <div class="prices-grid">
+    <div class="price-card glass">
+      <h3>Портретная съемка</h3>
+      <p class="price-value">от 3 000 ₽</p>
+      <p>Индивидуальные портреты, творческие съёмки, контент для соцсетей.</p>
+    </div>
+    <div class="price-card glass">
+      <h3>Репортаж</h3>
+      <p class="price-value">от 4 000 ₽</p>
+      <p>Мероприятия, концерты, события с живой атмосферой.</p>
+    </div>
+    <div class="price-card glass">
+      <h3>Пейзажи и архитектура</h3>
+      <p class="price-value">по договоренности</p>
+      <p>Авторские пейзажи, архитектурная съёмка, проекты под ключ.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <h2 class="contact-title">Контакты</h2>
+  <div class="contact-columns">
+    <div class="contact-column">
+      <h3>Email</h3>
+      <p><a href="mailto:max@fotonerv.ru">max@fotonerv.ru</a></p>
+    </div>
+    <div class="contact-column">
+      <h3>Телефон</h3>
+      <p><a href="tel:+79137601900">+7-913-760-19-00</a></p>
+    </div>
+    <div class="contact-column">
+      <h3>Telegram</h3>
+      <p><a href="https://t.me/mconerv" target="_blank">@mconerv</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  © 2025 FotoNerv Max Karpovich
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <button class="lightbox-prev" id="lightboxPrev">&#10094;</button>
+  <button class="lightbox-next" id="lightboxNext">&#10095;</button>
+  <img src="" alt="Просмотр фото" id="lightboxImage">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
