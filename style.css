@@ -8,7 +8,7 @@
   --glass-border: rgba(255, 255, 255, 0.15);
   --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.4);
   --shadow-light: 0 8px 32px rgba(0, 0, 0, 0.2);
-  --section-gap: 8rem;  /* ← ЕДИНЫЙ ОТСТУП ДЛЯ ВСЕХ */
+  --section-gap: 8rem;
 }
 
 * {
@@ -18,7 +18,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
   color: var(--text-light);
   line-height: 1.6;
@@ -125,7 +125,7 @@ section {
 /* ABOUT */
 
 .about-section {
-  padding-top: var(--section-gap);  /* ← ОДИНАКОВОЕ РАССТОЯНИЕ */
+  padding-top: var(--section-gap);
 }
 
 .about-inner {
@@ -166,7 +166,7 @@ section {
 /* ПОРТФОЛИО */
 
 .portfolio-section {
-  padding-top: var(--section-gap);  /* ← ОДИНАКОВОЕ РАССТОЯНИЕ */
+  padding-top: var(--section-gap);
   padding-bottom: 5rem;
 }
 
@@ -311,7 +311,7 @@ section {
 /* ЦЕНЫ */
 
 .prices-section {
-  padding-top: var(--section-gap);  /* ← ОДИНАКОВОЕ РАССТОЯНИЕ */
+  padding-top: var(--section-gap);
   padding-bottom: 2.5rem;
 }
 
@@ -352,7 +352,7 @@ section {
 /* КОНТАКТЫ */
 
 .contact-section {
-  padding-top: var(--section-gap);  /* ← ОДИНАКОВОЕ РАССТОЯНИЕ */
+  padding-top: var(--section-gap);
   padding-bottom: 3rem;
   text-align: center;
 }
@@ -367,6 +367,12 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2.5rem;
+}
+
+.contact-column {
+  padding: 1.5rem 2rem;
+  border-radius: 18px;
+  max-width: 320px;
 }
 
 .contact-column h3 {
@@ -396,37 +402,124 @@ section {
   margin-top: 1rem;
 }
 
-/* АДАПТИВ */
+/* АДАПТИВ: планшеты и телефоны */
 
 @media (max-width: 768px) {
   :root {
-    --section-gap: 5rem;  /* Меньше на мобильных */
+    --section-gap: 5rem;
   }
 
   header {
+    padding: 0.6rem 1rem;
     flex-direction: column;
-    gap: 1rem;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
   }
 
   .nav-links {
-    gap: 1rem;
-    font-size: 0.85rem;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.6rem 1.2rem;
+    font-size: 0.8rem;
   }
 
   section {
-    padding: var(--section-gap) 1.5rem;
+    padding: var(--section-gap) 1.4rem;
+  }
+
+  .hero {
+    margin-top: 70px;
+    min-height: auto;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .hero-logo {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
+  }
+
+  .hero-subtitle a {
+    font-size: 1.05rem;
   }
 
   .about-inner {
     flex-direction: column;
     gap: 1.5rem;
+    text-align: center;
+  }
+
+  .about-photo img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .portfolio-section h2,
+  .prices-section h2,
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .portfolio-tabs {
+    gap: 0.6rem;
+  }
+
+  .portfolio-tab {
+    min-width: 150px;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.85rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .prices-grid {
+    grid-template-columns: 1fr;
   }
 
   .contact-columns {
     gap: 1.5rem;
+  }
+
+  .lightbox-prev {
+    left: 12px;
+  }
+
+  .lightbox-next {
+    right: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0.5rem 0.9rem;
+  }
+
+  .logo a {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  section {
+    padding: 3.2rem 1.1rem;
+  }
+
+  .hero-logo {
+    font-size: 2.1rem;
+  }
+
+  .portfolio-tab {
+    min-width: 130px;
+    font-size: 0.8rem;
+  }
+
+  .contact-column {
+    max-width: 100%;
+    padding: 1.2rem 1.3rem;
   }
 }
