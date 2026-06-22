@@ -68,3 +68,61 @@ img, picture { max-width: 100%; }
 @media (max-width: 575.98px) {
   .carousel-caption p { font-size: 0.95rem; }
 }
+
+/* ============================================================
+   9. Грид-галерея категорий (десктоп ≥992px)
+   На <992px остаётся штатная карусель. Грид и лайтбокс строит
+   gallery-grid.js; разметка карусели не меняется.
+   ============================================================ */
+.fn-grid { display: none; }
+
+@media (min-width: 992px) {
+  .fn-gallery-enhanced .carousel { display: none !important; }
+  .fn-grid {
+    display: block;
+    column-count: 3;
+    column-gap: 14px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1400px) { .fn-grid { column-count: 4; } }
+
+.fn-grid-item {
+  display: block; width: 100%; margin: 0 0 14px; padding: 0; border: 0;
+  background: none; line-height: 0; cursor: zoom-in;
+  border-radius: 6px; overflow: hidden; break-inside: avoid;
+  -webkit-user-select: none; user-select: none;
+}
+.fn-grid-item img { width: 100%; height: auto; display: block; }
+.fn-grid-item:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+@media (prefers-reduced-motion: no-preference) {
+  .fn-grid-item img { transition: transform .35s ease, filter .35s ease; }
+  .fn-grid-item:hover img { transform: scale(1.03); filter: brightness(.9); }
+}
+
+/* Лайтбокс */
+.fn-lb {
+  position: fixed; inset: 0; z-index: 1080; display: none;
+  align-items: center; justify-content: center; background: rgba(0,0,0,.93);
+}
+.fn-lb.open { display: flex; }
+.fn-lb img {
+  max-width: 92vw; max-height: 88svh; object-fit: contain;
+  -webkit-user-select: none; user-select: none;
+}
+.fn-lb button {
+  position: absolute; background: none; border: 0; color: #fff;
+  cursor: pointer; padding: 12px; line-height: 1;
+}
+.fn-lb .fn-lb-close { top: 8px; right: 14px; font-size: 34px; }
+.fn-lb .fn-lb-prev  { left: 6px;  top: 50%; transform: translateY(-50%); font-size: 46px; }
+.fn-lb .fn-lb-next  { right: 6px; top: 50%; transform: translateY(-50%); font-size: 46px; }
+.fn-lb button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.fn-lb-counter {
+  position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+  color: #fff; font: 400 13px/1 "Montserrat", sans-serif; letter-spacing: .05em;
+}
+@media (max-width: 991.98px) {
+  .fn-lb .fn-lb-prev, .fn-lb .fn-lb-next { font-size: 34px; }
+}
