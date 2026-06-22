@@ -1,0 +1,70 @@
+/* ============================================================
+   FotoNerv — responsive-fix.css
+   Лаконичные адаптивные доработки поверх сгенерированного all.css.
+   Подключается ПОСЛЕ all.css. Blocs/Bootstrap 5.
+   ============================================================ */
+
+/* 1. Шрифт: Montserrat уже грузится из Google Fonts, но all.css
+   форсит Helvetica. Применяем Montserrat с системным фолбэком. */
+body,
+h1, h2, h3, h4, h5, h6,
+p, label, a, .btn {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 2. Карточки прайса: убираем жёсткую высоту 352px.
+   Равная высота за счёт flex (Bootstrap .card в .col уже растягивается),
+   но контент диктует минимум, а не фиксирует. */
+.card-body-style {
+  height: auto;
+  min-height: clamp(220px, 30vh, 352px);
+}
+@media (max-width: 767.98px) {
+  .card-body-style { min-height: 0; }   /* на телефоне — по контенту */
+}
+
+/* 3. Герой и галереи (карусели): ограничиваем высоту, чтобы в ландшафте
+   телефона не занимали весь экран и не обрезали изображение. */
+.carousel-item img,
+.carousel-item picture > img {
+  width: 100%;
+  height: auto;
+  max-height: 80svh;          /* svh учитывает адресную строку моб. браузеров */
+  object-fit: cover;
+  object-position: center;
+}
+@media (orientation: landscape) and (max-height: 600px) {
+  .carousel-item img,
+  .carousel-item picture > img { max-height: 70svh; }
+}
+
+/* 4. Изображения по умолчанию не вылезают за контейнер. */
+img, picture { max-width: 100%; }
+
+/* 5. Тач-таргеты: ссылки навбара и кнопки удобны пальцем (>=44px). */
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .navbar-toggler { min-width: 44px; min-height: 44px; }
+}
+
+/* 6. Кнопки-стрелки карусели крупнее на тач-экранах. */
+@media (max-width: 767.98px) {
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon { width: 2.2rem; height: 2.2rem; }
+}
+
+/* 7. Контейнер не упирается в края на мелких экранах. */
+@media (max-width: 575.98px) {
+  .bloc { padding-left: 16px; padding-right: 16px; }
+  .full-width-bloc { padding-left: 0; padding-right: 0; }
+}
+
+/* 8. Подпись на герое читаема на узких экранах. */
+@media (max-width: 575.98px) {
+  .carousel-caption p { font-size: 0.95rem; }
+}
