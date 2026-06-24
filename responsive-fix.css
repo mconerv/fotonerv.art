@@ -1,0 +1,128 @@
+/* ============================================================
+   FotoNerv — responsive-fix.css
+   Лаконичные адаптивные доработки поверх сгенерированного all.css.
+   Подключается ПОСЛЕ all.css. Blocs/Bootstrap 5.
+   ============================================================ */
+
+/* 1. Шрифт: Montserrat уже грузится из Google Fonts, но all.css
+   форсит Helvetica. Применяем Montserrat с системным фолбэком. */
+body,
+h1, h2, h3, h4, h5, h6,
+p, label, a, .btn {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 2. Карточки прайса: убираем жёсткую высоту 352px.
+   Равная высота за счёт flex (Bootstrap .card в .col уже растягивается),
+   но контент диктует минимум, а не фиксирует. */
+.card-body-style {
+  height: auto;
+  min-height: clamp(220px, 30vh, 352px);
+}
+@media (max-width: 767.98px) {
+  .card-body-style { min-height: 0; }   /* на телефоне — по контенту */
+}
+
+/* 3. Герой и галереи (карусели): ограничиваем высоту, чтобы в ландшафте
+   телефона не занимали весь экран и не обрезали изображение. */
+.carousel-item img,
+.carousel-item picture > img {
+  width: 100%;
+  height: auto;
+  max-height: 80svh;          /* svh учитывает адресную строку моб. браузеров */
+  object-fit: cover;
+  object-position: center;
+}
+@media (orientation: landscape) and (max-height: 600px) {
+  .carousel-item img,
+  .carousel-item picture > img { max-height: 70svh; }
+}
+
+/* 4. Изображения по умолчанию не вылезают за контейнер. */
+img, picture { max-width: 100%; }
+
+/* 5. Тач-таргеты: ссылки навбара и кнопки удобны пальцем (>=44px). */
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .navbar-toggler { min-width: 44px; min-height: 44px; }
+}
+
+/* 6. Кнопки-стрелки карусели крупнее на тач-экранах. */
+@media (max-width: 767.98px) {
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon { width: 2.2rem; height: 2.2rem; }
+}
+
+/* 7. Контейнер не упирается в края на мелких экранах. */
+@media (max-width: 575.98px) {
+  .bloc { padding-left: 16px; padding-right: 16px; }
+  .full-width-bloc { padding-left: 0; padding-right: 0; }
+}
+
+/* 8. Подпись на герое читаема на узких экранах. */
+@media (max-width: 575.98px) {
+  .carousel-caption p { font-size: 0.95rem; }
+}
+
+/* ============================================================
+   9. Грид-галерея категорий (десктоп ≥992px)
+   На <992px остаётся штатная карусель. Грид и лайтбокс строит
+   gallery-grid.js; разметка карусели не меняется.
+   ============================================================ */
+.fn-grid { display: none; }
+
+@media (min-width: 992px) {
+  .fn-gallery-enhanced .carousel { display: none !important; }
+  .fn-grid {
+    display: block;
+    column-count: 3;
+    column-gap: 14px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1400px) { .fn-grid { column-count: 4; } }
+
+.fn-grid-item {
+  display: block; width: 100%; margin: 0 0 14px; padding: 0; border: 0;
+  background: none; line-height: 0; cursor: zoom-in;
+  border-radius: 6px; overflow: hidden; break-inside: avoid;
+  -webkit-user-select: none; user-select: none;
+}
+.fn-grid-item img { width: 100%; height: auto; display: block; }
+.fn-grid-item:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+@media (prefers-reduced-motion: no-preference) {
+  .fn-grid-item img { transition: transform .35s ease, filter .35s ease; }
+  .fn-grid-item:hover img { transform: scale(1.03); filter: brightness(.9); }
+}
+
+/* Лайтбокс */
+.fn-lb {
+  position: fixed; inset: 0; z-index: 1080; display: none;
+  align-items: center; justify-content: center; background: rgba(0,0,0,.93);
+}
+.fn-lb.open { display: flex; }
+.fn-lb img {
+  max-width: 92vw; max-height: 88svh; object-fit: contain;
+  -webkit-user-select: none; user-select: none;
+}
+.fn-lb button {
+  position: absolute; background: none; border: 0; color: #fff;
+  cursor: pointer; padding: 12px; line-height: 1;
+}
+.fn-lb .fn-lb-close { top: 8px; right: 14px; font-size: 34px; }
+.fn-lb .fn-lb-prev  { left: 6px;  top: 50%; transform: translateY(-50%); font-size: 46px; }
+.fn-lb .fn-lb-next  { right: 6px; top: 50%; transform: translateY(-50%); font-size: 46px; }
+.fn-lb button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.fn-lb-counter {
+  position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+  color: #fff; font: 400 13px/1 "Montserrat", sans-serif; letter-spacing: .05em;
+}
+@media (max-width: 991.98px) {
+  .fn-lb .fn-lb-prev, .fn-lb .fn-lb-next { font-size: 34px; }
+}
