@@ -669,7 +669,8 @@
     e.preventDefault();
     var form=this, b=form.querySelector('button[type=submit]'), note=document.getElementById('formNote'), orig=b.textContent;
     b.disabled=true; b.textContent='Отправляем…'; if(note)note.hidden=true;
-    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
+    var payload=Object.fromEntries(new FormData(form).entries());
+    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
       .then(function(r){return r.json();})
       .then(function(j){
         if(!j.success) throw new Error(j.message||'error');
