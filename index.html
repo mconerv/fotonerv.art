@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="Портрет, репортаж, архитектура, интерьеры и пейзаж. Санкт-Петербург · съёмки по всей России.">
 <meta name="twitter:image" content="https://fotonerv.art/assets/og-cover.jpg">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Макс Карпович","alternateName":"FotoNerv","jobTitle":"Фотограф","url":"https://fotonerv.art/","image":"https://fotonerv.art/assets/portrait.jpg","email":"mailto:max@fotonerv.ru","address":{"@type":"PostalAddress","addressLocality":"Санкт-Петербург","addressCountry":"RU"},"sameAs":["https://www.behance.net/mconerv/","https://www.instagram.com/fotonerv/","https://t.me/fotonerv","https://boosty.to/fotonerv"]}
+{"@context":"https://schema.org","@type":"Person","name":"Макс Карпович","alternateName":"FotoNerv","jobTitle":"Фотограф","url":"https://fotonerv.art/","image":"https://fotonerv.art/assets/portrait.jpg","address":{"@type":"PostalAddress","addressLocality":"Санкт-Петербург","addressCountry":"RU"},"sameAs":["https://www.behance.net/mconerv/","https://www.instagram.com/fotonerv/","https://t.me/fotonerv","https://boosty.to/fotonerv"]}
 </script>
 <style>
   @font-face { font-family:'Unbounded'; font-style: normal; font-display: swap; font-weight: 200 900; src:url(/assets/fonts/unbounded-cyrillic-wght-normal.woff2) format('woff2-variations'); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
@@ -545,7 +545,7 @@
         <span class="eyebrow">Прямые каналы</span>
         <div style="margin-top:22px">
           <div class="line-item"><span>TELEGRAM</span><a href="https://t.me/fotonerv" target="_blank" rel="noopener">@fotonerv</a></div>
-          <div class="line-item"><span>EMAIL</span><a href="mailto:max@fotonerv.ru">max@fotonerv.ru</a></div>
+          <div class="line-item"><span>EMAIL</span><a class="eml" href="#contact" rel="nofollow">показать email</a></div>
           <div class="line-item"><span>ГЕОГРАФИЯ</span><a href="#about">Санкт-Петербург · по РФ</a></div>
         </div>
       </div>
@@ -577,6 +577,10 @@
 (function(){
   // year
   document.getElementById('yr').textContent=new Date().getFullYear();
+
+  // email — собирается из частей, чтобы не светился в HTML для спам-ботов
+  (function(){var e=['max','fotonerv.ru'].join('@');
+    document.querySelectorAll('.eml').forEach(function(el){el.href='mailto:'+e;el.textContent=e;});})();
 
   // header + scroll nerve
   var hdr=document.getElementById('hdr'), nerve=document.getElementById('nerve-top');
