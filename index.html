@@ -262,6 +262,7 @@
     color:var(--fog);font-family:var(--text);font-size:1rem;padding:13px 15px;transition:border-color .2s;
   }
   .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--impulse)}
+  .field input:focus-visible,.field textarea:focus-visible,.field select:focus-visible{outline:2px solid var(--impulse);outline-offset:2px}
   .field textarea{resize:vertical;min-height:110px}
   .field .opt{font-family:var(--text);font-weight:500;font-size:.66rem;letter-spacing:0;text-transform:none;color:var(--ash);margin-left:6px}
   .form-note{font-size:.88rem;margin-top:2px}
@@ -522,7 +523,8 @@
       <div>
         <span class="eyebrow">Контакт</span>
         <h2 style="font-family:var(--display);font-weight:600;font-size:clamp(1.9rem,4vw,3rem);margin:14px 0 22px;line-height:1.05">Обсудим съёмку</h2>
-        <form class="form" id="form">
+        <form class="form" id="form" method="post" action="#contact">
+<noscript><p style="color:#FB4435;margin:0 0 14px">Для отправки формы включите JavaScript — без него заявка не будет отправлена. Либо напишите на почту из подвала сайта.</p></noscript>
           <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
           <div class="field"><label for="nm">Имя</label><input id="nm" name="Имя" type="text" placeholder="Как к вам обращаться" required></div>
           <div class="field"><label for="em">Email для ответа</label><input id="em" name="email" type="email" placeholder="вы@почта.ру" required></div>
@@ -594,12 +596,16 @@
 
   // mobile menu
   var burger=document.getElementById('burger'), menu=document.getElementById('menu');
+  var mqMenu=window.matchMedia('(max-width:900px)');
+  function syncMenuInert(){menu.inert=mqMenu.matches&&!menu.classList.contains('open');}
+  if('inert' in menu){(mqMenu.addEventListener?mqMenu.addEventListener('change',syncMenuInert):mqMenu.addListener(syncMenuInert));syncMenuInert();}
   burger.addEventListener('click',function(){
     var open=menu.classList.toggle('open'); burger.classList.toggle('open',open);
     burger.setAttribute('aria-expanded',open);
+    if('inert' in menu)syncMenuInert();
   });
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){
-    menu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded',false);
+    menu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded',false);if('inert' in menu)syncMenuInert();
   });});
 
   // ---- portfolio: live preview wall + genre gallery + lightbox ----
