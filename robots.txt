@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /privacy.html
+Disallow: /consent.html
 
 Sitemap: https://fotonerv.art/sitemap.xml
