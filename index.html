@@ -22,7 +22,7 @@
 <meta name="twitter:description" content="Портрет, репортаж, архитектура, интерьеры и пейзаж. Санкт-Петербург · съёмки по всей России.">
 <meta name="twitter:image" content="https://fotonerv.art/assets/og-cover.jpg">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Макс Карпович","alternateName":"FotoNerv","jobTitle":"Фотограф","url":"https://fotonerv.art/","image":"https://fotonerv.art/assets/portrait.jpg","address":{"@type":"PostalAddress","addressLocality":"Санкт-Петербург","addressCountry":"RU"},"sameAs":["https://www.behance.net/mconerv/","https://www.instagram.com/fotonerv/","https://t.me/fotonerv","https://boosty.to/fotonerv"]}
+{"@context":"https://schema.org","@type":"Person","name":"Макс Карпович","alternateName":"FotoNerv","jobTitle":"Фотограф","url":"https://fotonerv.art/","image":"https://fotonerv.art/assets/portrait.jpg","address":{"@type":"PostalAddress","addressLocality":"Санкт-Петербург","addressCountry":"RU"},"sameAs":["https://www.behance.net/mconerv/","https://www.instagram.com/fotonerv/","https://t.me/fotonerv","https://boosty.to/fotonerv"],"areaServed":"Санкт-Петербург","makesOffer":[{"@type":"Offer","priceCurrency":"RUB","itemOffered":{"@type":"Service","name":"Портретная съёмка на улице или в интерьере","areaServed":"Санкт-Петербург","description":"1 час, 15 фото в ретуши и все удачные кадры в цветокоррекции"},"price":5000},{"@type":"Offer","priceCurrency":"RUB","itemOffered":{"@type":"Service","name":"Портретная съёмка в студии","areaServed":"Санкт-Петербург","description":"1 час, 10 фото в ретуши; аренда студии оплачивается отдельно"},"price":3000},{"@type":"Offer","priceCurrency":"RUB","itemOffered":{"@type":"Service","name":"Интерьерная съёмка: студия или однокомнатная квартира","areaServed":"Санкт-Петербург"},"price":6000},{"@type":"Offer","priceCurrency":"RUB","itemOffered":{"@type":"Service","name":"Интерьерная съёмка: двухкомнатная квартира","areaServed":"Санкт-Петербург"},"price":7000},{"@type":"Offer","priceCurrency":"RUB","itemOffered":{"@type":"Service","name":"Интерьерная съёмка: трёхкомнатная квартира и больше","areaServed":"Санкт-Петербург"},"price":8000},{"@type":"Offer","priceCurrency":"RUB","itemOffered":{"@type":"Service","name":"Интерьерная съёмка: кафе, салон, офис","areaServed":"Санкт-Петербург","description":"до 2 часов съёмки"},"priceSpecification":{"@type":"PriceSpecification","minPrice":9000,"priceCurrency":"RUB"}}]}
 </script>
 <style>
   html{font-synthesis-weight:none}  /* у Oranienbaum одно начертание — без фальшивого полужирного */
@@ -74,6 +74,9 @@
   :focus-visible{outline:2px solid var(--impulse);outline-offset:3px;border-radius:4px}
 
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .skip{position:fixed;left:16px;top:12px;z-index:1000;padding:10px 16px;border-radius:var(--r-pill);background:var(--fog);color:var(--graphite);font-weight:700;text-decoration:none;transform:translateY(-200%);transition:transform .2s}
+  .skip:focus{transform:none}
+  main:focus{outline:none}
   .eyebrow{
     font-family:var(--text);font-weight:700;
     font-size:.84rem;
@@ -114,7 +117,7 @@
   .brand .name b{color:var(--impulse);font-family:var(--accent);font-style:italic;font-weight:400}
   .brand .underline{width:96px;height:7px;display:block;color:var(--impulse)}
   .about-portrait{display:flex;flex-direction:column;align-items:center;gap:14px;padding-bottom:28px}
-  .avatar-lg{width:100%;max-width:340px;aspect-ratio:1561/1912;display:block;border-radius:14px;background:url(assets/portrait-neutral.jpg) center/cover no-repeat;border:1px solid var(--line);margin-bottom:126px}
+  .avatar-lg{width:100%;max-width:340px;aspect-ratio:1561/1912;display:block;border-radius:14px;background:url(assets/portrait-neutral.webp) center/cover no-repeat;border:1px solid var(--line);margin-bottom:126px}
   .portrait-cap{font-family:var(--text);font-weight:700;font-size:.84rem;letter-spacing:.01em;color:var(--ash);display:flex;align-items:center;gap:9px}
   .portrait-cap svg{width:34px;height:12px}
   .portrait-cap path{fill:none;stroke:var(--impulse);stroke-width:1.6}
@@ -391,6 +394,7 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#top">К содержанию</a>
 
 <div id="nerve-top"></div>
 
@@ -417,7 +421,7 @@
   </div>
 </header>
 
-<main id="top">
+<main id="top" tabindex="-1">
 
   <!-- HERO -->
   <section class="hero">
