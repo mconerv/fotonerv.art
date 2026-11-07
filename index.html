@@ -336,6 +336,58 @@
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
 
+  /* ---------- истории: серия одной съёмки на ленте 35 мм (геометрия как у плёнки в hero, масштаб --k) ---------- */
+  .story-head{display:flex;align-items:baseline;justify-content:space-between;gap:6px 24px;flex-wrap:wrap;margin-bottom:20px}
+  .story-head h3{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,2.8vw,2.2rem);line-height:1.1}
+  .story-meta{color:var(--ash)}
+  .story-film{--k:1.36;position:relative;background:var(--film-bg);border-radius:4px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;box-shadow:0 18px 40px rgba(0,0,0,.45);
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)}
+  .story-film::-webkit-scrollbar{display:none}
+  .story-film:focus-visible{outline:2px solid var(--impulse);outline-offset:3px}
+  .story-track{position:relative;display:flex;width:max-content;list-style:none;margin:0;padding:0 calc(33px*var(--k))}
+  .story-track::before,.story-track::after{content:"";position:absolute;left:0;right:0;height:calc(19px*var(--k));background:var(--film-hole);
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='19'%3E%3Crect x='9.5' width='14' height='19' rx='2.5'/%3E%3C/svg%3E") 0 0/calc(33px*var(--k)) calc(19px*var(--k)) repeat-x;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='19'%3E%3Crect x='9.5' width='14' height='19' rx='2.5'/%3E%3C/svg%3E") 0 0/calc(33px*var(--k)) calc(19px*var(--k)) repeat-x}
+  .story-track::before{top:calc(14px*var(--k))}.story-track::after{bottom:calc(14px*var(--k))}
+  .scell{position:relative;flex:none;width:calc(264px*var(--k));padding:calc(38px*var(--k)) calc(7px*var(--k));scroll-snap-align:center}
+  .sframe{display:block;width:100%;aspect-ratio:3/2;padding:0;border:0;border-radius:2px;overflow:hidden;background:#000;cursor:zoom-in}
+  .sframe img{width:100%;height:100%;object-fit:cover;display:block;transition:filter .3s}
+  .sframe:hover img{filter:brightness(1.1)}
+  .sframe:focus-visible{outline:2px solid var(--impulse);outline-offset:2px}
+  .sep{position:absolute;left:0;right:0;height:10px;font-family:var(--text);font-weight:700;font-size:.6rem;line-height:10px;letter-spacing:.2em;color:var(--impulse);white-space:nowrap;opacity:.9}
+  .sep.t{top:calc(2px*var(--k))}.sep.b{bottom:calc(2px*var(--k))}
+  .sep i{position:absolute;font-style:normal}
+  .sep.t i{left:8%}
+  .sep.b i:first-child{left:44%}.sep.b i:last-child{left:84%}
+  .sep.b i:last-child::before{content:"";display:inline-block;border-left:5px solid currentColor;border-top:3px solid transparent;border-bottom:3px solid transparent;margin-right:4px;vertical-align:0}
+  .story-foot{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-top:24px}
+  .story-text{display:grid;grid-template-columns:auto 1fr;gap:8px 20px;max-width:62ch;margin:0}
+  .story-text dt{color:var(--ash)}
+  .story-text dd{margin:0}
+  .story-nav{display:flex;gap:10px;flex:none}
+  .story-nav button{width:46px;height:46px;border-radius:50%;background:transparent;border:1px solid var(--line);color:var(--fog);font-size:1.4rem;line-height:1;cursor:pointer;transition:border-color .2s,color .2s}
+  .story-nav button:hover{border-color:var(--impulse);color:var(--impulse)}
+  .story-nav button:disabled{opacity:.35;cursor:default;border-color:var(--line);color:var(--fog)}
+  .story-cta{margin-top:20px}
+  .story-cta .pcta{display:inline-block;margin-top:0}
+
+  /* stories-v2: вкладки историй, вертикальные кадры целиком, ссылки под лентой */
+  .story-tabs{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);border-top:1px solid var(--line);margin-bottom:24px}
+  .stab{position:relative;display:block;text-align:left;padding:18px 24px 0 0;background:none;border:0;color:var(--ash);font:inherit;cursor:pointer;transition:color .2s}
+  .stab::before{content:"";position:absolute;left:0;right:24px;top:-1px;height:2px;background:var(--impulse);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+  .stab[aria-selected="true"]{color:var(--fog);cursor:default}
+  .stab[aria-selected="true"]::before{transform:none}
+  .stab:hover{color:var(--fog)}
+  .stab:focus-visible{outline:2px solid var(--impulse);outline-offset:4px}
+  .stab-t{display:block;font-family:var(--display);font-size:clamp(1.25rem,1.8vw,1.6rem);line-height:1.15}
+  .stab-m{display:block;margin-top:6px;font-size:.92rem;color:var(--ash)}
+  .story-track{transition:opacity .22s}
+  .story-film.swap .story-track{opacity:0}
+  .sframe img.v{object-fit:contain}
+  .story-links{display:flex;justify-content:space-between;align-items:baseline;gap:12px 24px;flex-wrap:wrap;margin-top:22px}
+  .story-links .pcta{margin-top:0}
+  .story-all{color:var(--ash);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--ash) 45%,transparent);text-underline-offset:4px;transition:color .2s}
+  .story-all:hover{color:var(--fog)}
+
   /* ---------- prices ---------- */
   .prices{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto auto;gap:0 72px}
   .pcol{display:grid;grid-row:span 4;grid-template-rows:subgrid;align-content:start}  /* заголовок, пояснение, список, ссылка — на одной линии в обеих колонках */
@@ -364,6 +416,12 @@
     .avatar-lg{max-width:280px;margin-bottom:106px}
     .community{grid-template-columns:1fr}
     .prices{grid-template-columns:1fr;grid-template-rows:none}
+    .story-film{--k:1}
+    .story-tabs{grid-auto-columns:minmax(230px,76%);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+    .story-tabs::-webkit-scrollbar{display:none}
+    .stab{scroll-snap-align:start}
+    .story-foot{flex-direction:column-reverse;gap:16px}
+    .story-links{flex-direction:column}
     .pcol{grid-row:auto;grid-template-rows:none}
     .pcol+.pcol{margin-top:56px}
     .steps{grid-template-columns:repeat(2,1fr)}
@@ -412,6 +470,7 @@
     </a>
     <nav class="menu" id="menu">
       <a href="#work">Работы</a>
+      <a href="#stories">Истории</a>
       <a href="#about">Обо мне</a>
       <a href="#process">Как работаем</a>
       <a href="#prices">Цены</a>
@@ -463,13 +522,51 @@
         <button class="chip active" data-f="all">Все</button>
         <button class="chip" data-f="portrait">Портрет</button>
         <button class="chip" data-f="reportage">Репортаж</button>
-        <button class="chip" data-f="arch">Архитектура и интерьеры</button>
+        <button class="chip" data-f="arch">Интерьеры и архитектура</button>
         <button class="chip" data-f="land">Пейзаж</button>
       </div>
 
       <div class="wall" id="wall" aria-label="Превью работ"></div>
       <div class="wall-hint" id="wallHint">Превью обновляется · выбери жанр для полной подборки</div>
       <div class="gallery" id="gallery" hidden></div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- STORIES -->
+  <section class="section" id="stories">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Истории</span>
+        <h2>Съёмки целиком</h2>
+        <p>Серия кадров одной съёмки: задача, что сняли и как это выглядит вместе.</p>
+      </div>
+      <div class="story">
+        <div class="story-tabs" role="tablist" aria-label="Съёмки">
+          <button type="button" role="tab" class="stab" id="stab-ozden" data-id="ozden" aria-controls="storyFilm" aria-selected="true"><span class="stab-t">Этно-кафе «Ёzden», Приэльбрусье</span><span class="stab-m">интерьер и еда · 2025 · 9 кадров</span></button>
+          <button type="button" role="tab" class="stab" id="stab-sel" data-id="sel" aria-controls="storyFilm" aria-selected="false" tabindex="-1"><span class="stab-t">Сель в Тырныаузе</span><span class="stab-m">репортаж · 2025 · 10 кадров</span></button>
+          <button type="button" role="tab" class="stab" id="stab-chertog" data-id="chertog" aria-controls="storyFilm" aria-selected="false" tabindex="-1"><span class="stab-t">Свободный микрофон в «Чертоге»</span><span class="stab-m">репортаж · 2025 · 10 кадров</span></button>
+          <button type="button" role="tab" class="stab" id="stab-julia" data-id="julia" aria-controls="storyFilm" aria-selected="false" tabindex="-1"><span class="stab-t">Портрет в цветном свете</span><span class="stab-m">портрет · 2026 · 9 кадров</span></button>
+        </div>
+        <div class="story-film" id="storyFilm" role="tabpanel" tabindex="0" aria-labelledby="stab-ozden">
+          <ol class="story-track" id="storyTrack"></ol>
+        </div>
+        <div class="story-foot">
+          <dl class="story-text" id="storyRows">
+            <dt>Задача</dt><dd>Фото для соцсетей, агрегаторов и карт.</dd>
+            <dt>Сняли</dt><dd>Фасад с видом на горы, зал, детали интерьера и подачу блюд.</dd>
+          </dl>
+          <div class="story-nav">
+            <button type="button" id="storyPrev" aria-label="Предыдущие кадры">&#8249;</button>
+            <button type="button" id="storyNext" aria-label="Следующие кадры">&#8250;</button>
+          </div>
+        </div>
+        <div class="story-links">
+          <a class="pcta" id="storyCta" href="#contact" data-fmt="Интерьеры">Нужна похожая съёмка</a>
+          <a class="story-all" href="stories.html">Все истории · 10</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -487,7 +584,8 @@
           <span class="eyebrow">Обо мне</span>
           <h2 style="font-family:var(--display);font-weight:400;font-size:clamp(2.3rem,5vw,3.8rem);margin:14px 0 22px;line-height:1">Макс Карпович</h2>
           <p>Снимаю людей, события, города и пространства так, чтобы кадр держал <strong>живое напряжение</strong> — тот самый нерв, ради которого стоит нажимать на спуск.</p>
-          <p>Выстраиваю кадр от света до финальной ретуши, чтобы серия складывалась в <strong>цельную историю</strong>, а не в набор случайных снимков.</p>
+          <p>Работаю в разных жанрах: портрет, репортаж, интерьеры и архитектура, пейзаж. Камера со мной и в рабочих поездках — Якутия, Кольский полуостров, Кавказ, Камчатка. Там я привык снимать в любых условиях: ночью, под дождём, на пожаре и после схода селя. Кавказские и алтайские пейзажи выставлялись в Томском художественном музее.</p>
+          <p>Веду съёмку от света до финальной ретуши: на площадке подскажу с позированием и выставлю свет под задачу, потом отбираю кадры — сам или вместе с клиентом — и делаю цветокоррекцию и ретушь. Поэтому серия складывается в <strong>цельную историю</strong>, а не в набор случайных снимков.</p>
           <p>Базируюсь в Санкт-Петербурге, снимаю по всей России — выезжаю на проекты в любой город.</p>
         </div>
       </div>
@@ -529,7 +627,7 @@
           <p class="pnote">Подскажу с позированием, свет ставлю под вас. Готовые фото — через 7 дней.</p>
           <ul class="plist">
           <li><span class="n">На улице или в интерьере<small>1 час, 15 фото в ретуши и все удачные кадры в цветокоррекции</small></span><span class="c">5 000<i>₽</i></span></li>
-          <li><span class="n">В студии<small>1 час, 10 фото в ретуши. Аренда 1 500–2 500 ₽/ч, помогу выбрать зал. Цена для первых 10 студийных съёмок</small></span><span class="c">3 000<i>₽</i><span class="post">+ аренда зала</span></span></li>
+          <li><span class="n">В студии<small>1 час, 10 фото в ретуши. Аренда 1 600–3 400 ₽/ч, помогу выбрать зал. Цена для первых 10 студийных съёмок</small></span><span class="c">3 000<i>₽</i><span class="post">+ аренда зала</span></span></li>
           <li><span class="n">Дополнительный час</span><span class="c">3 000<i>₽</i></span></li>
           <li><span class="n">Дополнительная ретушь</span><span class="c">300<i>₽</i><span class="post">за фото</span></span></li>
           </ul>
@@ -651,6 +749,7 @@
 </footer>
 
 <script src="assets/gallery-data.js"></script>
+<script src="assets/stories.js?v=b80e9f5a"></script>
 <script>
 (function(){
   // year
@@ -686,7 +785,7 @@
 
   // ---- portfolio: live preview wall + genre gallery + lightbox ----
   // GEN и WALL загружаются из assets/gallery-data.js
-  var NAME={portrait:'Портрет',reportage:'Репортаж',arch:'Архитектура и интерьеры',land:'Пейзаж'};
+  var NAME={portrait:'Портрет',reportage:'Репортаж',arch:'Интерьеры и архитектура',land:'Пейзаж'};
   var TH='img/thumb/', FULL='img/', WTH='img/wall/';
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.random()*(i+1)|0,t=a[i];a[i]=a[j];a[j]=t}return a}
@@ -737,14 +836,16 @@
   function focus(im,n){im.style.objectPosition=FOCUS[n]||'';}
   var curList=[],curIdx=0;
   function buildGallery(g,first){
+    if(!first&&g==='arch')first=FIRST.interior; // в жанре сначала интерьеры, потом архитектура
     curList=(GEN[g]||[]).slice(); gallery.innerHTML='';
     if(first){var head=first.map(function(b){return b+'.webp'}).filter(function(f){return curList.indexOf(f)>=0});
       curList=head.concat(curList.filter(function(f){return head.indexOf(f)<0}));}
+    var list=curList;
     curList.forEach(function(n,i){
       var d=document.createElement('div');d.className='gtile';d.setAttribute('role','button');d.tabIndex=0;
       var im=new Image();im.loading='lazy';im.alt=NAME[g];im.src=TH+n;focus(im,n);d.appendChild(im);
-      d.addEventListener('click',function(){openLb(i)});
-      d.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openLb(i)}});
+      d.addEventListener('click',function(){openSet(list,i)});
+      d.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openSet(list,i)}});
       gallery.appendChild(d);
     });
   }
@@ -787,8 +888,33 @@
     if(f==='all'){gallery.hidden=true;wall.hidden=false;wallHint.hidden=false;buildWall();startRot();}
     else{stopRot();wall.hidden=true;wallHint.hidden=true;gallery.hidden=false;buildGallery(f,first);}
   }
-  // интерьеры внутри жанра «Архитектура и интерьеры» — в этом порядке идут первыми, когда галерею открывают из цен
+  // интерьеры внутри жанра «Интерьеры и архитектура» — в этом порядке идут первыми, когда галерею открывают из цен
   var FIRST={interior:['Arc_19','Arc_18','Arc_3','Arc_5','Arc_20','Arc_21','Arc_4','Arc_10','Arc_23','Arc_7','Arc_29','Arc_27','Arc_22','Arc_25','Arc_26','Arc_28','Arc_24']};
+  // ---- истории: вкладки переключают ленту (данные — assets/stories.js) ----
+  (function(){
+    var film=document.getElementById('storyFilm');if(!film||!window.STORIES)return;
+    var byId={};STORIES.forEach(function(s){byId[s.id]=s});
+    var tabs=[].slice.call(document.querySelectorAll('.stab')),cur=-1;
+    var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var fill=storyFilm({film:film,track:document.getElementById('storyTrack'),prev:document.getElementById('storyPrev'),next:document.getElementById('storyNext'),
+      rows:document.getElementById('storyRows'),cta:document.getElementById('storyCta'),open:openSet});
+    function show(k,focus){
+      if(k===cur)return;var initial=cur<0;cur=k;
+      tabs.forEach(function(t,j){var on=j===k;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;});
+      film.setAttribute('aria-labelledby',tabs[k].id);
+      if(focus){tabs[k].focus();tabs[k].scrollIntoView({block:'nearest',inline:'nearest'});}
+      var st=byId[tabs[k].dataset.id];
+      if(initial||calm){fill(st);return;}
+      film.classList.add('swap');setTimeout(function(){fill(st);film.classList.remove('swap');},220);
+    }
+    tabs.forEach(function(t,j){
+      t.addEventListener('click',function(){show(j)});
+      t.addEventListener('keydown',function(e){var n=tabs.length,d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;
+        if(e.key==='Home'){e.preventDefault();show(0,true);}else if(e.key==='End'){e.preventDefault();show(n-1,true);}else if(d){e.preventDefault();show((cur+d+n)%n,true);}});
+    });
+    show(0);
+  })();
+
   // цены → галерея нужного жанра
   document.querySelectorAll('[data-genre]').forEach(function(a){
     a.addEventListener('click',function(){
@@ -809,7 +935,7 @@
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
   },{threshold:.12});
-  document.querySelectorAll('.section-head,.about,.steps,.prices,.community,.contact,.hero-grid').forEach(function(el){
+  document.querySelectorAll('.section-head,.about,.story,.steps,.prices,.community,.contact,.hero-grid').forEach(function(el){
     el.classList.add('reveal');io.observe(el);
   });
 
