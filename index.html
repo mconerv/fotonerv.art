@@ -339,6 +339,9 @@
   /* ---------- prices ---------- */
   .prices{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto auto;gap:0 72px}
   .pcol{display:grid;grid-row:span 4;grid-template-rows:subgrid;align-content:start}  /* заголовок, пояснение, список, ссылка — на одной линии в обеих колонках */
+  .phead{display:flex;align-items:baseline;justify-content:space-between;gap:8px 20px;flex-wrap:wrap}
+  .pex{color:var(--ash);font-size:.95rem;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--ash) 45%,transparent);text-underline-offset:4px;transition:color .2s,text-decoration-color .2s}
+  .pex:hover{color:var(--fog);text-decoration-color:var(--fog)}
   .pcol h3{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,2.6vw,2.1rem);line-height:1.1}
   .pnote{color:var(--ash);font-size:.98rem;margin:10px 0 20px;max-width:44ch}
   .plist{list-style:none;border-top:1px solid var(--line)}
@@ -522,7 +525,7 @@
       </div>
       <div class="prices">
         <div class="pcol">
-          <h3>Портрет</h3>
+          <div class="phead"><h3>Портрет</h3><a class="pex" href="#work" data-genre="portrait">Смотреть портреты</a></div>
           <p class="pnote">Подскажу с позированием, свет ставлю под вас. Готовые фото — через 7 дней.</p>
           <ul class="plist">
           <li><span class="n">На улице или в интерьере<small>1 час, 15 фото в ретуши и все удачные кадры в цветокоррекции</small></span><span class="c">5 000<i>₽</i></span></li>
@@ -533,7 +536,7 @@
           <a class="pcta" href="#contact" data-fmt="Портрет">Записаться на портрет</a>
         </div>
         <div class="pcol">
-          <h3>Интерьер</h3>
+          <div class="phead"><h3>Интерьер</h3><a class="pex" href="#work" data-genre="arch" data-first="interior">Смотреть интерьеры</a></div>
           <p class="pnote">Квартиры под аренду и продажу. Общие и детальные планы, помогу подготовить квартиру к съёмке. Готовые фото — через 3 дня.</p>
           <ul class="plist">
           <li><span class="n">Студия или однокомнатная</span><span class="c">6 000<i>₽</i></span></li>
@@ -730,8 +733,10 @@
   function stopRot(){ timers.forEach(function(t){clearTimeout(t);}); timers=[]; }
 
   var curList=[],curIdx=0;
-  function buildGallery(g){
-    curList=GEN[g]||[]; gallery.innerHTML='';
+  function buildGallery(g,first){
+    curList=(GEN[g]||[]).slice(); gallery.innerHTML='';
+    if(first){var head=first.map(function(b){return b+'.webp'}).filter(function(f){return curList.indexOf(f)>=0});
+      curList=head.concat(curList.filter(function(f){return head.indexOf(f)<0}));}
     curList.forEach(function(n,i){
       var d=document.createElement('div');d.className='gtile';d.setAttribute('role','button');d.tabIndex=0;
       var im=new Image();im.loading='lazy';im.alt=NAME[g];im.src=TH+n;d.appendChild(im);
@@ -775,10 +780,20 @@
     if(reduce) track.style.animation='none';
   })();
 
-  function setView(f){
+  function setView(f,first){
     if(f==='all'){gallery.hidden=true;wall.hidden=false;wallHint.hidden=false;buildWall();startRot();}
-    else{stopRot();wall.hidden=true;wallHint.hidden=true;gallery.hidden=false;buildGallery(f);}
+    else{stopRot();wall.hidden=true;wallHint.hidden=true;gallery.hidden=false;buildGallery(f,first);}
   }
+  // интерьеры внутри жанра «Архитектура и интерьеры» — в этом порядке идут первыми, когда галерею открывают из цен
+  var FIRST={interior:['Arc_19','Arc_18','Arc_3','Arc_5','Arc_20','Arc_21','Arc_4','Arc_10','Arc_23','Arc_7','Arc_29','Arc_27','Arc_22','Arc_25','Arc_26','Arc_28','Arc_24']};
+  // цены → галерея нужного жанра
+  document.querySelectorAll('[data-genre]').forEach(function(a){
+    a.addEventListener('click',function(){
+      var g=a.getAttribute('data-genre');
+      document.querySelectorAll('.chip').forEach(function(x){x.classList.toggle('active',x.dataset.f===g)});
+      setView(g,FIRST[a.getAttribute('data-first')]);
+    });
+  });
   document.querySelectorAll('.chip').forEach(function(c){
     c.addEventListener('click',function(){
       document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active')});
