@@ -333,6 +333,23 @@
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
 
+  /* ---------- prices ---------- */
+  .prices{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto auto;gap:0 72px}
+  .pcol{display:grid;grid-row:span 4;grid-template-rows:subgrid;align-content:start}  /* заголовок, пояснение, список, ссылка — на одной линии в обеих колонках */
+  .pcol h3{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,2.6vw,2.1rem);line-height:1.1}
+  .pnote{color:var(--ash);font-size:.98rem;margin:10px 0 20px;max-width:44ch}
+  .plist{list-style:none;border-top:1px solid var(--line)}
+  .plist li{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .plist .n{font-size:1.04rem}
+  .plist .n small{display:block;color:var(--ash);font-size:.9rem;line-height:1.45;margin-top:4px;max-width:40ch}
+  .plist .c{flex:none;font-family:var(--display);font-size:1.5rem;line-height:1;white-space:nowrap;text-align:right}
+  .plist .c i{font-family:var(--text);font-style:normal;font-size:.66em;margin-left:.16em;color:var(--ash)}
+  .plist .c .pre{font-family:var(--text);font-size:.6em;color:var(--ash)}
+  .plist .c .post{display:block;font-family:var(--text);font-size:.56em;color:var(--ash);margin-top:6px}
+  .pcta{justify-self:start;align-self:start;margin-top:20px;color:var(--impulse);font-weight:700;text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--impulse) 35%,transparent);padding-bottom:2px;transition:border-color .2s}
+  .pcta:hover{border-bottom-color:var(--impulse)}
+  .pfoot{grid-column:1/-1;color:var(--ash);font-size:.92rem;margin-top:34px}
+
   /* ---------- responsive ---------- */
   @media(max-width:900px){
     .hero-grid,.about,.contact{grid-template-columns:1fr}
@@ -340,6 +357,9 @@
     .about-portrait{order:-1}
     .avatar-lg{max-width:280px;margin-bottom:106px}
     .community{grid-template-columns:1fr}
+    .prices{grid-template-columns:1fr;grid-template-rows:none}
+    .pcol{grid-row:auto;grid-template-rows:none}
+    .pcol+.pcol{margin-top:56px}
     .steps{grid-template-columns:repeat(2,1fr)}
     .grid{grid-template-columns:repeat(2,1fr)}
     .tile.wide{grid-column:span 2}
@@ -387,6 +407,7 @@
       <a href="#work">Работы</a>
       <a href="#about">Обо мне</a>
       <a href="#process">Как работаем</a>
+      <a href="#prices">Цены</a>
       <a href="#community">Соцсети</a>
       <a href="#contact" class="btn btn-solid">Связаться</a>
     </nav>
@@ -481,6 +502,44 @@
         <div class="step"><h3>Съёмка</h3><p>Работаем на площадке: свет, ракурс, ритм. Держим нерв момента.</p><div class="line"></div></div>
         <div class="step"><h3>Отбор</h3><p>Вместе выбираем лучшие кадры из чернового набора.</p><div class="line"></div></div>
         <div class="step"><h3>Сдача</h3><p>Ретушь в Capture One, экспорт в нужных форматах, передача файлов.</p><div class="line"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- PRICES -->
+  <section class="section" id="prices">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Стоимость</span>
+        <h2>Цены</h2>
+        <p>Итоговую сумму называю до съёмки и фиксирую в переписке.</p>
+      </div>
+      <div class="prices">
+        <div class="pcol">
+          <h3>Портрет</h3>
+          <p class="pnote">Подскажу с позированием, свет ставлю под вас. Готовые фото — через 7 дней.</p>
+          <ul class="plist">
+          <li><span class="n">На улице или в интерьере<small>1 час, 15 фото в ретуши и все удачные кадры в цветокоррекции</small></span><span class="c">5 000<i>₽</i></span></li>
+          <li><span class="n">В студии<small>1 час, 10 фото в ретуши. Аренда 1 500–2 500 ₽/ч, помогу выбрать зал. Цена для первых 10 студийных съёмок</small></span><span class="c">3 000<i>₽</i><span class="post">+ аренда зала</span></span></li>
+          <li><span class="n">Дополнительный час</span><span class="c">3 000<i>₽</i></span></li>
+          <li><span class="n">Дополнительная ретушь</span><span class="c">300<i>₽</i><span class="post">за фото</span></span></li>
+          </ul>
+          <a class="pcta" href="#contact" data-fmt="Портрет">Записаться на портрет</a>
+        </div>
+        <div class="pcol">
+          <h3>Интерьер</h3>
+          <p class="pnote">Квартиры под аренду и продажу. Общие и детальные планы, помогу подготовить квартиру к съёмке. Готовые фото — через 3 дня.</p>
+          <ul class="plist">
+          <li><span class="n">Студия или однокомнатная</span><span class="c">6 000<i>₽</i></span></li>
+          <li><span class="n">Двухкомнатная</span><span class="c">7 000<i>₽</i></span></li>
+          <li><span class="n">Трёхкомнатная и больше</span><span class="c">8 000<i>₽</i></span></li>
+          <li><span class="n">Кафе, салон, офис<small>До 2 часов съёмки</small></span><span class="c"><span class="pre">от</span> 9 000<i>₽</i></span></li>
+          </ul>
+          <a class="pcta" href="#contact" data-fmt="Интерьеры">Заказать съёмку интерьера</a>
+        </div>
+        <p class="pfoot">Цены — для съёмки в пределах КАД. Выезд за город обсуждаем отдельно.</p>
       </div>
     </div>
   </section>
@@ -728,8 +787,13 @@
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
   },{threshold:.12});
-  document.querySelectorAll('.section-head,.about,.steps,.community,.contact,.hero-grid').forEach(function(el){
+  document.querySelectorAll('.section-head,.about,.steps,.prices,.community,.contact,.hero-grid').forEach(function(el){
     el.classList.add('reveal');io.observe(el);
+  });
+
+  // цены → форма: подставляем формат съёмки
+  document.querySelectorAll('[data-fmt]').forEach(function(a){
+    a.addEventListener('click',function(){var t=document.getElementById('tp');if(t)t.value=a.getAttribute('data-fmt');});
   });
 
   // form → FormHook
