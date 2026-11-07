@@ -709,7 +709,7 @@
       if(dpos>=deck.length) reshuffle();
       var name=deck[dpos++]; shown.push(name);
       var d=document.createElement('div');d.className='wtile';
-      var im=new Image();im.loading='lazy';im.alt='';im.src=WTH+name;
+      var im=new Image();im.loading='lazy';im.alt='';im.src=WTH+name;focus(im,name);
       im.onload=(function(im){return function(){im.classList.add('on')}})(im);
       d.appendChild(im);wall.appendChild(d);
     }
@@ -723,7 +723,7 @@
       var pre=new Image();
       pre.onload=function(){
         im.classList.remove('on');
-        setTimeout(function(){im.src=WTH+name;im.classList.add('on');shown[idx]=name;},420);
+        setTimeout(function(){im.src=WTH+name;focus(im,name);im.classList.add('on');shown[idx]=name;},420);
       };
       pre.src=WTH+name;
       scheduleTile(idx);
@@ -732,6 +732,9 @@
   function startRot(){ if(reduce)return; stopRot(); for(var i=0;i<wall.children.length;i++) scheduleTile(i); }
   function stopRot(){ timers.forEach(function(t){clearTimeout(t);}); timers=[]; }
 
+  // вертикальные кадры в горизонтальных превью: где держать центр кадра (лицо), % по высоте для object-position
+  var FOCUS={'Prt_24.webp':'50% 27%','Prt_25.webp':'50% 27%','Prt_28.webp':'50% 40%','Prt_29.webp':'50% 4%'};
+  function focus(im,n){im.style.objectPosition=FOCUS[n]||'';}
   var curList=[],curIdx=0;
   function buildGallery(g,first){
     curList=(GEN[g]||[]).slice(); gallery.innerHTML='';
@@ -739,7 +742,7 @@
       curList=head.concat(curList.filter(function(f){return head.indexOf(f)<0}));}
     curList.forEach(function(n,i){
       var d=document.createElement('div');d.className='gtile';d.setAttribute('role','button');d.tabIndex=0;
-      var im=new Image();im.loading='lazy';im.alt=NAME[g];im.src=TH+n;d.appendChild(im);
+      var im=new Image();im.loading='lazy';im.alt=NAME[g];im.src=TH+n;focus(im,n);d.appendChild(im);
       d.addEventListener('click',function(){openLb(i)});
       d.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openLb(i)}});
       gallery.appendChild(d);
@@ -773,7 +776,7 @@
       if(r) c.setAttribute('aria-hidden','true');
       c.innerHTML='<span class="ep t"><i>FOTONERV 400</i></span><span class="ep b"><i>'+n+'</i><i>'+n+'A</i></span>';
       var fr=document.createElement('div');fr.className='frame';
-      var im=new Image();im.loading='lazy';im.alt='';im.src=TH+f;fr.appendChild(im);
+      var im=new Image();im.loading='lazy';im.alt='';im.src=TH+f;focus(im,f);fr.appendChild(im);
       fr.addEventListener('click',function(){var g=genreOf(f);if(g)openSet(GEN[g],GEN[g].indexOf(f));});
       c.insertBefore(fr,c.lastChild); track.appendChild(c);
     });
