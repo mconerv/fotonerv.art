@@ -108,11 +108,11 @@
   .brand .name{font-family:var(--display);font-weight:400;font-size:1.45rem;letter-spacing:.01em}
   .brand .name b{color:var(--impulse);font-family:var(--accent);font-style:italic;font-weight:400}
   .brand .underline{width:96px;height:7px;display:block;color:var(--impulse)}
-  .about-portrait{display:flex;flex-direction:column;align-items:center;gap:14px;padding-bottom:28px}
+  .about-portrait{display:flex;flex-direction:column;align-items:center}
   .avatar-lg{width:100%;max-width:340px;aspect-ratio:1561/1912;display:block;border-radius:14px;background:url(assets/portrait-neutral.webp) center/cover no-repeat;border:1px solid var(--line);margin-bottom:126px}
-  .portrait-cap{font-family:var(--text);font-weight:700;font-size:.84rem;letter-spacing:.01em;color:var(--ash);display:flex;align-items:center;gap:9px}
-  .portrait-cap svg{width:34px;height:12px}
-  .portrait-cap path{fill:none;stroke:var(--impulse);stroke-width:1.6}
+  .eyebrow.pulse::before{content:none}
+  .eyebrow.pulse svg{width:34px;height:12px;flex:none}
+  .eyebrow.pulse path{fill:none;stroke:var(--impulse);stroke-width:1.6}
   .menu{display:flex;gap:30px;align-items:center}
   .menu a{font-size:.95rem;color:var(--ash);transition:color .2s;position:relative}
   .menu a:hover{color:var(--fog)}
@@ -544,51 +544,59 @@
       </div>
 
       <div class="filters" role="group" aria-label="Жанры">
-        <button class="chip active" data-f="all">Все · 10</button>
+        <button class="chip active" data-f="all">Все · 12</button>
         <button class="chip" data-f="interior">Интерьер · 2</button>
-        <button class="chip" data-f="reportage">Репортаж · 5</button>
-        <button class="chip" data-f="portrait">Портрет · 3</button>
+        <button class="chip" data-f="reportage">Репортаж · 6</button>
+        <button class="chip" data-f="portrait">Портрет · 4</button>
       </div>
       <ul class="sgrid" id="sgrid">
         <li data-g="interior"><button type="button" class="scard" id="card-ozden" data-id="ozden" aria-controls="viewer">
-          <span class="scard-img"><img src="img/story/thumb/ozden-01.webp" alt="" loading="eager"></span>
+          <span class="scard-img"><img src="img/story/thumb/ozden-01.webp" srcset="img/story/t480/ozden-01.webp 480w, img/story/thumb/ozden-01.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="eager" fetchpriority="high"></span>
           <span class="scard-t">Этно-кафе «Ёzden», Приэльбрусье</span><span class="scard-m">интерьер и еда · 2025 · 9 кадров</span>
         </button></li>
         <li data-g="interior"><button type="button" class="scard" id="card-greenfox" data-id="greenfox" aria-controls="viewer">
-          <span class="scard-img"><img src="img/story/thumb/greenfox-03.webp" alt="" loading="eager"></span>
+          <span class="scard-img"><img src="img/story/thumb/greenfox-03.webp" srcset="img/story/t480/greenfox-03.webp 480w, img/story/thumb/greenfox-03.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="eager"></span>
           <span class="scard-t">Кофейня Green Fox, Петербург</span><span class="scard-m">интерьер · 2025 · 10 кадров</span>
         </button></li>
         <li data-g="reportage"><button type="button" class="scard" id="card-sel" data-id="sel" aria-controls="viewer">
-          <span class="scard-img"><img src="img/story/thumb/sel-05.webp" alt="" loading="eager"></span>
+          <span class="scard-img"><img src="img/story/thumb/sel-05.webp" srcset="img/story/t480/sel-05.webp 480w, img/story/thumb/sel-05.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="eager"></span>
           <span class="scard-t">Сель в Тырныаузе</span><span class="scard-m">репортаж · 2025 · 10 кадров</span>
         </button></li>
         <li data-g="reportage"><button type="button" class="scard" id="card-pozhar" data-id="pozhar" aria-controls="viewer">
-          <span class="scard-img"><img src="img/story/thumb/pozhar-05.webp" alt="" loading="lazy"></span>
+          <span class="scard-img"><img src="img/story/thumb/pozhar-05.webp" srcset="img/story/t480/pozhar-05.webp 480w, img/story/thumb/pozhar-05.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="lazy"></span>
           <span class="scard-t">Пожар на горе, Тырныауз</span><span class="scard-m">репортаж · 2025 · 10 кадров</span>
         </button></li>
         <li data-g="reportage"><button type="button" class="scard" id="card-chertog" data-id="chertog" aria-controls="viewer">
-          <span class="scard-img"><img src="img/story/thumb/chertog-02.webp" alt="" loading="lazy"></span>
+          <span class="scard-img"><img src="img/story/thumb/chertog-02.webp" srcset="img/story/t480/chertog-02.webp 480w, img/story/thumb/chertog-02.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="lazy"></span>
           <span class="scard-t">Свободный микрофон в «Чертоге»</span><span class="scard-m">репортаж · 2025 · 10 кадров</span>
         </button></li>
         <li data-g="reportage"><button type="button" class="scard" id="card-minstrel" data-id="minstrel" aria-controls="viewer">
-          <span class="scard-img"><img src="img/story/thumb/minstrel-03.webp" alt="" loading="lazy"></span>
+          <span class="scard-img"><img src="img/story/thumb/minstrel-03.webp" srcset="img/story/t480/minstrel-03.webp 480w, img/story/thumb/minstrel-03.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="lazy"></span>
           <span class="scard-t">Менестрельник в Magic Coffee</span><span class="scard-m">репортаж · 2026 · 10 кадров</span>
         </button></li>
         <li data-g="reportage"><button type="button" class="scard" id="card-festival" data-id="festival" aria-controls="viewer">
-          <span class="scard-img"><img src="img/story/thumb/festival-04.webp" alt="" loading="lazy"></span>
+          <span class="scard-img"><img src="img/story/thumb/festival-04.webp" srcset="img/story/t480/festival-04.webp 480w, img/story/thumb/festival-04.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="lazy"></span>
           <span class="scard-t">Театральный фестиваль в парке</span><span class="scard-m">репортаж · 2026 · 9 кадров</span>
         </button></li>
+        <li data-g="reportage"><button type="button" class="scard" id="card-fencing" data-id="fencing" aria-controls="viewer">
+          <span class="scard-img"><img src="img/story/thumb/fencing-03.webp" srcset="img/story/t480/fencing-03.webp 480w, img/story/thumb/fencing-03.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="lazy"></span>
+          <span class="scard-t">Фестиваль исторического фехтования, Новосибирск</span><span class="scard-m">репортаж · 2018 · 10 кадров</span>
+        </button></li>
         <li data-g="portrait"><button type="button" class="scard" id="card-julia" data-id="julia" aria-controls="viewer">
-          <span class="scard-img"><img src="img/story/thumb/julia-02.webp" alt="" loading="lazy"></span>
+          <span class="scard-img"><img src="img/story/thumb/julia-02.webp" srcset="img/story/t480/julia-02.webp 480w, img/story/thumb/julia-02.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="lazy"></span>
           <span class="scard-t">Портрет в цветном свете</span><span class="scard-m">портрет · 2026 · 9 кадров</span>
         </button></li>
         <li data-g="portrait"><button type="button" class="scard" id="card-asta" data-id="asta" aria-controls="viewer">
-          <span class="scard-img"><img src="img/story/thumb/asta-01.webp" alt="" loading="lazy"></span>
+          <span class="scard-img"><img src="img/story/thumb/asta-01.webp" srcset="img/story/t480/asta-01.webp 480w, img/story/thumb/asta-01.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="lazy"></span>
           <span class="scard-t">Арт-портрет дома</span><span class="scard-m">портрет · 2026 · 9 кадров</span>
         </button></li>
         <li data-g="portrait"><button type="button" class="scard" id="card-colorbg" data-id="colorbg" aria-controls="viewer">
-          <span class="scard-img"><img src="img/story/thumb/colorbg-03.webp" alt="" loading="lazy"></span>
+          <span class="scard-img"><img src="img/story/thumb/colorbg-03.webp" srcset="img/story/t480/colorbg-03.webp 480w, img/story/thumb/colorbg-03.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="lazy"></span>
           <span class="scard-t">Портрет на цветном фоне</span><span class="scard-m">портрет · 2025 · 9 кадров</span>
+        </button></li>
+        <li data-g="portrait"><button type="button" class="scard" id="card-kate" data-id="kate" aria-controls="viewer">
+          <span class="scard-img"><img src="img/story/thumb/kate-01.webp" srcset="img/story/t480/kate-01.webp 480w, img/story/thumb/kate-01.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="lazy"></span>
+          <span class="scard-t">Домашний портрет с котом</span><span class="scard-m">портрет · 2019 · 9 кадров</span>
         </button></li>
       </ul>
     </div>
@@ -621,9 +629,9 @@
   </div>
 </footer>
 
-<script src="assets/stories.js?v=b80e9f5a"></script>
+<script src="assets/stories.js?v=f48ca724" defer></script>
 <script>
-(function(){
+document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('yr').textContent=new Date().getFullYear();
   var hdr=document.getElementById('hdr'),nerve=document.getElementById('nerve-top');
   function onScroll(){var st=window.scrollY||document.documentElement.scrollTop;hdr.classList.toggle('scrolled',st>20);
@@ -668,7 +676,7 @@
     var f=ch.dataset.f;document.querySelectorAll('#sgrid li').forEach(function(li){li.hidden=f!=='all'&&li.dataset.g!==f;});
   });});
   var h=location.hash.slice(1);if(byId[h])open(h,true);
-})();
+});
 </script>
 </body>
 </html>

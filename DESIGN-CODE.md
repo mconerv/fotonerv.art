@@ -248,5 +248,6 @@ Eyebrow первого экрана — «Фотограф».
 - Формат `WebP + lazy`, осмысленные alt.
 - Истории: источник — `tools/stories.json` (вне репозитория), сборка `tools/build_stories.py`
   пишет `assets/stories.js`, раздел на главной и `stories.html`. Кадры —
-  `img/story/<id>-NN.webp` (2048px) и `img/story/thumb/<id>-NN.webp` (720px), sRGB.
+  `img/story/<id>-NN.webp` (2048px), `img/story/thumb/<id>-NN.webp` (720px) и `img/story/t480/<id>-NN.webp` (480px, для `srcset`), sRGB.
+  Скрипты страниц подключены с `defer`, основной встроенный скрипт запускается по `DOMContentLoaded`.
   Ссылка на `stories.js` с `?v=<хэш>` — браузер не держит старые тексты.

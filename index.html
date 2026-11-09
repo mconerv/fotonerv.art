@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
 <link rel="apple-touch-icon" href="assets/logo-badge.png">
-<meta name="description" content="Макс Карпович (FotoNerv) — фотограф: портрет, репортаж, архитектура, интерьеры, пейзаж. Санкт-Петербург · съёмки по всей России.">
+<meta name="description" content="Макс Карпович (FotoNerv) — фотограф: портрет, репортаж, интерьеры и архитектура, пейзаж. Санкт-Петербург · съёмки по всей России.">
 <link rel="canonical" href="https://fotonerv.art/">
 <meta name="theme-color" content="#1D140E">
 <meta property="og:type" content="website">
@@ -15,11 +15,11 @@
 <meta property="og:url" content="https://fotonerv.art/">
 <meta property="og:site_name" content="FotoNerv">
 <meta property="og:title" content="FotoNerv — Макс Карпович · фотограф">
-<meta property="og:description" content="Портрет, репортаж, архитектура, интерьеры и пейзаж. Санкт-Петербург · съёмки по всей России.">
+<meta property="og:description" content="Портрет, репортаж, интерьеры и архитектура, пейзаж. Санкт-Петербург · съёмки по всей России.">
 <meta property="og:image" content="https://fotonerv.art/assets/og-cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="FotoNerv — Макс Карпович · фотограф">
-<meta name="twitter:description" content="Портрет, репортаж, архитектура, интерьеры и пейзаж. Санкт-Петербург · съёмки по всей России.">
+<meta name="twitter:description" content="Портрет, репортаж, интерьеры и архитектура, пейзаж. Санкт-Петербург · съёмки по всей России.">
 <meta name="twitter:image" content="https://fotonerv.art/assets/og-cover.jpg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Макс Карпович","alternateName":"FotoNerv","jobTitle":"Фотограф","url":"https://fotonerv.art/","image":"https://fotonerv.art/assets/portrait.jpg","address":{"@type":"PostalAddress","addressLocality":"Санкт-Петербург","addressCountry":"RU"},"sameAs":["https://www.behance.net/mconerv/","https://www.instagram.com/fotonerv/","https://t.me/fotonerv","https://boosty.to/fotonerv"],"areaServed":"Санкт-Петербург","makesOffer":[{"@type":"Offer","priceCurrency":"RUB","itemOffered":{"@type":"Service","name":"Портретная съёмка на улице или в интерьере","areaServed":"Санкт-Петербург","description":"1 час, 15 фото в ретуши и все удачные кадры в цветокоррекции"},"price":5000},{"@type":"Offer","priceCurrency":"RUB","itemOffered":{"@type":"Service","name":"Портретная съёмка в студии","areaServed":"Санкт-Петербург","description":"1 час, 10 фото в ретуши; аренда студии оплачивается отдельно"},"price":3000},{"@type":"Offer","priceCurrency":"RUB","itemOffered":{"@type":"Service","name":"Интерьерная съёмка: студия или однокомнатная квартира","areaServed":"Санкт-Петербург"},"price":6000},{"@type":"Offer","priceCurrency":"RUB","itemOffered":{"@type":"Service","name":"Интерьерная съёмка: двухкомнатная квартира","areaServed":"Санкт-Петербург"},"price":7000},{"@type":"Offer","priceCurrency":"RUB","itemOffered":{"@type":"Service","name":"Интерьерная съёмка: трёхкомнатная квартира и больше","areaServed":"Санкт-Петербург"},"price":8000},{"@type":"Offer","priceCurrency":"RUB","itemOffered":{"@type":"Service","name":"Интерьерная съёмка: кафе, салон, офис","areaServed":"Санкт-Петербург","description":"до 2 часов съёмки"},"priceSpecification":{"@type":"PriceSpecification","minPrice":9000,"priceCurrency":"RUB"}}]}
@@ -504,7 +504,7 @@
       <div>
         <span class="eyebrow">Фотограф</span>
         <h1>Ловлю <em>нерв</em> момента</h1>
-        <p class="lead">Портрет, репортаж, архитектура, интерьеры и пейзаж. Кадр с характером.</p>
+        <p class="lead">Портрет, репортаж, интерьеры и архитектура, пейзаж. Кадр с характером.</p>
         <div class="hero-cta">
           <a href="#work" class="btn btn-solid">Смотреть работы</a>
           <a href="#contact" class="btn">Обсудить съёмку</a>
@@ -531,7 +531,7 @@
         <p>Превью-стена обновляется сама. Выберите жанр — откроются все кадры, каждый можно развернуть в полном разрешении.</p>
       </div>
 
-      <div class="filters" role="tablist" aria-label="Жанры">
+      <div class="filters" role="group" aria-label="Жанры">
         <button class="chip active" data-f="all">Все</button>
         <button class="chip" data-f="portrait">Портрет</button>
         <button class="chip" data-f="reportage">Репортаж</button>
@@ -539,7 +539,7 @@
         <button class="chip" data-f="land">Пейзаж</button>
       </div>
 
-      <div class="wall" id="wall" aria-label="Превью работ"></div>
+      <div class="wall" id="wall" role="group" aria-label="Превью работ"></div>
       <div class="wall-hint" id="wallHint">Превью обновляется · выбери жанр для полной подборки</div>
       <div class="gallery" id="gallery" hidden></div>
     </div>
@@ -577,7 +577,7 @@
         </div>
         <div class="story-links">
           <a class="pcta" id="storyCta" href="#contact" data-fmt="Интерьеры">Нужна похожая съёмка</a>
-          <a class="story-all" href="stories.html">Все истории · 10</a>
+          <a class="story-all" href="stories.html">Все истории · 12</a>
         </div>
       </div>
     </div>
@@ -760,10 +760,10 @@
   </div>
 </footer>
 
-<script src="assets/gallery-data.js"></script>
-<script src="assets/stories.js?v=b80e9f5a"></script>
+<script src="assets/gallery-data.js" defer></script>
+<script src="assets/stories.js?v=f48ca724" defer></script>
 <script>
-(function(){
+document.addEventListener('DOMContentLoaded',function(){
   // year
   document.getElementById('yr').textContent=new Date().getFullYear();
 
@@ -977,7 +977,7 @@
         if(note){note.hidden=false;note.style.color='var(--err)';note.textContent='Не удалось отправить. Попробуйте ещё раз или напишите в Telegram @mconerv.';}
       });
   });
-})();
+});
 </script>
 </body>
 </html>
