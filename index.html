@@ -64,7 +64,7 @@
     color:var(--fog);
     font-family:var(--text);
     font-size:16px;
-    line-height:1.6;
+    line-height:1.65;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
@@ -304,16 +304,16 @@
   .foot .brand .underline{width:84px}
 
   /* отражение под фото, как в сетке iWeb (reflectionOffset:2) */
-  .wtile,.gtile,.avatar-lg,.lb img{-webkit-box-reflect:below 2px linear-gradient(transparent 70%,rgba(255,255,255,.32))}
+  .wtile,.gtile,.avatar-lg{-webkit-box-reflect:below 2px linear-gradient(transparent 70%,rgba(255,255,255,.32))}
   /* preview wall (Все) */
-  .wall{display:grid;grid-template-columns:repeat(6,1fr);gap:62px 12px;padding-bottom:62px}
+  .wall{display:grid;grid-template-columns:repeat(6,1fr);gap:42px 12px;padding-bottom:42px}
   .wtile{position:relative;aspect-ratio:1/1;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--carbon-2)}
   .wtile img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .7s ease}
   .wtile img.on{opacity:1}
   .wall-hint{margin-top:0;font-family:var(--text);font-size:.88rem;color:var(--ash);display:flex;align-items:center;gap:9px}
   .wall-hint::before{content:"";width:18px;height:1px;background:var(--impulse)}
   /* genre gallery (full view) */
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:96px 16px;padding-bottom:96px}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:64px 16px;padding-bottom:64px}
   .gtile{position:relative;border-radius:var(--r-card);overflow:hidden;border:1px solid var(--line);background:var(--carbon);cursor:pointer;aspect-ratio:3/2}
   .gtile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s ease,opacity .5s}
   .gtile:hover{border-color:var(--impulse)}
@@ -325,13 +325,12 @@
   /* lightbox */
   .lb{position:fixed;inset:0;z-index:200;background:rgba(14,9,6,.97);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:24px}
   .lb.open{display:flex}
-  .lb{align-items:flex-start;padding-top:5vh}
-  .lb img{max-width:92vw;max-height:66vh;border-radius:4px}
+  .lb img{max-width:calc(100vw - 150px);max-height:88vh;border-radius:4px}
   .lb button{position:absolute;background:rgba(26,26,26,.8);border:1px solid var(--line);color:var(--fog);width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
   .lb button:hover{border-color:var(--impulse);color:var(--impulse)}
   .lb-close{top:22px;right:24px}
-  .lb-prev{left:24px;top:38vh;transform:translateY(-50%)}
-  .lb-next{right:24px;top:38vh;transform:translateY(-50%)}
+  .lb-prev{left:24px;top:50%;transform:translateY(-50%)}
+  .lb-next{right:24px;top:50%;transform:translateY(-50%)}
   /* reveal */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
@@ -427,9 +426,10 @@
     .steps{grid-template-columns:repeat(2,1fr)}
     .grid{grid-template-columns:repeat(2,1fr)}
     .tile.wide{grid-column:span 2}
-    .wall{grid-template-columns:repeat(4,1fr);gap:40px 10px}
-    .gallery{grid-template-columns:repeat(2,1fr);gap:72px 14px}
+    .wall{grid-template-columns:repeat(4,1fr);gap:28px 10px}
+    .gallery{grid-template-columns:repeat(2,1fr);gap:48px 14px}
     .lb-prev{left:12px}.lb-next{right:12px}
+    .lb{padding:0}.lb img{max-width:100vw;max-height:82vh;border-radius:0}
     .menu{
       position:fixed;inset:68px 0 auto 0;flex-direction:column;gap:0;
       background:color-mix(in srgb,var(--graphite) 97%,transparent);backdrop-filter:blur(14px);
@@ -444,8 +444,8 @@
   @media(max-width:560px){
     .grid{grid-template-columns:1fr}
     .tile.wide{grid-column:span 1;aspect-ratio:4/5}
-    .wall{grid-template-columns:repeat(3,1fr);gap:34px 8px}
-    .gallery{grid-template-columns:1fr;gap:110px}
+    .wall{grid-template-columns:repeat(3,1fr);gap:24px 8px}
+    .gallery{grid-template-columns:1fr;gap:72px}
     .steps{grid-template-columns:1fr}
   }
   @media(prefers-reduced-motion:reduce){
@@ -710,7 +710,7 @@
         <span class="eyebrow">Контакт</span>
         <h2 style="font-family:var(--display);font-weight:400;font-size:clamp(2.3rem,5vw,3.8rem);margin:14px 0 22px;line-height:1">Обсудим съёмку</h2>
         <form class="form" id="form" method="post" action="#contact">
-<noscript><p style="color:var(--err);margin:0 0 14px">Для отправки формы включите JavaScript — без него заявка не будет отправлена. Либо напишите на почту из подвала сайта.</p></noscript>
+<noscript><p style="color:var(--ash);margin:0 0 14px">Форма работает с включённым JavaScript. Можно написать и напрямую — в Telegram <a href="https://t.me/mconerv">@mconerv</a>.</p></noscript>
           <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
           <div class="field"><label for="nm">Имя</label><input id="nm" name="Имя" type="text" placeholder="Как к вам обращаться" required></div>
           <div class="field"><label for="em">Email для ответа</label><input id="em" name="email" type="email" placeholder="вы@почта.ру" required></div>
@@ -733,7 +733,7 @@
         <span class="eyebrow">Связь напрямую</span>
         <div style="margin-top:22px">
           <div class="line-item"><span>Telegram</span><a href="https://t.me/mconerv" target="_blank" rel="noopener">Макс Карпович</a></div>
-          <div class="line-item"><span>Email</span><a class="eml" href="#contact" rel="nofollow">показать email</a></div>
+          <div class="line-item"><span>Email</span><a class="eml" href="https://t.me/mconerv" rel="nofollow">напишите в Telegram</a></div>
           <div class="line-item"><span>География</span><a href="#about">Санкт-Петербург · по РФ</a></div>
         </div>
       </div>
