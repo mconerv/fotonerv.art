@@ -116,11 +116,11 @@
   .brand .name{font-family:var(--display);font-weight:400;font-size:1.45rem;letter-spacing:.01em}
   .brand .name b{color:var(--impulse);font-family:var(--accent);font-style:italic;font-weight:400}
   .brand .underline{width:96px;height:7px;display:block;color:var(--impulse)}
-  .about-portrait{display:flex;flex-direction:column;align-items:center;gap:14px;padding-bottom:28px}
+  .about-portrait{display:flex;flex-direction:column;align-items:center}
   .avatar-lg{width:100%;max-width:340px;aspect-ratio:1561/1912;display:block;border-radius:14px;background:url(assets/portrait-neutral.webp) center/cover no-repeat;border:1px solid var(--line);margin-bottom:126px}
-  .portrait-cap{font-family:var(--text);font-weight:700;font-size:.84rem;letter-spacing:.01em;color:var(--ash);display:flex;align-items:center;gap:9px}
-  .portrait-cap svg{width:34px;height:12px}
-  .portrait-cap path{fill:none;stroke:var(--impulse);stroke-width:1.6}
+  .eyebrow.pulse::before{content:none}
+  .eyebrow.pulse svg{width:34px;height:12px;flex:none}
+  .eyebrow.pulse path{fill:none;stroke:var(--impulse);stroke-width:1.6}
   .menu{display:flex;gap:30px;align-items:center}
   .menu a{font-size:.95rem;color:var(--ash);transition:color .2s;position:relative}
   .menu a:hover{color:var(--fog)}
@@ -591,10 +591,9 @@
       <div class="about">
         <div class="about-portrait">
           <span class="avatar-lg" role="img" aria-label="Макс Карпович — портрет"></span>
-          <span class="portrait-cap"><svg viewBox="0 0 46 16" aria-hidden="true"><path d="M0 8 H14 L17 3 L20 13 L23 6 L26 8 H46"/></svg>Макс Карпович, фотограф</span>
         </div>
         <div>
-          <span class="eyebrow">Обо мне</span>
+          <span class="eyebrow pulse"><svg viewBox="0 0 46 16" aria-hidden="true"><path d="M0 8 H14 L17 3 L20 13 L23 6 L26 8 H46"/></svg>Обо мне</span>
           <h2 style="font-family:var(--display);font-weight:400;font-size:clamp(2.3rem,5vw,3.8rem);margin:14px 0 22px;line-height:1">Макс Карпович</h2>
           <p>Снимаю людей, события, города и пространства так, чтобы кадр держал <strong>живое напряжение</strong> — тот самый нерв, ради которого стоит нажимать на спуск.</p>
           <p>Работаю в разных жанрах: портрет, репортаж, интерьеры и архитектура, пейзаж. Камера со мной и в рабочих поездках — Якутия, Кольский полуостров, Кавказ, Камчатка. Там я привык снимать в любых условиях: ночью, под дождём, на пожаре и после схода селя. Кавказские и алтайские пейзажи выставлялись в Томском художественном музее.</p>
