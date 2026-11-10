@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Оплата прошла · FotoNerv</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<meta name="theme-color" content="#1D140E">
+<style>
+  html{font-synthesis-weight:none}
+  @font-face { font-family:'Oranienbaum'; font-style:normal; font-display:swap; font-weight:400; src:url(assets/fonts/oranienbaum-regular.woff2) format('woff2'); }
+  @font-face { font-family:'Arsenal'; font-style:normal; font-display:swap; font-weight:400; size-adjust:104%; src:url(assets/fonts/arsenal-regular.woff2) format('woff2'); }
+  @font-face { font-family:'Arsenal'; font-style:normal; font-display:swap; font-weight:700; size-adjust:104%; src:url(assets/fonts/arsenal-bold.woff2) format('woff2'); }
+  :root{--graphite:#1D140E;--carbon:#291C14;--line:#45311F;--fog:#EAE4D6;--ash:#B9A48F;--impulse:#FF8F1F;--err:#FF8A65}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--graphite);color:var(--fog);font-family:'Arsenal',sans-serif;line-height:1.6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:22px}
+  .box{max-width:560px;text-align:center}
+  .mark{font-family:'Oranienbaum',serif;font-size:clamp(3.2rem,10vw,5rem);line-height:1;color:var(--impulse)}
+  h1{font-family:'Oranienbaum',serif;font-weight:400;font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.1;margin:16px 0 14px}
+  p{color:var(--ash);margin-bottom:12px}
+  p b{color:var(--fog);font-weight:700}
+  .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+  a.btn{display:inline-block;font-weight:700;font-size:.95rem;color:var(--fog);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:12px 24px;transition:.2s}
+  a.btn:hover{border-color:var(--impulse);color:var(--impulse)}
+  a.btn.solid{border-color:var(--impulse);background:var(--impulse);color:var(--graphite)}
+  a.btn.solid:hover{filter:brightness(1.07);color:var(--graphite)}
+  a{color:var(--fog)}
+</style>
+</head>
+<body>
+<main class="box">
+  <div class="mark">✓</div>
+  <h1>Спасибо, оплата прошла</h1>
+  <p id="num">Заказ принят.</p>
+  <p>Чек из «Мой налог» придёт на почту, указанную при оплате. Как только отпечаток будет готов и отправлен, пришлю трек-номер.</p>
+  <p>Вопросы по заказу — в Telegram <a href="https://t.me/mconerv">@mconerv</a> или на <a href="mailto:max@fotonerv.ru">max@fotonerv.ru</a>.</p>
+  <div class="acts"><a class="btn solid" href="shop.html">Вернуться в магазин</a><a class="btn" href="index.html">На главную</a></div>
+</main>
+<script>
+(function(){
+  var q = new URLSearchParams(location.search), id = q.get('InvId') || q.get('inv_id'), sum = q.get('OutSum');
+  if (!id) { try { var last = JSON.parse(sessionStorage.getItem('fotonerv-last-order') || 'null'); if (last) { id = last.invId; sum = last.sum; } } catch (e) {} }
+  if (id) {
+    var s = sum ? ' на ' + Math.round(Number(sum)).toLocaleString('ru-RU') + ' ₽' : '';
+    document.getElementById('num').innerHTML = 'Номер заказа — <b>' + String(id).replace(/[^0-9]/g, '') + '</b>' + s + '.';
+  }
+  try { localStorage.removeItem('fotonerv-cart-v1'); sessionStorage.removeItem('fotonerv-last-order'); } catch (e) {}
+})();
+</script>
+</body>
+</html>
