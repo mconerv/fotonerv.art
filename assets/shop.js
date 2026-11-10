@@ -688,7 +688,13 @@
     var lg = D.legal || {};
     var demo = !API ? '<div class="co-msg demo"><b>Онлайн-оплата подключается.</b> Пока заказ можно оформить в Telegram — <a href="https://t.me/' + esc(D.seller.telegram) +
       '" target="_blank" rel="noopener">@' + esc(D.seller.telegram) + '</a>. <button type="button" id="copyOrder">Скопировать состав заказа</button></div>' : '';
-    body.innerHTML = '<form class="co" id="coForm" novalidate>' + demo +
+    var nItems = qq.lines.reduce(function (a, l) { return a + (l.ok ? l.qty : 0); }, 0);
+    var summary = '<details class="co-sum"><summary>Состав заказа · ' + nItems + ' ' + plural(nItems, 'позиция', 'позиции', 'позиций') + ' · ' + rubText(qq.goods) + '</summary><ul>' +
+      qq.lines.filter(function (l) { return l.ok; }).map(function (l) {
+        return '<li><span class="co-sum-img" style="background-image:url(\'' + esc(l.img) + '\')"></span><span class="co-sum-t"><b>' + esc(l.kind === 'print' ? '«' + l.workTitle + '»' : l.detail) + '</b>' +
+          esc(l.kind === 'print' ? l.title + ', ' + l.detail : l.title) + (l.qty > 1 ? ' · ' + l.qty + ' шт.' : '') + '</span><span class="co-sum-p">' + rubText(l.sum) + '</span></li>';
+      }).join('') + '</ul></details>';
+    body.innerHTML = '<form class="co" id="coForm" novalidate>' + summary + demo +
       '<fieldset><legend>Получатель</legend>' +
       '<div class="field"><label for="coName">Фамилия, имя, отчество</label><input id="coName" autocomplete="name" value="' + esc(co.name) + '" required></div>' +
       '<div class="row2"><div class="field"><label for="coPhone">Телефон</label><input id="coPhone" type="tel" autocomplete="tel" value="' + esc(co.phone) + '" placeholder="+7 …" required></div>' +

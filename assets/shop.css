@@ -394,3 +394,26 @@ body.noscroll{overflow:hidden}
 .cfg-scene{display:flex;flex-direction:column;align-items:flex-end;gap:8px;margin-left:auto}
 @media (max-width:600px){.cfg-scene{align-items:flex-start;margin-left:0;width:100%}}
 .hub-tiles.one{grid-template-columns:1fr;max-width:760px}
+/* оформление: состав заказа сверху */
+.co-sum{margin:12px 0 4px;border:1px solid var(--line);border-radius:12px;background:var(--carbon)}
+.co-sum summary{cursor:pointer;padding:12px 14px;font-weight:600;color:var(--fog);list-style:none}
+.co-sum summary::-webkit-details-marker{display:none}
+.co-sum summary::after{content:'▾';float:right;color:var(--ash)}
+.co-sum[open] summary::after{content:'▴'}
+.co-sum ul{list-style:none;margin:0;padding:0 14px 10px}
+.co-sum li{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line);font-size:.86rem;color:var(--ash)}
+.co-sum-img{width:44px;height:44px;border-radius:6px;background:#222 center/cover no-repeat}
+.co-sum-t b{display:block;color:var(--fog);font-weight:500}
+.co-sum-p{white-space:nowrap;color:var(--fog)}
+/* корзина на телефоне: прокручивается вся панель, итог прилипает снизу и занимает меньше места */
+.cart-body{min-height:0;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+@media (max-width:600px){
+  .cart-panel{height:100%;height:100dvh;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  .cart-body{flex:none;overflow:visible;padding:4px 16px 18px}
+  .cart-head{padding:14px 16px}
+  .cart-foot{position:sticky;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));margin-top:auto}
+  .cart-foot .sum-row{padding:2px 0;font-size:.9rem}
+  .cart-foot .sum-row.total{font-size:1.05rem}
+  .cart-foot .btn{margin-top:8px;padding:11px 18px}
+  .cart-foot .foot-note{display:none}
+}
