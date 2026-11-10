@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Магазин — печать работ на холсте и пенокартоне · FotoNerv</title>
-<meta name="description" content="Печать работ Макса Карповича (FotoNerv): холст с галерейной натяжкой и накатка на пенокартон. Онлайн-оплата, доставка СДЭК и Почтой России.">
+<title>Магазин FotoNerv — работы на стену и открытки</title>
+<meta name="description" content="Магазин фотографа Макса Карповича (FotoNerv): печать работ на холсте и пенокартоне, почтовые открытки. Онлайн-оплата, доставка по России.">
 <link rel="canonical" href="https://fotonerv.art/shop.html">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
@@ -14,8 +14,8 @@
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://fotonerv.art/shop.html">
 <meta property="og:site_name" content="FotoNerv">
-<meta property="og:title" content="Магазин FotoNerv — работы на стену">
-<meta property="og:description" content="Холст с галерейной натяжкой и накатка на пенокартон. Доставка по России.">
+<meta property="og:title" content="Магазин FotoNerv">
+<meta property="og:description" content="Работы на стену и почтовые открытки. Доставка по России.">
 <meta property="og:image" content="https://fotonerv.art/assets/og-cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <style>
@@ -448,7 +448,7 @@
   }
 </style>
 <link rel="preload" as="image" href="assets/shop-room-light.webp" fetchpriority="high">
-<link rel="stylesheet" href="assets/shop.css?v=202611101555">
+<link rel="stylesheet" href="assets/shop.css?v=202611102138">
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -463,7 +463,7 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/114133632" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 </head>
-<body class="shop">
+<body class="shop" data-shop-page="hub">
 <a class="skip" href="#top">К содержанию</a>
 
 <div id="nerve-top"></div>
@@ -498,85 +498,29 @@
 
 <main id="top" tabindex="-1">
 
-  <section class="shop-hero">
+  <section class="shop-hero hub-hero">
     <div class="wrap">
       <a class="crumb" href="index.html">На главную</a>
-      <div class="shop-hero-grid">
-        <div class="section-head">
-          <span class="eyebrow">Магазин</span>
-          <h1>Работы на стену</h1>
-          <p>Холст с галерейной натяжкой и накатка на пенокартон. Печать под заказ, доставка СДЭК и Почтой России по всей стране.</p>
-          <nav class="jump" aria-label="Разделы магазина">
-            <a class="chip" href="#works">Каталог <span id="worksCount"></span></a>
-            <a class="chip" href="#canvas">Холст <span id="fromCanvas"></span></a>
-            <a class="chip" href="#foam">Пенокартон <span id="fromFoam"></span></a>
-            <a class="chip" href="#cards">Открытки <span id="fromCards"></span></a>
-          </nav>
-        </div>
-        <figure class="hero-art" id="heroArt">
-          <div class="room light" id="heroRoom"></div>
-          <figcaption><span id="heroCap"></span><button type="button" id="heroOpen">Выбрать размер</button></figcaption>
-        </figure>
+      <div class="section-head">
+        <span class="eyebrow">Магазин</span>
+        <h1>Мои кадры у вас дома</h1>
+        <p>Печать работ на стену<span data-needs="postcard"> и почтовые открытки</span>. Онлайн-оплата, доставка Почтой России и самовывоз.</p>
+      </div>
+      <div class="hub-tiles" id="hubTiles">
+        <a class="hub-tile" href="shop-wall.html">
+          <span class="hub-vis" id="hubWall"></span>
+          <span class="hub-t">Работы на стену</span>
+          <span class="hub-d">Холст с галерейной натяжкой и накатка на пенокартон, от 20 × 30 до 100 × 150 см. Примерка над диваном в реальном масштабе.</span>
+          <span class="hub-m"><span id="hubWallN"></span><b id="hubWallFrom"></b></span>
+        </a>
+        <a class="hub-tile" href="shop-cards.html">
+          <span class="hub-vis pc-vis" id="hubCards"></span>
+          <span class="hub-t">Открытки</span>
+          <span class="hub-d">Почтовые открытки 10 × 15 см: наборы по пять и поштучно. Любые пять — по цене набора.</span>
+          <span class="hub-m"><span id="hubCardsN"></span><b id="hubCardsFrom"></b></span>
+        </a>
       </div>
       <noscript><p class="co-msg err" style="margin-top:24px">Для каталога и корзины включите JavaScript. Заказать можно и в Telegram: <a href="https://t.me/mconerv">@mconerv</a>.</p></noscript>
-    </div>
-  </section>
-
-  <div class="wrap"><div class="divider"></div></div>
-
-  <section class="section" id="works">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Каталог</span>
-        <h2>Работы</h2>
-        <p>Выберите кадр — материал, ориентацию и размер настроите на следующем шаге и сразу увидите, как он смотрится над диваном.</p>
-      </div>
-      <div class="filters" id="shopFilter" role="group" aria-label="Фильтр работ"></div>
-      <div class="pgrid" id="worksGrid"></div>
-    </div>
-  </section>
-
-  <div class="wrap"><div class="divider"></div></div>
-
-  <section class="section" id="materials">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Материалы</span>
-        <h2>Холст и пенокартон</h2>
-        <p>Любую работу из каталога можно заказать в обоих вариантах.</p>
-      </div>
-      <div class="mats">
-        <article class="mat" id="canvas" data-product="canvas">
-          <h3>Печать на холсте</h3>
-          <p class="mat-lead" data-lead></p>
-          <ul class="specs" data-specs></ul>
-          <p class="psec-note" data-note></p>
-          <details class="sizes-all"><summary>Все размеры и цены</summary><div data-table></div></details>
-        </article>
-        <article class="mat" id="foam" data-product="foam">
-          <h3>Накатка на пенокартон</h3>
-          <p class="mat-lead" data-lead></p>
-          <ul class="specs" data-specs></ul>
-          <p class="psec-note" data-note></p>
-          <details class="sizes-all"><summary>Все размеры и цены</summary><div data-table></div></details>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <div class="wrap"><div class="divider"></div></div>
-
-  <section class="section" id="cards" data-product="postcard">
-    <div class="wrap">
-      <div class="psec-head">
-        <div class="section-head">
-          <span class="eyebrow">Открытки</span>
-          <h2>Почтовые открытки</h2>
-          <p data-lead></p>
-        </div>
-        <div><ul class="specs" data-specs></ul></div>
-      </div>
-      <div class="pgrid" data-grid></div>
     </div>
   </section>
 
@@ -589,7 +533,7 @@
         <h2>Как это устроено</h2>
       </div>
       <div class="steps shop-steps">
-        <div class="step"><h3>Выбор</h3><p>Работа, материал, ориентация и размер. Превью показывает кадр в масштабе над диваном шириной 2,1 метра.</p><span class="line"></span></div>
+        <div class="step"><h3>Выбор</h3><p>Работа на стену<span data-needs="postcard"> или открытки</span>. У холста и пенокартона превью показывает кадр в масштабе над диваном шириной 2,1 метра.</p><span class="line"></span></div>
         <div class="step"><h3>Оплата</h3><p>Онлайн через Robokassa: карта, СБП, SberPay, T-Pay. Чек из «Мой налог» придёт на почту.</p><span class="line"></span></div>
         <div class="step"><h3>Печать</h3><p>Изготовление — <span data-fill="productionDays">до 5 рабочих дней</span>. Проверяю отпечаток и упаковываю для перевозки.</p><span class="line"></span></div>
         <div class="step"><h3>Доставка</h3><p>Почта России или самовывоз, СДЭК — скоро. Трек-номер пришлю в день отправки.</p><span class="line"></span></div>
@@ -610,7 +554,7 @@
           <h3>Доставка</h3>
           <ul>
             <li>СДЭК — после подключения; пока доступны Почта России и самовывоз.</li>
-            <li>Почта России — до отделения по индексу, стоимость считается по тарифу Почты и видна до оплаты.</li>
+            <li>Почта России — до отделения по индексу, стоимость считается по тарифу Почты и видна до оплаты.<span data-needs="postcard"> Открытки без других товаров идут заказным письмом или заказной бандеролью.</span></li>
             <li>Самовывоз — Сертолово или Санкт-Петербург, по договорённости.</li>
             <li>Отправляю из Сертолово (Ленинградская область). Изготовление до 5 рабочих дней, затем отправка; срок Почты — по тарифу, ориентировочно 3–10 дней.</li>
           </ul>
@@ -664,9 +608,15 @@
           <button type="button" data-view="room" aria-pressed="true">В интерьере</button>
           <button type="button" data-view="zoom" aria-pressed="false">Крупно</button>
         </div>
+        <div class="cfg-scene">
+        <div class="seg tabs" id="cfgRoom" role="group" aria-label="Комната">
+          <button type="button" data-room="living" aria-pressed="true">Гостиная</button>
+          <button type="button" data-room="kitchen" aria-pressed="false">Кухня</button>
+        </div>
         <div class="seg tabs" id="cfgWall" role="group" aria-label="Цвет стены">
           <button type="button" data-wall="light" aria-pressed="true">Светлая стена</button>
           <button type="button" data-wall="dark" aria-pressed="false">Тёмная</button>
+        </div>
         </div>
       </div>
       <div class="cfg-stage" id="cfgStage"></div>
@@ -717,10 +667,36 @@
   <div class="cdek-box"><button type="button" class="cdek-x" id="pochtaClose" aria-label="Закрыть карту">&#10005;</button><div id="pochtaMap"></div><p class="map-note">Если карта не открылась — закройте окно и введите индекс отделения вручную, стоимость посчитается по тарифу Почты.</p></div>
 </div>
 
+<div class="cdek-modal sv" id="setView" role="dialog" aria-modal="true" aria-labelledby="svTitle" hidden>
+  <div class="sv-box">
+    <button type="button" class="cdek-x" id="svClose" aria-label="Закрыть">&#10005;</button>
+    <div class="sv-head"><span class="eyebrow">Набор открыток</span><h3 id="svTitle"></h3><p id="svLead"></p></div>
+    <div class="sv-grid" id="svGrid"></div>
+    <div class="sv-foot"><span class="sv-price" id="svPrice"></span><button type="button" class="btn btn-solid" id="svAdd">В корзину</button></div>
+  </div>
+</div>
+
+<div class="cdek-modal cv" id="cardView" role="dialog" aria-modal="true" aria-labelledby="cvTitle" hidden>
+  <div class="cv-box">
+    <button type="button" class="cdek-x" id="cvClose" aria-label="Закрыть">&#10005;</button>
+    <div class="cv-stage">
+      <button type="button" class="cv-nav" id="cvPrev" aria-label="Предыдущая открытка">&#8249;</button>
+      <div class="cv-flip" id="cvFlip" tabindex="0" role="button" aria-label="Перевернуть открытку">
+        <div class="cv-inner"><div class="cv-face front"><img id="cvFront" alt=""></div><div class="cv-face back"><img id="cvBack" alt=""></div></div>
+      </div>
+      <button type="button" class="cv-nav" id="cvNext" aria-label="Следующая открытка">&#8250;</button>
+    </div>
+    <div class="cv-foot">
+      <div class="cv-info"><h3 id="cvTitle"></h3><p id="cvCap"></p></div>
+      <div class="cv-act"><button type="button" class="btn" id="cvTurn">Перевернуть</button><span class="sv-price" id="cvPrice"></span><button type="button" class="btn btn-solid" id="cvAdd">В корзину</button></div>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
-<script src="assets/shop-data.js?v=202611101555"></script>
-<script src="assets/shop-core.js?v=202611101555"></script>
-<script src="assets/shop.js?v=202611101555"></script>
+<script src="assets/shop-data.js?v=202611102138"></script>
+<script src="assets/shop-core.js?v=202611102138"></script>
+<script src="assets/shop.js?v=202611102138"></script>
 </body>
 </html>

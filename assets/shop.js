@@ -127,8 +127,8 @@
   }
   function postcardMock(card, set) {
     var land = card.w >= card.h, car = land ? 1.5 : 1 / 1.5, cw = land ? 52 : 36;
-    var back = set ? '<span class="pc-card back"></span>' : '<span class="pc-card back"></span>';
-    return '<span class="pc-mk" style="--img:url(\'' + abs(card.thumb) + '\');--cw:' + cw + 'cqw;--car:' + car + '" aria-hidden="true">' + back + '<span class="pc-card front"></span></span>';
+    var back = card.back ? '<span class="pc-card back real" style="--back:url(\'' + abs(card.back) + '\')"></span>' : '';
+    return '<span class="pc-mk" style="--img:url(\'' + abs(card.thumb) + '\');--cw:' + cw + 'cqw;--car:' + car + '" aria-hidden="true">' + back + '<span class="pc-card front' + (back ? '' : ' single') + '"></span></span>';
   }
   function setMock(cards) {
     var out = '';
@@ -208,27 +208,41 @@
     if (!pc) { if (secC) secC.hidden = true; $$('a[href="#cards"]').forEach(function (a) { a.hidden = true; }); }
     if (pc && secC) {
       $('[data-lead]', secC).textContent = pc.lead || '';
+      var any = pc.anyN;
       $('[data-specs]', secC).innerHTML = (pc.specs || []).map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') +
-        '<li>Открытка — ' + rubText(pc.price) + (pc.set ? ', набор из ' + D.postcards.length + ' — ' + rubText(pc.set.price) : '') + '</li>';
+        '<li>Открытка — ' + rubText(pc.price) + (any ? ', любые ' + any.n + ' — ' + rubText(any.price) + ' (скидка сама появится в корзине)' : '') + '</li>';
       var html = '';
-      if (pc.set && D.postcards.length) {
-        html += '<div class="pcard"><span class="pcard-vis pc-vis">' + setMock(D.postcards) + '</span>' +
-          '<span class="pcard-t">' + esc(pc.set.title) + '</span><span class="pcard-m"><span>' + D.postcards.length + ' ' +
-          plural(D.postcards.length, 'открытка', 'открытки', 'открыток') + '</span><span><b>' + rub(pc.set.price) + '</b></span></span>' +
-          '<span class="pc-actions">' + qtyHTML('set') + '<button type="button" class="btn btn-solid" data-add-card="set">В корзину</button></span></div>';
+      if ((pc.sets || []).length) {
+        html += '<h3 class="pc-sub">Наборы</h3><div class="pgrid pc-sets">';
+        pc.sets.forEach(function (st) {
+          var cards = C.setCards(D, st);
+          if (!cards.length) return;
+          html += '<div class="pcard pc-set"><button type="button" class="pcard-vis pc-vis" data-view-set="' + esc(st.id) + '" aria-label="Посмотреть открытки набора «' + esc(st.title) + '»">' + setMock(cards) +
+            '<span class="pcard-go">Посмотреть ' + cards.length + ' ' + plural(cards.length, 'открытку', 'открытки', 'открыток') + '</span></button>' +
+            '<span class="pcard-t">' + esc(st.title) + '</span><span class="pcard-m"><span>' + cards.length + ' ' + plural(cards.length, 'открытка', 'открытки', 'открыток') +
+            (st.lead ? ' · ' + esc(st.lead) : '') + '</span><span><b>' + rub(st.price) + '</b></span></span>' +
+            (st.cards !== 'all' ? '<span class="pc-list">' + cards.map(function (c) { return esc(c.title); }).join(' · ') + '</span>' : '') +
+            '<span class="pc-actions">' + qtyHTML(st.id) + '<button type="button" class="btn btn-solid" data-add-card="' + esc(st.id) + '">В корзину</button></span></div>';
+        });
+        html += '</div><h3 class="pc-sub" id="singles">Поштучно' + (any ? ' <small>любые ' + any.n + ' — ' + rubText(any.price) + '</small>' : '') + '</h3>';
       }
+      html += '<div class="pgrid">';
       D.postcards.forEach(function (c) {
-        html += '<div class="pcard"><span class="pcard-vis pc-vis">' + postcardMock(c) + '</span>' +
-          '<span class="pcard-t">' + esc(c.title) + '</span><span class="pcard-m"><span>Открытка 10 × 15 см</span><span><b>' + rub(pc.price) + '</b></span></span>' +
+        html += '<div class="pcard"><button type="button" class="pcard-vis pc-vis" data-view-card="' + esc(c.id) + '" aria-label="Открытка «' + esc(c.title) + '» крупно">' + postcardMock(c) +
+          '<span class="pcard-go">Крупно и оборот</span></button>' +
+          '<span class="pcard-t">' + esc(c.title) + '</span><span class="pcard-m"><span>' + esc(c.caption || 'Открытка 10 × 15 см') + '</span><span><b>' + rub(pc.price) + '</b></span></span>' +
           '<span class="pc-actions">' + qtyHTML(c.id) + '<button type="button" class="btn" data-add-card="' + esc(c.id) + '">В корзину</button></span></div>';
       });
-      $('[data-grid]', secC).innerHTML = html;
+      html += '</div>';
+      var grid = $('[data-grid]', secC); grid.classList.remove('pgrid'); grid.innerHTML = html;
     }
     var fc = $('#fromCanvas'), ff = $('#fromFoam'), fp = $('#fromCards');
     function minOf(pid) { var m = Infinity; D.works.forEach(function (w) { var v = (w.products || []).indexOf(pid) >= 0 ? C.minPrice(D, w, pid) : null; if (v != null && v < m) m = v; }); return m; }
     if (fc && minOf('canvas') < Infinity) fc.textContent = 'от ' + rubText(minOf('canvas'));
     if (ff && minOf('foam') < Infinity) ff.textContent = 'от ' + rubText(minOf('foam'));
     if (fp && pc) fp.textContent = 'от ' + rubText(pc.price);
+    var fs = $('#fromSets'); if (fs && pc && (pc.sets || []).length) fs.textContent = 'от ' + rubText(Math.min.apply(null, pc.sets.map(function (x) { return x.price; })));
+    renderHub(minOf);
     $$('[data-fill]').forEach(function (el) { var v = D.shop && D.shop[el.getAttribute('data-fill')]; if (v) el.textContent = v; });
   }
   // каталог: карточки и фильтр по меткам
@@ -269,13 +283,32 @@
     if (fr) fr.innerHTML = 'Продавец: ' + esc(s.name) + ', ' + esc(s.status) + ' · ИНН ' + inn + ' · ' + esc(s.city) +
       ' · <a href="mailto:' + esc(s.email) + '" style="color:inherit">' + esc(s.email) + '</a> · ' + esc(s.phone);
   }
+  // вход в магазин: плитки разделов
+  function renderHub(minOf) {
+    var wv = $('#hubWall'); if (!wv) return;
+    var w = D.works.filter(function (x) { return x.award; })[0] || D.works[0];
+    var sizes = w ? C.sizesFor(D, w, 'canvas') : [];
+    if (sizes.length) {
+      var fitS = sizes.filter(function (x) { return x.size.b <= 90; }), sz = (fitS.length ? fitS[fitS.length - 1] : sizes[sizes.length - 1]).size, o = C.orient(w, sz);
+      wv.innerHTML = '<span class="room light">' + roomHTML({ kind: 'canvas', img: w.thumb, iw: w.w, ih: w.h, wcm: o.w, hcm: o.h, depth: 2, label: C.sizeLabel(sz) }) + '</span>';
+    }
+    var n = D.works.filter(function (x) { return !x.pairOf && !x.partOf; }).length;
+    $('#hubWallN').textContent = n + ' ' + plural(n, 'работа', 'работы', 'работ');
+    var mc = Math.min(minOf('canvas'), minOf('foam')); if (mc < Infinity) $('#hubWallFrom').textContent = 'от ' + rubText(mc);
+    var pc = product('postcard'), tile = $('#hubCards');
+    if (!pc) { tile.closest('.hub-tile').hidden = true; $('#hubTiles').classList.add('one'); return; }
+    tile.innerHTML = setMock([D.postcards[2], D.postcards[21], D.postcards[25]].filter(Boolean));
+    var k = D.postcards.length, ns = (pc.sets || []).length;
+    $('#hubCardsN').textContent = k + ' ' + plural(k, 'открытка', 'открытки', 'открыток') + (ns ? ' · ' + ns + ' ' + plural(ns, 'набор', 'набора', 'наборов') : '');
+    $('#hubCardsFrom').textContent = 'от ' + rubText(pc.price);
+  }
   function renderHero() {
     var w = D.works.filter(function (x) { return x.award; })[0] || D.works[0];
     if (!w) return;
     var sizes = C.sizesFor(D, w, 'canvas'); if (!sizes.length) return;
     var fitS = sizes.filter(function (x) { return x.size.b <= 90; });   // крупный формат нагляднее, но без крайностей
     var s = (fitS.length ? fitS[fitS.length - 1] : sizes[sizes.length - 1]).size, o = C.orient(w, s);
-    var room = $('#heroRoom');
+    var room = $('#heroRoom'); if (!room) return;
     room.innerHTML = roomHTML({ kind: 'canvas', img: w.thumb, iw: w.w, ih: w.h, wcm: o.w, hcm: o.h, depth: 2, label: C.sizeLabel(s) });
     $('#heroCap').innerHTML = '«' + esc(w.title) + '», холст ' + C.sizeLabel(s) + (w.award ? ' · ' + esc(w.award.title) : '');
     room.setAttribute('role', 'img'); room.setAttribute('aria-label', 'Работа «' + w.title + '» на холсте ' + C.sizeLabel(s) + ' над диваном в комнате');
@@ -312,11 +345,20 @@
       var out = $('output', q.parentNode), v = Math.max(1, Math.min(MAX, (+out.textContent || 1) + (+q.getAttribute('data-d'))));
       out.textContent = v; return;
     }
+    var vc = e.target.closest('[data-view-card]');
+    if (vc) {
+      var pcp = product('postcard'), inSet = vc.getAttribute('data-in-set'), stv = inSet && C.byId(pcp.sets || [], inSet);
+      var list = stv ? C.setCards(D, stv) : D.postcards;
+      openCardView(list, vc.getAttribute('data-view-card'));
+      return;
+    }
+    var vs = e.target.closest('[data-view-set]');
+    if (vs) { openSetView(vs.getAttribute('data-view-set')); return; }
     var add = e.target.closest('[data-add-card]');
     if (add) {
       var id = add.getAttribute('data-add-card'), box = add.parentNode, qn = +($('.qty output', box) || {}).textContent || 1;
       addItem({ product: 'postcard', work: id, qty: qn });
-      toast(id === 'set' ? 'Набор открыток в корзине' : 'Открытка в корзине', 'Открыть корзину', openCart);
+      toast(id.indexOf('set') === 0 ? 'Набор открыток в корзине' : 'Открытка в корзине', 'Открыть корзину', openCart);
       return;
     }
     var open = e.target.closest('[data-open]');
@@ -324,7 +366,7 @@
   });
 
   /* ---------- конфигуратор ---------- */
-  var cfg = { work: null, product: 'canvas', size: null, option: null, qty: 1, view: 'room', wall: 'light', parts: null };
+  var cfg = { work: null, product: 'canvas', size: null, option: null, qty: 1, view: 'room', wall: 'light', room: 'living', parts: null };
   var cfgEl = $('#cfg'), lastFocus = null;
 
   function openCfg(workId, pid, sizeId) {
@@ -453,8 +495,13 @@
     var note = $('#cfgNote'); note.textContent = p.note || ''; note.hidden = !p.note;
     $$('#cfgView button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-view') === cfg.view); });
     $$('#cfgWall button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-wall') === cfg.wall); });
+    $$('#cfgRoom button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-room') === cfg.room); });
     $('#cfgWall').hidden = cfg.view !== 'room';
+    if ($('#cfgRoom')) $('#cfgRoom').hidden = cfg.view !== 'room';
     renderStage(l);
+  }
+  function roomScale() {
+    return cfg.room === 'kitchen' ? 'Стол — 140 см в длину и 75 см в высоту, потолок — 270 см.' : 'Диван — 210 см в ширину, потолок — 270 см.';
   }
   function renderStage(l) {
     var st = $('#cfgStage'), w = cfg.work, hint = $('#cfgHint');
@@ -464,9 +511,9 @@
       var parts = pts.map(function (p, i) { return { img: cfg.view === 'room' ? p.thumb : p.img, on: !!cfg.parts[i] }; });
       var lab = C.sizeLabel({ a: Math.min(l.w, l.h), b: Math.max(l.w, l.h) });
       if (cfg.view === 'room') {
-        st.innerHTML = '<div class="room ' + cfg.wall + '">' + roomTripHTML({ kind: cfg.product, parts: parts, iw: w.w, ih: w.h, wcm: l.w, hcm: l.h, depth: l.depth,
+        st.innerHTML = '<div class="room ' + cfg.wall + (cfg.room === 'kitchen' ? ' kitchen' : '') + '">' + roomTripHTML({ kind: cfg.product, parts: parts, iw: w.w, ih: w.h, wcm: l.w, hcm: l.h, depth: l.depth,
           label: (l.n > 1 ? l.n + ' × ' : '') + lab + (l.n > 1 ? ', зазор ' + TRIP_GAP + ' см' : '') }) + '</div>';
-        hint.textContent = 'Триптих в реальном масштабе по стене. Пунктир — части, которые не выбраны. Диван — 210 см в ширину.';
+        hint.textContent = 'Триптих в реальном масштабе по стене. Пунктир — части, которые не выбраны. ' + roomScale();
       } else {
         st.innerHTML = tripMock({ kind: cfg.product, parts: parts, iw: w.w, ih: w.h, wcm: l.w, hcm: l.h, depth: l.depth, boxH: 238.1, fillW: 0.86, fillH: 0.62 });
         hint.textContent = cfg.product === 'canvas' ? 'Галерейная натяжка: кадр каждой части продолжается на торцы подрамника ' + l.depth + ' см.'
@@ -475,9 +522,9 @@
       return;
     }
     if (cfg.view === 'room') {
-      st.innerHTML = '<div class="room ' + cfg.wall + '">' + roomHTML({ kind: cfg.product, img: w.thumb, iw: w.w, ih: w.h, wcm: l.w, hcm: l.h, depth: l.depth,
+      st.innerHTML = '<div class="room ' + cfg.wall + (cfg.room === 'kitchen' ? ' kitchen' : '') + '">' + roomHTML({ kind: cfg.product, img: w.thumb, iw: w.w, ih: w.h, wcm: l.w, hcm: l.h, depth: l.depth,
         label: C.sizeLabel({ a: Math.min(l.w, l.h), b: Math.max(l.w, l.h) }) }) + '</div>';
-      hint.textContent = 'Кадр показан в реальном масштабе по стене. Диван — 210 см в ширину, потолок — 270 см.';
+      hint.textContent = 'Кадр показан в реальном масштабе по стене. ' + roomScale();
     } else {
       st.innerHTML = mock3d({ kind: cfg.product, img: w.img, iw: w.w, ih: w.h, wcm: l.w, hcm: l.h, depth: l.depth, boxH: 71.43, fillW: 0.6, fillH: 0.72 });
       hint.textContent = cfg.product === 'canvas'
@@ -513,6 +560,7 @@
       }
       if ((b = e.target.closest('[data-view]'))) { cfg.view = b.getAttribute('data-view'); renderCfg(); return; }
       if ((b = e.target.closest('[data-wall]'))) { cfg.wall = b.getAttribute('data-wall'); renderCfg(); return; }
+      if ((b = e.target.closest('[data-room]'))) { cfg.room = b.getAttribute('data-room'); renderCfg(); return; }
     });
     $('#cfgClose').addEventListener('click', closeCfg);
     $('#cfgMinus').addEventListener('click', function () { cfg.qty = Math.max(1, cfg.qty - 1); renderCfg(); });
@@ -585,7 +633,7 @@
           '<button type="button" class="cline-rm" data-rm="' + i + '">Удалить</button></div></div>' +
           '<div class="cline-sum">' + rub(l.sum) + '</div></div>';
       }).join('');
-      foot.innerHTML = '<div class="sum-row total"><span>Товары</span><b>' + rub(qq.goods) + '</b></div>' +
+      foot.innerHTML = discountRows(qq) + '<div class="sum-row total"><span>Товары</span><b>' + rub(qq.goods) + '</b></div>' +
         '<button type="button" class="btn btn-solid" id="toCheckout">Оформить заказ</button>' +
         '<p class="foot-note">Доставку и итог посчитаем на следующем шаге.</p>';
       return;
@@ -668,13 +716,24 @@
   function renderCheckoutFoot(qq) {
     var foot = $('#cartFoot'), dp = deliveryPrice();
     var total = qq.goods + (dp || 0);
-    foot.innerHTML = '<div class="sum-row"><span>Товары</span><b>' + rub(qq.goods) + '</b></div>' +
+    foot.innerHTML = discountRows(qq) + '<div class="sum-row"><span>Товары</span><b>' + rub(qq.goods) + '</b></div>' +
       '<div class="sum-row"><span>Доставка' + deliveryBreak() + '</span><b>' +
       (dp == null ? '—' : dp === 0 ? 'бесплатно' : rub(dp)) + '</b></div>' +
       '<div class="sum-row total"><span>Итого</span><b>' + (dp == null ? '—' : rub(total)) + '</b></div>' +
       '<button type="button" class="btn btn-solid" id="payBtn"' + (valid(qq) && API ? '' : ' disabled') + '>' +
       (co.busy ? 'Создаём заказ…' : !API ? 'Онлайн-оплата скоро' : dp == null ? 'Выберите доставку' : 'Перейти к оплате · ' + rubText(total)) + '</button>' +
       '<p class="foot-note">Оплата на защищённой странице Robokassa: карта, СБП, SberPay, T-Pay. Чек «Мой налог» придёт на email.</p>';
+  }
+  // скидка «любые 5 открыток» и подсказка, сколько добавить до следующей пятёрки
+  function discountRows(qq) {
+    var pc = product('postcard'), any = pc && pc.anyN, out = '';
+    if (qq.discount) out += '<div class="sum-row"><span>Скидка «' + esc(any.title) + '»</span><b>−' + rub(qq.discount) + '</b></div>';
+    if (any) {
+      var singles = 0; qq.lines.forEach(function (l) { if (l.ok && l.kind === 'postcard' && !l.set) singles += l.qty; });
+      var left = singles % any.n ? any.n - singles % any.n : 0;
+      if (singles && left) out += '<p class="foot-note">Добавьте ещё ' + left + ' ' + plural(left, 'открытку', 'открытки', 'открыток') + ' — любые ' + any.n + ' за ' + rubText(any.price) + '.</p>';
+    }
+    return out;
   }
   function refreshFoot() { if (step === 'checkout') renderCheckoutFoot(q()); }
 
@@ -719,8 +778,93 @@
       refreshFoot();
     });
   }
+  // просмотр открыток набора
+  var svSet = null, svLast = null;
+  function openSetView(id) {
+    var pc = product('postcard'), st = pc && C.byId(pc.sets || [], id); if (!st) return;
+    var cards = C.setCards(D, st); svSet = st; svLast = document.activeElement;
+    $('#svTitle').textContent = st.title;
+    $('#svLead').textContent = cards.length + ' ' + plural(cards.length, 'открытка', 'открытки', 'открыток') + ' 10 × 15 см' + (st.lead ? ' · ' + st.lead : '');
+    $('#svGrid').innerHTML = cards.map(function (c) {
+      var land = c.w >= c.h;
+      return '<figure class="sv-card' + (land ? '' : ' v') + '"><button type="button" data-view-card="' + esc(c.id) + '" data-in-set="' + esc(st.id) + '" aria-label="«' + esc(c.title) + '» крупно"><img src="' + esc(cards.length > 8 ? c.thumb : c.img) + '" alt="' + esc(c.title) + '" loading="lazy"></button>' +
+        '<figcaption><b>' + esc(c.title) + '</b>' + (c.caption && c.caption !== c.title ? '<span>' + esc(c.caption) + '</span>' : '') + '</figcaption></figure>';
+    }).join('');
+    $('#svPrice').innerHTML = rub(st.price);
+    $('#setView').hidden = false; document.body.classList.add('noscroll');
+    $('#svClose').focus();
+  }
+  function closeSetView() {
+    $('#setView').hidden = true; document.body.classList.remove('noscroll');
+    if (svLast && svLast.focus) svLast.focus();
+  }
+  $('#svClose').addEventListener('click', closeSetView);
+  $('#setView').addEventListener('click', function (e) { if (e.target === this) closeSetView(); });
+  $('#svAdd').addEventListener('click', function () {
+    if (!svSet) return;
+    addItem({ product: 'postcard', work: svSet.id, qty: 1 });
+    closeSetView();
+    toast('Набор «' + svSet.title + '» в корзине', 'Открыть корзину', openCart);
+  });
+
+  // крупный просмотр открытки: лицо и оборот, листание
+  var cv = { list: [], i: 0, last: null };
+  function cvShow() {
+    var c = cv.list[cv.i], pc = product('postcard'); if (!c) return;
+    var land = c.w >= c.h, flip = $('#cvFlip');
+    flip.classList.remove('flipped'); flip.classList.toggle('v', !land);
+    $('#cvFront').src = c.img; $('#cvFront').alt = c.title + ' — лицевая сторона';
+    $('#cvBack').src = c.backL || c.back || ''; $('#cvBack').alt = c.title + ' — оборот';
+    $('#cvTitle').textContent = c.title;
+    $('#cvCap').textContent = [c.caption && c.caption !== c.title ? c.caption : '', 'открытка 10 × 15 см', cv.list.length > 1 ? (cv.i + 1) + ' из ' + cv.list.length : ''].filter(Boolean).join(' · ');
+    $('#cvPrice').innerHTML = rub(pc.price);
+    $('#cvTurn').textContent = 'Оборот';
+    var many = cv.list.length > 1; $('#cvPrev').hidden = !many; $('#cvNext').hidden = !many;
+    [cv.list[cv.i + 1], cv.list[cv.i - 1]].forEach(function (n) { if (n) { new Image().src = n.img; if (n.backL) new Image().src = n.backL; } });
+  }
+  function cvTurn() { var f = $('#cvFlip'); f.classList.toggle('flipped'); $('#cvTurn').textContent = f.classList.contains('flipped') ? 'Лицевая сторона' : 'Оборот'; }
+  function cvGo(d) { if (cv.list.length < 2) return; cv.i = (cv.i + d + cv.list.length) % cv.list.length; cvShow(); }
+  function openCardView(list, id) {
+    cv.list = list || []; cv.i = Math.max(0, cv.list.findIndex(function (c) { return c.id === id; }));
+    cv.last = document.activeElement;
+    cvShow(); $('#cardView').hidden = false; document.body.classList.add('noscroll'); $('#cvFlip').focus();
+  }
+  function closeCardView() {
+    $('#cardView').hidden = true;
+    if ($('#setView').hidden) document.body.classList.remove('noscroll');
+    if (cv.last && cv.last.focus) cv.last.focus();
+  }
+  $('#cvClose').addEventListener('click', closeCardView);
+  $('#cardView').addEventListener('click', function (e) { if (e.target === this) closeCardView(); });
+  $('#cvFlip').addEventListener('click', cvTurn);
+  $('#cvTurn').addEventListener('click', cvTurn);
+  $('#cvPrev').addEventListener('click', function () { cvGo(-1); });
+  $('#cvNext').addEventListener('click', function () { cvGo(1); });
+  $('#cvAdd').addEventListener('click', function () {
+    var c = cv.list[cv.i]; if (!c) return;
+    addItem({ product: 'postcard', work: c.id, qty: 1 });
+    toast('Открытка «' + c.title + '» в корзине', 'Открыть корзину', openCart);
+  });
+  (function () {   // свайп влево-вправо — листать, короткое касание — перевернуть (click)
+    var x0 = null, y0 = 0, el = $('#cvFlip');
+    el.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+    el.addEventListener('touchend', function (e) {
+      if (x0 == null) return;
+      var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) { e.preventDefault(); cvGo(dx < 0 ? 1 : -1); }
+    });
+  })();
+  document.addEventListener('keydown', function (e) {
+    if ($('#cardView').hidden) return;
+    if (e.key === 'ArrowRight') { cvGo(1); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft') { cvGo(-1); e.preventDefault(); }
+    else if ((e.key === ' ' || e.key === 'Enter') && document.activeElement === $('#cvFlip')) { cvTurn(); e.preventDefault(); }
+  });
+
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
+    if (!$('#cardView').hidden) { closeCardView(); return; }
+    if (!$('#setView').hidden) { closeSetView(); return; }
     if (!$('#cdekModal').hidden) { closeCdek(); return; }
     if ($('#pochtaModal') && !$('#pochtaModal').hidden) { closePochta(); return; }
     if (!cfgEl.hidden) { closeCfg(); return; }
@@ -873,8 +1017,8 @@
   }
   function orderLines(qq) {
     return qq.lines.map(function (l) {
-      return (l.kind === 'print' ? l.title + ', ' + l.detail + ' — «' + l.workTitle + '»' : l.title + ' — ' + l.detail) + ' × ' + l.qty + ' = ' + rubText(l.sum);
-    }).join('\n');
+      return (l.kind === 'print' ? l.title + ', ' + l.detail + ' — «' + l.workTitle + '»' : l.title + ' — ' + l.detail + (l.cardTitles ? ' (' + l.cardTitles.join(', ') + ')' : '')) + ' × ' + l.qty + ' = ' + rubText(l.sum);
+    }).join('\n') + (qq.discount ? '\nСкидка «' + ((qq.discountInfo && qq.discountInfo.title) || 'набор') + '»: −' + rubText(qq.discount) : '');
   }
   function copyOrder() {
     var qq = q(), text = 'Заказ с fotonerv.art\n' + orderLines(qq) + '\nИтого товары: ' + rubText(qq.goods);
@@ -932,6 +1076,17 @@
   renderHero();
   badge();
   var h = decodeURIComponent((location.hash || '').slice(1));
-  if (h && work(h)) openCfg(h);
+  var page = document.body.getAttribute('data-shop-page') || 'wall';
+  // раздел открыток выключен в каталоге (products.postcard.hidden) — прячем все упоминания и ссылки на него
+  if (!product('postcard')) {
+    $$('[data-needs="postcard"], a[href="shop-cards.html"]').forEach(function (el) { el.hidden = true; el.style.display = 'none'; });
+    if (page === 'cards') { location.replace('shop.html'); return; }
+  }
+  // старые ссылки на единую страницу магазина: shop.html#работа, #works, #materials, #canvas, #foam → раздел работ; #cards → открытки
+  if (page === 'hub' && h) {
+    if (work(h) || ['works', 'materials', 'canvas', 'foam'].indexOf(h) >= 0) { location.replace('shop-wall.html#' + encodeURIComponent(h)); return; }
+    if (h === 'cards') { location.replace(product('postcard') ? 'shop-cards.html' : 'shop-wall.html'); return; }
+  }
+  if (h && work(h) && $('#cfg')) openCfg(h);
   window.addEventListener('pageshow', function (e) { if (e.persisted) { co.busy = false; if (!cartEl.hidden) renderCart(); } });
 })();

@@ -10,7 +10,8 @@ window.SHOP_DATA = /*JSON-START*/
     "Триптих: triptych — id частей слева направо; у каждой части partOf и part (1–3). Части продаются как обычные отпечатки: одна, две или все три одного размера; размеры подбираются по пропорциям части.",
     "Размеры — только форматы типографии. Кадр под формат кадрируется по центру; размеры, где обрезка больше 16 %, не предлагаются.",
     "Цены: себестоимость Яркого (холст: галерейная натяжка, срок 24 ч; синтетика — влагостойкая печать; пенокартон: Durst Theta, матовая 180 г/м², 10 мм, крепление 2 шт) × k от 3 (20×30) до 2 (100×150) с учётом НПД 4 % и комиссии 3,9 %. Снято 10.11.2026.",
-    "Холст: options — сочетание холста (mat: n — натуральный, s — синтетический) и подрамника; materials — подписи холстов; tableCols — столбцы таблицы цен."
+    "Холст: options — сочетание холста (mat: n — натуральный, s — синтетический) и подрамника; materials — подписи холстов; tableCols — столбцы таблицы цен.",
+    "Открытки: postcards — по работам каталога; products.postcard.sets — наборы (cards: id открыток или \"all\"), anyN — любые n открыток поштучно стоят как набор (скидка считается в quote). Только открытки — Почта шлёт заказным письмом (до 100 г) или заказной бандеролью."
   ],
   "version": "2026-11-09",
   "seller": {
@@ -899,26 +900,102 @@ window.SHOP_DATA = /*JSON-START*/
     "postcard": {
       "hidden": true,
       "title": "Открытки",
-      "lead": "Почтовые открытки с моими кадрами — по одной или набором.",
+      "lead": "Почтовые открытки 10 × 15 см с кадрами из каталога — по одной, готовым набором или любые пять со скидкой.",
       "specs": [
-        "Формат 10 × 15 см",
-        "Оборот с полем для адреса и текста"
+        "Формат 10 × 15 см, плотная мелованная бумага 300 г/м²",
+        "На обороте — поле для адреса, марки и текста, название и место съёмки",
+        "Наборы по 5 открыток, а любые 5 штук в корзине стоят как набор"
       ],
-      "price": 150,
-      "set": {
-        "id": "set",
-        "title": "Набор всех открыток",
-        "price": 750
+      "price": 200,
+      "anyN": {
+        "n": 5,
+        "price": 850,
+        "title": "Любые 5 открыток"
       },
+      "sets": [
+        {
+          "id": "set-kamchatka",
+          "title": "Камчатка",
+          "lead": "Вулканы, тундра и облака",
+          "cards": [
+            "slope-clouds",
+            "red-ridge",
+            "tundra-pattern",
+            "valley-light",
+            "beyond-pass"
+          ],
+          "price": 850
+        },
+        {
+          "id": "set-winter-forest",
+          "title": "Зимний лес",
+          "lead": "Магадан, чёрно-белая серия",
+          "cards": [
+            "larch-ridge",
+            "forest-line",
+            "larches",
+            "white-valley",
+            "snow-hills"
+          ],
+          "price": 850
+        },
+        {
+          "id": "set-bw",
+          "title": "Чёрно-белое",
+          "lead": "Города и горы",
+          "cards": [
+            "isaac-night",
+            "gate-light",
+            "bridge-fog",
+            "snow-peak",
+            "snow-ridge"
+          ],
+          "price": 850
+        },
+        {
+          "id": "set-sky",
+          "title": "Небо и туман",
+          "lead": "Тихие ночные и туманные кадры",
+          "cards": [
+            "moon-path",
+            "moon",
+            "cloud-slope",
+            "cloud-peak",
+            "rocks-fog"
+          ],
+          "price": 850
+        },
+        {
+          "id": "set-quiet",
+          "title": "Тихие места",
+          "lead": "Река, деревня, долины",
+          "cards": [
+            "misty-river",
+            "hut-field",
+            "old-barn",
+            "river-valley",
+            "green-valley"
+          ],
+          "price": 850
+        },
+        {
+          "id": "set-all",
+          "title": "Все открытки",
+          "lead": "Полная коллекция",
+          "cards": "all",
+          "price": 3000
+        }
+      ],
       "pack": {
         "each": {
-          "g": 15
+          "g": 5
         },
         "envelope": {
           "l": 23,
           "w": 17,
-          "h": 2,
-          "g": 40
+          "h": 1,
+          "g": 20,
+          "price": 15
         }
       }
     }
@@ -927,7 +1004,7 @@ window.SHOP_DATA = /*JSON-START*/
     {
       "id": "misty-river",
       "title": "Река в тумане",
-      "caption": "Снято на iPhone 7 Plus",
+      "caption": "Якутия",
       "img": "img/shop/misty-river.webp",
       "thumb": "img/shop/thumb/misty-river.webp",
       "w": 5250,
@@ -1074,7 +1151,7 @@ window.SHOP_DATA = /*JSON-START*/
     {
       "id": "moon-path",
       "title": "Ночной туман",
-      "caption": "Пейзаж",
+      "caption": "Кольский полуостров",
       "img": "img/shop/moon-path.webp",
       "thumb": "img/shop/thumb/moon-path.webp",
       "w": 7000,
@@ -1089,8 +1166,8 @@ window.SHOP_DATA = /*JSON-START*/
     },
     {
       "id": "gate-light",
-      "title": "Верхотурье",
-      "caption": "Архитектура",
+      "title": "Врата",
+      "caption": "Верхотурье",
       "img": "img/shop/gate-light.webp",
       "thumb": "img/shop/thumb/gate-light.webp",
       "w": 3722,
@@ -1111,7 +1188,7 @@ window.SHOP_DATA = /*JSON-START*/
         70
       ],
       "title": "Баня",
-      "caption": "Пейзаж",
+      "caption": "Кольский полуостров",
       "img": "img/shop/hut-field.webp",
       "thumb": "img/shop/thumb/hut-field.webp",
       "w": 7000,
@@ -1127,7 +1204,7 @@ window.SHOP_DATA = /*JSON-START*/
     {
       "id": "old-barn",
       "title": "Старый сруб",
-      "caption": "Пейзаж",
+      "caption": "Кольский полуостров",
       "img": "img/shop/old-barn.webp",
       "thumb": "img/shop/thumb/old-barn.webp",
       "w": 7000,
@@ -1176,8 +1253,8 @@ window.SHOP_DATA = /*JSON-START*/
     },
     {
       "id": "bridge-fog",
-      "title": "Новосибирск",
-      "caption": "Чёрно-белая фотография",
+      "title": "Зимний мост",
+      "caption": "Новосибирск",
       "img": "img/shop/bridge-fog.webp",
       "thumb": "img/shop/thumb/bridge-fog.webp",
       "w": 7000,
@@ -1194,7 +1271,7 @@ window.SHOP_DATA = /*JSON-START*/
     {
       "id": "larch-ridge",
       "title": "Лиственницы под хребтом",
-      "caption": "Зимний лес в горах",
+      "caption": "Магадан",
       "img": "img/shop/larch-ridge.webp",
       "thumb": "img/shop/thumb/larch-ridge.webp",
       "w": 7008,
@@ -1213,7 +1290,7 @@ window.SHOP_DATA = /*JSON-START*/
     {
       "id": "larch-ridge-v",
       "title": "Лиственницы под хребтом · вертикальная",
-      "caption": "Зимний лес в горах",
+      "caption": "Магадан",
       "img": "img/shop/larch-ridge-v.webp",
       "thumb": "img/shop/thumb/larch-ridge-v.webp",
       "w": 4672,
@@ -1232,7 +1309,7 @@ window.SHOP_DATA = /*JSON-START*/
     {
       "id": "forest-line",
       "title": "Граница леса",
-      "caption": "Зимний лес в горах",
+      "caption": "Магадан",
       "img": "img/shop/forest-line.webp",
       "thumb": "img/shop/thumb/forest-line.webp",
       "w": 6701,
@@ -1250,7 +1327,7 @@ window.SHOP_DATA = /*JSON-START*/
     {
       "id": "larches",
       "title": "Лиственницы",
-      "caption": "Зимний лес в горах",
+      "caption": "Магадан",
       "img": "img/shop/larches.webp",
       "thumb": "img/shop/thumb/larches.webp",
       "w": 7008,
@@ -1268,7 +1345,7 @@ window.SHOP_DATA = /*JSON-START*/
     {
       "id": "white-valley",
       "title": "Белая долина",
-      "caption": "Зимний лес в горах",
+      "caption": "Магадан",
       "img": "img/shop/white-valley.webp",
       "thumb": "img/shop/thumb/white-valley.webp",
       "w": 7008,
@@ -1286,7 +1363,7 @@ window.SHOP_DATA = /*JSON-START*/
     {
       "id": "sparse-slope",
       "title": "Редколесье на склоне",
-      "caption": "Зимний лес в горах",
+      "caption": "Магадан",
       "img": "img/shop/sparse-slope.webp",
       "thumb": "img/shop/thumb/sparse-slope.webp",
       "w": 6914,
@@ -1304,7 +1381,7 @@ window.SHOP_DATA = /*JSON-START*/
     {
       "id": "snow-hills",
       "title": "Снежные сопки",
-      "caption": "Зимний лес в горах",
+      "caption": "Магадан",
       "img": "img/shop/snow-hills.webp",
       "thumb": "img/shop/thumb/snow-hills.webp",
       "w": 7008,
@@ -1556,52 +1633,388 @@ window.SHOP_DATA = /*JSON-START*/
   ],
   "postcards": [
     {
-      "id": "pc-peaks",
-      "title": "Горы в облаках",
-      "img": "img/Nat_31.webp",
-      "thumb": "img/thumb/Nat_31.webp",
-      "w": 1280,
-      "h": 853
+      "id": "misty-river",
+      "title": "Река в тумане",
+      "caption": "Якутия",
+      "img": "img/shop/misty-river.webp",
+      "thumb": "img/shop/thumb/misty-river.webp",
+      "w": 5250,
+      "h": 7000,
+      "tags": [
+        "bw",
+        "forest"
+      ],
+      "back": "img/shop/back/misty-river.webp",
+      "backL": "img/shop/back/misty-river-l.webp"
     },
     {
-      "id": "pc-neva",
-      "title": "Ночная Нева",
-      "img": "img/Arc_16.webp",
-      "thumb": "img/thumb/Arc_16.webp",
-      "w": 1280,
-      "h": 853
+      "id": "isaac-night",
+      "title": "Первый снег",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/isaac-night.webp",
+      "thumb": "img/shop/thumb/isaac-night.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "bw",
+        "city"
+      ],
+      "back": "img/shop/back/isaac-night.webp",
+      "backL": "img/shop/back/isaac-night-l.webp"
     },
     {
-      "id": "pc-winter-river",
-      "title": "Река зимой",
-      "img": "img/Nat_57.webp",
-      "thumb": "img/thumb/Nat_57.webp",
-      "w": 2048,
-      "h": 1536
+      "id": "slope-clouds",
+      "title": "Гора Отвесная",
+      "caption": "Камчатка",
+      "img": "img/shop/slope-clouds.webp",
+      "thumb": "img/shop/thumb/slope-clouds.webp",
+      "w": 7000,
+      "h": 9333,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/slope-clouds.webp",
+      "backL": "img/shop/back/slope-clouds-l.webp"
     },
     {
-      "id": "pc-snow-trees",
-      "title": "Иней",
-      "img": "img/Nat_56.webp",
-      "thumb": "img/thumb/Nat_56.webp",
-      "w": 2048,
-      "h": 1536
+      "id": "moon-path",
+      "title": "Ночной туман",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/moon-path.webp",
+      "thumb": "img/shop/thumb/moon-path.webp",
+      "w": 7000,
+      "h": 4950,
+      "tags": [
+        "sky"
+      ],
+      "back": "img/shop/back/moon-path.webp",
+      "backL": "img/shop/back/moon-path-l.webp"
     },
     {
-      "id": "pc-cathedral",
-      "title": "Собор в снегу",
-      "img": "img/Arc_30.webp",
-      "thumb": "img/thumb/Arc_30.webp",
-      "w": 1500,
-      "h": 1000
+      "id": "gate-light",
+      "title": "Врата",
+      "caption": "Верхотурье",
+      "img": "img/shop/gate-light.webp",
+      "thumb": "img/shop/thumb/gate-light.webp",
+      "w": 3722,
+      "h": 3722,
+      "tags": [
+        "bw",
+        "city"
+      ],
+      "back": "img/shop/back/gate-light.webp",
+      "backL": "img/shop/back/gate-light-l.webp"
     },
     {
-      "id": "pc-sea",
-      "title": "Закат над морем",
-      "img": "img/Nat_10.webp",
-      "thumb": "img/thumb/Nat_10.webp",
-      "w": 1280,
-      "h": 850
+      "id": "hut-field",
+      "title": "Баня",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/hut-field.webp",
+      "thumb": "img/shop/thumb/hut-field.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/hut-field.webp",
+      "backL": "img/shop/back/hut-field-l.webp"
+    },
+    {
+      "id": "old-barn",
+      "title": "Старый сруб",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/old-barn.webp",
+      "thumb": "img/shop/thumb/old-barn.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/old-barn.webp",
+      "backL": "img/shop/back/old-barn-l.webp"
+    },
+    {
+      "id": "snow-peak",
+      "title": "Снежная вершина",
+      "caption": "Камчатка",
+      "img": "img/shop/snow-peak.webp",
+      "thumb": "img/shop/thumb/snow-peak.webp",
+      "w": 7000,
+      "h": 5250,
+      "tags": [
+        "bw",
+        "mountains"
+      ],
+      "back": "img/shop/back/snow-peak.webp",
+      "backL": "img/shop/back/snow-peak-l.webp"
+    },
+    {
+      "id": "snow-ridge",
+      "title": "Восхождение",
+      "caption": "Камчатка",
+      "img": "img/shop/snow-ridge.webp",
+      "thumb": "img/shop/thumb/snow-ridge.webp",
+      "w": 7000,
+      "h": 5250,
+      "tags": [
+        "bw",
+        "mountains"
+      ],
+      "back": "img/shop/back/snow-ridge.webp",
+      "backL": "img/shop/back/snow-ridge-l.webp"
+    },
+    {
+      "id": "bridge-fog",
+      "title": "Зимний мост",
+      "caption": "Новосибирск",
+      "img": "img/shop/bridge-fog.webp",
+      "thumb": "img/shop/thumb/bridge-fog.webp",
+      "w": 7000,
+      "h": 3938,
+      "tags": [
+        "bw",
+        "city"
+      ],
+      "back": "img/shop/back/bridge-fog.webp",
+      "backL": "img/shop/back/bridge-fog-l.webp"
+    },
+    {
+      "id": "larch-ridge",
+      "title": "Лиственницы под хребтом",
+      "caption": "Магадан",
+      "img": "img/shop/larch-ridge.webp",
+      "thumb": "img/shop/thumb/larch-ridge.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "bw",
+        "forest",
+        "mountains"
+      ],
+      "back": "img/shop/back/larch-ridge.webp",
+      "backL": "img/shop/back/larch-ridge-l.webp"
+    },
+    {
+      "id": "forest-line",
+      "title": "Граница леса",
+      "caption": "Магадан",
+      "img": "img/shop/forest-line.webp",
+      "thumb": "img/shop/thumb/forest-line.webp",
+      "w": 6701,
+      "h": 4467,
+      "tags": [
+        "bw",
+        "forest",
+        "mountains"
+      ],
+      "back": "img/shop/back/forest-line.webp",
+      "backL": "img/shop/back/forest-line-l.webp"
+    },
+    {
+      "id": "larches",
+      "title": "Лиственницы",
+      "caption": "Магадан",
+      "img": "img/shop/larches.webp",
+      "thumb": "img/shop/thumb/larches.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "bw",
+        "forest",
+        "mountains"
+      ],
+      "back": "img/shop/back/larches.webp",
+      "backL": "img/shop/back/larches-l.webp"
+    },
+    {
+      "id": "white-valley",
+      "title": "Белая долина",
+      "caption": "Магадан",
+      "img": "img/shop/white-valley.webp",
+      "thumb": "img/shop/thumb/white-valley.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "bw",
+        "forest",
+        "mountains"
+      ],
+      "back": "img/shop/back/white-valley.webp",
+      "backL": "img/shop/back/white-valley-l.webp"
+    },
+    {
+      "id": "sparse-slope",
+      "title": "Редколесье на склоне",
+      "caption": "Магадан",
+      "img": "img/shop/sparse-slope.webp",
+      "thumb": "img/shop/thumb/sparse-slope.webp",
+      "w": 6914,
+      "h": 4609,
+      "tags": [
+        "bw",
+        "forest",
+        "mountains"
+      ],
+      "back": "img/shop/back/sparse-slope.webp",
+      "backL": "img/shop/back/sparse-slope-l.webp"
+    },
+    {
+      "id": "snow-hills",
+      "title": "Снежные сопки",
+      "caption": "Магадан",
+      "img": "img/shop/snow-hills.webp",
+      "thumb": "img/shop/thumb/snow-hills.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "bw",
+        "forest",
+        "mountains"
+      ],
+      "back": "img/shop/back/snow-hills.webp",
+      "backL": "img/shop/back/snow-hills-l.webp"
+    },
+    {
+      "id": "valley-light",
+      "title": "Свет в долине",
+      "caption": "Камчатка",
+      "img": "img/shop/valley-light.webp",
+      "thumb": "img/shop/thumb/valley-light.webp",
+      "w": 7000,
+      "h": 5250,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/valley-light.webp",
+      "backL": "img/shop/back/valley-light-l.webp"
+    },
+    {
+      "id": "river-valley",
+      "title": "Река в долине",
+      "caption": "Камчатка",
+      "img": "img/shop/river-valley.webp",
+      "thumb": "img/shop/thumb/river-valley.webp",
+      "w": 7000,
+      "h": 5250,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/river-valley.webp",
+      "backL": "img/shop/back/river-valley-l.webp"
+    },
+    {
+      "id": "green-valley",
+      "title": "Зелёная долина",
+      "caption": "Камчатка",
+      "img": "img/shop/green-valley.webp",
+      "thumb": "img/shop/thumb/green-valley.webp",
+      "w": 7000,
+      "h": 5250,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/green-valley.webp",
+      "backL": "img/shop/back/green-valley-l.webp"
+    },
+    {
+      "id": "beyond-pass",
+      "title": "За перевалом",
+      "caption": "Камчатка",
+      "img": "img/shop/beyond-pass.webp",
+      "thumb": "img/shop/thumb/beyond-pass.webp",
+      "w": 7000,
+      "h": 5250,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/beyond-pass.webp",
+      "backL": "img/shop/back/beyond-pass-l.webp"
+    },
+    {
+      "id": "tundra-pattern",
+      "title": "Узор тундры",
+      "caption": "Камчатка",
+      "img": "img/shop/tundra-pattern.webp",
+      "thumb": "img/shop/thumb/tundra-pattern.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/tundra-pattern.webp",
+      "backL": "img/shop/back/tundra-pattern-l.webp"
+    },
+    {
+      "id": "red-ridge",
+      "title": "Красный гребень",
+      "caption": "Камчатка",
+      "img": "img/shop/red-ridge.webp",
+      "thumb": "img/shop/thumb/red-ridge.webp",
+      "w": 7000,
+      "h": 9333,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/red-ridge.webp",
+      "backL": "img/shop/back/red-ridge-l.webp"
+    },
+    {
+      "id": "cloud-slope",
+      "title": "Облако на склоне",
+      "caption": "Камчатка",
+      "img": "img/shop/cloud-slope.webp",
+      "thumb": "img/shop/thumb/cloud-slope.webp",
+      "w": 7000,
+      "h": 5250,
+      "tags": [
+        "mountains",
+        "sky"
+      ],
+      "back": "img/shop/back/cloud-slope.webp",
+      "backL": "img/shop/back/cloud-slope-l.webp"
+    },
+    {
+      "id": "cloud-peak",
+      "title": "Вершина под облаком",
+      "caption": "Камчатка",
+      "img": "img/shop/cloud-peak.webp",
+      "thumb": "img/shop/thumb/cloud-peak.webp",
+      "w": 7000,
+      "h": 5250,
+      "tags": [
+        "mountains",
+        "sky"
+      ],
+      "back": "img/shop/back/cloud-peak.webp",
+      "backL": "img/shop/back/cloud-peak-l.webp"
+    },
+    {
+      "id": "rocks-fog",
+      "title": "Скалы в тумане",
+      "caption": "Камчатка",
+      "img": "img/shop/rocks-fog.webp",
+      "thumb": "img/shop/thumb/rocks-fog.webp",
+      "w": 5250,
+      "h": 7000,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/rocks-fog.webp",
+      "backL": "img/shop/back/rocks-fog-l.webp"
+    },
+    {
+      "id": "moon",
+      "title": "Луна",
+      "caption": "Камчатка, утро",
+      "img": "img/shop/moon.webp",
+      "thumb": "img/shop/thumb/moon.webp",
+      "w": 7000,
+      "h": 5250,
+      "tags": [
+        "sky"
+      ],
+      "back": "img/shop/back/moon.webp",
+      "backL": "img/shop/back/moon-l.webp"
     }
   ],
   "delivery": {
@@ -1641,7 +2054,9 @@ window.SHOP_DATA = /*JSON-START*/
         "object": 4020,
         "maxPackSide": 100,
         "_maxNote": "Предел длинной стороны коробки, см. Крупнее — Почта не берёт: 100x150 выходит за её габариты, а для 70x100 тариф по весу сильно расходится с фактом.",
-        "tooBig": "Для форматов крупнее 60×90 Почта не подходит — напишите в Telegram, отправим иначе"
+        "tooBig": "Для форматов крупнее 60×90 Почта не подходит — напишите в Telegram, отправим иначе",
+        "letterObject": 2010,
+        "bookpostObject": 3010
       },
       {
         "id": "pickup",

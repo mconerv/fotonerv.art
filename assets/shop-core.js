@@ -106,14 +106,16 @@
     if (it.product === 'postcard') {
       var pc = data.products.postcard;
       if (!pc || pc.hidden) return err('bad_work', it);
-      if (it.work === 'set' && pc.set) {
-        var n = (data.postcards || []).length;
+      var set = byId(pc.sets || [], it.work);
+      if (set) {
+        var cards = setCards(data, set);
+        if (!cards.length) return err('bad_work', it);
         return {
-          ok: true, key: key(it), kind: 'postcard', product: 'postcard', work: 'set', qty: qty,
-          price: pc.set.price, sum: pc.set.price * qty, cards: n * qty,
-          title: pc.set.title, detail: n + ' открыток', workTitle: pc.set.title,
-          img: data.postcards[0] && data.postcards[0].thumb,
-          receiptName: clean(pc.set.title + ', ' + n + ' шт.')
+          ok: true, key: key(it), kind: 'postcard', product: 'postcard', work: set.id, set: true, qty: qty,
+          price: set.price, sum: set.price * qty, cards: cards.length * qty,
+          title: 'Набор открыток', detail: set.title + ' · ' + cards.length + ' шт.', workTitle: set.title,
+          img: cards[0].thumb, ratio: cards[0].w / cards[0].h, cardTitles: cards.map(function (c) { return c.title; }),
+          receiptName: clean('Набор открыток «' + set.title + '», ' + cards.length + ' шт.')
         };
       }
       var card = byId(data.postcards, it.work);
@@ -121,11 +123,27 @@
       return {
         ok: true, key: key(it), kind: 'postcard', product: 'postcard', work: card.id, qty: qty,
         price: pc.price, sum: pc.price * qty, cards: qty,
-        title: 'Открытка', detail: card.title, workTitle: card.title, img: card.thumb, ratio: card.w / card.h,
-        receiptName: clean('Открытка ' + card.title)
+        title: 'Открытка 10 × 15 см', detail: card.title, workTitle: card.title, img: card.thumb, ratio: card.w / card.h,
+        receiptName: clean('Открытка 10x15 см, ' + card.title)
       };
     }
     return err('bad_product', it);
+  }
+
+  // Открытки набора: список id или "all" — все открытки каталога
+  function setCards(data, set) {
+    var all = data.postcards || [];
+    if (set.cards === 'all') return all.slice();
+    return (set.cards || []).map(function (id) { return byId(all, id); }).filter(Boolean);
+  }
+  // «Любые n открыток» поштучно стоят как набор: скидка на каждые полные n штук
+  function cardDiscount(data, lines) {
+    var pc = data.products && data.products.postcard, any = pc && pc.anyN;
+    if (!any || !(any.n > 1) || !(any.price > 0)) return { amount: 0, groups: 0 };
+    var singles = 0;
+    lines.forEach(function (l) { if (l.ok && l.kind === 'postcard' && !l.set) singles += l.qty; });
+    var groups = Math.floor(singles / any.n), per = any.n * pc.price - any.price;
+    return { amount: per > 0 ? groups * per : 0, groups: groups, n: any.n, title: any.title };
   }
 
   // Посылки для расчёта доставки: каждый отпечаток — своя коробка; открытки кладём в первую коробку или в конверт
@@ -143,7 +161,7 @@
     if (cards) {
       var pc = data.products.postcard.pack, g = cards * pc.each.g;
       if (out.length) out[0].weight += g;
-      else out.push({ length: pc.envelope.l, width: pc.envelope.w, height: pc.envelope.h, weight: pc.envelope.g + g });
+      else out.push({ length: pc.envelope.l, width: pc.envelope.w, height: pc.envelope.h, weight: pc.envelope.g + g, price: Number(pc.envelope.price) || 0, letter: true });
     }
     return out;
   }
@@ -153,7 +171,9 @@
     var bad = lines.filter(function (l) { return !l.ok; });
     var goods = 0;
     lines.forEach(function (l) { if (l.ok) goods += l.sum; });
-    return { ok: !bad.length && lines.length > 0, lines: lines, errors: bad, goods: goods, packages: packages(data, lines) };
+    var disc = cardDiscount(data, lines);
+    return { ok: !bad.length && lines.length > 0, lines: lines, errors: bad, subtotal: goods, discount: disc.amount, discountInfo: disc,
+      goods: goods - disc.amount, packages: packages(data, lines) };
   }
 
   // Способ доставки может не брать крупные посылки: maxPackSide в каталоге — предел
@@ -180,6 +200,6 @@
   return {
     ratio: ratio, fit: fit, cut: cut, orient: orient, byId: byId, sizesFor: sizesFor, minPrice: minPrice,
     dims: dims, sizeLabel: sizeLabel, clean: clean, key: key, line: line, packages: packages, quote: quote,
-    methodOk: methodOk, packing: packing
+    methodOk: methodOk, packing: packing, setCards: setCards, cardDiscount: cardDiscount
   };
 });
