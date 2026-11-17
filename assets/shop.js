@@ -952,6 +952,8 @@
     if (!/^\d{6}$/.test(idx)) { var mm = JSON.stringify(d || {}).match(/"(\d{6})"/); idx = mm ? mm[1] : ''; }
     if (!idx) { toast('Не удалось определить индекс отделения — выберите другое'); return; }
     var adr = pick(d, ['addressTo', 'address', 'fullAddress']);
+    var city = pick(d, ['cityTo', 'city']);
+    if (adr && typeof adr === 'string' && city && adr.indexOf(city) < 0) adr = city + ', ' + adr;
     if (adr && typeof adr === 'object') adr = [adr.city || adr.place, adr.street, adr.house].filter(Boolean).join(', ') || JSON.stringify(adr);
     var r = co.pochta;
     r.index = idx; r.address = String(adr || pick(d, ['cityTo', 'city']) || 'отделение ' + idx);

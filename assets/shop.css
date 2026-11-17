@@ -435,4 +435,4 @@ body.noscroll{overflow:hidden}
 .pochta-bar small{grid-column:1/-1;font-size:.75rem;line-height:1.35;color:#B9A48F}
 .pochta-bar .err{grid-column:1/-1;color:#FF8A65;font-size:.8rem}
 /* на телефоне крестик внизу слева на карте: справа сверху у виджета свои кнопки */
-@media (max-width:600px){.pochta-box .cdek-x{top:auto;right:auto;bottom:12px;left:12px}}
+.pochta-box .cdek-x{top:auto;right:auto;bottom:12px;left:12px}
