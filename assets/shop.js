@@ -670,7 +670,8 @@
       // иначе при недоступном виджете Почту нельзя было бы выбрать вообще.
       var r = co.pochta;
       more = (m.widgetId ? '<button type="button" class="link-btn" id="pochtaPick">' +
-        (r.index ? 'Выбрать другое отделение на карте' : 'Выбрать отделение на карте') + '</button>' : '') +
+        (r.index ? 'Выбрать другое отделение на карте' : 'Выбрать отделение на карте') + '</button>' :
+        m.officesUrl ? '<a class="link-btn" href="' + esc(m.officesUrl) + '" target="_blank" rel="noopener">Найти отделение и его индекс на pochta.ru ↗</a>' : '') +
         '<div class="row2"><div class="field"><label for="coIndex">Индекс</label><input id="coIndex" inputmode="numeric" maxlength="6" autocomplete="postal-code" value="' + esc(r.index) + '" placeholder="188650"></div>' +
         '<div class="field"><label for="coAddr">Адрес</label><input id="coAddr" autocomplete="street-address" value="' + esc(r.address) + '" placeholder="Город, улица, дом, квартира"></div></div>' +
         '<div class="dopt-res' + (r.err ? ' err' : '') + '" id="pochtaRes">' + pochtaResHTML() + '</div>';
