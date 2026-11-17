@@ -931,6 +931,7 @@
     var qq = q(), g = 0;
     qq.packages.forEach(function (p) { g += p.weight; });
     $('#pochtaModal').hidden = false;
+    var pi = $('#pochtaIdx'); if (pi) pi.value = /^\d{6}$/.test(co.pochta.index) ? co.pochta.index : '';
     (pochtaLoading = pochtaLoading || loadScript(POCHTA_SRC)).then(function () {
       var box = $('#pochtaMap'); box.innerHTML = '';   // виджет добавляет iframe — старый убираем
       window.ecomStartWidget({ id: m.widgetId, containerId: 'pochtaMap', weight: g || 1000, sumoc: qq.goods, callbackFunction: onPochta });
@@ -961,6 +962,26 @@
     if (API) quotePochta();
   }
   var pochtaClose = $('#pochtaClose'); if (pochtaClose) pochtaClose.addEventListener('click', closePochta);
+  // Своя кнопка выбора: виджет Почты без договора не отдаёт выбранное отделение
+  var pochtaBar = $('#pochtaBar');
+  if (pochtaBar) {
+    var pIdx = $('#pochtaIdx');
+    pIdx.addEventListener('input', function () { pIdx.value = pIdx.value.replace(/\D/g, '').slice(0, 6); var e = pochtaBar.querySelector('.err'); if (e) e.remove(); });
+    pochtaBar.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = pIdx.value.replace(/\D/g, '');
+      if (!/^\d{6}$/.test(v)) {
+        if (!pochtaBar.querySelector('.err')) { var m = document.createElement('div'); m.className = 'err'; m.textContent = 'Индекс — 6 цифр, он указан в карточке отделения: «№ 624997»'; pochtaBar.appendChild(m); }
+        pIdx.focus(); return;
+      }
+      var r = co.pochta;
+      if (r.index !== v) { r.price = null; r.err = ''; }
+      r.index = v;
+      if (!r.address || /^отделение \d{6}$/.test(r.address)) r.address = 'отделение ' + v;
+      closePochta(); renderCart(); refreshFoot();
+      if (API) quotePochta();
+    });
+  }
 
   var cdekWidget = null, cdekLoading = null;
   function loadScript(src) {

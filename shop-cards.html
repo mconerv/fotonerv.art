@@ -448,7 +448,7 @@
   }
 </style>
 <link rel="preload" as="image" href="assets/shop-room-light.webp" fetchpriority="high">
-<link rel="stylesheet" href="assets/shop.css?v=202611172100">
+<link rel="stylesheet" href="assets/shop.css?v=202611172130">
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -614,7 +614,7 @@
 </div>
 
 <div class="cdek-modal" id="pochtaModal" hidden>
-  <div class="cdek-box"><button type="button" class="cdek-x" id="pochtaClose" aria-label="Закрыть карту">&#10005;</button><div id="pochtaMap"></div><p class="map-note">Если карта не открылась — закройте окно и введите индекс отделения вручную, стоимость посчитается по тарифу Почты.</p></div>
+  <div class="cdek-box pochta-box"><div class="pochta-map-wrap"><button type="button" class="cdek-x" id="pochtaClose" aria-label="Закрыть карту">&#10005;</button><div id="pochtaMap"></div><p class="map-note">Карта загружается… Если она не открылась, просто введите индекс отделения ниже.</p></div><form class="pochta-bar" id="pochtaBar" novalidate><label for="pochtaIdx">Индекс отделения</label><input id="pochtaIdx" inputmode="numeric" autocomplete="postal-code" maxlength="6" placeholder="например, 624997"><button type="submit" class="btn" id="pochtaOk">Выбрать</button><small>Найдите отделение на карте и введите его номер. Цена на карте — для посылки по тарифу виджета; к оплате идёт расчёт сайта.</small></form></div>
 </div>
 
 <div class="cdek-modal sv" id="setView" role="dialog" aria-modal="true" aria-labelledby="svTitle" hidden>
@@ -647,6 +647,6 @@
 
 <script src="assets/shop-data.js?v=202611171200"></script>
 <script src="assets/shop-core.js?v=202611171200"></script>
-<script src="assets/shop.js?v=202611171200"></script>
+<script src="assets/shop.js?v=202611172130"></script>
 </body>
 </html>
