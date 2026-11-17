@@ -935,6 +935,8 @@
     var pi = $('#pochtaIdx'); if (pi) pi.value = /^\d{6}$/.test(co.pochta.index) ? co.pochta.index : '';
     (pochtaLoading = pochtaLoading || loadScript(POCHTA_SRC)).then(function () {
       var box = $('#pochtaMap'); box.innerHTML = '';   // виджет добавляет iframe — старый убираем
+      // имя функции задаётся и в настройках виджета на widget.pochta.ru («Callback function name»): fotonervPochta
+      window.fotonervPochta = onPochta;
       window.ecomStartWidget({ id: m.widgetId, containerId: 'pochtaMap', weight: g || 1000, sumoc: qq.goods, callbackFunction: onPochta });
     }).catch(function () {
       pochtaLoading = null; closePochta();
