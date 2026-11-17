@@ -84,7 +84,7 @@
     var foam = o.kind === 'foam';
     var g = geom({ iw: o.iw, ih: o.ih, wcm: o.wcm, hcm: o.hcm, depth: foam ? 0.5 : o.depth, wrap: !foam,
       boxW: 100, boxH: o.boxH, fillW: o.fillW || 0.62, fillH: o.fillH || 0.66, minD: foam ? 0.7 : 1.2 });
-    return '<span class="mk' + (foam ? ' foam' : '') + '" style="' + cssVars(g, o.img) + '" aria-hidden="true">' +
+    return '<span class="mk' + (foam ? ' foam' + (o.edge === 'b' ? ' black' : '') : '') + '" style="' + cssVars(g, o.img) + '" aria-hidden="true">' +
       '<span class="mk-obj"><span class="mk-sh"></span><span class="mk-face"></span><span class="mk-r"></span></span></span>';
   }
   // Комната — рендер 420 × 300 см (assets/shop-room-*.webp): стена параллельна кадру, 1 см = 100/420 cqw.
@@ -97,7 +97,7 @@
       boxW: o.wcm * k, boxH: o.hcm * k, fillW: 1, fillH: 1 });
     var left = (cx - o.wcm / 2) * k, top = (cy - o.hcm / 2) * k, dimTop = (cy + o.hcm / 2) * k + 1.1;
     var edge = Math.max(g.D * 0.35, 0.18);
-    return '<div class="room-art' + (foam ? ' foam' : '') + '" style="' + cssVars(g, o.img) + ';left:' + left.toFixed(3) + 'cqw;top:' + top.toFixed(3) +
+    return '<div class="room-art' + (foam ? ' foam' + (o.edge === 'b' ? ' black' : '') : '') + '" style="' + cssVars(g, o.img) + ';left:' + left.toFixed(3) + 'cqw;top:' + top.toFixed(3) +
       'cqw;width:' + g.W.toFixed(3) + 'cqw;height:' + g.H.toFixed(3) + 'cqw;--edge:' + edge.toFixed(3) + 'cqw"></div>' +
       (o.label ? '<div class="room-dim" style="left:' + (cx * k).toFixed(3) + 'cqw;top:' + dimTop.toFixed(3) + 'cqw">' + esc(o.label) + '</div>' : '') +
       (o.note ? '<div class="room-note">' + esc(o.note) + '</div>' : '');
@@ -112,7 +112,7 @@
     var edge = Math.max(g.D * 0.35, 0.18);
     o.parts.forEach(function (pt, i) {
       var left = (x0 + i * (o.wcm + TRIP_GAP)) * k, pos = ';left:' + left.toFixed(3) + 'cqw;top:' + top.toFixed(3) + 'cqw;width:' + g.W.toFixed(3) + 'cqw;height:' + g.H.toFixed(3) + 'cqw';
-      html += pt.on ? '<div class="room-art' + (foam ? ' foam' : '') + '" style="' + cssVars(g, pt.img) + pos + ';--edge:' + edge.toFixed(3) + 'cqw"></div>'
+      html += pt.on ? '<div class="room-art' + (foam ? ' foam' + (o.edge === 'b' ? ' black' : '') : '') + '" style="' + cssVars(g, pt.img) + pos + ';--edge:' + edge.toFixed(3) + 'cqw"></div>'
         : '<div class="room-ghost" style="' + pos.slice(1) + '"></div>';
     });
     var dimTop = (cy + o.hcm / 2) * k + 1.1;
@@ -121,7 +121,7 @@
   // Триптих крупно: три макета в ряд
   function tripMock(o) {
     return '<span class="mk-trip" aria-hidden="true">' + o.parts.map(function (pt) {
-      return '<span class="mk-cell' + (pt.on ? '' : ' off') + '">' + mock3d({ kind: o.kind, img: pt.img, iw: o.iw, ih: o.ih, wcm: o.wcm, hcm: o.hcm, depth: o.depth,
+      return '<span class="mk-cell' + (pt.on ? '' : ' off') + '">' + mock3d({ kind: o.kind, img: pt.img, iw: o.iw, ih: o.ih, wcm: o.wcm, hcm: o.hcm, depth: o.depth, edge: o.edge,
         boxH: o.boxH, fillW: o.fillW || 0.86, fillH: o.fillH || 0.8 }) + '</span>';
     }).join('') + '</span>';
   }
@@ -403,16 +403,18 @@
     fixOption();
   }
   // у варианта (например, синтетического холста) может не быть цены на этот размер — берём вариант с той же толщиной
+  // вариант опции, который сохраняется при смене материала: у холста — подрамник, у пенокартона — бумага
+  function vr(o) { return o ? (o.v != null ? o.v : o.depth) : null; }
   function fixOption() {
     var p = product(cfg.product), s = byId(p.sizes, cfg.size), o = byId(p.options, cfg.option);
     if (!s || !o || s.price[o.id] > 0) return;
-    var alt = p.options.filter(function (x) { return s.price[x.id] > 0 && x.depth === o.depth; })[0] || p.options.filter(function (x) { return s.price[x.id] > 0; })[0];
+    var alt = p.options.filter(function (x) { return s.price[x.id] > 0 && vr(x) === vr(o); })[0] || p.options.filter(function (x) { return s.price[x.id] > 0; })[0];
     if (alt) cfg.option = alt.id;
   }
   function optPrice(size) {
     var p = product(cfg.product), o = byId(p.options, cfg.option);
     if (size.price[cfg.option] > 0 || !o) return size.price[cfg.option];
-    var alt = p.options.filter(function (x) { return size.price[x.id] > 0 && x.depth === o.depth; })[0];
+    var alt = p.options.filter(function (x) { return size.price[x.id] > 0 && vr(x) === vr(o); })[0];
     return alt ? size.price[alt.id] : null;
   }
   function cfgItems() {
@@ -469,9 +471,12 @@
     var curOpt = byId(p.options, cfg.option) || p.options[0];
     var mats = p.materials || [];
     $('#cfgMatWrap').hidden = mats.length < 2;
+    var ml = p.matLabel || 'Тип холста', ol = p.optLabel || 'Подрамник';
+    $('#cfgMatWrap .lbl').textContent = ml; $('#cfgMats').setAttribute('aria-label', ml);
+    $('#cfgOptWrap .lbl').textContent = ol; $('#cfgOpts').setAttribute('aria-label', ol);
     if (mats.length > 1) {
       $('#cfgMats').innerHTML = mats.map(function (m) {
-        var o = p.options.filter(function (x) { return x.mat === m.id && x.depth === curOpt.depth; })[0];
+        var o = p.options.filter(function (x) { return x.mat === m.id && vr(x) === vr(curOpt); })[0];
         var pr = cur && o ? cur.size.price[o.id] : 0, off = !(pr > 0);
         return '<button type="button" data-m="' + m.id + '" aria-pressed="' + (m.id === curOpt.mat) + '"' + (off ? ' disabled title="Нет в этом размере"' : '') + '>' + esc(m.label) + '<small>' + (off ? 'нет в этом размере' : rubText(pr)) + '</small></button>';
       }).join('');
@@ -511,25 +516,25 @@
       var parts = pts.map(function (p, i) { return { img: cfg.view === 'room' ? p.thumb : p.img, on: !!cfg.parts[i] }; });
       var lab = C.sizeLabel({ a: Math.min(l.w, l.h), b: Math.max(l.w, l.h) });
       if (cfg.view === 'room') {
-        st.innerHTML = '<div class="room ' + cfg.wall + (cfg.room === 'kitchen' ? ' kitchen' : '') + '">' + roomTripHTML({ kind: cfg.product, parts: parts, iw: w.w, ih: w.h, wcm: l.w, hcm: l.h, depth: l.depth,
+        st.innerHTML = '<div class="room ' + cfg.wall + (cfg.room === 'kitchen' ? ' kitchen' : '') + '">' + roomTripHTML({ kind: cfg.product, parts: parts, iw: w.w, ih: w.h, wcm: l.w, hcm: l.h, depth: l.depth, edge: l.edge,
           label: (l.n > 1 ? l.n + ' × ' : '') + lab + (l.n > 1 ? ', зазор ' + TRIP_GAP + ' см' : '') }) + '</div>';
         hint.textContent = 'Триптих в реальном масштабе по стене. Пунктир — части, которые не выбраны. ' + roomScale();
       } else {
-        st.innerHTML = tripMock({ kind: cfg.product, parts: parts, iw: w.w, ih: w.h, wcm: l.w, hcm: l.h, depth: l.depth, boxH: 238.1, fillW: 0.86, fillH: 0.62 });
+        st.innerHTML = tripMock({ kind: cfg.product, parts: parts, iw: w.w, ih: w.h, wcm: l.w, hcm: l.h, depth: l.depth, edge: l.edge, boxH: 238.1, fillW: 0.86, fillH: 0.62 });
         hint.textContent = cfg.product === 'canvas' ? 'Галерейная натяжка: кадр каждой части продолжается на торцы подрамника ' + l.depth + ' см.'
-          : 'Фотобумага на белом пенокартоне — по краю видна кромка основы.';
+          : 'Фотобумага на ' + (l.edge === 'b' ? 'чёрном' : 'белом') + ' пенокартоне — по краю видна кромка основы.';
       }
       return;
     }
     if (cfg.view === 'room') {
-      st.innerHTML = '<div class="room ' + cfg.wall + (cfg.room === 'kitchen' ? ' kitchen' : '') + '">' + roomHTML({ kind: cfg.product, img: w.thumb, iw: w.w, ih: w.h, wcm: l.w, hcm: l.h, depth: l.depth,
+      st.innerHTML = '<div class="room ' + cfg.wall + (cfg.room === 'kitchen' ? ' kitchen' : '') + '">' + roomHTML({ kind: cfg.product, img: w.thumb, iw: w.w, ih: w.h, wcm: l.w, hcm: l.h, depth: l.depth, edge: l.edge,
         label: C.sizeLabel({ a: Math.min(l.w, l.h), b: Math.max(l.w, l.h) }) }) + '</div>';
       hint.textContent = 'Кадр показан в реальном масштабе по стене. ' + roomScale();
     } else {
-      st.innerHTML = mock3d({ kind: cfg.product, img: w.img, iw: w.w, ih: w.h, wcm: l.w, hcm: l.h, depth: l.depth, boxH: 71.43, fillW: 0.6, fillH: 0.72 });
+      st.innerHTML = mock3d({ kind: cfg.product, img: w.img, iw: w.w, ih: w.h, wcm: l.w, hcm: l.h, depth: l.depth, edge: l.edge, boxH: 71.43, fillW: 0.6, fillH: 0.72 });
       hint.textContent = cfg.product === 'canvas'
         ? 'Галерейная натяжка: кадр продолжается на торцы подрамника ' + l.depth + ' см.'
-        : 'Фотобумага на белом пенокартоне — по краю видна кромка основы.';
+        : 'Фотобумага на ' + (l.edge === 'b' ? 'чёрном' : 'белом') + ' пенокартоне — по краю видна кромка основы.';
     }
   }
   if (cfgEl) {
@@ -548,7 +553,7 @@
       if ((b = e.target.closest('[data-m]'))) {
         if (b.disabled) return;
         var pp = product(cfg.product), co = byId(pp.options, cfg.option) || {}, mid = b.getAttribute('data-m');
-        var no = pp.options.filter(function (x) { return x.mat === mid && x.depth === co.depth; })[0] || pp.options.filter(function (x) { return x.mat === mid; })[0];
+        var no = pp.options.filter(function (x) { return x.mat === mid && vr(x) === vr(co); })[0] || pp.options.filter(function (x) { return x.mat === mid; })[0];
         if (no) { cfg.option = no.id; renderCfg(); }
         return;
       }

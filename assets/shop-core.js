@@ -92,11 +92,12 @@
       if (!(price > 0)) return err('bad_price', it);
       var o = orient(w, hit.size), sz = hit.size.a + 'x' + hit.size.b + ' см';
       var canvas = it.product === 'canvas';
-      var mat = canvas && opt.mat ? byId(p.materials || [], opt.mat) : null;
-      var extra = canvas ? (mat ? mat.short + ', ' : '') + 'подрамник ' + opt.short : 'основа ' + (hit.size.thickness || 5) + ' мм';
+      var mat = opt.mat ? byId(p.materials || [], opt.mat) : null;
+      var extra = canvas ? (mat ? mat.short + ', ' : '') + 'подрамник ' + opt.short
+        : (mat ? mat.short : 'основа ' + (hit.size.thickness || 5) + ' мм') + (opt.short ? ', ' + opt.short : '');
       return {
         ok: true, key: key(it), kind: 'print', product: it.product, work: w.id, size: hit.size.id, option: opt.id,
-        qty: qty, price: price, sum: price * qty, fit: hit.fit, w: o.w, h: o.h, depth: opt.depth,
+        qty: qty, price: price, sum: price * qty, fit: hit.fit, w: o.w, h: o.h, depth: opt.depth, edge: (mat && mat.edge) || '',
         title: p.title + ' ' + sizeLabel(hit.size), detail: extra, workTitle: w.title, img: w.thumb, ratio: w.w / w.h,
         receiptName: clean((canvas ? 'Печать на холсте ' : 'Фотопечать на пенокартоне ') + sz + ', ' + extra + ', ' + w.title),
         pack: hit.size.pack[opt.id]

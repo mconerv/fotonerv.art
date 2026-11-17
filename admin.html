@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>FotoNerv · панель портфолио</title>
+<meta name="theme-color" content="#1D140E">
+<style>
+@font-face{font-family:'Oranienbaum';font-display:swap;src:url(https://fotonerv.art/assets/fonts/oranienbaum-regular.woff2) format('woff2')}
+@font-face{font-family:'Old Standard TT';font-style:italic;font-display:swap;src:url(https://fotonerv.art/assets/fonts/old-standard-italic-nerv.woff2) format('woff2')}
+@font-face{font-family:'Arsenal';font-weight:400;font-display:swap;size-adjust:104%;src:url(https://fotonerv.art/assets/fonts/arsenal-regular.woff2) format('woff2')}
+@font-face{font-family:'Arsenal';font-weight:700;font-display:swap;size-adjust:104%;src:url(https://fotonerv.art/assets/fonts/arsenal-bold.woff2) format('woff2')}
+:root{
+  --bg:#1D140E;--card:#291C14;--card2:#32231A;--line:#45311F;
+  --ink:#EAE4D6;--mut:#B9A48F;--acc:#FF8F1F;--ok:#9BC27A;--err:#FF8A65;--film:#100A06;
+  --display:'Oranienbaum',serif;--text:'Arsenal',sans-serif;
+  --hole:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='12'%3E%3Crect x='6' y='0' width='10' height='12' rx='2' fill='black'/%3E%3C/svg%3E")}
+*{box-sizing:border-box}
+html{font-synthesis-weight:none}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--text)}
+.film{height:30px;background:var(--film);position:relative}
+.film::after{content:"";position:absolute;left:0;right:0;top:9px;height:12px;background:rgba(234,228,214,.72);-webkit-mask:var(--hole) 0 0/22px 12px repeat-x;mask:var(--hole) 0 0/22px 12px repeat-x}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 40px}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+h1{font:400 clamp(1.7rem,3.4vw,2.3rem)/1.05 var(--display);margin:0}
+h1 b{font-family:'Old Standard TT',serif;font-style:italic;font-weight:400;color:var(--acc)}
+h1 span{color:var(--mut);font-size:.62em;margin-left:.35em}
+.sub{color:var(--mut);font-size:.92rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:18px}
+input[type=password],input[type=text],select{background:var(--card2);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:11px 14px;font:inherit;font-size:.95rem;width:100%;min-height:44px}
+input:focus,select:focus{outline:2px solid var(--acc);outline-offset:1px;border-color:transparent}
+button{font:700 .95rem/1 var(--text);background:var(--acc);color:var(--bg);border:0;border-radius:999px;padding:12px 22px;cursor:pointer;min-height:44px;transition:filter .15s,background .15s,color .15s}
+button:hover{filter:brightness(1.08)}
+button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+button.ghost:hover{border-color:var(--acc);color:var(--acc);filter:none}
+button:disabled{opacity:.4;cursor:default;filter:none}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.grow{flex:1;min-width:200px}
+#tabs{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}
+#tabs button{background:transparent;color:var(--mut);border:1px solid var(--line);font-weight:400;padding:10px 18px}
+#tabs button:hover{color:var(--ink);border-color:var(--mut);filter:none}
+#tabs button.act{background:var(--ink);color:var(--bg);border-color:var(--ink);font-weight:700}
+#tabs button .n{margin-left:8px;opacity:.6;font-weight:400}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.ph{position:relative;border-radius:10px;overflow:hidden;background:var(--film);aspect-ratio:1;border:1px solid var(--line)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.ph:hover img{transform:scale(1.04)}
+.ph .nm{position:absolute;left:0;right:0;bottom:0;padding:16px 8px 6px;font:700 .66rem/1 var(--text);letter-spacing:.14em;text-transform:uppercase;color:var(--acc);background:linear-gradient(transparent,rgba(16,10,6,.85));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ph .del{position:absolute;top:6px;right:6px;width:34px;height:34px;min-height:34px;padding:0;border-radius:50%;background:rgba(16,10,6,.78);color:var(--ink);font-size:15px;opacity:0;transition:opacity .15s,background .15s}
+.ph:hover .del,.ph .del:focus-visible{opacity:1}
+@media (hover:none){.ph .del{opacity:1}}
+.ph .del:hover{background:var(--err);color:var(--bg)}
+.ph .w{position:absolute;top:8px;left:8px;font:700 .66rem/1 var(--text);background:rgba(16,10,6,.78);padding:5px 8px;border-radius:999px;color:var(--ink)}
+#drop{border:1.5px dashed var(--line);border-radius:14px;padding:38px 20px;text-align:center;color:var(--mut);transition:.15s;cursor:pointer;font-size:1.02rem}
+#drop strong{display:block;font:400 1.45rem/1.2 var(--display);color:var(--ink);margin-bottom:6px}
+#drop:hover,#drop.over{border-color:var(--acc);background:rgba(255,143,31,.05)}
+#drop.over strong{color:var(--acc)}
+#queue{margin-top:14px;display:grid;gap:8px}
+.qi{display:flex;gap:12px;align-items:center;background:var(--card2);border-radius:12px;padding:8px}
+.qi img{width:54px;height:54px;object-fit:cover;border-radius:8px}
+.qi .st{font-size:.85rem;color:var(--mut)}
+.qi .st.ok{color:var(--ok)}.qi .st.err{color:var(--err)}
+.bar{height:3px;background:var(--line);border-radius:2px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;background:var(--acc);width:0;transition:width .2s}
+label.chk{display:flex;gap:8px;align-items:center;cursor:pointer;font-size:.95rem;color:var(--mut)}
+label.chk input{accent-color:var(--acc);width:18px;height:18px}
+h2{font:400 1.35rem/1.2 var(--display);margin:0 0 14px}
+#log{font-size:.85rem;color:var(--mut);white-space:pre-wrap;max-height:140px;overflow:auto}
+.hide{display:none}
+.pill{font-size:.88rem;color:var(--mut)}
+a{color:var(--ink)}
+@media (max-width:600px){.wrap{padding:20px 14px}.card{padding:16px}#grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}}
+</style>
+</head>
+<body>
+<div class="film" aria-hidden="true"></div>
+<div class="wrap">
+  <header>
+    <h1>Foto<b>Nerv</b><span>панель портфолио</span></h1>
+    <div class="sub">mconerv/fotonerv.art · локальный инструмент, в репозиторий не выкладывать</div>
+  </header>
+
+  <div class="card" id="auth">
+    <h2>Вход</h2>
+    <div class="row">
+      <input class="grow" type="password" id="tok" placeholder="GitHub fine-grained token (Contents: Read and write)" autocomplete="off">
+      <button id="btnAuth">Подключиться</button>
+    </div>
+    <div class="pill" style="margin-top:10px">Токен хранится только в этом браузере (localStorage) и уходит только на api.github.com.</div>
+  </div>
+
+  <div id="app" class="hide">
+    <div class="card">
+      <h2>Загрузка</h2>
+      <div id="drop" tabindex="0" role="button"><strong>Перетащите фотографии сюда</strong>или нажмите, чтобы выбрать. JPG, PNG, WebP; HEIC — только если браузер его читает</div>
+      <input type="file" id="file" accept="image/*" multiple class="hide">
+      <div class="row" style="margin-top:14px">
+        <select id="cat" style="max-width:280px">
+          <option value="portrait">Портрет (Prt_)</option>
+          <option value="reportage">Репортаж (Rep_)</option>
+          <option value="arch">Интерьеры и архитектура (Arc_)</option>
+          <option value="land">Пейзаж (Nat_)</option>
+        </select>
+        <label class="chk"><input type="checkbox" id="toWall" checked> добавить в общую стену</label>
+        <span class="grow"></span>
+        <button id="btnClr" class="ghost hide">Очистить</button>
+        <button id="btnUp" disabled>Загрузить на сайт</button>
+      </div>
+      <div id="queue"></div>
+    </div>
+
+    <div id="tabs"></div>
+    <div class="card">
+      <div class="row" style="justify-content:space-between;margin-bottom:14px">
+        <span class="pill" id="cnt"></span>
+        <button id="btnRe" class="ghost">Обновить</button>
+      </div>
+      <div id="grid"></div>
+    </div>
+
+    <div class="card"><h2>Журнал</h2><div id="log">Пока пусто</div></div>
+  </div>
+</div>
+
+<script>
+'use strict';
+/* ===== конфиг ===== */
+const OWNER='mconerv', REPO='fotonerv.art', BRANCH='main';
+const DATA='assets/gallery-data.js';
+const DIR_FULL='img/', DIR_TH='img/thumb/', DIR_W='img/wall/';
+const SITE='https://fotonerv.art/';
+const PREFIX={portrait:'Prt_',reportage:'Rep_',arch:'Arc_',land:'Nat_'};
+const CATNAME={portrait:'Портрет',reportage:'Репортаж',arch:'Интерьеры и архитектура',land:'Пейзаж',wall:'Общая стена'};
+/* размеры: длинная сторона px, качество webp */
+const SIZES={full:[2048,.82],thumb:[720,.78],wall:[440,.72]};
+
+let TOKEN='', GEN=null, WALL=null, SHAS={}, tab='portrait', queue=[];
+
+const $=id=>document.getElementById(id);
+const log=m=>{const el=$('log');el.textContent=(new Date).toLocaleTimeString()+'  '+m+'\n'+el.textContent;};
+
+/* ===== GitHub API ===== */
+async function api(path,opt={}){
+  const r=await fetch('https://api.github.com'+path,{...opt,headers:{
+    'Authorization':'Bearer '+TOKEN,'Accept':'application/vnd.github+json',
+    'X-GitHub-Api-Version':'2022-11-28',...(opt.headers||{})}});
+  if(!r.ok){const t=await r.text();throw new Error(r.status+' '+t.slice(0,180));}
+  return r.status===204?null:r.json();
+}
+const putFile=(path,b64,msg,sha)=>api(`/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(path).replace(/%2F/g,'/')}`,
+  {method:'PUT',body:JSON.stringify({message:msg,content:b64,branch:BRANCH,...(sha?{sha}:{})})});
+const delFile=(path,sha,msg)=>api(`/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(path).replace(/%2F/g,'/')}`,
+  {method:'DELETE',body:JSON.stringify({message:msg,sha,branch:BRANCH})});
+
+async function loadState(){
+  const tree=await api(`/repos/${OWNER}/${REPO}/git/trees/${BRANCH}?recursive=1`);
+  SHAS={}; tree.tree.forEach(t=>{if(t.type==='blob')SHAS[t.path]=t.sha;});
+  const f=await api(`/repos/${OWNER}/${REPO}/contents/${DATA}?ref=${BRANCH}`);
+  const src=decodeURIComponent(escape(atob(f.content.replace(/\n/g,''))));
+  GEN=JSON.parse(src.match(/var GEN=(\{[\s\S]*?\});/)[1]);
+  WALL=JSON.parse(src.match(/var WALL=(\[[\s\S]*?\]);/)[1]);
+  log(`Состояние загружено: ${Object.values(GEN).reduce((s,a)=>s+a.length,0)} фото в жанрах, ${WALL.length} на стене.`);
+}
+function serialize(){
+  const gen={}; Object.keys(GEN).forEach(k=>{gen[k]=GEN[k].slice().sort();});
+  return '// Данные галереи FotoNerv — списки файлов изображений\n'
+    +'var GEN='+JSON.stringify(gen)+';\n'
+    +'var WALL='+JSON.stringify(WALL)+';\n';
+}
+async function saveManifest(msg){
+  const f=await api(`/repos/${OWNER}/${REPO}/contents/${DATA}?ref=${BRANCH}`);/* свежий sha */
+  const b64=btoa(unescape(encodeURIComponent(serialize())));
+  await putFile(DATA,b64,msg,f.sha);
+  log('gallery-data.js обновлён → '+msg);
+}
+
+/* ===== обработка изображений ===== */
+async function renderVariant(bmp,long,q){
+  const r=Math.min(1,long/Math.max(bmp.width,bmp.height));
+  const w=Math.round(bmp.width*r),h=Math.round(bmp.height*r);
+  const c=document.createElement('canvas');c.width=w;c.height=h;
+  c.getContext('2d').drawImage(bmp,0,0,w,h);
+  const blob=await new Promise(res=>c.toBlob(res,'image/webp',q));
+  if(!blob)throw new Error('браузер не умеет кодировать WebP — открой панель в Chrome');
+  return blob;
+}
+const blobB64=b=>new Promise((res,rej)=>{const r=new FileReader();
+  r.onload=()=>res(r.result.split(',')[1]);r.onerror=rej;r.readAsDataURL(b);});
+
+function nextNum(prefix){
+  let mx=0;const rx=new RegExp('^'+prefix+'(\\d+)\\.webp$');
+  const scan=n=>{const m=n.match(rx);if(m)mx=Math.max(mx,+m[1]);};
+  Object.values(GEN).flat().forEach(scan);WALL.forEach(scan);
+  Object.keys(SHAS).forEach(p=>{const n=p.split('/').pop();scan(n);});
+  return mx+1;
+}
+
+/* ===== очередь загрузки ===== */
+function addFiles(list){
+  [...list].filter(f=>f.type.startsWith('image/')).forEach(f=>{
+    const q={file:f,url:URL.createObjectURL(f),st:'в очереди',prog:0};
+    queue.push(q);
+  });
+  drawQueue();$('btnUp').disabled=!queue.length;$('btnClr').classList.toggle('hide',!queue.length);
+}
+function drawQueue(){
+  $('queue').innerHTML=queue.map((q,i)=>`<div class="qi"><img src="${q.url}">
+    <div class="grow"><div style="font-size:13px">${q.file.name}</div>
+    <div class="st ${q.cls||''}">${q.st}</div><div class="bar"><i style="width:${q.prog}%"></i></div></div></div>`).join('');
+}
+async function upload(){
+  $('btnUp').disabled=true;$('btnClr').classList.add('hide');
+  const cat=$('cat').value,toWall=$('toWall').checked,pref=PREFIX[cat];
+  let n=nextNum(pref),added=[],addedWall=[];
+  for(const q of queue){
+    if(q.done)continue;
+    try{
+      q.st='обработка…';q.prog=10;drawQueue();
+      const bmp=await createImageBitmap(q.file,{imageOrientation:'from-image'});
+      const name=pref+(n++)+'.webp';
+      const jobs=[[DIR_FULL+name,...SIZES.full],[DIR_TH+name,...SIZES.thumb]];
+      if(toWall)jobs.push([DIR_W+name,...SIZES.wall]);
+      let step=0;
+      for(const[path,long,quality]of jobs){
+        q.st='загрузка '+path;drawQueue();
+        const blob=await renderVariant(bmp,long,quality);
+        await putFile(path,await blobB64(blob),'Добавлено фото '+name);
+        q.prog=10+(++step/jobs.length)*80;drawQueue();
+      }
+      bmp.close();
+      GEN[cat].push(name);added.push(name);
+      if(toWall){WALL.push(name);addedWall.push(name);}
+      q.done=true;q.st='загружено как '+name;q.cls='ok';q.prog=100;drawQueue();
+      log(name+' → '+CATNAME[cat]+(toWall?' + стена':''));
+    }catch(e){q.st='ошибка: '+e.message;q.cls='err';drawQueue();log('ОШИБКА '+q.file.name+': '+e.message);}
+  }
+  if(added.length){
+    await saveManifest(`Портфолио: +${added.length} фото (${CATNAME[cat]}${addedWall.length?', стена':''})`);
+    log('Готово. Сайт обновится через 1–2 минуты (GitHub Pages).');
+  }
+  queue=queue.filter(q=>!q.done);drawQueue();
+  $('btnUp').disabled=!queue.length;$('btnClr').classList.toggle('hide',!queue.length);
+  refreshTree();drawTabs();drawGrid();
+}
+async function refreshTree(){
+  try{const tree=await api(`/repos/${OWNER}/${REPO}/git/trees/${BRANCH}?recursive=1`);
+    SHAS={};tree.tree.forEach(t=>{if(t.type==='blob')SHAS[t.path]=t.sha;});}catch(e){}
+}
+
+/* ===== удаление ===== */
+async function removeImg(name,fromTab){
+  const inWall=WALL.includes(name);
+  const paths=fromTab==='wall'&&!Object.values(GEN).flat().includes(name)
+    ?[DIR_W+name]
+    :[DIR_FULL+name,DIR_TH+name,...(SHAS[DIR_W+name]?[DIR_W+name]:[])];
+  const what=fromTab==='wall'?'со стены':'из портфолио'+(inWall?' и со стены':'');
+  if(!confirm('Удалить '+name+' '+what+'? Файлы будут удалены из репозитория.'))return;
+  try{
+    for(const p of paths){
+      if(!SHAS[p]){log('пропуск (нет файла): '+p);continue;}
+      await delFile(p,SHAS[p],'Удалено фото '+name);delete SHAS[p];
+    }
+    if(fromTab==='wall'&&!Object.values(GEN).flat().includes(name)){
+      WALL=WALL.filter(x=>x!==name);
+    }else{
+      Object.keys(GEN).forEach(k=>{GEN[k]=GEN[k].filter(x=>x!==name);});
+      WALL=WALL.filter(x=>x!==name);
+    }
+    await saveManifest('Портфолио: удалено '+name);
+    log(name+' удалено '+what+'. Сайт обновится через 1–2 минуты.');
+    drawTabs();drawGrid();
+  }catch(e){log('ОШИБКА удаления '+name+': '+e.message);alert('Не удалось удалить: '+e.message);}
+}
+
+/* ===== интерфейс ===== */
+function drawTabs(){
+  $('tabs').innerHTML=['portrait','reportage','arch','land','wall'].map(k=>{
+    const c=k==='wall'?WALL.length:GEN[k].length;
+    return `<button data-t="${k}" class="${tab===k?'act':''}">${CATNAME[k]}<span class="n">${c}</span></button>`;
+  }).join('');
+  $('tabs').querySelectorAll('button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;drawTabs();drawGrid();});
+}
+function drawGrid(){
+  const list=tab==='wall'?WALL:GEN[tab];
+  const base=tab==='wall'?SITE+DIR_W:SITE+DIR_TH;
+  $('cnt').textContent=list.length+' фото · превью с fotonerv.art';
+  $('grid').innerHTML=list.map(n=>`<div class="ph">
+    <img loading="lazy" src="${base}${n}" alt="">
+    ${tab!=='wall'&&WALL.includes(n)?'<span class="w">стена</span>':''}
+    <button class="del" title="Удалить" aria-label="Удалить ${n}" data-n="${n}">✕</button>
+    <span class="nm">${n.replace('.webp','')}</span></div>`).join('');
+  $('grid').querySelectorAll('.del').forEach(b=>b.onclick=()=>removeImg(b.dataset.n,tab));
+}
+
+/* ===== старт ===== */
+$('btnAuth').onclick=async()=>{
+  TOKEN=$('tok').value.trim();if(!TOKEN)return;
+  try{
+    await api(`/repos/${OWNER}/${REPO}`);
+    localStorage.setItem('fn_token',TOKEN);
+    await loadState();
+    $('auth').classList.add('hide');$('app').classList.remove('hide');
+    drawTabs();drawGrid();
+  }catch(e){alert('Не удалось подключиться: '+e.message);}
+};
+$('btnRe').onclick=async()=>{await refreshTree();await loadState();drawTabs();drawGrid();};
+$('btnUp').onclick=upload;
+$('btnClr').onclick=()=>{queue=[];drawQueue();$('btnUp').disabled=true;$('btnClr').classList.add('hide');};
+const drop=$('drop');
+drop.onclick=()=>$('file').click();
+drop.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('file').click();}};
+$('file').onchange=e=>addFiles(e.target.files);
+['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('over');}));
+['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('over');}));
+drop.addEventListener('drop',e=>addFiles(e.dataTransfer.files));
+const saved=localStorage.getItem('fn_token');
+if(saved){$('tok').value=saved;$('btnAuth').click();}
+</script>
+</body>
+</html>
