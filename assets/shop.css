@@ -421,3 +421,6 @@ body.noscroll{overflow:hidden}
   .cart-foot .btn{margin-top:8px;padding:11px 18px}
   .cart-foot .foot-note{display:none}
 }
+
+/* на телефоне крестик карты внизу слева: вверху справа он закрывал кнопки виджета Почты */
+@media (max-width:600px){.cdek-x{top:auto;right:auto;bottom:calc(14px + env(safe-area-inset-bottom));left:14px}}
