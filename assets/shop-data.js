@@ -2445,8 +2445,8 @@ window.SHOP_DATA = /*JSON-START*/
   ],
   "delivery": {
     "from": {
-      "city": "Сертолово",
-      "postal_code": "188632",
+      "city": "Санкт-Петербург",
+      "postal_code": "191186",
       "country_code": "RU"
     },
     "handlingFee": 0,
