@@ -147,7 +147,7 @@
     return { amount: per > 0 ? groups * per : 0, groups: groups, n: any.n, title: any.title };
   }
 
-  // Посылки для расчёта доставки: каждый отпечаток — своя коробка; открытки кладём в первую коробку или в конверт
+  // Посылки для расчёта доставки: каждый отпечаток — своя коробка; открытки кладём в первую коробку, в конверт (письмо) или, если их много, в коробку (посылка)
   function packages(data, lines) {
     var out = [], cards = 0;
     lines.forEach(function (l) {
@@ -162,6 +162,12 @@
     if (cards) {
       var pc = data.products.postcard.pack, g = cards * pc.each.g;
       if (out.length) out[0].weight += g;
+      else if (pc.box && cards >= (Number(pc.box.from) || Infinity)) {
+        // Много открыток: коробка подходящего размера, пока считаем посылкой (бандероль — флагом bookpost)
+        var boxes = pc.box.boxes || [], b = boxes[boxes.length - 1];
+        for (var j = 0; j < boxes.length; j++) if (cards <= boxes[j].upTo) { b = boxes[j]; break; }
+        out.push({ length: b.l, width: b.w, height: b.h, weight: b.g + g, price: Number(b.price) || 0 });
+      }
       else out.push({ length: pc.envelope.l, width: pc.envelope.w, height: pc.envelope.h, weight: pc.envelope.g + g, price: Number(pc.envelope.price) || 0, letter: true });
     }
     return out;

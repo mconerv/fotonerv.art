@@ -1,6 +1,5 @@
 /* FotoNerv · данные магазина. Правьте только JSON между маркерами — его же читает серверная функция. */
-window.SHOP_DATA = /*JSON-START*/
-{
+window.SHOP_DATA = /*JSON-START*/{
   "_readme": [
     "Данные магазина. Между маркерами JSON-START и JSON-END — строгий JSON (двойные кавычки, без комментариев и висячих запятых):",
     "этот же файл читает серверная функция и по нему пересчитывает цены, поэтому цена на сайте и в оплате всегда одна.",
@@ -1330,7 +1329,7 @@ window.SHOP_DATA = /*JSON-START*/
       "specs": [
         "Формат 10 × 15 см, плотная мелованная бумага 300 г/м²",
         "На обороте — поле для адреса, марки и текста, название и место съёмки",
-        "Наборы по 5 открыток, а любые 5 штук в корзине стоят как набор"
+        "Наборы по 5 открыток и большие наборы по регионам, а любые 5 штук в корзине стоят как набор"
       ],
       "price": 200,
       "anyN": {
@@ -1405,11 +1404,121 @@ window.SHOP_DATA = /*JSON-START*/
           "price": 850
         },
         {
+          "id": "set-milky-way",
+          "title": "Млечный путь",
+          "lead": "Ночное небо Камчатки",
+          "cards": [
+            "mw-valley",
+            "mw-forest",
+            "mw-red",
+            "mw-branches",
+            "mw-crown"
+          ],
+          "price": 850
+        },
+        {
+          "id": "set-kamchatka-full",
+          "title": "Камчатка целиком",
+          "lead": "Вулканы, тундра, луна и звёзды",
+          "cards": [
+            "slope-clouds",
+            "snow-peak",
+            "snow-ridge",
+            "valley-light",
+            "river-valley",
+            "green-valley",
+            "beyond-pass",
+            "tundra-pattern",
+            "red-ridge",
+            "cloud-slope",
+            "cloud-peak",
+            "rocks-fog",
+            "moon",
+            "moon-peak",
+            "rain-valley",
+            "mw-valley",
+            "mw-forest",
+            "mw-red",
+            "mw-branches",
+            "mw-crown"
+          ],
+          "price": 2400
+        },
+        {
+          "id": "set-kola",
+          "title": "Кольский полуостров",
+          "lead": "Тундра, сияние и закаты",
+          "cards": [
+            "moon-path",
+            "hut-field",
+            "old-barn",
+            "snow-truck",
+            "oil-lamp",
+            "kola-aurora",
+            "antlers",
+            "snow-creek",
+            "hut-sunset",
+            "lone-tree",
+            "fogbow",
+            "barrel-moon"
+          ],
+          "price": 1450
+        },
+        {
+          "id": "set-spb",
+          "title": "Петербург",
+          "lead": "Соборы, каналы и осень",
+          "cards": [
+            "isaac-night",
+            "isaac-autumn",
+            "isaac-summer",
+            "isaac-view",
+            "yard-cat",
+            "fern",
+            "kazan-tree",
+            "kazan-dome",
+            "dom-knigi",
+            "maple-leaf",
+            "colonnade",
+            "capitals",
+            "spas-grille",
+            "griboedov"
+          ],
+          "price": 1650
+        },
+        {
+          "id": "set-ural",
+          "title": "Урал",
+          "lead": "Верхотурье, Серов, Североуральск, Краснотурьинск",
+          "cards": [
+            "gate-light",
+            "autumn-gate",
+            "iron-gate",
+            "aurora",
+            "kremlin-night",
+            "snow-alley",
+            "kremlin-hill",
+            "arch-sunset",
+            "gold-domes",
+            "snow-merlons",
+            "winter-monastery",
+            "frost-pine",
+            "belltower",
+            "carved-window",
+            "dome-silhouette",
+            "storm-lake",
+            "campfire",
+            "balcony",
+            "woodpile"
+          ],
+          "price": 2300
+        },
+        {
           "id": "set-all",
           "title": "Все открытки",
           "lead": "Полная коллекция",
           "cards": "all",
-          "price": 3000
+          "price": 6270
         }
       ],
       "pack": {
@@ -1422,6 +1531,36 @@ window.SHOP_DATA = /*JSON-START*/
           "h": 1,
           "g": 20,
           "price": 15
+        },
+        "box": {
+          "_note": "С from открыток и больше (без отпечатков в заказе) — коробка вместо письма, считается посылкой: письмо до 100 г, это ~16 открыток. Коробка — первая, куда помещается количество (upTo). g — вес пустой коробки с упаковкой, price — материалы.",
+          "from": 17,
+          "boxes": [
+            {
+              "upTo": 50,
+              "l": 16,
+              "w": 11,
+              "h": 2,
+              "g": 40,
+              "price": 30
+            },
+            {
+              "upTo": 100,
+              "l": 16,
+              "w": 11,
+              "h": 4,
+              "g": 60,
+              "price": 40
+            },
+            {
+              "upTo": 200,
+              "l": 16,
+              "w": 11,
+              "h": 8,
+              "g": 90,
+              "price": 50
+            }
+          ]
         }
       }
     }
@@ -2089,6 +2228,36 @@ window.SHOP_DATA = /*JSON-START*/
       "backL": "img/shop/back/isaac-night-l.webp"
     },
     {
+      "id": "isaac-autumn",
+      "title": "Поздняя осень",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/isaac-autumn.webp",
+      "thumb": "img/shop/thumb/isaac-autumn.webp",
+      "w": 2576,
+      "h": 1717,
+      "tags": [
+        "bw",
+        "city"
+      ],
+      "back": "img/shop/back/isaac-autumn.webp",
+      "backL": "img/shop/back/isaac-autumn-l.webp"
+    },
+    {
+      "id": "isaac-summer",
+      "title": "Летняя ночь",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/isaac-summer.webp",
+      "thumb": "img/shop/thumb/isaac-summer.webp",
+      "w": 2576,
+      "h": 1717,
+      "tags": [
+        "bw",
+        "city"
+      ],
+      "back": "img/shop/back/isaac-summer.webp",
+      "backL": "img/shop/back/isaac-summer-l.webp"
+    },
+    {
       "id": "slope-clouds",
       "title": "Гора Отвесная",
       "caption": "Камчатка",
@@ -2118,7 +2287,7 @@ window.SHOP_DATA = /*JSON-START*/
     },
     {
       "id": "gate-light",
-      "title": "Врата",
+      "title": "Врата I",
       "caption": "Верхотурье",
       "img": "img/shop/gate-light.webp",
       "thumb": "img/shop/thumb/gate-light.webp",
@@ -2130,6 +2299,34 @@ window.SHOP_DATA = /*JSON-START*/
       ],
       "back": "img/shop/back/gate-light.webp",
       "backL": "img/shop/back/gate-light-l.webp"
+    },
+    {
+      "id": "autumn-gate",
+      "title": "Врата II",
+      "caption": "Верхотурье",
+      "img": "img/shop/autumn-gate.webp",
+      "thumb": "img/shop/thumb/autumn-gate.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/autumn-gate.webp",
+      "backL": "img/shop/back/autumn-gate-l.webp"
+    },
+    {
+      "id": "iron-gate",
+      "title": "Врата III",
+      "caption": "Верхотурье",
+      "img": "img/shop/iron-gate.webp",
+      "thumb": "img/shop/thumb/iron-gate.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/iron-gate.webp",
+      "backL": "img/shop/back/iron-gate-l.webp"
     },
     {
       "id": "hut-field",
@@ -2441,6 +2638,619 @@ window.SHOP_DATA = /*JSON-START*/
       ],
       "back": "img/shop/back/moon.webp",
       "backL": "img/shop/back/moon-l.webp"
+    },
+    {
+      "id": "moon-peak",
+      "title": "Луна над вершиной",
+      "caption": "Камчатка",
+      "img": "img/shop/moon-peak.webp",
+      "thumb": "img/shop/thumb/moon-peak.webp",
+      "w": 4466,
+      "h": 3350,
+      "tags": [
+        "sky",
+        "mountains"
+      ],
+      "back": "img/shop/back/moon-peak.webp",
+      "backL": "img/shop/back/moon-peak-l.webp"
+    },
+    {
+      "id": "rain-valley",
+      "title": "Свет в долине II",
+      "caption": "Камчатка",
+      "img": "img/shop/rain-valley.webp",
+      "thumb": "img/shop/thumb/rain-valley.webp",
+      "w": 7000,
+      "h": 5250,
+      "tags": [
+        "mountains",
+        "sky"
+      ],
+      "back": "img/shop/back/rain-valley.webp",
+      "backL": "img/shop/back/rain-valley-l.webp"
+    },
+    {
+      "id": "aurora",
+      "title": "Северное сияние",
+      "caption": "Серов",
+      "img": "img/shop/aurora.webp",
+      "thumb": "img/shop/thumb/aurora.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "sky",
+        "forest"
+      ],
+      "back": "img/shop/back/aurora.webp",
+      "backL": "img/shop/back/aurora-l.webp"
+    },
+    {
+      "id": "snow-truck",
+      "title": "Снегопад",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/snow-truck.webp",
+      "thumb": "img/shop/thumb/snow-truck.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/snow-truck.webp",
+      "backL": "img/shop/back/snow-truck-l.webp"
+    },
+    {
+      "id": "oil-lamp",
+      "title": "Керосиновая лампа",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/oil-lamp.webp",
+      "thumb": "img/shop/thumb/oil-lamp.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/oil-lamp.webp",
+      "backL": "img/shop/back/oil-lamp-l.webp"
+    },
+    {
+      "id": "isaac-view",
+      "title": "Вид на Исаакий",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/isaac-view.webp",
+      "thumb": "img/shop/thumb/isaac-view.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/isaac-view.webp",
+      "backL": "img/shop/back/isaac-view-l.webp"
+    },
+    {
+      "id": "yard-cat",
+      "title": "Кот на люке",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/yard-cat.webp",
+      "thumb": "img/shop/thumb/yard-cat.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/yard-cat.webp",
+      "backL": "img/shop/back/yard-cat-l.webp"
+    },
+    {
+      "id": "fern",
+      "title": "Папоротник",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/fern.webp",
+      "thumb": "img/shop/thumb/fern.webp",
+      "w": 3061,
+      "h": 2041,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/fern.webp",
+      "backL": "img/shop/back/fern-l.webp"
+    },
+    {
+      "id": "mw-valley",
+      "title": "Млечный путь над долиной",
+      "caption": "Камчатка",
+      "img": "img/shop/mw-valley.webp",
+      "thumb": "img/shop/thumb/mw-valley.webp",
+      "w": 4672,
+      "h": 7008,
+      "tags": [
+        "sky",
+        "mountains"
+      ],
+      "back": "img/shop/back/mw-valley.webp",
+      "backL": "img/shop/back/mw-valley-l.webp"
+    },
+    {
+      "id": "mw-forest",
+      "title": "Камень желаний",
+      "caption": "Камчатка",
+      "img": "img/shop/mw-forest.webp",
+      "thumb": "img/shop/thumb/mw-forest.webp",
+      "w": 4672,
+      "h": 7008,
+      "tags": [
+        "sky",
+        "forest"
+      ],
+      "back": "img/shop/back/mw-forest.webp",
+      "backL": "img/shop/back/mw-forest-l.webp"
+    },
+    {
+      "id": "mw-red",
+      "title": "Млечный путь I",
+      "caption": "Камчатка",
+      "img": "img/shop/mw-red.webp",
+      "thumb": "img/shop/thumb/mw-red.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "sky",
+        "forest"
+      ],
+      "back": "img/shop/back/mw-red.webp",
+      "backL": "img/shop/back/mw-red-l.webp"
+    },
+    {
+      "id": "mw-branches",
+      "title": "Млечный путь II",
+      "caption": "Камчатка",
+      "img": "img/shop/mw-branches.webp",
+      "thumb": "img/shop/thumb/mw-branches.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "sky",
+        "forest"
+      ],
+      "back": "img/shop/back/mw-branches.webp",
+      "backL": "img/shop/back/mw-branches-l.webp"
+    },
+    {
+      "id": "mw-crown",
+      "title": "Млечный путь III",
+      "caption": "Камчатка",
+      "img": "img/shop/mw-crown.webp",
+      "thumb": "img/shop/thumb/mw-crown.webp",
+      "w": 4672,
+      "h": 7008,
+      "tags": [
+        "sky",
+        "forest"
+      ],
+      "back": "img/shop/back/mw-crown.webp",
+      "backL": "img/shop/back/mw-crown-l.webp"
+    },
+    {
+      "id": "kola-aurora",
+      "title": "Сияние над тундрой",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/kola-aurora.webp",
+      "thumb": "img/shop/thumb/kola-aurora.webp",
+      "w": 7000,
+      "h": 4905,
+      "tags": [
+        "sky"
+      ],
+      "back": "img/shop/back/kola-aurora.webp",
+      "backL": "img/shop/back/kola-aurora-l.webp"
+    },
+    {
+      "id": "antlers",
+      "title": "Рога на закате",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/antlers.webp",
+      "thumb": "img/shop/thumb/antlers.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "sky",
+        "country"
+      ],
+      "back": "img/shop/back/antlers.webp",
+      "backL": "img/shop/back/antlers-l.webp"
+    },
+    {
+      "id": "snow-creek",
+      "title": "Ручей в снегу",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/snow-creek.webp",
+      "thumb": "img/shop/thumb/snow-creek.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/snow-creek.webp",
+      "backL": "img/shop/back/snow-creek-l.webp"
+    },
+    {
+      "id": "hut-sunset",
+      "title": "Изба на закате",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/hut-sunset.webp",
+      "thumb": "img/shop/thumb/hut-sunset.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/hut-sunset.webp",
+      "backL": "img/shop/back/hut-sunset-l.webp"
+    },
+    {
+      "id": "lone-tree",
+      "title": "Одинокое дерево",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/lone-tree.webp",
+      "thumb": "img/shop/thumb/lone-tree.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "sky"
+      ],
+      "back": "img/shop/back/lone-tree.webp",
+      "backL": "img/shop/back/lone-tree-l.webp"
+    },
+    {
+      "id": "fogbow",
+      "title": "Туманная радуга",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/fogbow.webp",
+      "thumb": "img/shop/thumb/fogbow.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "sky"
+      ],
+      "back": "img/shop/back/fogbow.webp",
+      "backL": "img/shop/back/fogbow-l.webp"
+    },
+    {
+      "id": "barrel-moon",
+      "title": "Бочка под луной",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/barrel-moon.webp",
+      "thumb": "img/shop/thumb/barrel-moon.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "sky",
+        "country"
+      ],
+      "back": "img/shop/back/barrel-moon.webp",
+      "backL": "img/shop/back/barrel-moon-l.webp"
+    },
+    {
+      "id": "kazan-tree",
+      "title": "Ёлка у Казанского",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/kazan-tree.webp",
+      "thumb": "img/shop/thumb/kazan-tree.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/kazan-tree.webp",
+      "backL": "img/shop/back/kazan-tree-l.webp"
+    },
+    {
+      "id": "kazan-dome",
+      "title": "Купол Казанского",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/kazan-dome.webp",
+      "thumb": "img/shop/thumb/kazan-dome.webp",
+      "w": 7000,
+      "h": 10500,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/kazan-dome.webp",
+      "backL": "img/shop/back/kazan-dome-l.webp"
+    },
+    {
+      "id": "dom-knigi",
+      "title": "Дом книги",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/dom-knigi.webp",
+      "thumb": "img/shop/thumb/dom-knigi.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/dom-knigi.webp",
+      "backL": "img/shop/back/dom-knigi-l.webp"
+    },
+    {
+      "id": "maple-leaf",
+      "title": "Осень пришла",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/maple-leaf.webp",
+      "thumb": "img/shop/thumb/maple-leaf.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/maple-leaf.webp",
+      "backL": "img/shop/back/maple-leaf-l.webp"
+    },
+    {
+      "id": "colonnade",
+      "title": "Колоннада",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/colonnade.webp",
+      "thumb": "img/shop/thumb/colonnade.webp",
+      "w": 7000,
+      "h": 10500,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/colonnade.webp",
+      "backL": "img/shop/back/colonnade-l.webp"
+    },
+    {
+      "id": "capitals",
+      "title": "Капители",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/capitals.webp",
+      "thumb": "img/shop/thumb/capitals.webp",
+      "w": 7000,
+      "h": 10500,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/capitals.webp",
+      "backL": "img/shop/back/capitals-l.webp"
+    },
+    {
+      "id": "spas-grille",
+      "title": "Спас сквозь решётку",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/spas-grille.webp",
+      "thumb": "img/shop/thumb/spas-grille.webp",
+      "w": 7000,
+      "h": 10500,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/spas-grille.webp",
+      "backL": "img/shop/back/spas-grille-l.webp"
+    },
+    {
+      "id": "griboedov",
+      "title": "Канал Грибоедова",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/griboedov.webp",
+      "thumb": "img/shop/thumb/griboedov.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/griboedov.webp",
+      "backL": "img/shop/back/griboedov-l.webp"
+    },
+    {
+      "id": "kremlin-night",
+      "title": "Стена кремля ночью",
+      "caption": "Верхотурье",
+      "img": "img/shop/kremlin-night.webp",
+      "thumb": "img/shop/thumb/kremlin-night.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/kremlin-night.webp",
+      "backL": "img/shop/back/kremlin-night-l.webp"
+    },
+    {
+      "id": "snow-alley",
+      "title": "Аллея в снегу",
+      "caption": "Верхотурье",
+      "img": "img/shop/snow-alley.webp",
+      "thumb": "img/shop/thumb/snow-alley.webp",
+      "w": 6000,
+      "h": 9000,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/snow-alley.webp",
+      "backL": "img/shop/back/snow-alley-l.webp"
+    },
+    {
+      "id": "kremlin-hill",
+      "title": "Кремль на холме",
+      "caption": "Верхотурье",
+      "img": "img/shop/kremlin-hill.webp",
+      "thumb": "img/shop/thumb/kremlin-hill.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/kremlin-hill.webp",
+      "backL": "img/shop/back/kremlin-hill-l.webp"
+    },
+    {
+      "id": "arch-sunset",
+      "title": "Закат в арке",
+      "caption": "Верхотурье",
+      "img": "img/shop/arch-sunset.webp",
+      "thumb": "img/shop/thumb/arch-sunset.webp",
+      "w": 6000,
+      "h": 9000,
+      "tags": [
+        "city",
+        "sky"
+      ],
+      "back": "img/shop/back/arch-sunset.webp",
+      "backL": "img/shop/back/arch-sunset-l.webp"
+    },
+    {
+      "id": "gold-domes",
+      "title": "Золотые купола",
+      "caption": "Верхотурье",
+      "img": "img/shop/gold-domes.webp",
+      "thumb": "img/shop/thumb/gold-domes.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/gold-domes.webp",
+      "backL": "img/shop/back/gold-domes-l.webp"
+    },
+    {
+      "id": "snow-merlons",
+      "title": "Зубцы в снегу",
+      "caption": "Верхотурье",
+      "img": "img/shop/snow-merlons.webp",
+      "thumb": "img/shop/thumb/snow-merlons.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/snow-merlons.webp",
+      "backL": "img/shop/back/snow-merlons-l.webp"
+    },
+    {
+      "id": "winter-monastery",
+      "title": "Верхотурский кремль",
+      "caption": "Верхотурье",
+      "img": "img/shop/winter-monastery.webp",
+      "thumb": "img/shop/thumb/winter-monastery.webp",
+      "w": 1312,
+      "h": 2048,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/winter-monastery.webp",
+      "backL": "img/shop/back/winter-monastery-l.webp"
+    },
+    {
+      "id": "frost-pine",
+      "title": "Сосна в инее",
+      "caption": "Краснотурьинск",
+      "img": "img/shop/frost-pine.webp",
+      "thumb": "img/shop/thumb/frost-pine.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/frost-pine.webp",
+      "backL": "img/shop/back/frost-pine-l.webp"
+    },
+    {
+      "id": "belltower",
+      "title": "Церковь Петра и Павла",
+      "caption": "Североуральск",
+      "img": "img/shop/belltower.webp",
+      "thumb": "img/shop/thumb/belltower.webp",
+      "w": 6000,
+      "h": 9000,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/belltower.webp",
+      "backL": "img/shop/back/belltower-l.webp"
+    },
+    {
+      "id": "carved-window",
+      "title": "Резное окно",
+      "caption": "Серов",
+      "img": "img/shop/carved-window.webp",
+      "thumb": "img/shop/thumb/carved-window.webp",
+      "w": 2281,
+      "h": 3673,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/carved-window.webp",
+      "backL": "img/shop/back/carved-window-l.webp"
+    },
+    {
+      "id": "dome-silhouette",
+      "title": "Часовня Симеона Верхотурского",
+      "caption": "Серов",
+      "img": "img/shop/dome-silhouette.webp",
+      "thumb": "img/shop/thumb/dome-silhouette.webp",
+      "w": 5500,
+      "h": 7700,
+      "tags": [
+        "sky"
+      ],
+      "back": "img/shop/back/dome-silhouette.webp",
+      "backL": "img/shop/back/dome-silhouette-l.webp"
+    },
+    {
+      "id": "storm-lake",
+      "title": "Гроза над водой",
+      "caption": "Серов",
+      "img": "img/shop/storm-lake.webp",
+      "thumb": "img/shop/thumb/storm-lake.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "sky"
+      ],
+      "back": "img/shop/back/storm-lake.webp",
+      "backL": "img/shop/back/storm-lake-l.webp"
+    },
+    {
+      "id": "campfire",
+      "title": "Дрова в печи",
+      "caption": "Серов",
+      "img": "img/shop/campfire.webp",
+      "thumb": "img/shop/thumb/campfire.webp",
+      "w": 1365,
+      "h": 2048,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/campfire.webp",
+      "backL": "img/shop/back/campfire-l.webp"
+    },
+    {
+      "id": "balcony",
+      "title": "Балкон на Проспекте Серова",
+      "caption": "Серов",
+      "img": "img/shop/balcony.webp",
+      "thumb": "img/shop/thumb/balcony.webp",
+      "w": 1707,
+      "h": 2560,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/balcony.webp",
+      "backL": "img/shop/back/balcony-l.webp"
+    },
+    {
+      "id": "woodpile",
+      "title": "Поленница",
+      "caption": "Серов",
+      "img": "img/shop/woodpile.webp",
+      "thumb": "img/shop/thumb/woodpile.webp",
+      "w": 2048,
+      "h": 1365,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/woodpile.webp",
+      "backL": "img/shop/back/woodpile-l.webp"
     }
   ],
   "delivery": {
@@ -2477,7 +3287,7 @@ window.SHOP_DATA = /*JSON-START*/
         "title": "Почта России",
         "lead": "До отделения Почты: выберите на карте или введите индекс",
         "widgetId": 63945,
-        "_widgetNote": "Виджет widget.pochta.ru: callback fotonervPochta, стоимость и сроки в нём выключены — цену считает сайт (письма для открыток, посылки для отпечатков). officesUrl — запасная ссылка, если убрать widgetId.",
+        "_widgetNote": "Виджет widget.pochta.ru: callback fotonervPochta, стоимость и сроки в нём выключены — цену считает сайт (письма для открыток, коробка для большого числа открыток — посылкой, посылки для отпечатков). officesUrl — запасная ссылка, если убрать widgetId.",
         "officesUrl": "https://www.pochta.ru/offices",
         "object": 4020,
         "maxPackSide": 100,
@@ -2527,5 +3337,4 @@ window.SHOP_DATA = /*JSON-START*/
       "Деревня"
     ]
   ]
-}
-/*JSON-END*/;
+}/*JSON-END*/;
