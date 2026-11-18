@@ -545,14 +545,18 @@
       </div>
 
       <div class="filters" role="group" aria-label="Жанры">
-        <button class="chip active" data-f="all">Все · 12</button>
-        <button class="chip" data-f="interior">Интерьер · 2</button>
+        <button class="chip active" data-f="all">Все · 13</button>
+        <button class="chip" data-f="interior">Интерьер · 3</button>
         <button class="chip" data-f="reportage">Репортаж · 6</button>
         <button class="chip" data-f="portrait">Портрет · 4</button>
       </div>
       <ul class="sgrid" id="sgrid">
+        <li data-g="interior"><button type="button" class="scard" id="card-shishka" data-id="shishka" aria-controls="viewer">
+          <span class="scard-img"><img src="img/story/thumb/shishka-01.webp" srcset="img/story/t480/shishka-01.webp 480w, img/story/thumb/shishka-01.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="eager" fetchpriority="high"></span>
+          <span class="scard-t">Кофейня «Шишка», Сертолово</span><span class="scard-m">интерьер · 2026 · 10 кадров</span>
+        </button></li>
         <li data-g="interior"><button type="button" class="scard" id="card-ozden" data-id="ozden" aria-controls="viewer">
-          <span class="scard-img"><img src="img/story/thumb/ozden-01.webp" srcset="img/story/t480/ozden-01.webp 480w, img/story/thumb/ozden-01.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="eager" fetchpriority="high"></span>
+          <span class="scard-img"><img src="img/story/thumb/ozden-01.webp" srcset="img/story/t480/ozden-01.webp 480w, img/story/thumb/ozden-01.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="eager"></span>
           <span class="scard-t">Этно-кафе «Ёzden», Приэльбрусье</span><span class="scard-m">интерьер и еда · 2025 · 9 кадров</span>
         </button></li>
         <li data-g="interior"><button type="button" class="scard" id="card-greenfox" data-id="greenfox" aria-controls="viewer">
@@ -565,7 +569,7 @@
         </button></li>
         <li data-g="reportage"><button type="button" class="scard" id="card-pozhar" data-id="pozhar" aria-controls="viewer">
           <span class="scard-img"><img src="img/story/thumb/pozhar-05.webp" srcset="img/story/t480/pozhar-05.webp 480w, img/story/thumb/pozhar-05.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="lazy"></span>
-          <span class="scard-t">Пожар на горе, Тырныауз</span><span class="scard-m">репортаж · 2025 · 10 кадров</span>
+          <span class="scard-t">Пожар на горе, Тырныауз</span><span class="scard-m">репортаж · 2025 · 9 кадров</span>
         </button></li>
         <li data-g="reportage"><button type="button" class="scard" id="card-chertog" data-id="chertog" aria-controls="viewer">
           <span class="scard-img"><img src="img/story/thumb/chertog-02.webp" srcset="img/story/t480/chertog-02.webp 480w, img/story/thumb/chertog-02.webp 720w" sizes="(max-width:560px) calc(100vw - 32px), (max-width:900px) 46vw, 380px" alt="" loading="lazy"></span>
@@ -630,7 +634,7 @@
   </div>
 </footer>
 
-<script src="assets/stories.js?v=bb56f9ad" defer></script>
+<script src="assets/stories.js?v=20261118b" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('yr').textContent=new Date().getFullYear();

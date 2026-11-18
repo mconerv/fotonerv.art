@@ -559,6 +559,7 @@
       <div class="story">
         <div class="story-tabs" role="tablist" aria-label="Съёмки">
           <button type="button" role="tab" class="stab" id="stab-ozden" data-id="ozden" aria-controls="storyFilm" aria-selected="true"><span class="stab-t">Этно-кафе «Ёzden», Приэльбрусье</span><span class="stab-m">интерьер и еда · 2025 · 9 кадров</span></button>
+          <button type="button" role="tab" class="stab" id="stab-shishka" data-id="shishka" aria-controls="storyFilm" aria-selected="false" tabindex="-1"><span class="stab-t">Кофейня «Шишка», Сертолово</span><span class="stab-m">интерьер · 2026 · 10 кадров</span></button>
           <button type="button" role="tab" class="stab" id="stab-sel" data-id="sel" aria-controls="storyFilm" aria-selected="false" tabindex="-1"><span class="stab-t">Сель в Тырныаузе</span><span class="stab-m">репортаж · 2025 · 10 кадров</span></button>
           <button type="button" role="tab" class="stab" id="stab-chertog" data-id="chertog" aria-controls="storyFilm" aria-selected="false" tabindex="-1"><span class="stab-t">Свободный микрофон в «Чертоге»</span><span class="stab-m">репортаж · 2025 · 10 кадров</span></button>
           <button type="button" role="tab" class="stab" id="stab-julia" data-id="julia" aria-controls="storyFilm" aria-selected="false" tabindex="-1"><span class="stab-t">Портрет в цветном свете</span><span class="stab-m">портрет · 2026 · 9 кадров</span></button>
@@ -762,8 +763,8 @@
   </div>
 </footer>
 
-<script src="assets/gallery-data.js" defer></script>
-<script src="assets/stories.js?v=bb56f9ad" defer></script>
+<script src="assets/gallery-data.js?v=20261118c" defer></script>
+<script src="assets/stories.js?v=20261118b" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   // year
@@ -903,7 +904,7 @@ document.addEventListener('DOMContentLoaded',function(){
     else{stopRot();wall.hidden=true;wallHint.hidden=true;gallery.hidden=false;buildGallery(f,first);}
   }
   // интерьеры внутри жанра «Интерьеры и архитектура» — в этом порядке идут первыми, когда галерею открывают из цен
-  var FIRST={interior:['Arc_19','Arc_18','Arc_3','Arc_5','Arc_20','Arc_21','Arc_4','Arc_10','Arc_23','Arc_7','Arc_29','Arc_27','Arc_22','Arc_25','Arc_26','Arc_28','Arc_24']};
+  var FIRST={interior:['Arc_33','Arc_35','Arc_19','Arc_18','Arc_3','Arc_5','Arc_20','Arc_21','Arc_4','Arc_10','Arc_23','Arc_7','Arc_29','Arc_27','Arc_22','Arc_25','Arc_26','Arc_28','Arc_24']};
   // ---- истории: вкладки переключают ленту (данные — assets/stories.js) ----
   (function(){
     var film=document.getElementById('storyFilm');if(!film||!window.STORIES)return;
