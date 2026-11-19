@@ -130,9 +130,12 @@
     var back = card.back ? '<span class="pc-card back real" style="--back:url(\'' + abs(card.back) + '\')"></span>' : '';
     return '<span class="pc-mk" style="--img:url(\'' + abs(card.thumb) + '\');--cw:' + cw + 'cqw;--car:' + car + '" aria-hidden="true">' + back + '<span class="pc-card front' + (back ? '' : ' single') + '"></span></span>';
   }
-  function setMock(cards) {
-    var out = '';
-    cards.slice(0, 3).forEach(function (c, i) {
+  function setMock(cards, cover) {
+    var out = '', top = cards.slice(0, 3), ci = -1;
+    // Обложка набора (sets[].cover) — верхняя, третья в стопке
+    if (cover) cards.forEach(function (c, i) { if (c.id === cover) ci = i; });
+    if (ci >= 0) { top = cards.filter(function (c, i) { return i !== ci; }).slice(0, 2); top.push(cards[ci]); }
+    top.forEach(function (c, i) {
       var land = c.w >= c.h, car = land ? 1.5 : 1 / 1.5, cw = land ? 44 : 30;
       var t = ['rotate(-10deg) translate(-26%,-4%)', 'rotate(3deg) translate(0,-8%)', 'rotate(12deg) translate(26%,4%)'][i];
       out += '<span class="pc-card front" style="--img:url(\'' + abs(c.thumb) + '\');--cw:' + cw + 'cqw;--car:' + car + ';transform:' + t + '"></span>';
@@ -217,7 +220,7 @@
         pc.sets.forEach(function (st) {
           var cards = C.setCards(D, st);
           if (!cards.length) return;
-          html += '<div class="pcard pc-set"><button type="button" class="pcard-vis pc-vis" data-view-set="' + esc(st.id) + '" aria-label="Посмотреть открытки набора «' + esc(st.title) + '»">' + setMock(cards) +
+          html += '<div class="pcard pc-set"><button type="button" class="pcard-vis pc-vis" data-view-set="' + esc(st.id) + '" aria-label="Посмотреть открытки набора «' + esc(st.title) + '»">' + setMock(cards, st.cover) +
             '<span class="pcard-go">Посмотреть ' + cards.length + ' ' + plural(cards.length, 'открытку', 'открытки', 'открыток') + '</span></button>' +
             '<span class="pcard-t">' + esc(st.title) + '</span><span class="pcard-m"><span>' + cards.length + ' ' + plural(cards.length, 'открытка', 'открытки', 'открыток') +
             (st.lead ? ' · ' + esc(st.lead) : '') + '</span><span><b>' + rub(st.price) + '</b></span></span>' +

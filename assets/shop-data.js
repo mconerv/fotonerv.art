@@ -11,7 +11,8 @@ window.SHOP_DATA = /*JSON-START*/{
     "Цены: себестоимость Яркого × 2 с учётом НПД 4 % и комиссии 3,9 % (до 17.11.2026 было ×3…×2). Пересчитано из прежних цен, где k шёл от 3 (20×30) до 2 (100×150) по логарифму площади. Форматы — до 60×90.",
     "Холст: options — сочетание холста (mat: n — натуральный, s — синтетический) и подрамника; materials — подписи холстов; tableCols — столбцы таблицы цен.",
     "Пенокартон: materials — основа (w — белый, b — чёрный, 5 мм; edge — цвет кромки на превью), options — основа × бумага (v: gl — глянцевая, mt — матовая, sk — шёлк). Печать — Durst Theta 76, «мокрая».",
-    "Открытки: postcards — по работам каталога; products.postcard.sets — наборы (cards: id открыток или \"all\"), anyN — любые n открыток поштучно стоят как набор (скидка считается в quote). Только открытки — Почта шлёт заказным письмом (до 100 г) или заказной бандеролью."
+    "Открытки: postcards — по работам каталога; products.postcard.sets — наборы (cards: id открыток или \"all\"), anyN — любые n открыток поштучно стоят как набор (скидка считается в quote). Только открытки — Почта шлёт заказным письмом (до 100 г) или заказной бандеролью.",
+    "products.postcard.sets[].cover — id открытки, которая лежит сверху на превью набора (необязательно)."
   ],
   "version": "2026-11-17",
   "seller": {
@@ -1349,7 +1350,8 @@ window.SHOP_DATA = /*JSON-START*/{
             "valley-light",
             "beyond-pass"
           ],
-          "price": 850
+          "price": 850,
+          "cover": "valley-light"
         },
         {
           "id": "set-winter-forest",
@@ -1388,7 +1390,8 @@ window.SHOP_DATA = /*JSON-START*/{
             "cloud-peak",
             "rocks-fog"
           ],
-          "price": 850
+          "price": 850,
+          "cover": "moon-path"
         },
         {
           "id": "set-quiet",
@@ -1413,6 +1416,165 @@ window.SHOP_DATA = /*JSON-START*/{
             "mw-red",
             "mw-branches",
             "mw-crown"
+          ],
+          "price": 850
+        },
+        {
+          "id": "set-autumn-forest",
+          "title": "Осенний лес",
+          "lead": "Парки Петербурга и Ленобласти",
+          "cards": [
+            "maple-moss",
+            "fern-leaf",
+            "moss-stump",
+            "yellow-maple",
+            "log-mushrooms"
+          ],
+          "price": 850
+        },
+        {
+          "id": "set-forest-details",
+          "title": "Лесные мелочи",
+          "lead": "Листья, папоротники и пни",
+          "cards": [
+            "leaf-spruce",
+            "leaves-grass",
+            "stump-fern",
+            "fern-autumn",
+            "old-stumps"
+          ],
+          "price": 850,
+          "cover": "leaf-spruce"
+        },
+        {
+          "id": "set-spb-details",
+          "title": "Петербург. Детали",
+          "lead": "Листья на камне и зелёный фургон",
+          "cards": [
+            "maple-leaf",
+            "leaf-cobbles",
+            "leaf-slabs",
+            "green-van",
+            "van-mirror"
+          ],
+          "price": 850
+        },
+        {
+          "id": "set-spb-views",
+          "title": "Петербургские виды",
+          "lead": "Исаакий, Спас, Казанский собор",
+          "cards": [
+            "isaac-view",
+            "griboedov",
+            "dom-knigi",
+            "kazan-tree",
+            "kazan-dome"
+          ],
+          "price": 850,
+          "cover": "isaac-view"
+        },
+        {
+          "id": "set-tomsk-lace",
+          "title": "Деревянное кружево",
+          "lead": "Резьба томских домов",
+          "cards": [
+            "wood-curl",
+            "terem-moon",
+            "wood-lace",
+            "four-windows",
+            "carved-eaves"
+          ],
+          "price": 850
+        },
+        {
+          "id": "set-tomsk-streets",
+          "title": "Томск. Улицы",
+          "lead": "Храмы, часовня, старые дома",
+          "cards": [
+            "tomsk-churches",
+            "chapel-stairs",
+            "green-house",
+            "ivy-door",
+            "white-bridge"
+          ],
+          "price": 850
+        },
+        {
+          "id": "set-tomsk-summer",
+          "title": "Томское лето",
+          "lead": "Одуванчики, ландыши и колесо обозрения",
+          "cards": [
+            "butterfly",
+            "lilies",
+            "ferris-wheel",
+            "owl-tree",
+            "roof-dandelion"
+          ],
+          "price": 850
+        },
+        {
+          "id": "set-kola-sky",
+          "title": "Кольский: небо",
+          "lead": "Сияние, радуга и луна над тундрой",
+          "cards": [
+            "kola-aurora",
+            "fogbow",
+            "barrel-moon",
+            "lone-tree",
+            "antlers"
+          ],
+          "price": 850,
+          "cover": "kola-aurora"
+        },
+        {
+          "id": "set-kola-winter",
+          "title": "Кольская зима",
+          "lead": "Снегопад, ручей и старые избы",
+          "cards": [
+            "snow-truck",
+            "oil-lamp",
+            "snow-creek",
+            "hut-sunset",
+            "old-barn"
+          ],
+          "price": 850
+        },
+        {
+          "id": "set-verkhoturye-winter",
+          "title": "Зимнее Верхотурье",
+          "lead": "Кремль в снегу",
+          "cards": [
+            "snow-alley",
+            "snow-merlons",
+            "winter-monastery",
+            "kremlin-night",
+            "iron-gate"
+          ],
+          "price": 850
+        },
+        {
+          "id": "set-domes",
+          "title": "Купола и арки",
+          "lead": "Верхотурье и Североуральск",
+          "cards": [
+            "autumn-gate",
+            "gold-domes",
+            "kremlin-hill",
+            "arch-sunset",
+            "belltower"
+          ],
+          "price": 850
+        },
+        {
+          "id": "set-ural-winter",
+          "title": "Уральская зима",
+          "lead": "Серов и Краснотурьинск",
+          "cards": [
+            "carved-window",
+            "campfire",
+            "woodpile",
+            "frost-pine",
+            "aurora"
           ],
           "price": 850
         },
@@ -1482,9 +1644,13 @@ window.SHOP_DATA = /*JSON-START*/{
             "colonnade",
             "capitals",
             "spas-grille",
-            "griboedov"
+            "griboedov",
+            "leaf-cobbles",
+            "leaf-slabs",
+            "green-van",
+            "van-mirror"
           ],
-          "price": 1650
+          "price": 2150
         },
         {
           "id": "set-ural",
@@ -1514,11 +1680,40 @@ window.SHOP_DATA = /*JSON-START*/{
           "price": 2300
         },
         {
+          "id": "set-tomsk",
+          "title": "Томск",
+          "lead": "Деревянное кружево, улицы и лето",
+          "cards": [
+            "butterfly",
+            "green-house",
+            "owl-tree",
+            "lilies",
+            "wood-curl",
+            "ivy-door",
+            "terem-moon",
+            "wood-lace",
+            "terem-leaves",
+            "terem-dome",
+            "ferris-wheel",
+            "tomsk-churches",
+            "chapel-stairs",
+            "spiral-stairs",
+            "shutters",
+            "carved-eaves",
+            "white-bridge",
+            "four-windows",
+            "evening-window",
+            "roof-dandelion"
+          ],
+          "price": 2400,
+          "cover": "carved-eaves"
+        },
+        {
           "id": "set-all",
           "title": "Все открытки",
           "lead": "Полная коллекция",
           "cards": "all",
-          "price": 6270
+          "price": 9200
         }
       ],
       "pack": {
@@ -1536,7 +1731,14 @@ window.SHOP_DATA = /*JSON-START*/{
           "_note": "С from открыток и больше (без отпечатков в заказе) — пакет Почты S 280×380 мм с картонной вставкой вместо письма (письмо до 100 г, это ~16 открыток). Пока считается посылкой; бандероль — флагом bookpost. Пакет S вмещает до ~200 открыток. g — пакет ~13 г + 2 листа гофрокартона ~17 г (оценка, взвесить), price — пакет 55 ₽ (цена Москвы) + картон.",
           "from": 17,
           "boxes": [
-            { "upTo": 200, "l": 38, "w": 28, "h": 3, "g": 30, "price": 60 }
+            {
+              "upTo": 200,
+              "l": 38,
+              "w": 28,
+              "h": 3,
+              "g": 30,
+              "price": 60
+            }
           ]
         }
       }
@@ -3228,6 +3430,501 @@ window.SHOP_DATA = /*JSON-START*/{
       ],
       "back": "img/shop/back/woodpile.webp",
       "backL": "img/shop/back/woodpile-l.webp"
+    },
+    {
+      "id": "leaf-spruce",
+      "title": "Осень",
+      "caption": "Петербург и Ленобласть",
+      "img": "img/shop/leaf-spruce.webp",
+      "thumb": "img/shop/thumb/leaf-spruce.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/leaf-spruce.webp",
+      "backL": "img/shop/back/leaf-spruce-l.webp"
+    },
+    {
+      "id": "leaves-grass",
+      "title": "Листья в траве",
+      "caption": "Петербург и Ленобласть",
+      "img": "img/shop/leaves-grass.webp",
+      "thumb": "img/shop/thumb/leaves-grass.webp",
+      "w": 6298,
+      "h": 4199,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/leaves-grass.webp",
+      "backL": "img/shop/back/leaves-grass-l.webp"
+    },
+    {
+      "id": "stump-fern",
+      "title": "Пень",
+      "caption": "Петербург и Ленобласть",
+      "img": "img/shop/stump-fern.webp",
+      "thumb": "img/shop/thumb/stump-fern.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/stump-fern.webp",
+      "backL": "img/shop/back/stump-fern-l.webp"
+    },
+    {
+      "id": "maple-moss",
+      "title": "Клён на пне",
+      "caption": "Петербург и Ленобласть",
+      "img": "img/shop/maple-moss.webp",
+      "thumb": "img/shop/thumb/maple-moss.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/maple-moss.webp",
+      "backL": "img/shop/back/maple-moss-l.webp"
+    },
+    {
+      "id": "fern-autumn",
+      "title": "Осенний папоротник",
+      "caption": "Петербург и Ленобласть",
+      "img": "img/shop/fern-autumn.webp",
+      "thumb": "img/shop/thumb/fern-autumn.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/fern-autumn.webp",
+      "backL": "img/shop/back/fern-autumn-l.webp"
+    },
+    {
+      "id": "fern-leaf",
+      "title": "Лист в папоротнике",
+      "caption": "Петербург и Ленобласть",
+      "img": "img/shop/fern-leaf.webp",
+      "thumb": "img/shop/thumb/fern-leaf.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/fern-leaf.webp",
+      "backL": "img/shop/back/fern-leaf-l.webp"
+    },
+    {
+      "id": "old-stumps",
+      "title": "Старые пни",
+      "caption": "Петербург и Ленобласть",
+      "img": "img/shop/old-stumps.webp",
+      "thumb": "img/shop/thumb/old-stumps.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/old-stumps.webp",
+      "backL": "img/shop/back/old-stumps-l.webp"
+    },
+    {
+      "id": "moss-stump",
+      "title": "Пень во мху",
+      "caption": "Петербург и Ленобласть",
+      "img": "img/shop/moss-stump.webp",
+      "thumb": "img/shop/thumb/moss-stump.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/moss-stump.webp",
+      "backL": "img/shop/back/moss-stump-l.webp"
+    },
+    {
+      "id": "yellow-maple",
+      "title": "Жёлтый клён",
+      "caption": "Петербург и Ленобласть",
+      "img": "img/shop/yellow-maple.webp",
+      "thumb": "img/shop/thumb/yellow-maple.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yellow-maple.webp",
+      "backL": "img/shop/back/yellow-maple-l.webp"
+    },
+    {
+      "id": "fern-2",
+      "title": "Папоротник II",
+      "caption": "Петербург и Ленобласть",
+      "img": "img/shop/fern-2.webp",
+      "thumb": "img/shop/thumb/fern-2.webp",
+      "w": 2261,
+      "h": 3392,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/fern-2.webp",
+      "backL": "img/shop/back/fern-2-l.webp"
+    },
+    {
+      "id": "log-mushrooms",
+      "title": "Грибы на бревне",
+      "caption": "Петербург и Ленобласть",
+      "img": "img/shop/log-mushrooms.webp",
+      "thumb": "img/shop/thumb/log-mushrooms.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/log-mushrooms.webp",
+      "backL": "img/shop/back/log-mushrooms-l.webp"
+    },
+    {
+      "id": "van-mirror",
+      "title": "Зелёный фургон II",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/van-mirror.webp",
+      "thumb": "img/shop/thumb/van-mirror.webp",
+      "w": 4505,
+      "h": 6757,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/van-mirror.webp",
+      "backL": "img/shop/back/van-mirror-l.webp"
+    },
+    {
+      "id": "green-van",
+      "title": "Зелёный фургон I",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/green-van.webp",
+      "thumb": "img/shop/thumb/green-van.webp",
+      "w": 6582,
+      "h": 4388,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/green-van.webp",
+      "backL": "img/shop/back/green-van-l.webp"
+    },
+    {
+      "id": "leaf-cobbles",
+      "title": "Осень пришла II",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/leaf-cobbles.webp",
+      "thumb": "img/shop/thumb/leaf-cobbles.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/leaf-cobbles.webp",
+      "backL": "img/shop/back/leaf-cobbles-l.webp"
+    },
+    {
+      "id": "leaf-slabs",
+      "title": "Осень пришла III",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/leaf-slabs.webp",
+      "thumb": "img/shop/thumb/leaf-slabs.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/leaf-slabs.webp",
+      "backL": "img/shop/back/leaf-slabs-l.webp"
+    },
+    {
+      "id": "butterfly",
+      "title": "Бабочка",
+      "caption": "Томск",
+      "img": "img/shop/butterfly.webp",
+      "thumb": "img/shop/thumb/butterfly.webp",
+      "w": 3049,
+      "h": 2033,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/butterfly.webp",
+      "backL": "img/shop/back/butterfly-l.webp"
+    },
+    {
+      "id": "green-house",
+      "title": "Дом в зелени",
+      "caption": "Томск",
+      "img": "img/shop/green-house.webp",
+      "thumb": "img/shop/thumb/green-house.webp",
+      "w": 4516,
+      "h": 6021,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/green-house.webp",
+      "backL": "img/shop/back/green-house-l.webp"
+    },
+    {
+      "id": "owl-tree",
+      "title": "Сова",
+      "caption": "Томск",
+      "img": "img/shop/owl-tree.webp",
+      "thumb": "img/shop/thumb/owl-tree.webp",
+      "w": 6718,
+      "h": 4479,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/owl-tree.webp",
+      "backL": "img/shop/back/owl-tree-l.webp"
+    },
+    {
+      "id": "lilies",
+      "title": "Ландыши",
+      "caption": "Томск",
+      "img": "img/shop/lilies.webp",
+      "thumb": "img/shop/thumb/lilies.webp",
+      "w": 6739,
+      "h": 4493,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/lilies.webp",
+      "backL": "img/shop/back/lilies-l.webp"
+    },
+    {
+      "id": "wood-curl",
+      "title": "Завиток",
+      "caption": "Томск",
+      "img": "img/shop/wood-curl.webp",
+      "thumb": "img/shop/thumb/wood-curl.webp",
+      "w": 6676,
+      "h": 4451,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/wood-curl.webp",
+      "backL": "img/shop/back/wood-curl-l.webp"
+    },
+    {
+      "id": "ivy-door",
+      "title": "Дверь в плюще",
+      "caption": "Томск",
+      "img": "img/shop/ivy-door.webp",
+      "thumb": "img/shop/thumb/ivy-door.webp",
+      "w": 4264,
+      "h": 6396,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/ivy-door.webp",
+      "backL": "img/shop/back/ivy-door-l.webp"
+    },
+    {
+      "id": "terem-moon",
+      "title": "Терем и луна",
+      "caption": "Томск",
+      "img": "img/shop/terem-moon.webp",
+      "thumb": "img/shop/thumb/terem-moon.webp",
+      "w": 6739,
+      "h": 4493,
+      "tags": [
+        "city",
+        "sky"
+      ],
+      "back": "img/shop/back/terem-moon.webp",
+      "backL": "img/shop/back/terem-moon-l.webp"
+    },
+    {
+      "id": "wood-lace",
+      "title": "Деревянное кружево",
+      "caption": "Томск",
+      "img": "img/shop/wood-lace.webp",
+      "thumb": "img/shop/thumb/wood-lace.webp",
+      "w": 6739,
+      "h": 4493,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/wood-lace.webp",
+      "backL": "img/shop/back/wood-lace-l.webp"
+    },
+    {
+      "id": "terem-leaves",
+      "title": "Терем за листвой",
+      "caption": "Томск",
+      "img": "img/shop/terem-leaves.webp",
+      "thumb": "img/shop/thumb/terem-leaves.webp",
+      "w": 2891,
+      "h": 4336,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/terem-leaves.webp",
+      "backL": "img/shop/back/terem-leaves-l.webp"
+    },
+    {
+      "id": "terem-dome",
+      "title": "Купол терема",
+      "caption": "Томск",
+      "img": "img/shop/terem-dome.webp",
+      "thumb": "img/shop/thumb/terem-dome.webp",
+      "w": 4150,
+      "h": 6226,
+      "tags": [
+        "city",
+        "sky"
+      ],
+      "back": "img/shop/back/terem-dome.webp",
+      "backL": "img/shop/back/terem-dome-l.webp"
+    },
+    {
+      "id": "ferris-wheel",
+      "title": "Колесо обозрения",
+      "caption": "Томск",
+      "img": "img/shop/ferris-wheel.webp",
+      "thumb": "img/shop/thumb/ferris-wheel.webp",
+      "w": 5662,
+      "h": 4045,
+      "tags": [
+        "city",
+        "sky"
+      ],
+      "back": "img/shop/back/ferris-wheel.webp",
+      "backL": "img/shop/back/ferris-wheel-l.webp"
+    },
+    {
+      "id": "tomsk-churches",
+      "title": "Воскресенская церковь",
+      "caption": "Томск",
+      "img": "img/shop/tomsk-churches.webp",
+      "thumb": "img/shop/thumb/tomsk-churches.webp",
+      "w": 6439,
+      "h": 4293,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/tomsk-churches.webp",
+      "backL": "img/shop/back/tomsk-churches-l.webp"
+    },
+    {
+      "id": "chapel-stairs",
+      "title": "Ворота храма Покрова",
+      "caption": "Томск",
+      "img": "img/shop/chapel-stairs.webp",
+      "thumb": "img/shop/thumb/chapel-stairs.webp",
+      "w": 4135,
+      "h": 6202,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/chapel-stairs.webp",
+      "backL": "img/shop/back/chapel-stairs-l.webp"
+    },
+    {
+      "id": "spiral-stairs",
+      "title": "Винтовая лестница",
+      "caption": "Томск",
+      "img": "img/shop/spiral-stairs.webp",
+      "thumb": "img/shop/thumb/spiral-stairs.webp",
+      "w": 4672,
+      "h": 7008,
+      "tags": [
+        "bw",
+        "city"
+      ],
+      "back": "img/shop/back/spiral-stairs.webp",
+      "backL": "img/shop/back/spiral-stairs-l.webp"
+    },
+    {
+      "id": "shutters",
+      "title": "Окна и ставни",
+      "caption": "Томск",
+      "img": "img/shop/shutters.webp",
+      "thumb": "img/shop/thumb/shutters.webp",
+      "w": 6410,
+      "h": 4274,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/shutters.webp",
+      "backL": "img/shop/back/shutters-l.webp"
+    },
+    {
+      "id": "carved-eaves",
+      "title": "Резной карниз",
+      "caption": "Томск",
+      "img": "img/shop/carved-eaves.webp",
+      "thumb": "img/shop/thumb/carved-eaves.webp",
+      "w": 4928,
+      "h": 3285,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/carved-eaves.webp",
+      "backL": "img/shop/back/carved-eaves-l.webp"
+    },
+    {
+      "id": "white-bridge",
+      "title": "Каменный мост через реку Ушайку",
+      "caption": "Томск",
+      "img": "img/shop/white-bridge.webp",
+      "thumb": "img/shop/thumb/white-bridge.webp",
+      "w": 4431,
+      "h": 6646,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/white-bridge.webp",
+      "backL": "img/shop/back/white-bridge-l.webp"
+    },
+    {
+      "id": "four-windows",
+      "title": "Окна",
+      "caption": "Томск",
+      "img": "img/shop/four-windows.webp",
+      "thumb": "img/shop/thumb/four-windows.webp",
+      "w": 7008,
+      "h": 4672,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/four-windows.webp",
+      "backL": "img/shop/back/four-windows-l.webp"
+    },
+    {
+      "id": "evening-window",
+      "title": "Вечернее окно",
+      "caption": "Томск",
+      "img": "img/shop/evening-window.webp",
+      "thumb": "img/shop/thumb/evening-window.webp",
+      "w": 5754,
+      "h": 3836,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/evening-window.webp",
+      "backL": "img/shop/back/evening-window-l.webp"
+    },
+    {
+      "id": "roof-dandelion",
+      "title": "Одуванчик на крыше",
+      "caption": "Томск",
+      "img": "img/shop/roof-dandelion.webp",
+      "thumb": "img/shop/thumb/roof-dandelion.webp",
+      "w": 6704,
+      "h": 4469,
+      "tags": [
+        "country",
+        "sky"
+      ],
+      "back": "img/shop/back/roof-dandelion.webp",
+      "backL": "img/shop/back/roof-dandelion-l.webp"
     }
   ],
   "delivery": {
