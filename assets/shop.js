@@ -143,6 +143,18 @@
     return '<span class="pc-mk" aria-hidden="true">' + out + '</span>';
   }
 
+  // россыпь открыток на кофейном столике (плитка «Открытки» на входе в магазин)
+  function scatterMock(ids) {
+    var pos = [[-27, -16, -14], [3, -22, 6], [-22, 18, 9], [9, 12, -7], [31, 19, 15], [-2, -2, -3]];
+    var out = '';
+    ids.map(function (id) { return D.postcards.filter(function (c) { return c.id === id; })[0]; }).filter(Boolean).forEach(function (c, i) {
+      var p = pos[i % pos.length], land = c.w >= c.h;
+      out += '<span class="pc-card front" style="--img:url(\'' + abs(c.thumb) + '\');--cw:' + (land ? 30 : 20) + 'cqw;--car:' + (land ? 1.5 : 1 / 1.5) +
+        ';transform:translate(' + p[0] + 'cqw,' + p[1] + 'cqw) rotate(' + p[2] + 'deg)"></span>';
+    });
+    return '<span class="pc-mk scatter" aria-hidden="true">' + out + '</span>';
+  }
+
   /* ---------- витрина ---------- */
   function minAny(w) {
     var m = Infinity, pts = partsOf(w);
@@ -300,7 +312,8 @@
     var mc = Math.min(minOf('canvas'), minOf('foam')); if (mc < Infinity) $('#hubWallFrom').textContent = 'от ' + rubText(mc);
     var pc = product('postcard'), tile = $('#hubCards');
     if (!pc) { tile.closest('.hub-tile').hidden = true; $('#hubTiles').classList.add('one'); return; }
-    tile.innerHTML = setMock([D.postcards[2], D.postcards[21], D.postcards[25]].filter(Boolean));
+    tile.classList.add('table');
+    tile.innerHTML = scatterMock(['larch-ridge', 'isaac-autumn', 'red-ridge', 'butterfly', 'leaf-spruce', 'moon']);
     var k = D.postcards.length, ns = (pc.sets || []).length;
     $('#hubCardsN').textContent = k + ' ' + plural(k, 'открытка', 'открытки', 'открыток') + (ns ? ' · ' + ns + ' ' + plural(ns, 'набор', 'набора', 'наборов') : '');
     $('#hubCardsFrom').textContent = 'от ' + rubText(pc.price);
