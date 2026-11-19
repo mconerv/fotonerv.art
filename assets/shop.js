@@ -236,7 +236,6 @@
             '<span class="pcard-go">Посмотреть ' + cards.length + ' ' + plural(cards.length, 'открытку', 'открытки', 'открыток') + '</span></button>' +
             '<span class="pcard-t">' + esc(st.title) + '</span><span class="pcard-m"><span>' + cards.length + ' ' + plural(cards.length, 'открытка', 'открытки', 'открыток') +
             (st.lead ? ' · ' + esc(st.lead) : '') + '</span><span><b>' + rub(st.price) + '</b></span></span>' +
-            (st.cards !== 'all' ? '<span class="pc-list">' + cards.map(function (c) { return esc(c.title); }).join(' · ') + '</span>' : '') +
             '<span class="pc-actions">' + qtyHTML(st.id) + '<button type="button" class="btn btn-solid" data-add-card="' + esc(st.id) + '">В корзину</button></span></div>';
         });
         html += '</div><h3 class="pc-sub" id="singles">Поштучно' + (any ? ' <small>любые ' + any.n + ' — ' + rubText(any.price) + '</small>' : '') + '</h3>';
