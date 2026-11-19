@@ -12,7 +12,8 @@ window.SHOP_DATA = /*JSON-START*/{
     "Холст: options — сочетание холста (mat: n — натуральный, s — синтетический) и подрамника; materials — подписи холстов; tableCols — столбцы таблицы цен.",
     "Пенокартон: materials — основа (w — белый, b — чёрный, 5 мм; edge — цвет кромки на превью), options — основа × бумага (v: gl — глянцевая, mt — матовая, sk — шёлк). Печать — Durst Theta 76, «мокрая».",
     "Открытки: postcards — по работам каталога; products.postcard.sets — наборы (cards: id открыток или \"all\"), anyN — любые n открыток поштучно стоят как набор (скидка считается в quote). Только открытки — Почта шлёт заказным письмом (до 100 г) или заказной бандеролью.",
-    "products.postcard.sets[].cover — id открытки, которая лежит сверху на превью набора (необязательно)."
+    "products.postcard.sets[].cover — id открытки, которая лежит сверху на превью набора (необязательно).",
+    "postcards[].themes — темы для фильтра поштучных открыток (ключи из products.postcard.themes); postcards[].region — ключ из products.postcard.regions."
   ],
   "version": "2026-11-17",
   "seller": {
@@ -1579,6 +1580,160 @@ window.SHOP_DATA = /*JSON-START*/{
           "price": 850
         },
         {
+          "id": "set-yak-autumn",
+          "title": "Якутская осень",
+          "lead": "Склоны тайги в багрянце и золоте",
+          "cards": [
+            "yak-crimson-slope",
+            "yak-red-slope",
+            "yak-golden-slope",
+            "yak-red-aspen",
+            "yak-river-loops"
+          ],
+          "price": 850,
+          "cover": "yak-river-loops"
+        },
+        {
+          "id": "set-yak-reflections",
+          "title": "Отражения",
+          "lead": "Тихая вода якутских рек",
+          "cards": [
+            "yak-stones-reflection",
+            "yak-reflection",
+            "yak-cliff-reflection",
+            "yak-quiet-water",
+            "yak-evening-channel"
+          ],
+          "price": 850,
+          "cover": "yak-reflection"
+        },
+        {
+          "id": "set-yak-taiga",
+          "title": "Тайга вблизи",
+          "lead": "Листья, цветы, ягель и хвоя",
+          "cards": [
+            "yak-red-leaves",
+            "yak-asters",
+            "yak-reindeer-moss",
+            "yak-wintergreen",
+            "yak-cedar-needles"
+          ],
+          "price": 850,
+          "cover": "yak-red-leaves"
+        },
+        {
+          "id": "set-yak-ice",
+          "title": "Первый лёд",
+          "lead": "Наледь, ледоход и туман над тайгой",
+          "cards": [
+            "yak-first-ice",
+            "yak-naled",
+            "yak-ice-drift",
+            "yak-taiga-fog",
+            "yak-new-year-branch"
+          ],
+          "price": 850,
+          "cover": "yak-ice-drift"
+        },
+        {
+          "id": "set-zab-autumn",
+          "title": "Забайкальская осень",
+          "lead": "Золото лиственниц и берёз",
+          "cards": [
+            "zab-golden-autumn",
+            "zab-autumn-slope",
+            "zab-birch-sun",
+            "zab-rocks-leaves",
+            "zab-fox"
+          ],
+          "price": 850,
+          "cover": "zab-golden-autumn"
+        },
+        {
+          "id": "set-zab-rocks",
+          "title": "Скалы и степь",
+          "lead": "Останцы, прострел и закат",
+          "cards": [
+            "zab-rocks",
+            "zab-outlier",
+            "zab-larch",
+            "zab-pasque",
+            "zab-sunset-lake"
+          ],
+          "price": 850,
+          "cover": "zab-outlier"
+        },
+        {
+          "id": "set-elbrus",
+          "title": "Эльбрус",
+          "lead": "Двуглавая вершина с разных сторон",
+          "cards": [
+            "kav-elbrus-forest",
+            "kav-elbrus-twin",
+            "kav-summit",
+            "kav-bellflowers",
+            "kav-elbrus-slope"
+          ],
+          "price": 850,
+          "cover": "kav-elbrus-twin"
+        },
+        {
+          "id": "set-donguz",
+          "title": "Донгуз-Орун",
+          "lead": "Стена, ледопад и ледниковый цирк",
+          "cards": [
+            "kav-donguz-pine",
+            "kav-donguz-peak",
+            "kav-donguz",
+            "kav-icefall",
+            "kav-cirque"
+          ],
+          "price": 850,
+          "cover": "kav-donguz"
+        },
+        {
+          "id": "set-kav-clouds",
+          "title": "Над облаками",
+          "lead": "Вершины Приэльбрусья в облаках",
+          "cards": [
+            "kav-peak-clouds",
+            "kav-cloud-ridges",
+            "kav-through-clouds",
+            "kav-glacier-clouds",
+            "kav-observatory"
+          ],
+          "price": 850,
+          "cover": "kav-peak-clouds"
+        },
+        {
+          "id": "set-kav-evening",
+          "title": "Вечер в горах",
+          "lead": "Закатный свет на снежных гребнях",
+          "cards": [
+            "kav-sunset-light",
+            "kav-sunset-light-2",
+            "kav-light-spots",
+            "kav-red-rocks",
+            "kav-eagle"
+          ],
+          "price": 850,
+          "cover": "kav-sunset-light"
+        },
+        {
+          "id": "set-kav-lakes",
+          "title": "Озеро и долины",
+          "lead": "Гижгит, Баксан и каньон",
+          "cards": [
+            "kav-white-shore",
+            "kav-cliff-wall",
+            "kav-turquoise",
+            "kav-baksan",
+            "kav-canyon"
+          ],
+          "price": 850,
+          "cover": "kav-turquoise"
+        },
+        {
           "id": "set-kamchatka-full",
           "title": "Камчатка целиком",
           "lead": "Вулканы, тундра, луна и звёзды",
@@ -1709,11 +1864,111 @@ window.SHOP_DATA = /*JSON-START*/{
           "cover": "carved-eaves"
         },
         {
+          "id": "set-yakutia",
+          "title": "Якутия",
+          "lead": "Осенняя тайга, реки и первый лёд",
+          "cards": [
+            "misty-river",
+            "yak-red-leaves",
+            "yak-crimson-slope",
+            "yak-stones-reflection",
+            "yak-reflection",
+            "yak-moss-stream",
+            "yak-red-slope",
+            "yak-plane",
+            "yak-asters",
+            "yak-fireweed",
+            "yak-cliff-reflection",
+            "yak-cliff-clouds",
+            "yak-quiet-water",
+            "yak-cliffs-water",
+            "yak-rail-bridge",
+            "yak-red-aspen",
+            "yak-river-loops",
+            "yak-golden-slope",
+            "yak-pasque",
+            "yak-first-ice",
+            "yak-naled",
+            "yak-ice-drift",
+            "yak-evening-channel",
+            "yak-reindeer-moss",
+            "yak-wintergreen",
+            "yak-tussock",
+            "yak-taiga-fog",
+            "yak-cedar-needles",
+            "yak-clearing",
+            "yak-new-year-branch"
+          ],
+          "price": 3600,
+          "cover": "yak-river-loops"
+        },
+        {
+          "id": "set-zabaikalye",
+          "title": "Забайкалье",
+          "lead": "Золотая осень, скалы и лиса",
+          "cards": [
+            "zab-pasque",
+            "zab-birch-sun",
+            "zab-rocks",
+            "zab-rocks-leaves",
+            "zab-outlier",
+            "zab-autumn-slope",
+            "zab-larch",
+            "zab-golden-autumn",
+            "zab-fox",
+            "zab-sunset-lake"
+          ],
+          "price": 1200,
+          "cover": "zab-golden-autumn"
+        },
+        {
+          "id": "set-kavkaz",
+          "title": "Кавказ",
+          "lead": "Эльбрус, Донгуз-Орун, ледники и Гижгит",
+          "cards": [
+            "kav-horses",
+            "kav-sunset-light",
+            "kav-sunset-light-2",
+            "kav-light-spots",
+            "kav-red-rocks",
+            "kav-eagle",
+            "kav-white-shore",
+            "kav-cliff-wall",
+            "kav-turquoise",
+            "kav-elbrus-forest",
+            "kav-baksan",
+            "kav-donguz-pine",
+            "kav-cirque",
+            "kav-elbrus-twin",
+            "kav-donguz-peak",
+            "kav-white-flowers",
+            "kav-donguz",
+            "kav-peak-clouds",
+            "kav-icefall",
+            "kav-cloud-ridges",
+            "kav-snowball",
+            "kav-trail",
+            "kav-mountain-flowers",
+            "kav-elbrus-slope",
+            "kav-canyon",
+            "kav-bellflowers",
+            "kav-glacier-ridge",
+            "kav-through-clouds",
+            "kav-summit",
+            "kav-glacier-rocks",
+            "kav-raven",
+            "kav-glacier-clouds",
+            "kav-observatory"
+          ],
+          "price": 3950,
+          "cover": "kav-elbrus-twin"
+        },
+        {
           "id": "set-all",
           "title": "Все открытки",
           "lead": "Полная коллекция",
           "cards": "all",
-          "price": 9200
+          "price": 16000
         }
       ],
       "pack": {
@@ -1728,7 +1983,7 @@ window.SHOP_DATA = /*JSON-START*/{
           "price": 15
         },
         "box": {
-          "_note": "С from открыток и больше (без отпечатков в заказе) — пакет Почты S 280×380 мм с картонной вставкой вместо письма (письмо до 100 г, это ~16 открыток). Пока считается посылкой; бандероль — флагом bookpost. Пакет S вмещает до ~200 открыток. g — пакет ~13 г + 2 листа гофрокартона ~17 г (оценка, взвесить), price — пакет 55 ₽ (цена Москвы) + картон.",
+          "_note": "От from открыток (без отпечатков в заказе) — пакет Почты S 280×380 мм с картонной вставкой (письмо — только до 100 г, ~16 открыток). Заказ открыток дешевле bookpostUpTo ₽ — заказная бандероль (без объявленной ценности, до 2 кг), дороже — посылка с объявленной ценностью. Пакет S вмещает ~200 открыток. g — пакет ~13 г + 2 листа гофрокартона ~17 г (оценка, взвесить), price — пакет 55 ₽ + картон.",
           "from": 17,
           "boxes": [
             {
@@ -1739,9 +1994,94 @@ window.SHOP_DATA = /*JSON-START*/{
               "g": 30,
               "price": 60
             }
-          ]
+          ],
+          "bookpostUpTo": 5000
         }
-      }
+      },
+      "themes": [
+        [
+          "mountains",
+          "Горы"
+        ],
+        [
+          "forest",
+          "Лес"
+        ],
+        [
+          "autumn",
+          "Осень"
+        ],
+        [
+          "winter",
+          "Зима"
+        ],
+        [
+          "water",
+          "Вода"
+        ],
+        [
+          "sky",
+          "Небо и ночь"
+        ],
+        [
+          "city",
+          "Город"
+        ],
+        [
+          "village",
+          "Деревня"
+        ],
+        [
+          "macro",
+          "Крупный план"
+        ],
+        [
+          "animals",
+          "Животные"
+        ],
+        [
+          "bw",
+          "Чёрно-белые"
+        ]
+      ],
+      "regions": [
+        [
+          "kamchatka",
+          "Камчатка"
+        ],
+        [
+          "kola",
+          "Кольский"
+        ],
+        [
+          "spb",
+          "Петербург и область"
+        ],
+        [
+          "ural",
+          "Урал"
+        ],
+        [
+          "tomsk",
+          "Томск"
+        ],
+        [
+          "yakutia",
+          "Якутия"
+        ],
+        [
+          "zabaikalye",
+          "Забайкалье"
+        ],
+        [
+          "kavkaz",
+          "Кавказ"
+        ],
+        [
+          "magadan",
+          "Магадан"
+        ]
+      ]
     }
   },
   "works": [
@@ -2377,6 +2717,1370 @@ window.SHOP_DATA = /*JSON-START*/{
   ],
   "postcards": [
     {
+      "id": "yak-red-leaves",
+      "title": "Красные листья",
+      "caption": "Якутия",
+      "img": "img/shop/yak-red-leaves.webp",
+      "thumb": "img/shop/thumb/yak-red-leaves.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-red-leaves.webp",
+      "backL": "img/shop/back/yak-red-leaves-l.webp",
+      "themes": [
+        "autumn",
+        "macro"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-crimson-slope",
+      "title": "Багряный склон",
+      "caption": "Якутия",
+      "img": "img/shop/yak-crimson-slope.webp",
+      "thumb": "img/shop/thumb/yak-crimson-slope.webp",
+      "w": 7000,
+      "h": 7000,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-crimson-slope.webp",
+      "backL": "img/shop/back/yak-crimson-slope-l.webp",
+      "themes": [
+        "forest",
+        "autumn"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-stones-reflection",
+      "title": "Отражение I",
+      "caption": "Якутия",
+      "img": "img/shop/yak-stones-reflection.webp",
+      "thumb": "img/shop/thumb/yak-stones-reflection.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-stones-reflection.webp",
+      "backL": "img/shop/back/yak-stones-reflection-l.webp",
+      "themes": [
+        "autumn",
+        "water"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-reflection",
+      "title": "Отражение II",
+      "caption": "Якутия",
+      "img": "img/shop/yak-reflection.webp",
+      "thumb": "img/shop/thumb/yak-reflection.webp",
+      "w": 7000,
+      "h": 5427,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-reflection.webp",
+      "backL": "img/shop/back/yak-reflection-l.webp",
+      "themes": [
+        "forest",
+        "autumn",
+        "water"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-moss-stream",
+      "title": "Ручей во мху",
+      "caption": "Якутия",
+      "img": "img/shop/yak-moss-stream.webp",
+      "thumb": "img/shop/thumb/yak-moss-stream.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-moss-stream.webp",
+      "backL": "img/shop/back/yak-moss-stream-l.webp",
+      "themes": [
+        "forest",
+        "water"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-red-slope",
+      "title": "Рыжий склон",
+      "caption": "Якутия",
+      "img": "img/shop/yak-red-slope.webp",
+      "thumb": "img/shop/thumb/yak-red-slope.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-red-slope.webp",
+      "backL": "img/shop/back/yak-red-slope-l.webp",
+      "themes": [
+        "forest",
+        "autumn"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-plane",
+      "title": "Жёлтый самолёт",
+      "caption": "Якутия",
+      "img": "img/shop/yak-plane.webp",
+      "thumb": "img/shop/thumb/yak-plane.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "sky"
+      ],
+      "back": "img/shop/back/yak-plane.webp",
+      "backL": "img/shop/back/yak-plane-l.webp",
+      "themes": [
+        "sky"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-asters",
+      "title": "Цветы",
+      "caption": "Якутия",
+      "img": "img/shop/yak-asters.webp",
+      "thumb": "img/shop/thumb/yak-asters.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-asters.webp",
+      "backL": "img/shop/back/yak-asters-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-fireweed",
+      "title": "Кипрей на гальке",
+      "caption": "Якутия",
+      "img": "img/shop/yak-fireweed.webp",
+      "thumb": "img/shop/thumb/yak-fireweed.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/yak-fireweed.webp",
+      "backL": "img/shop/back/yak-fireweed-l.webp",
+      "themes": [
+        "autumn",
+        "macro"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-cliff-reflection",
+      "title": "Скалы над Чульманом",
+      "caption": "Якутия",
+      "img": "img/shop/yak-cliff-reflection.webp",
+      "thumb": "img/shop/thumb/yak-cliff-reflection.webp",
+      "w": 7000,
+      "h": 5061,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/yak-cliff-reflection.webp",
+      "backL": "img/shop/back/yak-cliff-reflection-l.webp",
+      "themes": [
+        "water"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-cliff-clouds",
+      "title": "Обрыв над рекой",
+      "caption": "Якутия",
+      "img": "img/shop/yak-cliff-clouds.webp",
+      "thumb": "img/shop/thumb/yak-cliff-clouds.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "sky",
+        "mountains"
+      ],
+      "back": "img/shop/back/yak-cliff-clouds.webp",
+      "backL": "img/shop/back/yak-cliff-clouds-l.webp",
+      "themes": [
+        "water",
+        "sky"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-quiet-water",
+      "title": "Тихие воды",
+      "caption": "Якутия",
+      "img": "img/shop/yak-quiet-water.webp",
+      "thumb": "img/shop/thumb/yak-quiet-water.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-quiet-water.webp",
+      "backL": "img/shop/back/yak-quiet-water-l.webp",
+      "themes": [
+        "water"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-cliffs-water",
+      "title": "Скалы над водой",
+      "caption": "Якутия",
+      "img": "img/shop/yak-cliffs-water.webp",
+      "thumb": "img/shop/thumb/yak-cliffs-water.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-cliffs-water.webp",
+      "backL": "img/shop/back/yak-cliffs-water-l.webp",
+      "themes": [
+        "autumn",
+        "water"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-rail-bridge",
+      "title": "Железнодорожный мост",
+      "caption": "Якутия",
+      "img": "img/shop/yak-rail-bridge.webp",
+      "thumb": "img/shop/thumb/yak-rail-bridge.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/yak-rail-bridge.webp",
+      "backL": "img/shop/back/yak-rail-bridge-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-red-aspen",
+      "title": "Красная осина",
+      "caption": "Якутия",
+      "img": "img/shop/yak-red-aspen.webp",
+      "thumb": "img/shop/thumb/yak-red-aspen.webp",
+      "w": 7000,
+      "h": 10500,
+      "tags": [
+        "forest",
+        "sky"
+      ],
+      "back": "img/shop/back/yak-red-aspen.webp",
+      "backL": "img/shop/back/yak-red-aspen-l.webp",
+      "themes": [
+        "forest",
+        "autumn"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-river-loops",
+      "title": "Вид на долину",
+      "caption": "Якутия",
+      "img": "img/shop/yak-river-loops.webp",
+      "thumb": "img/shop/thumb/yak-river-loops.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-river-loops.webp",
+      "backL": "img/shop/back/yak-river-loops-l.webp",
+      "themes": [
+        "forest",
+        "autumn",
+        "water"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-golden-slope",
+      "title": "Золотой склон",
+      "caption": "Якутия",
+      "img": "img/shop/yak-golden-slope.webp",
+      "thumb": "img/shop/thumb/yak-golden-slope.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-golden-slope.webp",
+      "backL": "img/shop/back/yak-golden-slope-l.webp",
+      "themes": [
+        "forest",
+        "autumn"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-pasque",
+      "title": "Сон-трава",
+      "caption": "Якутия",
+      "img": "img/shop/yak-pasque.webp",
+      "thumb": "img/shop/thumb/yak-pasque.webp",
+      "w": 2933,
+      "h": 3911,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-pasque.webp",
+      "backL": "img/shop/back/yak-pasque-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-first-ice",
+      "title": "Первый лёд",
+      "caption": "Якутия",
+      "img": "img/shop/yak-first-ice.webp",
+      "thumb": "img/shop/thumb/yak-first-ice.webp",
+      "w": 5820,
+      "h": 3880,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-first-ice.webp",
+      "backL": "img/shop/back/yak-first-ice-l.webp",
+      "themes": [
+        "winter",
+        "water"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-naled",
+      "title": "Наледь",
+      "caption": "Якутия",
+      "img": "img/shop/yak-naled.webp",
+      "thumb": "img/shop/thumb/yak-naled.webp",
+      "w": 5820,
+      "h": 3880,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/yak-naled.webp",
+      "backL": "img/shop/back/yak-naled-l.webp",
+      "themes": [
+        "winter",
+        "macro"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-ice-drift",
+      "title": "Ледоход",
+      "caption": "Якутия",
+      "img": "img/shop/yak-ice-drift.webp",
+      "thumb": "img/shop/thumb/yak-ice-drift.webp",
+      "w": 5388,
+      "h": 3592,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-ice-drift.webp",
+      "backL": "img/shop/back/yak-ice-drift-l.webp",
+      "themes": [
+        "winter",
+        "water"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-evening-channel",
+      "title": "Вечер на протоке",
+      "caption": "Якутия",
+      "img": "img/shop/yak-evening-channel.webp",
+      "thumb": "img/shop/thumb/yak-evening-channel.webp",
+      "w": 6439,
+      "h": 9065,
+      "tags": [
+        "sky",
+        "forest"
+      ],
+      "back": "img/shop/back/yak-evening-channel.webp",
+      "backL": "img/shop/back/yak-evening-channel-l.webp",
+      "themes": [
+        "water",
+        "sky"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-reindeer-moss",
+      "title": "Ягель",
+      "caption": "Якутия",
+      "img": "img/shop/yak-reindeer-moss.webp",
+      "thumb": "img/shop/thumb/yak-reindeer-moss.webp",
+      "w": 5820,
+      "h": 3880,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-reindeer-moss.webp",
+      "backL": "img/shop/back/yak-reindeer-moss-l.webp",
+      "themes": [
+        "forest",
+        "macro"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-wintergreen",
+      "title": "Грушанка",
+      "caption": "Якутия",
+      "img": "img/shop/yak-wintergreen.webp",
+      "thumb": "img/shop/thumb/yak-wintergreen.webp",
+      "w": 5820,
+      "h": 3880,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-wintergreen.webp",
+      "backL": "img/shop/back/yak-wintergreen-l.webp",
+      "themes": [
+        "forest",
+        "macro"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-tussock",
+      "title": "Кочка",
+      "caption": "Якутия",
+      "img": "img/shop/yak-tussock.webp",
+      "thumb": "img/shop/thumb/yak-tussock.webp",
+      "w": 5566,
+      "h": 8394,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/yak-tussock.webp",
+      "backL": "img/shop/back/yak-tussock-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-taiga-fog",
+      "title": "Туман над тайгой",
+      "caption": "Якутия",
+      "img": "img/shop/yak-taiga-fog.webp",
+      "thumb": "img/shop/thumb/yak-taiga-fog.webp",
+      "w": 5792,
+      "h": 3861,
+      "tags": [
+        "forest",
+        "mountains"
+      ],
+      "back": "img/shop/back/yak-taiga-fog.webp",
+      "backL": "img/shop/back/yak-taiga-fog-l.webp",
+      "themes": [
+        "mountains",
+        "forest"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-cedar-needles",
+      "title": "Хвоя",
+      "caption": "Якутия",
+      "img": "img/shop/yak-cedar-needles.webp",
+      "thumb": "img/shop/thumb/yak-cedar-needles.webp",
+      "w": 5820,
+      "h": 3880,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-cedar-needles.webp",
+      "backL": "img/shop/back/yak-cedar-needles-l.webp",
+      "themes": [
+        "forest",
+        "macro"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-clearing",
+      "title": "Просека",
+      "caption": "Якутия",
+      "img": "img/shop/yak-clearing.webp",
+      "thumb": "img/shop/thumb/yak-clearing.webp",
+      "w": 5820,
+      "h": 3880,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-clearing.webp",
+      "backL": "img/shop/back/yak-clearing-l.webp",
+      "themes": [
+        "forest",
+        "autumn"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-new-year-branch",
+      "title": "Новогодняя ветка",
+      "caption": "Якутия",
+      "img": "img/shop/yak-new-year-branch.webp",
+      "thumb": "img/shop/thumb/yak-new-year-branch.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-new-year-branch.webp",
+      "backL": "img/shop/back/yak-new-year-branch-l.webp",
+      "themes": [
+        "forest",
+        "winter",
+        "macro"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "zab-pasque",
+      "title": "Прострел на склоне",
+      "caption": "Забайкалье",
+      "img": "img/shop/zab-pasque.webp",
+      "thumb": "img/shop/thumb/zab-pasque.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "country"
+      ],
+      "back": "img/shop/back/zab-pasque.webp",
+      "backL": "img/shop/back/zab-pasque-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "zabaikalye"
+    },
+    {
+      "id": "zab-birch-sun",
+      "title": "Берёза и солнце",
+      "caption": "Забайкалье",
+      "img": "img/shop/zab-birch-sun.webp",
+      "thumb": "img/shop/thumb/zab-birch-sun.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "forest",
+        "sky"
+      ],
+      "back": "img/shop/back/zab-birch-sun.webp",
+      "backL": "img/shop/back/zab-birch-sun-l.webp",
+      "themes": [
+        "forest",
+        "autumn"
+      ],
+      "region": "zabaikalye"
+    },
+    {
+      "id": "zab-rocks",
+      "title": "Скалы",
+      "caption": "Забайкалье",
+      "img": "img/shop/zab-rocks.webp",
+      "thumb": "img/shop/thumb/zab-rocks.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/zab-rocks.webp",
+      "backL": "img/shop/back/zab-rocks-l.webp",
+      "themes": [
+        "mountains",
+        "autumn"
+      ],
+      "region": "zabaikalye"
+    },
+    {
+      "id": "zab-rocks-leaves",
+      "title": "Скалы в листве",
+      "caption": "Забайкалье",
+      "img": "img/shop/zab-rocks-leaves.webp",
+      "thumb": "img/shop/thumb/zab-rocks-leaves.webp",
+      "w": 5820,
+      "h": 3880,
+      "tags": [
+        "mountains",
+        "forest"
+      ],
+      "back": "img/shop/back/zab-rocks-leaves.webp",
+      "backL": "img/shop/back/zab-rocks-leaves-l.webp",
+      "themes": [
+        "mountains",
+        "autumn"
+      ],
+      "region": "zabaikalye"
+    },
+    {
+      "id": "zab-outlier",
+      "title": "Останец",
+      "caption": "Забайкалье",
+      "img": "img/shop/zab-outlier.webp",
+      "thumb": "img/shop/thumb/zab-outlier.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/zab-outlier.webp",
+      "backL": "img/shop/back/zab-outlier-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "zabaikalye"
+    },
+    {
+      "id": "zab-autumn-slope",
+      "title": "Осенний склон",
+      "caption": "Забайкалье",
+      "img": "img/shop/zab-autumn-slope.webp",
+      "thumb": "img/shop/thumb/zab-autumn-slope.webp",
+      "w": 5642,
+      "h": 4320,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/zab-autumn-slope.webp",
+      "backL": "img/shop/back/zab-autumn-slope-l.webp",
+      "themes": [
+        "forest",
+        "autumn"
+      ],
+      "region": "zabaikalye"
+    },
+    {
+      "id": "zab-larch",
+      "title": "Лиственница",
+      "caption": "Забайкалье",
+      "img": "img/shop/zab-larch.webp",
+      "thumb": "img/shop/thumb/zab-larch.webp",
+      "w": 5327,
+      "h": 3551,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/zab-larch.webp",
+      "backL": "img/shop/back/zab-larch-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "zabaikalye"
+    },
+    {
+      "id": "zab-golden-autumn",
+      "title": "Золотая осень",
+      "caption": "Забайкалье",
+      "img": "img/shop/zab-golden-autumn.webp",
+      "thumb": "img/shop/thumb/zab-golden-autumn.webp",
+      "w": 5820,
+      "h": 3880,
+      "tags": [
+        "forest",
+        "mountains"
+      ],
+      "back": "img/shop/back/zab-golden-autumn.webp",
+      "backL": "img/shop/back/zab-golden-autumn-l.webp",
+      "themes": [
+        "mountains",
+        "forest",
+        "autumn"
+      ],
+      "region": "zabaikalye"
+    },
+    {
+      "id": "zab-fox",
+      "title": "Лиса",
+      "caption": "Забайкалье",
+      "img": "img/shop/zab-fox.webp",
+      "thumb": "img/shop/thumb/zab-fox.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/zab-fox.webp",
+      "backL": "img/shop/back/zab-fox-l.webp",
+      "themes": [
+        "autumn",
+        "animals"
+      ],
+      "region": "zabaikalye"
+    },
+    {
+      "id": "zab-sunset-lake",
+      "title": "Закат над озером",
+      "caption": "Забайкалье",
+      "img": "img/shop/zab-sunset-lake.webp",
+      "thumb": "img/shop/thumb/zab-sunset-lake.webp",
+      "w": 5820,
+      "h": 3880,
+      "tags": [
+        "sky"
+      ],
+      "back": "img/shop/back/zab-sunset-lake.webp",
+      "backL": "img/shop/back/zab-sunset-lake-l.webp",
+      "themes": [
+        "water",
+        "sky"
+      ],
+      "region": "zabaikalye"
+    },
+    {
+      "id": "kav-horses",
+      "title": "Лошади в снегу",
+      "caption": "Кавказ",
+      "img": "img/shop/kav-horses.webp",
+      "thumb": "img/shop/thumb/kav-horses.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [
+        "mountains",
+        "country"
+      ],
+      "back": "img/shop/back/kav-horses.webp",
+      "backL": "img/shop/back/kav-horses-l.webp",
+      "themes": [
+        "mountains",
+        "winter",
+        "animals"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-sunset-light",
+      "title": "Вечер в горах I",
+      "caption": "Кавказ",
+      "img": "img/shop/kav-sunset-light.webp",
+      "thumb": "img/shop/thumb/kav-sunset-light.webp",
+      "w": 5820,
+      "h": 3880,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-sunset-light.webp",
+      "backL": "img/shop/back/kav-sunset-light-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-sunset-light-2",
+      "title": "Вечер в горах II",
+      "caption": "Кавказ",
+      "img": "img/shop/kav-sunset-light-2.webp",
+      "thumb": "img/shop/thumb/kav-sunset-light-2.webp",
+      "w": 5820,
+      "h": 3880,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-sunset-light-2.webp",
+      "backL": "img/shop/back/kav-sunset-light-2-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-light-spots",
+      "title": "Вечер в горах III",
+      "caption": "Кавказ",
+      "img": "img/shop/kav-light-spots.webp",
+      "thumb": "img/shop/thumb/kav-light-spots.webp",
+      "w": 5820,
+      "h": 3880,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-light-spots.webp",
+      "backL": "img/shop/back/kav-light-spots-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-red-rocks",
+      "title": "Гора Наушидза (Тёщины Зубы)",
+      "caption": "Кавказ",
+      "img": "img/shop/kav-red-rocks.webp",
+      "thumb": "img/shop/thumb/kav-red-rocks.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-red-rocks.webp",
+      "backL": "img/shop/back/kav-red-rocks-l.webp",
+      "themes": [
+        "mountains",
+        "winter"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-eagle",
+      "title": "Орёл",
+      "caption": "Кавказ",
+      "img": "img/shop/kav-eagle.webp",
+      "thumb": "img/shop/thumb/kav-eagle.webp",
+      "w": 4119,
+      "h": 2746,
+      "tags": [
+        "mountains",
+        "sky"
+      ],
+      "back": "img/shop/back/kav-eagle.webp",
+      "backL": "img/shop/back/kav-eagle-l.webp",
+      "themes": [
+        "mountains",
+        "sky",
+        "animals"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-white-shore",
+      "title": "Белый берег",
+      "caption": "Гижгитское озеро",
+      "img": "img/shop/kav-white-shore.webp",
+      "thumb": "img/shop/thumb/kav-white-shore.webp",
+      "w": 5775,
+      "h": 3850,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-white-shore.webp",
+      "backL": "img/shop/back/kav-white-shore-l.webp",
+      "themes": [
+        "mountains",
+        "water"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-cliff-wall",
+      "title": "Скальная стена",
+      "caption": "Гижгитское озеро",
+      "img": "img/shop/kav-cliff-wall.webp",
+      "thumb": "img/shop/thumb/kav-cliff-wall.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-cliff-wall.webp",
+      "backL": "img/shop/back/kav-cliff-wall-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-turquoise",
+      "title": "Бирюзовое озеро",
+      "caption": "Гижгитское озеро",
+      "img": "img/shop/kav-turquoise.webp",
+      "thumb": "img/shop/thumb/kav-turquoise.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-turquoise.webp",
+      "backL": "img/shop/back/kav-turquoise-l.webp",
+      "themes": [
+        "mountains",
+        "water"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-elbrus-forest",
+      "title": "Эльбрус из леса",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-elbrus-forest.webp",
+      "thumb": "img/shop/thumb/kav-elbrus-forest.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains",
+        "forest"
+      ],
+      "back": "img/shop/back/kav-elbrus-forest.webp",
+      "backL": "img/shop/back/kav-elbrus-forest-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-baksan",
+      "title": "Долина Баксана",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-baksan.webp",
+      "thumb": "img/shop/thumb/kav-baksan.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-baksan.webp",
+      "backL": "img/shop/back/kav-baksan-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-donguz-pine",
+      "title": "Донгуз-Орун",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-donguz-pine.webp",
+      "thumb": "img/shop/thumb/kav-donguz-pine.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-donguz-pine.webp",
+      "backL": "img/shop/back/kav-donguz-pine-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-cirque",
+      "title": "Ледниковый цирк",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-cirque.webp",
+      "thumb": "img/shop/thumb/kav-cirque.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-cirque.webp",
+      "backL": "img/shop/back/kav-cirque-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-elbrus-twin",
+      "title": "Двуглавый Эльбрус",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-elbrus-twin.webp",
+      "thumb": "img/shop/thumb/kav-elbrus-twin.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-elbrus-twin.webp",
+      "backL": "img/shop/back/kav-elbrus-twin-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-donguz-peak",
+      "title": "Вершина Донгуз-Оруна",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-donguz-peak.webp",
+      "thumb": "img/shop/thumb/kav-donguz-peak.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-donguz-peak.webp",
+      "backL": "img/shop/back/kav-donguz-peak-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-white-flowers",
+      "title": "Цветы над пропастью",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-white-flowers.webp",
+      "thumb": "img/shop/thumb/kav-white-flowers.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-white-flowers.webp",
+      "backL": "img/shop/back/kav-white-flowers-l.webp",
+      "themes": [
+        "mountains",
+        "macro"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-donguz",
+      "title": "Донгуз-Орун",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-donguz.webp",
+      "thumb": "img/shop/thumb/kav-donguz.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-donguz.webp",
+      "backL": "img/shop/back/kav-donguz-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-peak-clouds",
+      "title": "Пик в облаках",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-peak-clouds.webp",
+      "thumb": "img/shop/thumb/kav-peak-clouds.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains",
+        "sky"
+      ],
+      "back": "img/shop/back/kav-peak-clouds.webp",
+      "backL": "img/shop/back/kav-peak-clouds-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-icefall",
+      "title": "Ледопад",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-icefall.webp",
+      "thumb": "img/shop/thumb/kav-icefall.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-icefall.webp",
+      "backL": "img/shop/back/kav-icefall-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-cloud-ridges",
+      "title": "Облако между гребнями",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-cloud-ridges.webp",
+      "thumb": "img/shop/thumb/kav-cloud-ridges.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains",
+        "sky"
+      ],
+      "back": "img/shop/back/kav-cloud-ridges.webp",
+      "backL": "img/shop/back/kav-cloud-ridges-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-snowball",
+      "title": "Снежный ком",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-snowball.webp",
+      "thumb": "img/shop/thumb/kav-snowball.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-snowball.webp",
+      "backL": "img/shop/back/kav-snowball-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-trail",
+      "title": "Тропа на ледник Семёрка",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-trail.webp",
+      "thumb": "img/shop/thumb/kav-trail.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-trail.webp",
+      "backL": "img/shop/back/kav-trail-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-mountain-flowers",
+      "title": "Горные цветы",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-mountain-flowers.webp",
+      "thumb": "img/shop/thumb/kav-mountain-flowers.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-mountain-flowers.webp",
+      "backL": "img/shop/back/kav-mountain-flowers-l.webp",
+      "themes": [
+        "mountains",
+        "macro"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-elbrus-slope",
+      "title": "Склон Эльбруса",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-elbrus-slope.webp",
+      "thumb": "img/shop/thumb/kav-elbrus-slope.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-elbrus-slope.webp",
+      "backL": "img/shop/back/kav-elbrus-slope-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-canyon",
+      "title": "Каньон",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-canyon.webp",
+      "thumb": "img/shop/thumb/kav-canyon.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-canyon.webp",
+      "backL": "img/shop/back/kav-canyon-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-bellflowers",
+      "title": "Эльбрус и колокольчики",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-bellflowers.webp",
+      "thumb": "img/shop/thumb/kav-bellflowers.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-bellflowers.webp",
+      "backL": "img/shop/back/kav-bellflowers-l.webp",
+      "themes": [
+        "mountains",
+        "macro"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-glacier-ridge",
+      "title": "Вид с Чегета",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-glacier-ridge.webp",
+      "thumb": "img/shop/thumb/kav-glacier-ridge.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-glacier-ridge.webp",
+      "backL": "img/shop/back/kav-glacier-ridge-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-through-clouds",
+      "title": "Сквозь облака",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-through-clouds.webp",
+      "thumb": "img/shop/thumb/kav-through-clouds.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains",
+        "sky"
+      ],
+      "back": "img/shop/back/kav-through-clouds.webp",
+      "backL": "img/shop/back/kav-through-clouds-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-summit",
+      "title": "Вершина Эльбруса",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-summit.webp",
+      "thumb": "img/shop/thumb/kav-summit.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains",
+        "sky"
+      ],
+      "back": "img/shop/back/kav-summit.webp",
+      "backL": "img/shop/back/kav-summit-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-observatory",
+      "title": "Обсерватория Пик Терскол",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-observatory.webp",
+      "thumb": "img/shop/thumb/kav-observatory.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains",
+        "sky"
+      ],
+      "back": "img/shop/back/kav-observatory.webp",
+      "backL": "img/shop/back/kav-observatory-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-glacier-rocks",
+      "title": "Ледник и скалы",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-glacier-rocks.webp",
+      "thumb": "img/shop/thumb/kav-glacier-rocks.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-glacier-rocks.webp",
+      "backL": "img/shop/back/kav-glacier-rocks-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-raven",
+      "title": "Ворон",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-raven.webp",
+      "thumb": "img/shop/thumb/kav-raven.webp",
+      "w": 5966,
+      "h": 3977,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-raven.webp",
+      "backL": "img/shop/back/kav-raven-l.webp",
+      "themes": [
+        "mountains",
+        "animals"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-glacier-clouds",
+      "title": "Ледник под облаками",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-glacier-clouds.webp",
+      "thumb": "img/shop/thumb/kav-glacier-clouds.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains",
+        "sky"
+      ],
+      "back": "img/shop/back/kav-glacier-clouds.webp",
+      "backL": "img/shop/back/kav-glacier-clouds-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kavkaz"
+    },
+    {
       "id": "misty-river",
       "title": "Река в тумане",
       "caption": "Якутия",
@@ -2389,7 +4093,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/misty-river.webp",
-      "backL": "img/shop/back/misty-river-l.webp"
+      "backL": "img/shop/back/misty-river-l.webp",
+      "themes": [
+        "forest",
+        "water",
+        "bw"
+      ],
+      "region": "yakutia"
     },
     {
       "id": "isaac-night",
@@ -2404,7 +4114,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/isaac-night.webp",
-      "backL": "img/shop/back/isaac-night-l.webp"
+      "backL": "img/shop/back/isaac-night-l.webp",
+      "themes": [
+        "sky",
+        "city",
+        "bw"
+      ],
+      "region": "spb"
     },
     {
       "id": "isaac-autumn",
@@ -2419,7 +4135,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/isaac-autumn.webp",
-      "backL": "img/shop/back/isaac-autumn-l.webp"
+      "backL": "img/shop/back/isaac-autumn-l.webp",
+      "themes": [
+        "autumn",
+        "city",
+        "bw"
+      ],
+      "region": "spb"
     },
     {
       "id": "isaac-summer",
@@ -2434,7 +4156,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/isaac-summer.webp",
-      "backL": "img/shop/back/isaac-summer-l.webp"
+      "backL": "img/shop/back/isaac-summer-l.webp",
+      "themes": [
+        "sky",
+        "city",
+        "bw"
+      ],
+      "region": "spb"
     },
     {
       "id": "slope-clouds",
@@ -2448,7 +4176,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/slope-clouds.webp",
-      "backL": "img/shop/back/slope-clouds-l.webp"
+      "backL": "img/shop/back/slope-clouds-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "moon-path",
@@ -2462,7 +4194,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "sky"
       ],
       "back": "img/shop/back/moon-path.webp",
-      "backL": "img/shop/back/moon-path-l.webp"
+      "backL": "img/shop/back/moon-path-l.webp",
+      "themes": [
+        "water",
+        "sky"
+      ],
+      "region": "kola"
     },
     {
       "id": "gate-light",
@@ -2477,7 +4214,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/gate-light.webp",
-      "backL": "img/shop/back/gate-light-l.webp"
+      "backL": "img/shop/back/gate-light-l.webp",
+      "themes": [
+        "city",
+        "bw"
+      ],
+      "region": "ural"
     },
     {
       "id": "autumn-gate",
@@ -2491,7 +4233,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/autumn-gate.webp",
-      "backL": "img/shop/back/autumn-gate-l.webp"
+      "backL": "img/shop/back/autumn-gate-l.webp",
+      "themes": [
+        "autumn",
+        "city"
+      ],
+      "region": "ural"
     },
     {
       "id": "iron-gate",
@@ -2505,7 +4252,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/iron-gate.webp",
-      "backL": "img/shop/back/iron-gate-l.webp"
+      "backL": "img/shop/back/iron-gate-l.webp",
+      "themes": [
+        "winter",
+        "city"
+      ],
+      "region": "ural"
     },
     {
       "id": "hut-field",
@@ -2519,7 +4271,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "country"
       ],
       "back": "img/shop/back/hut-field.webp",
-      "backL": "img/shop/back/hut-field-l.webp"
+      "backL": "img/shop/back/hut-field-l.webp",
+      "themes": [
+        "village"
+      ],
+      "region": "kola"
     },
     {
       "id": "old-barn",
@@ -2533,7 +4289,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "country"
       ],
       "back": "img/shop/back/old-barn.webp",
-      "backL": "img/shop/back/old-barn-l.webp"
+      "backL": "img/shop/back/old-barn-l.webp",
+      "themes": [
+        "village"
+      ],
+      "region": "kola"
     },
     {
       "id": "snow-peak",
@@ -2548,7 +4308,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/snow-peak.webp",
-      "backL": "img/shop/back/snow-peak-l.webp"
+      "backL": "img/shop/back/snow-peak-l.webp",
+      "themes": [
+        "mountains",
+        "winter",
+        "bw"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "snow-ridge",
@@ -2563,7 +4329,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/snow-ridge.webp",
-      "backL": "img/shop/back/snow-ridge-l.webp"
+      "backL": "img/shop/back/snow-ridge-l.webp",
+      "themes": [
+        "mountains",
+        "winter",
+        "bw"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "bridge-fog",
@@ -2578,7 +4350,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/bridge-fog.webp",
-      "backL": "img/shop/back/bridge-fog-l.webp"
+      "backL": "img/shop/back/bridge-fog-l.webp",
+      "themes": [
+        "winter",
+        "water",
+        "city",
+        "bw"
+      ]
     },
     {
       "id": "larch-ridge",
@@ -2594,7 +4372,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/larch-ridge.webp",
-      "backL": "img/shop/back/larch-ridge-l.webp"
+      "backL": "img/shop/back/larch-ridge-l.webp",
+      "themes": [
+        "forest",
+        "winter",
+        "bw"
+      ],
+      "region": "magadan"
     },
     {
       "id": "forest-line",
@@ -2610,7 +4394,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/forest-line.webp",
-      "backL": "img/shop/back/forest-line-l.webp"
+      "backL": "img/shop/back/forest-line-l.webp",
+      "themes": [
+        "forest",
+        "winter",
+        "bw"
+      ],
+      "region": "magadan"
     },
     {
       "id": "larches",
@@ -2626,7 +4416,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/larches.webp",
-      "backL": "img/shop/back/larches-l.webp"
+      "backL": "img/shop/back/larches-l.webp",
+      "themes": [
+        "forest",
+        "winter",
+        "bw"
+      ],
+      "region": "magadan"
     },
     {
       "id": "white-valley",
@@ -2642,7 +4438,14 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/white-valley.webp",
-      "backL": "img/shop/back/white-valley-l.webp"
+      "backL": "img/shop/back/white-valley-l.webp",
+      "themes": [
+        "mountains",
+        "forest",
+        "winter",
+        "bw"
+      ],
+      "region": "magadan"
     },
     {
       "id": "sparse-slope",
@@ -2658,7 +4461,14 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/sparse-slope.webp",
-      "backL": "img/shop/back/sparse-slope-l.webp"
+      "backL": "img/shop/back/sparse-slope-l.webp",
+      "themes": [
+        "mountains",
+        "forest",
+        "winter",
+        "bw"
+      ],
+      "region": "magadan"
     },
     {
       "id": "snow-hills",
@@ -2674,7 +4484,14 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/snow-hills.webp",
-      "backL": "img/shop/back/snow-hills-l.webp"
+      "backL": "img/shop/back/snow-hills-l.webp",
+      "themes": [
+        "mountains",
+        "forest",
+        "winter",
+        "bw"
+      ],
+      "region": "magadan"
     },
     {
       "id": "valley-light",
@@ -2688,7 +4505,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/valley-light.webp",
-      "backL": "img/shop/back/valley-light-l.webp"
+      "backL": "img/shop/back/valley-light-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "river-valley",
@@ -2702,7 +4524,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/river-valley.webp",
-      "backL": "img/shop/back/river-valley-l.webp"
+      "backL": "img/shop/back/river-valley-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "green-valley",
@@ -2716,7 +4542,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/green-valley.webp",
-      "backL": "img/shop/back/green-valley-l.webp"
+      "backL": "img/shop/back/green-valley-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "beyond-pass",
@@ -2730,7 +4560,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/beyond-pass.webp",
-      "backL": "img/shop/back/beyond-pass-l.webp"
+      "backL": "img/shop/back/beyond-pass-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "tundra-pattern",
@@ -2744,7 +4578,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/tundra-pattern.webp",
-      "backL": "img/shop/back/tundra-pattern-l.webp"
+      "backL": "img/shop/back/tundra-pattern-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "red-ridge",
@@ -2758,7 +4596,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/red-ridge.webp",
-      "backL": "img/shop/back/red-ridge-l.webp"
+      "backL": "img/shop/back/red-ridge-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "cloud-slope",
@@ -2773,7 +4615,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "sky"
       ],
       "back": "img/shop/back/cloud-slope.webp",
-      "backL": "img/shop/back/cloud-slope-l.webp"
+      "backL": "img/shop/back/cloud-slope-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "cloud-peak",
@@ -2788,7 +4635,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "sky"
       ],
       "back": "img/shop/back/cloud-peak.webp",
-      "backL": "img/shop/back/cloud-peak-l.webp"
+      "backL": "img/shop/back/cloud-peak-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "rocks-fog",
@@ -2802,7 +4654,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/rocks-fog.webp",
-      "backL": "img/shop/back/rocks-fog-l.webp"
+      "backL": "img/shop/back/rocks-fog-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "moon",
@@ -2816,7 +4672,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "sky"
       ],
       "back": "img/shop/back/moon.webp",
-      "backL": "img/shop/back/moon-l.webp"
+      "backL": "img/shop/back/moon-l.webp",
+      "themes": [
+        "sky"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "moon-peak",
@@ -2831,7 +4691,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/moon-peak.webp",
-      "backL": "img/shop/back/moon-peak-l.webp"
+      "backL": "img/shop/back/moon-peak-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "rain-valley",
@@ -2846,7 +4711,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "sky"
       ],
       "back": "img/shop/back/rain-valley.webp",
-      "backL": "img/shop/back/rain-valley-l.webp"
+      "backL": "img/shop/back/rain-valley-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "aurora",
@@ -2861,7 +4731,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/aurora.webp",
-      "backL": "img/shop/back/aurora-l.webp"
+      "backL": "img/shop/back/aurora-l.webp",
+      "themes": [
+        "forest",
+        "winter",
+        "sky"
+      ],
+      "region": "ural"
     },
     {
       "id": "snow-truck",
@@ -2875,7 +4751,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "country"
       ],
       "back": "img/shop/back/snow-truck.webp",
-      "backL": "img/shop/back/snow-truck-l.webp"
+      "backL": "img/shop/back/snow-truck-l.webp",
+      "themes": [
+        "winter",
+        "village"
+      ],
+      "region": "kola"
     },
     {
       "id": "oil-lamp",
@@ -2889,7 +4770,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "country"
       ],
       "back": "img/shop/back/oil-lamp.webp",
-      "backL": "img/shop/back/oil-lamp-l.webp"
+      "backL": "img/shop/back/oil-lamp-l.webp",
+      "themes": [
+        "village"
+      ],
+      "region": "kola"
     },
     {
       "id": "isaac-view",
@@ -2903,7 +4788,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/isaac-view.webp",
-      "backL": "img/shop/back/isaac-view-l.webp"
+      "backL": "img/shop/back/isaac-view-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "spb"
     },
     {
       "id": "yard-cat",
@@ -2917,7 +4806,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/yard-cat.webp",
-      "backL": "img/shop/back/yard-cat-l.webp"
+      "backL": "img/shop/back/yard-cat-l.webp",
+      "themes": [
+        "city",
+        "animals"
+      ],
+      "region": "spb"
     },
     {
       "id": "fern",
@@ -2931,7 +4825,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/fern.webp",
-      "backL": "img/shop/back/fern-l.webp"
+      "backL": "img/shop/back/fern-l.webp",
+      "themes": [
+        "forest",
+        "macro"
+      ],
+      "region": "spb"
     },
     {
       "id": "mw-valley",
@@ -2946,7 +4845,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains"
       ],
       "back": "img/shop/back/mw-valley.webp",
-      "backL": "img/shop/back/mw-valley-l.webp"
+      "backL": "img/shop/back/mw-valley-l.webp",
+      "themes": [
+        "sky"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "mw-forest",
@@ -2961,7 +4864,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/mw-forest.webp",
-      "backL": "img/shop/back/mw-forest-l.webp"
+      "backL": "img/shop/back/mw-forest-l.webp",
+      "themes": [
+        "sky"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "mw-red",
@@ -2976,7 +4883,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/mw-red.webp",
-      "backL": "img/shop/back/mw-red-l.webp"
+      "backL": "img/shop/back/mw-red-l.webp",
+      "themes": [
+        "sky"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "mw-branches",
@@ -2991,7 +4902,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/mw-branches.webp",
-      "backL": "img/shop/back/mw-branches-l.webp"
+      "backL": "img/shop/back/mw-branches-l.webp",
+      "themes": [
+        "sky"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "mw-crown",
@@ -3006,7 +4921,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/mw-crown.webp",
-      "backL": "img/shop/back/mw-crown-l.webp"
+      "backL": "img/shop/back/mw-crown-l.webp",
+      "themes": [
+        "sky"
+      ],
+      "region": "kamchatka"
     },
     {
       "id": "kola-aurora",
@@ -3020,7 +4939,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "sky"
       ],
       "back": "img/shop/back/kola-aurora.webp",
-      "backL": "img/shop/back/kola-aurora-l.webp"
+      "backL": "img/shop/back/kola-aurora-l.webp",
+      "themes": [
+        "sky"
+      ],
+      "region": "kola"
     },
     {
       "id": "antlers",
@@ -3035,7 +4958,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "country"
       ],
       "back": "img/shop/back/antlers.webp",
-      "backL": "img/shop/back/antlers-l.webp"
+      "backL": "img/shop/back/antlers-l.webp",
+      "themes": [
+        "winter",
+        "sky"
+      ],
+      "region": "kola"
     },
     {
       "id": "snow-creek",
@@ -3049,7 +4977,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "country"
       ],
       "back": "img/shop/back/snow-creek.webp",
-      "backL": "img/shop/back/snow-creek-l.webp"
+      "backL": "img/shop/back/snow-creek-l.webp",
+      "themes": [
+        "winter",
+        "water"
+      ],
+      "region": "kola"
     },
     {
       "id": "hut-sunset",
@@ -3063,7 +4996,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "country"
       ],
       "back": "img/shop/back/hut-sunset.webp",
-      "backL": "img/shop/back/hut-sunset-l.webp"
+      "backL": "img/shop/back/hut-sunset-l.webp",
+      "themes": [
+        "winter",
+        "sky",
+        "village"
+      ],
+      "region": "kola"
     },
     {
       "id": "lone-tree",
@@ -3077,7 +5016,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "sky"
       ],
       "back": "img/shop/back/lone-tree.webp",
-      "backL": "img/shop/back/lone-tree-l.webp"
+      "backL": "img/shop/back/lone-tree-l.webp",
+      "themes": [
+        "winter",
+        "sky"
+      ],
+      "region": "kola"
     },
     {
       "id": "fogbow",
@@ -3091,7 +5035,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "sky"
       ],
       "back": "img/shop/back/fogbow.webp",
-      "backL": "img/shop/back/fogbow-l.webp"
+      "backL": "img/shop/back/fogbow-l.webp",
+      "themes": [
+        "winter",
+        "sky"
+      ],
+      "region": "kola"
     },
     {
       "id": "barrel-moon",
@@ -3106,7 +5055,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "country"
       ],
       "back": "img/shop/back/barrel-moon.webp",
-      "backL": "img/shop/back/barrel-moon-l.webp"
+      "backL": "img/shop/back/barrel-moon-l.webp",
+      "themes": [
+        "winter",
+        "sky"
+      ],
+      "region": "kola"
     },
     {
       "id": "kazan-tree",
@@ -3120,7 +5074,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/kazan-tree.webp",
-      "backL": "img/shop/back/kazan-tree-l.webp"
+      "backL": "img/shop/back/kazan-tree-l.webp",
+      "themes": [
+        "winter",
+        "city"
+      ],
+      "region": "spb"
     },
     {
       "id": "kazan-dome",
@@ -3134,7 +5093,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/kazan-dome.webp",
-      "backL": "img/shop/back/kazan-dome-l.webp"
+      "backL": "img/shop/back/kazan-dome-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "spb"
     },
     {
       "id": "dom-knigi",
@@ -3148,7 +5111,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/dom-knigi.webp",
-      "backL": "img/shop/back/dom-knigi-l.webp"
+      "backL": "img/shop/back/dom-knigi-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "spb"
     },
     {
       "id": "maple-leaf",
@@ -3162,7 +5129,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/maple-leaf.webp",
-      "backL": "img/shop/back/maple-leaf-l.webp"
+      "backL": "img/shop/back/maple-leaf-l.webp",
+      "themes": [
+        "autumn",
+        "city",
+        "macro"
+      ],
+      "region": "spb"
     },
     {
       "id": "colonnade",
@@ -3176,7 +5149,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/colonnade.webp",
-      "backL": "img/shop/back/colonnade-l.webp"
+      "backL": "img/shop/back/colonnade-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "spb"
     },
     {
       "id": "capitals",
@@ -3190,7 +5167,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/capitals.webp",
-      "backL": "img/shop/back/capitals-l.webp"
+      "backL": "img/shop/back/capitals-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "spb"
     },
     {
       "id": "spas-grille",
@@ -3204,7 +5185,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/spas-grille.webp",
-      "backL": "img/shop/back/spas-grille-l.webp"
+      "backL": "img/shop/back/spas-grille-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "spb"
     },
     {
       "id": "griboedov",
@@ -3218,7 +5203,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/griboedov.webp",
-      "backL": "img/shop/back/griboedov-l.webp"
+      "backL": "img/shop/back/griboedov-l.webp",
+      "themes": [
+        "water",
+        "city"
+      ],
+      "region": "spb"
     },
     {
       "id": "kremlin-night",
@@ -3232,7 +5222,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/kremlin-night.webp",
-      "backL": "img/shop/back/kremlin-night-l.webp"
+      "backL": "img/shop/back/kremlin-night-l.webp",
+      "themes": [
+        "winter",
+        "city"
+      ],
+      "region": "ural"
     },
     {
       "id": "snow-alley",
@@ -3246,7 +5241,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/snow-alley.webp",
-      "backL": "img/shop/back/snow-alley-l.webp"
+      "backL": "img/shop/back/snow-alley-l.webp",
+      "themes": [
+        "winter",
+        "city"
+      ],
+      "region": "ural"
     },
     {
       "id": "kremlin-hill",
@@ -3260,7 +5260,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/kremlin-hill.webp",
-      "backL": "img/shop/back/kremlin-hill-l.webp"
+      "backL": "img/shop/back/kremlin-hill-l.webp",
+      "themes": [
+        "winter",
+        "city"
+      ],
+      "region": "ural"
     },
     {
       "id": "arch-sunset",
@@ -3275,7 +5280,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "sky"
       ],
       "back": "img/shop/back/arch-sunset.webp",
-      "backL": "img/shop/back/arch-sunset-l.webp"
+      "backL": "img/shop/back/arch-sunset-l.webp",
+      "themes": [
+        "sky",
+        "city"
+      ],
+      "region": "ural"
     },
     {
       "id": "gold-domes",
@@ -3289,7 +5299,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/gold-domes.webp",
-      "backL": "img/shop/back/gold-domes-l.webp"
+      "backL": "img/shop/back/gold-domes-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "ural"
     },
     {
       "id": "snow-merlons",
@@ -3303,7 +5317,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/snow-merlons.webp",
-      "backL": "img/shop/back/snow-merlons-l.webp"
+      "backL": "img/shop/back/snow-merlons-l.webp",
+      "themes": [
+        "winter",
+        "city"
+      ],
+      "region": "ural"
     },
     {
       "id": "winter-monastery",
@@ -3317,7 +5336,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/winter-monastery.webp",
-      "backL": "img/shop/back/winter-monastery-l.webp"
+      "backL": "img/shop/back/winter-monastery-l.webp",
+      "themes": [
+        "winter",
+        "city"
+      ],
+      "region": "ural"
     },
     {
       "id": "frost-pine",
@@ -3331,7 +5355,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/frost-pine.webp",
-      "backL": "img/shop/back/frost-pine-l.webp"
+      "backL": "img/shop/back/frost-pine-l.webp",
+      "themes": [
+        "forest",
+        "winter",
+        "macro"
+      ],
+      "region": "ural"
     },
     {
       "id": "belltower",
@@ -3345,7 +5375,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/belltower.webp",
-      "backL": "img/shop/back/belltower-l.webp"
+      "backL": "img/shop/back/belltower-l.webp",
+      "themes": [
+        "winter",
+        "city"
+      ],
+      "region": "ural"
     },
     {
       "id": "carved-window",
@@ -3359,7 +5394,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "country"
       ],
       "back": "img/shop/back/carved-window.webp",
-      "backL": "img/shop/back/carved-window-l.webp"
+      "backL": "img/shop/back/carved-window-l.webp",
+      "themes": [
+        "winter",
+        "village"
+      ],
+      "region": "ural"
     },
     {
       "id": "dome-silhouette",
@@ -3373,7 +5413,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "sky"
       ],
       "back": "img/shop/back/dome-silhouette.webp",
-      "backL": "img/shop/back/dome-silhouette-l.webp"
+      "backL": "img/shop/back/dome-silhouette-l.webp",
+      "themes": [
+        "sky",
+        "city"
+      ],
+      "region": "ural"
     },
     {
       "id": "storm-lake",
@@ -3387,7 +5432,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "sky"
       ],
       "back": "img/shop/back/storm-lake.webp",
-      "backL": "img/shop/back/storm-lake-l.webp"
+      "backL": "img/shop/back/storm-lake-l.webp",
+      "themes": [
+        "water",
+        "sky"
+      ],
+      "region": "ural"
     },
     {
       "id": "campfire",
@@ -3401,7 +5451,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "country"
       ],
       "back": "img/shop/back/campfire.webp",
-      "backL": "img/shop/back/campfire-l.webp"
+      "backL": "img/shop/back/campfire-l.webp",
+      "themes": [
+        "village"
+      ],
+      "region": "ural"
     },
     {
       "id": "balcony",
@@ -3415,7 +5469,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/balcony.webp",
-      "backL": "img/shop/back/balcony-l.webp"
+      "backL": "img/shop/back/balcony-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "ural"
     },
     {
       "id": "woodpile",
@@ -3429,7 +5487,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "country"
       ],
       "back": "img/shop/back/woodpile.webp",
-      "backL": "img/shop/back/woodpile-l.webp"
+      "backL": "img/shop/back/woodpile-l.webp",
+      "themes": [
+        "winter",
+        "village"
+      ],
+      "region": "ural"
     },
     {
       "id": "leaf-spruce",
@@ -3443,7 +5506,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/leaf-spruce.webp",
-      "backL": "img/shop/back/leaf-spruce-l.webp"
+      "backL": "img/shop/back/leaf-spruce-l.webp",
+      "themes": [
+        "forest",
+        "autumn",
+        "macro"
+      ],
+      "region": "spb"
     },
     {
       "id": "leaves-grass",
@@ -3457,7 +5526,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/leaves-grass.webp",
-      "backL": "img/shop/back/leaves-grass-l.webp"
+      "backL": "img/shop/back/leaves-grass-l.webp",
+      "themes": [
+        "forest",
+        "autumn",
+        "macro"
+      ],
+      "region": "spb"
     },
     {
       "id": "stump-fern",
@@ -3471,7 +5546,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/stump-fern.webp",
-      "backL": "img/shop/back/stump-fern-l.webp"
+      "backL": "img/shop/back/stump-fern-l.webp",
+      "themes": [
+        "forest",
+        "autumn"
+      ],
+      "region": "spb"
     },
     {
       "id": "maple-moss",
@@ -3485,7 +5565,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/maple-moss.webp",
-      "backL": "img/shop/back/maple-moss-l.webp"
+      "backL": "img/shop/back/maple-moss-l.webp",
+      "themes": [
+        "forest",
+        "autumn",
+        "macro"
+      ],
+      "region": "spb"
     },
     {
       "id": "fern-autumn",
@@ -3499,7 +5585,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/fern-autumn.webp",
-      "backL": "img/shop/back/fern-autumn-l.webp"
+      "backL": "img/shop/back/fern-autumn-l.webp",
+      "themes": [
+        "forest",
+        "autumn"
+      ],
+      "region": "spb"
     },
     {
       "id": "fern-leaf",
@@ -3513,7 +5604,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/fern-leaf.webp",
-      "backL": "img/shop/back/fern-leaf-l.webp"
+      "backL": "img/shop/back/fern-leaf-l.webp",
+      "themes": [
+        "forest",
+        "autumn",
+        "macro"
+      ],
+      "region": "spb"
     },
     {
       "id": "old-stumps",
@@ -3527,7 +5624,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/old-stumps.webp",
-      "backL": "img/shop/back/old-stumps-l.webp"
+      "backL": "img/shop/back/old-stumps-l.webp",
+      "themes": [
+        "forest",
+        "autumn"
+      ],
+      "region": "spb"
     },
     {
       "id": "moss-stump",
@@ -3541,7 +5643,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/moss-stump.webp",
-      "backL": "img/shop/back/moss-stump-l.webp"
+      "backL": "img/shop/back/moss-stump-l.webp",
+      "themes": [
+        "forest",
+        "autumn"
+      ],
+      "region": "spb"
     },
     {
       "id": "yellow-maple",
@@ -3555,7 +5662,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/yellow-maple.webp",
-      "backL": "img/shop/back/yellow-maple-l.webp"
+      "backL": "img/shop/back/yellow-maple-l.webp",
+      "themes": [
+        "forest",
+        "autumn",
+        "macro"
+      ],
+      "region": "spb"
     },
     {
       "id": "fern-2",
@@ -3569,7 +5682,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/fern-2.webp",
-      "backL": "img/shop/back/fern-2-l.webp"
+      "backL": "img/shop/back/fern-2-l.webp",
+      "themes": [
+        "forest",
+        "autumn",
+        "macro"
+      ],
+      "region": "spb"
     },
     {
       "id": "log-mushrooms",
@@ -3583,7 +5702,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest"
       ],
       "back": "img/shop/back/log-mushrooms.webp",
-      "backL": "img/shop/back/log-mushrooms-l.webp"
+      "backL": "img/shop/back/log-mushrooms-l.webp",
+      "themes": [
+        "forest",
+        "autumn",
+        "macro"
+      ],
+      "region": "spb"
     },
     {
       "id": "van-mirror",
@@ -3597,7 +5722,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/van-mirror.webp",
-      "backL": "img/shop/back/van-mirror-l.webp"
+      "backL": "img/shop/back/van-mirror-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "spb"
     },
     {
       "id": "green-van",
@@ -3611,7 +5740,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/green-van.webp",
-      "backL": "img/shop/back/green-van-l.webp"
+      "backL": "img/shop/back/green-van-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "spb"
     },
     {
       "id": "leaf-cobbles",
@@ -3625,7 +5758,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/leaf-cobbles.webp",
-      "backL": "img/shop/back/leaf-cobbles-l.webp"
+      "backL": "img/shop/back/leaf-cobbles-l.webp",
+      "themes": [
+        "autumn",
+        "city",
+        "macro"
+      ],
+      "region": "spb"
     },
     {
       "id": "leaf-slabs",
@@ -3639,7 +5778,13 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/leaf-slabs.webp",
-      "backL": "img/shop/back/leaf-slabs-l.webp"
+      "backL": "img/shop/back/leaf-slabs-l.webp",
+      "themes": [
+        "autumn",
+        "city",
+        "macro"
+      ],
+      "region": "spb"
     },
     {
       "id": "butterfly",
@@ -3653,7 +5798,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "country"
       ],
       "back": "img/shop/back/butterfly.webp",
-      "backL": "img/shop/back/butterfly-l.webp"
+      "backL": "img/shop/back/butterfly-l.webp",
+      "themes": [
+        "macro",
+        "animals"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "green-house",
@@ -3667,7 +5817,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/green-house.webp",
-      "backL": "img/shop/back/green-house-l.webp"
+      "backL": "img/shop/back/green-house-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "owl-tree",
@@ -3681,7 +5835,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "country"
       ],
       "back": "img/shop/back/owl-tree.webp",
-      "backL": "img/shop/back/owl-tree-l.webp"
+      "backL": "img/shop/back/owl-tree-l.webp",
+      "themes": [
+        "forest",
+        "macro"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "lilies",
@@ -3695,7 +5854,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "country"
       ],
       "back": "img/shop/back/lilies.webp",
-      "backL": "img/shop/back/lilies-l.webp"
+      "backL": "img/shop/back/lilies-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "wood-curl",
@@ -3709,7 +5872,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/wood-curl.webp",
-      "backL": "img/shop/back/wood-curl-l.webp"
+      "backL": "img/shop/back/wood-curl-l.webp",
+      "themes": [
+        "city",
+        "macro"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "ivy-door",
@@ -3723,7 +5891,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/ivy-door.webp",
-      "backL": "img/shop/back/ivy-door-l.webp"
+      "backL": "img/shop/back/ivy-door-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "terem-moon",
@@ -3738,7 +5910,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "sky"
       ],
       "back": "img/shop/back/terem-moon.webp",
-      "backL": "img/shop/back/terem-moon-l.webp"
+      "backL": "img/shop/back/terem-moon-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "wood-lace",
@@ -3752,7 +5928,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/wood-lace.webp",
-      "backL": "img/shop/back/wood-lace-l.webp"
+      "backL": "img/shop/back/wood-lace-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "terem-leaves",
@@ -3766,7 +5946,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/terem-leaves.webp",
-      "backL": "img/shop/back/terem-leaves-l.webp"
+      "backL": "img/shop/back/terem-leaves-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "terem-dome",
@@ -3781,7 +5965,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "sky"
       ],
       "back": "img/shop/back/terem-dome.webp",
-      "backL": "img/shop/back/terem-dome-l.webp"
+      "backL": "img/shop/back/terem-dome-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "ferris-wheel",
@@ -3796,7 +5984,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "sky"
       ],
       "back": "img/shop/back/ferris-wheel.webp",
-      "backL": "img/shop/back/ferris-wheel-l.webp"
+      "backL": "img/shop/back/ferris-wheel-l.webp",
+      "themes": [
+        "sky",
+        "city"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "tomsk-churches",
@@ -3810,7 +6003,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/tomsk-churches.webp",
-      "backL": "img/shop/back/tomsk-churches-l.webp"
+      "backL": "img/shop/back/tomsk-churches-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "chapel-stairs",
@@ -3824,7 +6021,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/chapel-stairs.webp",
-      "backL": "img/shop/back/chapel-stairs-l.webp"
+      "backL": "img/shop/back/chapel-stairs-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "spiral-stairs",
@@ -3839,7 +6040,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/spiral-stairs.webp",
-      "backL": "img/shop/back/spiral-stairs-l.webp"
+      "backL": "img/shop/back/spiral-stairs-l.webp",
+      "themes": [
+        "city",
+        "bw"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "shutters",
@@ -3853,7 +6059,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/shutters.webp",
-      "backL": "img/shop/back/shutters-l.webp"
+      "backL": "img/shop/back/shutters-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "carved-eaves",
@@ -3867,7 +6077,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/carved-eaves.webp",
-      "backL": "img/shop/back/carved-eaves-l.webp"
+      "backL": "img/shop/back/carved-eaves-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "white-bridge",
@@ -3881,7 +6095,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/white-bridge.webp",
-      "backL": "img/shop/back/white-bridge-l.webp"
+      "backL": "img/shop/back/white-bridge-l.webp",
+      "themes": [
+        "water",
+        "city"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "four-windows",
@@ -3895,7 +6114,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/four-windows.webp",
-      "backL": "img/shop/back/four-windows-l.webp"
+      "backL": "img/shop/back/four-windows-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "evening-window",
@@ -3909,7 +6132,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city"
       ],
       "back": "img/shop/back/evening-window.webp",
-      "backL": "img/shop/back/evening-window-l.webp"
+      "backL": "img/shop/back/evening-window-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "tomsk"
     },
     {
       "id": "roof-dandelion",
@@ -3924,7 +6151,12 @@ window.SHOP_DATA = /*JSON-START*/{
         "sky"
       ],
       "back": "img/shop/back/roof-dandelion.webp",
-      "backL": "img/shop/back/roof-dandelion-l.webp"
+      "backL": "img/shop/back/roof-dandelion-l.webp",
+      "themes": [
+        "sky",
+        "macro"
+      ],
+      "region": "tomsk"
     }
   ],
   "delivery": {

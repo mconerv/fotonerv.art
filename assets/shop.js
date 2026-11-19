@@ -240,15 +240,16 @@
         });
         html += '</div><h3 class="pc-sub" id="singles">Поштучно' + (any ? ' <small>любые ' + any.n + ' — ' + rubText(any.price) + '</small>' : '') + '</h3>';
       }
-      html += '<div class="pgrid">';
+      html += pcFilterHTML(pc) + '<div class="pgrid" id="pcSingles">';
       D.postcards.forEach(function (c) {
-        html += '<div class="pcard"><button type="button" class="pcard-vis pc-vis" data-view-card="' + esc(c.id) + '" aria-label="Открытка «' + esc(c.title) + '» крупно">' + postcardMock(c) +
+        html += '<div class="pcard" data-themes="' + esc((c.themes || []).join(' ')) + '" data-region="' + esc(c.region || '') + '"><button type="button" class="pcard-vis pc-vis" data-view-card="' + esc(c.id) + '" aria-label="Открытка «' + esc(c.title) + '» крупно">' + postcardMock(c) +
           '<span class="pcard-go">Крупно и оборот</span></button>' +
           '<span class="pcard-t">' + esc(c.title) + '</span><span class="pcard-m"><span>' + esc(c.caption || 'Открытка 10 × 15 см') + '</span><span><b>' + rub(pc.price) + '</b></span></span>' +
           '<span class="pc-actions">' + qtyHTML(c.id) + '<button type="button" class="btn" data-add-card="' + esc(c.id) + '">В корзину</button></span></div>';
       });
       html += '</div>';
       var grid = $('[data-grid]', secC); grid.classList.remove('pgrid'); grid.innerHTML = html;
+      bindPcFilter(secC);
     }
     var fc = $('#fromCanvas'), ff = $('#fromFoam'), fp = $('#fromCards');
     function minOf(pid) { var m = Infinity; D.works.forEach(function (w) { var v = (w.products || []).indexOf(pid) >= 0 ? C.minPrice(D, w, pid) : null; if (v != null && v < m) m = v; }); return m; }
@@ -259,6 +260,43 @@
     renderHub(minOf);
     $$('[data-fill]').forEach(function (el) { var v = D.shop && D.shop[el.getAttribute('data-fill')]; if (v) el.textContent = v; });
   }
+  // поштучные открытки: фильтр по теме и региону (можно сочетать)
+  function pcFilterHTML(pc) {
+    function row(kind, label, list, field) {
+      var used = list.filter(function (t) {
+        var n = D.postcards.filter(function (c) { return field === 'themes' ? (c.themes || []).indexOf(t[0]) >= 0 : c.region === t[0]; }).length;
+        return n >= 3;
+      });
+      if (!used.length) return '';
+      return '<div class="filters pc-filter" role="group" aria-label="' + esc(label) + '" data-kind="' + kind + '"><span class="pc-filter-l">' + esc(label) + '</span>' +
+        '<button type="button" class="chip active" data-f="all" aria-pressed="true">Все</button>' +
+        used.map(function (t) { return '<button type="button" class="chip" data-f="' + esc(t[0]) + '" aria-pressed="false">' + esc(t[1]) + '</button>'; }).join('') + '</div>';
+    }
+    return row('theme', 'Тема', pc.themes || [], 'themes') + row('region', 'Регион', pc.regions || [], 'region') +
+      '<p class="pc-filter-n" id="pcCount" aria-live="polite"></p>';
+  }
+  function bindPcFilter(root) {
+    var sel = { theme: 'all', region: 'all' }, grid = $('#pcSingles', root), cnt = $('#pcCount', root);
+    if (!grid) return;
+    function apply() {
+      var n = 0;
+      $$('.pcard', grid).forEach(function (c) {
+        var ok = (sel.theme === 'all' || (' ' + c.getAttribute('data-themes') + ' ').indexOf(' ' + sel.theme + ' ') >= 0) &&
+          (sel.region === 'all' || c.getAttribute('data-region') === sel.region);
+        c.hidden = !ok; if (ok) n++;
+      });
+      if (cnt) cnt.textContent = n ? (sel.theme === 'all' && sel.region === 'all' ? '' : n + ' ' + plural(n, 'открытка', 'открытки', 'открыток')) : 'Таких открыток нет — снимите один из фильтров';
+    }
+    $$('.pc-filter', root).forEach(function (bar) {
+      bar.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-f]'); if (!b) return;
+        sel[bar.getAttribute('data-kind')] = b.getAttribute('data-f');
+        $$('[data-f]', bar).forEach(function (x) { var on = x === b; x.classList.toggle('active', on); x.setAttribute('aria-pressed', on); });
+        apply();
+      });
+    });
+  }
+
   // каталог: карточки и фильтр по меткам
   var filter = 'all';
   function renderWorks() {

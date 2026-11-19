@@ -163,10 +163,10 @@
       var pc = data.products.postcard.pack, g = cards * pc.each.g;
       if (out.length) out[0].weight += g;
       else if (pc.box && cards >= (Number(pc.box.from) || Infinity)) {
-        // Много открыток: коробка подходящего размера, пока считаем посылкой (бандероль — флагом bookpost)
+        // Много открыток: пакет с картоном. Дешёвый заказ — заказной бандеролью, дорогой — посылкой с объявленной ценностью (порог pack.box.bookpostUpTo, решает сервер)
         var boxes = pc.box.boxes || [], b = boxes[boxes.length - 1];
         for (var j = 0; j < boxes.length; j++) if (cards <= boxes[j].upTo) { b = boxes[j]; break; }
-        out.push({ length: b.l, width: b.w, height: b.h, weight: b.g + g, price: Number(b.price) || 0 });
+        out.push({ length: b.l, width: b.w, height: b.h, weight: b.g + g, price: Number(b.price) || 0, bag: true });
       }
       else out.push({ length: pc.envelope.l, width: pc.envelope.w, height: pc.envelope.h, weight: pc.envelope.g + g, price: Number(pc.envelope.price) || 0, letter: true });
     }
