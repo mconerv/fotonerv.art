@@ -171,7 +171,7 @@
       '<span class="pcard-vis">' + tripMock({ kind: pid, parts: pts.map(function (p) { return { img: p.thumb, on: true }; }), iw: pts[0].w, ih: pts[0].h,
         wcm: o.w, hcm: o.h, depth: opt.depth, boxH: 266.7, fillW: 0.86, fillH: 0.6 }) +
       '<span class="pcard-go">Выбрать размер</span></span>' +
-      '<span class="pcard-t">' + esc(w.title) + '</span>' +
+      '<span class="pcard-t">' + esc(w.short || w.title) + '</span>' +
       '<span class="pcard-m"><span>' + esc(w.caption || 'Триптих') + '</span><span>от <b>' + rub(min) + '</b> / часть</span></span></button>';
   }
   function cardFor(w) {
@@ -186,7 +186,7 @@
       '<span class="pcard-vis">' + (w.award ? '<span class="award">' + AWARD_ICON + esc(w.award.title) + '</span>' : '') +
       mock3d({ kind: pid, img: w.thumb, iw: w.w, ih: w.h, wcm: o.w, hcm: o.h, depth: opt.depth, boxH: 80 }) +
       '<span class="pcard-go">Выбрать размер</span></span>' +
-      '<span class="pcard-t">' + esc(w.title) + '</span>' +
+      '<span class="pcard-t">' + esc(w.short || w.title) + '</span>' +
       '<span class="pcard-m"><span>' + esc(w.caption || '') + (two ? ' · 2 ориентации' : '') + '</span><span>от <b>' + rub(min) + '</b></span></span></button>';
   }
   function ratioLabel(s) {
@@ -244,7 +244,7 @@
       D.postcards.forEach(function (c) {
         html += '<div class="pcard" data-themes="' + esc((c.themes || []).join(' ')) + '" data-region="' + esc(c.region || '') + '"><button type="button" class="pcard-vis pc-vis" data-view-card="' + esc(c.id) + '" aria-label="Открытка «' + esc(c.title) + '» крупно">' + postcardMock(c) +
           '<span class="pcard-go">Крупно и оборот</span></button>' +
-          '<span class="pcard-t">' + esc(c.title) + '</span><span class="pcard-m"><span>' + esc(c.caption || 'Открытка 10 × 15 см') + '</span><span><b>' + rub(pc.price) + '</b></span></span>' +
+          '<span class="pcard-t">' + esc(c.short || c.title) + '</span><span class="pcard-m"><span>' + esc(c.caption || 'Открытка 10 × 15 см') + '</span><span><b>' + rub(pc.price) + '</b></span></span>' +
           '<span class="pc-actions">' + qtyHTML(c.id) + '<button type="button" class="btn" data-add-card="' + esc(c.id) + '">В корзину</button></span></div>';
       });
       html += '</div>';
@@ -853,7 +853,7 @@
     $('#svGrid').innerHTML = cards.map(function (c) {
       var land = c.w >= c.h;
       return '<figure class="sv-card' + (land ? '' : ' v') + '"><button type="button" data-view-card="' + esc(c.id) + '" data-in-set="' + esc(st.id) + '" aria-label="«' + esc(c.title) + '» крупно"><img src="' + esc(cards.length > 8 ? c.thumb : c.img) + '" alt="' + esc(c.title) + '" loading="lazy"></button>' +
-        '<figcaption><b>' + esc(c.title) + '</b>' + (c.caption && c.caption !== c.title ? '<span>' + esc(c.caption) + '</span>' : '') + '</figcaption></figure>';
+        '<figcaption><b>' + esc(c.short || c.title) + '</b>' + (c.caption && c.caption !== c.title ? '<span>' + esc(c.caption) + '</span>' : '') + '</figcaption></figure>';
     }).join('');
     $('#svPrice').innerHTML = rub(st.price);
     $('#setView').hidden = false; document.body.classList.add('noscroll');

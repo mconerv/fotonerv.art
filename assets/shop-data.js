@@ -13,7 +13,8 @@ window.SHOP_DATA = /*JSON-START*/{
     "Пенокартон: materials — основа (w — белый, b — чёрный, 5 мм; edge — цвет кромки на превью), options — основа × бумага (v: gl — глянцевая, mt — матовая, sk — шёлк). Печать — Durst Theta 76, «мокрая».",
     "Открытки: postcards — по работам каталога; products.postcard.sets — наборы (cards: id открыток или \"all\"), anyN — любые n открыток поштучно стоят как набор (скидка считается в quote). Только открытки — Почта шлёт заказным письмом (до 100 г) или заказной бандеролью.",
     "products.postcard.sets[].cover — id открытки, которая лежит сверху на превью набора (необязательно).",
-    "postcards[].themes — темы для фильтра поштучных открыток (ключи из products.postcard.themes); postcards[].region — ключ из products.postcard.regions."
+    "postcards[].themes — темы для фильтра поштучных открыток (ключи из products.postcard.themes); postcards[].region — ключ из products.postcard.regions.",
+    "short — необязательное короткое название для подписи в сетке каталога и наборов; крупный просмотр, оборот, корзина и заказ берут полное title."
   ],
   "version": "2026-11-17",
   "seller": {
@@ -1734,6 +1735,34 @@ window.SHOP_DATA = /*JSON-START*/{
           "cover": "kav-turquoise"
         },
         {
+          "id": "set-kav-snow",
+          "title": "Снег и лёд",
+          "lead": "Ледники и снежные вершины Приэльбрусья",
+          "cards": [
+            "kav-snow-peaks",
+            "kav-elbrus-glacier",
+            "kav-snowfield",
+            "kav-pyramid",
+            "kav-snow-cap"
+          ],
+          "price": 850,
+          "cover": "kav-snow-peaks"
+        },
+        {
+          "id": "set-kav-forest",
+          "title": "Лес и склоны",
+          "lead": "Сосны, ручьи и зелёные склоны Кавказа",
+          "cards": [
+            "kav-lone-tree",
+            "kav-forest-slope",
+            "kav-forest-stream",
+            "kav-pines-peak",
+            "kav-valley-clouds"
+          ],
+          "price": 850,
+          "cover": "kav-lone-tree"
+        },
+        {
           "id": "set-kamchatka-full",
           "title": "Камчатка целиком",
           "lead": "Вулканы, тундра, луна и звёзды",
@@ -1897,9 +1926,13 @@ window.SHOP_DATA = /*JSON-START*/{
             "yak-taiga-fog",
             "yak-cedar-needles",
             "yak-clearing",
-            "yak-new-year-branch"
+            "yak-new-year-branch",
+            "yak-valley-above",
+            "yak-larch-cliff",
+            "yak-dry-clay",
+            "yak-grass"
           ],
-          "price": 3600,
+          "price": 4100,
           "cover": "yak-river-loops"
         },
         {
@@ -1924,7 +1957,7 @@ window.SHOP_DATA = /*JSON-START*/{
         {
           "id": "set-kavkaz",
           "title": "Кавказ",
-          "lead": "Эльбрус, Донгуз-Орун, ледники и Гижгит",
+          "lead": "Эльбрус, Донгуз-Орун, ледники, лес и Гижгит",
           "cards": [
             "kav-horses",
             "kav-sunset-light",
@@ -1958,9 +1991,26 @@ window.SHOP_DATA = /*JSON-START*/{
             "kav-glacier-rocks",
             "kav-raven",
             "kav-glacier-clouds",
-            "kav-observatory"
+            "kav-observatory",
+            "kav-lone-tree",
+            "kav-snow-cap",
+            "kav-elbrus-glacier",
+            "kav-pyramid",
+            "kav-sharp-peak",
+            "kav-snowfield",
+            "kav-elbrus-rocks",
+            "kav-crows",
+            "kav-forest-slope",
+            "kav-forest-stream",
+            "kav-pines-peak",
+            "kav-evening-clouds",
+            "kav-valley-town",
+            "kav-snow-peaks",
+            "kav-frost-leaves",
+            "kav-cable-car",
+            "kav-valley-clouds"
           ],
-          "price": 3950,
+          "price": 6000,
           "cover": "kav-elbrus-twin"
         },
         {
@@ -1968,7 +2018,7 @@ window.SHOP_DATA = /*JSON-START*/{
           "title": "Все открытки",
           "lead": "Полная коллекция",
           "cards": "all",
-          "price": 16000
+          "price": 18000
         }
       ],
       "pack": {
@@ -2103,55 +2153,20 @@ window.SHOP_DATA = /*JSON-START*/{
       ]
     },
     {
-      "id": "isaac-night",
-      "title": "Первый снег",
-      "caption": "Санкт-Петербург",
-      "img": "img/shop/isaac-night.webp",
-      "thumb": "img/shop/thumb/isaac-night.webp",
-      "w": 7000,
-      "h": 4667,
+      "id": "rocks-fog",
+      "title": "Скалы в тумане",
+      "caption": "Камчатка",
+      "img": "img/shop/rocks-fog.webp",
+      "thumb": "img/shop/thumb/rocks-fog.webp",
+      "w": 5250,
+      "h": 7000,
       "products": [
         "canvas",
         "foam"
       ],
       "tags": [
-        "bw",
-        "city"
+        "mountains"
       ]
-    },
-    {
-      "id": "slope-clouds",
-      "title": "Гора Отвесная",
-      "caption": "Камчатка",
-      "img": "img/shop/slope-clouds.webp",
-      "thumb": "img/shop/thumb/slope-clouds.webp",
-      "w": 7000,
-      "h": 9333,
-      "products": [
-        "canvas",
-        "foam"
-      ],
-      "tags": [
-        "mountains"
-      ],
-      "pair": "slope-clouds-h"
-    },
-    {
-      "id": "slope-clouds-h",
-      "title": "Гора Отвесная · горизонтальная",
-      "caption": "Камчатка",
-      "img": "img/shop/slope-clouds-h.webp",
-      "thumb": "img/shop/thumb/slope-clouds-h.webp",
-      "w": 7000,
-      "h": 5250,
-      "products": [
-        "canvas",
-        "foam"
-      ],
-      "tags": [
-        "mountains"
-      ],
-      "pairOf": "slope-clouds"
     },
     {
       "id": "lake-panorama",
@@ -2233,29 +2248,99 @@ window.SHOP_DATA = /*JSON-START*/{
       "part": 3
     },
     {
-      "id": "moon-path",
-      "title": "Ночной туман",
-      "caption": "Кольский полуостров",
-      "img": "img/shop/moon-path.webp",
-      "thumb": "img/shop/thumb/moon-path.webp",
-      "w": 7000,
-      "h": 4950,
+      "id": "forest-line",
+      "title": "Граница леса",
+      "caption": "Магадан",
+      "img": "img/shop/forest-line.webp",
+      "thumb": "img/shop/thumb/forest-line.webp",
+      "w": 6701,
+      "h": 4467,
       "products": [
         "canvas",
         "foam"
       ],
       "tags": [
+        "bw",
+        "forest",
+        "mountains"
+      ]
+    },
+    {
+      "id": "kav-golden-clouds",
+      "title": "Золотые облака",
+      "caption": "Кавказ",
+      "img": "img/shop/kav-golden-clouds.webp",
+      "thumb": "img/shop/thumb/kav-golden-clouds.webp",
+      "w": 6000,
+      "h": 4000,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "mountains",
         "sky"
       ]
     },
     {
-      "id": "gate-light",
-      "title": "Врата",
-      "caption": "Верхотурье",
-      "img": "img/shop/gate-light.webp",
-      "thumb": "img/shop/thumb/gate-light.webp",
-      "w": 3722,
-      "h": 3722,
+      "id": "valley-light",
+      "title": "Свет в долине",
+      "caption": "Камчатка",
+      "img": "img/shop/valley-light.webp",
+      "thumb": "img/shop/thumb/valley-light.webp",
+      "w": 7000,
+      "h": 5250,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "mountains"
+      ],
+      "pair": "valley-light-v"
+    },
+    {
+      "id": "valley-light-v",
+      "title": "Свет в долине · вертикальная",
+      "caption": "Камчатка",
+      "img": "img/shop/valley-light-v.webp",
+      "thumb": "img/shop/thumb/valley-light-v.webp",
+      "w": 7000,
+      "h": 9333,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "mountains"
+      ],
+      "pairOf": "valley-light"
+    },
+    {
+      "id": "kav-cirrus",
+      "title": "Ледник Семёрка",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-cirrus.webp",
+      "thumb": "img/shop/thumb/kav-cirrus.webp",
+      "w": 7000,
+      "h": 4667,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "mountains",
+        "sky"
+      ]
+    },
+    {
+      "id": "bridge-fog",
+      "title": "Зимний мост",
+      "caption": "Новосибирск",
+      "img": "img/shop/bridge-fog.webp",
+      "thumb": "img/shop/thumb/bridge-fog.webp",
+      "w": 7000,
+      "h": 3938,
       "products": [
         "canvas",
         "foam"
@@ -2266,56 +2351,120 @@ window.SHOP_DATA = /*JSON-START*/{
       ]
     },
     {
-      "id": "hut-field",
-      "maxSize": [
-        50,
-        70
-      ],
-      "title": "Баня",
-      "caption": "Кольский полуостров",
-      "img": "img/shop/hut-field.webp",
-      "thumb": "img/shop/thumb/hut-field.webp",
-      "w": 7000,
-      "h": 4667,
-      "products": [
-        "canvas",
-        "foam"
-      ],
-      "tags": [
-        "country"
-      ]
-    },
-    {
-      "id": "old-barn",
-      "title": "Старый сруб",
-      "caption": "Кольский полуостров",
-      "img": "img/shop/old-barn.webp",
-      "thumb": "img/shop/thumb/old-barn.webp",
-      "w": 7000,
-      "h": 4667,
-      "products": [
-        "canvas",
-        "foam"
-      ],
-      "tags": [
-        "country"
-      ]
-    },
-    {
-      "id": "snow-peak",
-      "title": "Снежная вершина",
+      "id": "tundra-pattern",
+      "title": "Узор тундры",
       "caption": "Камчатка",
-      "img": "img/shop/snow-peak.webp",
-      "thumb": "img/shop/thumb/snow-peak.webp",
+      "img": "img/shop/tundra-pattern.webp",
+      "thumb": "img/shop/thumb/tundra-pattern.webp",
       "w": 7000,
-      "h": 5250,
+      "h": 4667,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "mountains"
+      ],
+      "pair": "tundra-pattern-v"
+    },
+    {
+      "id": "tundra-pattern-v",
+      "title": "Узор тундры · вертикальная",
+      "caption": "Камчатка",
+      "img": "img/shop/tundra-pattern-v.webp",
+      "thumb": "img/shop/thumb/tundra-pattern-v.webp",
+      "w": 7000,
+      "h": 10500,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "mountains"
+      ],
+      "pairOf": "tundra-pattern"
+    },
+    {
+      "id": "kav-pines-peak",
+      "title": "Вершина сквозь сосны",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-pines-peak.webp",
+      "thumb": "img/shop/thumb/kav-pines-peak.webp",
+      "w": 7000,
+      "h": 10500,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "forest",
+        "mountains"
+      ]
+    },
+    {
+      "id": "snow-hills",
+      "title": "Снежные сопки",
+      "caption": "Магадан",
+      "img": "img/shop/snow-hills.webp",
+      "thumb": "img/shop/thumb/snow-hills.webp",
+      "w": 7008,
+      "h": 4672,
       "products": [
         "canvas",
         "foam"
       ],
       "tags": [
         "bw",
+        "forest",
         "mountains"
+      ]
+    },
+    {
+      "id": "kav-elbrus-glacier",
+      "title": "Ледник",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-elbrus-glacier.webp",
+      "thumb": "img/shop/thumb/kav-elbrus-glacier.webp",
+      "w": 7000,
+      "h": 4667,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "mountains"
+      ]
+    },
+    {
+      "id": "red-ridge",
+      "title": "Красный гребень",
+      "caption": "Камчатка",
+      "img": "img/shop/red-ridge.webp",
+      "thumb": "img/shop/thumb/red-ridge.webp",
+      "w": 7000,
+      "h": 9333,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "mountains"
+      ]
+    },
+    {
+      "id": "kav-forest-stream",
+      "title": "Ручей в лесу",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-forest-stream.webp",
+      "thumb": "img/shop/thumb/kav-forest-stream.webp",
+      "w": 7000,
+      "h": 10500,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "forest"
       ]
     },
     {
@@ -2336,20 +2485,23 @@ window.SHOP_DATA = /*JSON-START*/{
       ]
     },
     {
-      "id": "bridge-fog",
-      "title": "Зимний мост",
-      "caption": "Новосибирск",
-      "img": "img/shop/bridge-fog.webp",
-      "thumb": "img/shop/thumb/bridge-fog.webp",
+      "id": "hut-field",
+      "maxSize": [
+        50,
+        70
+      ],
+      "title": "Баня",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/hut-field.webp",
+      "thumb": "img/shop/thumb/hut-field.webp",
       "w": 7000,
-      "h": 3938,
+      "h": 4667,
       "products": [
         "canvas",
         "foam"
       ],
       "tags": [
-        "bw",
-        "city"
+        "country"
       ]
     },
     {
@@ -2391,101 +2543,11 @@ window.SHOP_DATA = /*JSON-START*/{
       "pairOf": "larch-ridge"
     },
     {
-      "id": "forest-line",
-      "title": "Граница леса",
-      "caption": "Магадан",
-      "img": "img/shop/forest-line.webp",
-      "thumb": "img/shop/thumb/forest-line.webp",
-      "w": 6701,
-      "h": 4467,
-      "products": [
-        "canvas",
-        "foam"
-      ],
-      "tags": [
-        "bw",
-        "forest",
-        "mountains"
-      ]
-    },
-    {
-      "id": "larches",
-      "title": "Лиственницы",
-      "caption": "Магадан",
-      "img": "img/shop/larches.webp",
-      "thumb": "img/shop/thumb/larches.webp",
-      "w": 7008,
-      "h": 4672,
-      "products": [
-        "canvas",
-        "foam"
-      ],
-      "tags": [
-        "bw",
-        "forest",
-        "mountains"
-      ]
-    },
-    {
-      "id": "white-valley",
-      "title": "Белая долина",
-      "caption": "Магадан",
-      "img": "img/shop/white-valley.webp",
-      "thumb": "img/shop/thumb/white-valley.webp",
-      "w": 7008,
-      "h": 4672,
-      "products": [
-        "canvas",
-        "foam"
-      ],
-      "tags": [
-        "bw",
-        "forest",
-        "mountains"
-      ]
-    },
-    {
-      "id": "sparse-slope",
-      "title": "Редколесье на склоне",
-      "caption": "Магадан",
-      "img": "img/shop/sparse-slope.webp",
-      "thumb": "img/shop/thumb/sparse-slope.webp",
-      "w": 6914,
-      "h": 4609,
-      "products": [
-        "canvas",
-        "foam"
-      ],
-      "tags": [
-        "bw",
-        "forest",
-        "mountains"
-      ]
-    },
-    {
-      "id": "snow-hills",
-      "title": "Снежные сопки",
-      "caption": "Магадан",
-      "img": "img/shop/snow-hills.webp",
-      "thumb": "img/shop/thumb/snow-hills.webp",
-      "w": 7008,
-      "h": 4672,
-      "products": [
-        "canvas",
-        "foam"
-      ],
-      "tags": [
-        "bw",
-        "forest",
-        "mountains"
-      ]
-    },
-    {
-      "id": "valley-light",
-      "title": "Свет в долине",
+      "id": "cloud-slope",
+      "title": "Облако на склоне",
       "caption": "Камчатка",
-      "img": "img/shop/valley-light.webp",
-      "thumb": "img/shop/thumb/valley-light.webp",
+      "img": "img/shop/cloud-slope.webp",
+      "thumb": "img/shop/thumb/cloud-slope.webp",
       "w": 7000,
       "h": 5250,
       "products": [
@@ -2493,26 +2555,58 @@ window.SHOP_DATA = /*JSON-START*/{
         "foam"
       ],
       "tags": [
-        "mountains"
-      ],
-      "pair": "valley-light-v"
+        "mountains",
+        "sky"
+      ]
     },
     {
-      "id": "valley-light-v",
-      "title": "Свет в долине · вертикальная",
-      "caption": "Камчатка",
-      "img": "img/shop/valley-light-v.webp",
-      "thumb": "img/shop/thumb/valley-light-v.webp",
-      "w": 7000,
-      "h": 9333,
+      "id": "yak-morning-fog",
+      "title": "Утренний туман",
+      "caption": "Якутия",
+      "img": "img/shop/yak-morning-fog.webp",
+      "thumb": "img/shop/thumb/yak-morning-fog.webp",
+      "w": 6000,
+      "h": 4000,
       "products": [
         "canvas",
         "foam"
       ],
       "tags": [
-        "mountains"
+        "forest"
+      ]
+    },
+    {
+      "id": "cloud-peak",
+      "title": "Вершина под облаком",
+      "caption": "Камчатка",
+      "img": "img/shop/cloud-peak.webp",
+      "thumb": "img/shop/thumb/cloud-peak.webp",
+      "w": 7000,
+      "h": 5250,
+      "products": [
+        "canvas",
+        "foam"
       ],
-      "pairOf": "valley-light"
+      "tags": [
+        "mountains",
+        "sky"
+      ]
+    },
+    {
+      "id": "moon-path",
+      "title": "Ночной туман",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/moon-path.webp",
+      "thumb": "img/shop/thumb/moon-path.webp",
+      "w": 7000,
+      "h": 4950,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "sky"
+      ]
     },
     {
       "id": "river-valley",
@@ -2549,6 +2643,92 @@ window.SHOP_DATA = /*JSON-START*/{
       "pairOf": "river-valley"
     },
     {
+      "id": "kav-pines-elbrus",
+      "title": "Эльбрус сквозь сосны",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-pines-elbrus.webp",
+      "thumb": "img/shop/thumb/kav-pines-elbrus.webp",
+      "w": 7000,
+      "h": 4667,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "forest",
+        "mountains"
+      ]
+    },
+    {
+      "id": "sparse-slope",
+      "title": "Редколесье на склоне",
+      "caption": "Магадан",
+      "img": "img/shop/sparse-slope.webp",
+      "thumb": "img/shop/thumb/sparse-slope.webp",
+      "w": 6914,
+      "h": 4609,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "bw",
+        "forest",
+        "mountains"
+      ]
+    },
+    {
+      "id": "kav-haze",
+      "title": "Утро над Тырныаузом",
+      "caption": "Кавказ",
+      "img": "img/shop/kav-haze.webp",
+      "thumb": "img/shop/thumb/kav-haze.webp",
+      "w": 5947,
+      "h": 3965,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "mountains"
+      ]
+    },
+    {
+      "id": "larches",
+      "title": "Лиственницы",
+      "caption": "Магадан",
+      "img": "img/shop/larches.webp",
+      "thumb": "img/shop/thumb/larches.webp",
+      "w": 7008,
+      "h": 4672,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "bw",
+        "forest",
+        "mountains"
+      ]
+    },
+    {
+      "id": "yak-valley-above",
+      "title": "Чульман вечером",
+      "caption": "Якутия",
+      "img": "img/shop/yak-valley-above.webp",
+      "thumb": "img/shop/thumb/yak-valley-above.webp",
+      "w": 7000,
+      "h": 4667,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "forest",
+        "sky"
+      ]
+    },
+    {
       "id": "green-valley",
       "title": "Зелёная долина",
       "caption": "Камчатка",
@@ -2556,6 +2736,139 @@ window.SHOP_DATA = /*JSON-START*/{
       "thumb": "img/shop/thumb/green-valley.webp",
       "w": 7000,
       "h": 5250,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "mountains"
+      ]
+    },
+    {
+      "id": "isaac-night",
+      "title": "Первый снег",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/isaac-night.webp",
+      "thumb": "img/shop/thumb/isaac-night.webp",
+      "w": 7000,
+      "h": 4667,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "bw",
+        "city"
+      ]
+    },
+    {
+      "id": "kav-icefall-wall",
+      "title": "Ледопад",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-icefall-wall.webp",
+      "thumb": "img/shop/thumb/kav-icefall-wall.webp",
+      "w": 7000,
+      "h": 4667,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "mountains"
+      ]
+    },
+    {
+      "id": "slope-clouds",
+      "title": "Гора Отвесная",
+      "caption": "Камчатка",
+      "img": "img/shop/slope-clouds.webp",
+      "thumb": "img/shop/thumb/slope-clouds.webp",
+      "w": 7000,
+      "h": 9333,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "mountains"
+      ],
+      "pair": "slope-clouds-h"
+    },
+    {
+      "id": "slope-clouds-h",
+      "title": "Гора Отвесная · горизонтальная",
+      "caption": "Камчатка",
+      "img": "img/shop/slope-clouds-h.webp",
+      "thumb": "img/shop/thumb/slope-clouds-h.webp",
+      "w": 7000,
+      "h": 5250,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "mountains"
+      ],
+      "pairOf": "slope-clouds"
+    },
+    {
+      "id": "kav-sunset-ridges",
+      "title": "На закате",
+      "caption": "Кавказ",
+      "img": "img/shop/kav-sunset-ridges.webp",
+      "thumb": "img/shop/thumb/kav-sunset-ridges.webp",
+      "w": 6000,
+      "h": 4000,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "mountains",
+        "sky"
+      ]
+    },
+    {
+      "id": "gate-light",
+      "title": "Врата",
+      "caption": "Верхотурье",
+      "img": "img/shop/gate-light.webp",
+      "thumb": "img/shop/thumb/gate-light.webp",
+      "w": 3722,
+      "h": 3722,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "bw",
+        "city"
+      ]
+    },
+    {
+      "id": "moon",
+      "title": "Луна",
+      "caption": "Камчатка, утро",
+      "img": "img/shop/moon.webp",
+      "thumb": "img/shop/thumb/moon.webp",
+      "w": 7000,
+      "h": 5250,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "sky"
+      ]
+    },
+    {
+      "id": "kav-snow-cap",
+      "title": "Снежная шапка",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-snow-cap.webp",
+      "thumb": "img/shop/thumb/kav-snow-cap.webp",
+      "w": 7000,
+      "h": 4667,
       "products": [
         "canvas",
         "foam"
@@ -2599,11 +2912,29 @@ window.SHOP_DATA = /*JSON-START*/{
       "pairOf": "beyond-pass"
     },
     {
-      "id": "tundra-pattern",
-      "title": "Узор тундры",
-      "caption": "Камчатка",
-      "img": "img/shop/tundra-pattern.webp",
-      "thumb": "img/shop/thumb/tundra-pattern.webp",
+      "id": "white-valley",
+      "title": "Белая долина",
+      "caption": "Магадан",
+      "img": "img/shop/white-valley.webp",
+      "thumb": "img/shop/thumb/white-valley.webp",
+      "w": 7008,
+      "h": 4672,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "bw",
+        "forest",
+        "mountains"
+      ]
+    },
+    {
+      "id": "kav-pyramid",
+      "title": "Пирамида",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-pyramid.webp",
+      "thumb": "img/shop/thumb/kav-pyramid.webp",
       "w": 7000,
       "h": 4667,
       "products": [
@@ -2612,15 +2943,31 @@ window.SHOP_DATA = /*JSON-START*/{
       ],
       "tags": [
         "mountains"
-      ],
-      "pair": "tundra-pattern-v"
+      ]
     },
     {
-      "id": "tundra-pattern-v",
-      "title": "Узор тундры · вертикальная",
+      "id": "snow-peak",
+      "title": "Снежная вершина",
       "caption": "Камчатка",
-      "img": "img/shop/tundra-pattern-v.webp",
-      "thumb": "img/shop/thumb/tundra-pattern-v.webp",
+      "img": "img/shop/snow-peak.webp",
+      "thumb": "img/shop/thumb/snow-peak.webp",
+      "w": 7000,
+      "h": 5250,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "bw",
+        "mountains"
+      ]
+    },
+    {
+      "id": "kav-elbrus-ice",
+      "title": "Ледники Эльбруса",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-elbrus-ice.webp",
+      "thumb": "img/shop/thumb/kav-elbrus-ice.webp",
       "w": 7000,
       "h": 10500,
       "products": [
@@ -2629,93 +2976,435 @@ window.SHOP_DATA = /*JSON-START*/{
       ],
       "tags": [
         "mountains"
-      ],
-      "pairOf": "tundra-pattern"
+      ]
     },
     {
-      "id": "red-ridge",
-      "title": "Красный гребень",
-      "caption": "Камчатка",
-      "img": "img/shop/red-ridge.webp",
-      "thumb": "img/shop/thumb/red-ridge.webp",
+      "id": "old-barn",
+      "title": "Старый сруб",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/old-barn.webp",
+      "thumb": "img/shop/thumb/old-barn.webp",
       "w": 7000,
-      "h": 9333,
+      "h": 4667,
+      "products": [
+        "canvas",
+        "foam"
+      ],
+      "tags": [
+        "country"
+      ]
+    },
+    {
+      "id": "kav-snow-peaks",
+      "title": "Снежные пирамиды",
+      "caption": "Кавказ",
+      "img": "img/shop/kav-snow-peaks.webp",
+      "thumb": "img/shop/thumb/kav-snow-peaks.webp",
+      "w": 6000,
+      "h": 4000,
       "products": [
         "canvas",
         "foam"
       ],
       "tags": [
         "mountains"
-      ]
-    },
-    {
-      "id": "cloud-slope",
-      "title": "Облако на склоне",
-      "caption": "Камчатка",
-      "img": "img/shop/cloud-slope.webp",
-      "thumb": "img/shop/thumb/cloud-slope.webp",
-      "w": 7000,
-      "h": 5250,
-      "products": [
-        "canvas",
-        "foam"
-      ],
-      "tags": [
-        "mountains",
-        "sky"
-      ]
-    },
-    {
-      "id": "cloud-peak",
-      "title": "Вершина под облаком",
-      "caption": "Камчатка",
-      "img": "img/shop/cloud-peak.webp",
-      "thumb": "img/shop/thumb/cloud-peak.webp",
-      "w": 7000,
-      "h": 5250,
-      "products": [
-        "canvas",
-        "foam"
-      ],
-      "tags": [
-        "mountains",
-        "sky"
-      ]
-    },
-    {
-      "id": "rocks-fog",
-      "title": "Скалы в тумане",
-      "caption": "Камчатка",
-      "img": "img/shop/rocks-fog.webp",
-      "thumb": "img/shop/thumb/rocks-fog.webp",
-      "w": 5250,
-      "h": 7000,
-      "products": [
-        "canvas",
-        "foam"
-      ],
-      "tags": [
-        "mountains"
-      ]
-    },
-    {
-      "id": "moon",
-      "title": "Луна",
-      "caption": "Камчатка, утро",
-      "img": "img/shop/moon.webp",
-      "thumb": "img/shop/thumb/moon.webp",
-      "w": 7000,
-      "h": 5250,
-      "products": [
-        "canvas",
-        "foam"
-      ],
-      "tags": [
-        "sky"
       ]
     }
   ],
   "postcards": [
+    {
+      "id": "kav-lone-tree",
+      "title": "Одинокое дерево",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-lone-tree.webp",
+      "thumb": "img/shop/thumb/kav-lone-tree.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains",
+        "forest"
+      ],
+      "back": "img/shop/back/kav-lone-tree.webp",
+      "backL": "img/shop/back/kav-lone-tree-l.webp",
+      "themes": [
+        "mountains",
+        "forest"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-snow-cap",
+      "title": "Снежная шапка",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-snow-cap.webp",
+      "thumb": "img/shop/thumb/kav-snow-cap.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-snow-cap.webp",
+      "backL": "img/shop/back/kav-snow-cap-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-elbrus-glacier",
+      "title": "Ледники Эльбруса",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-elbrus-glacier.webp",
+      "thumb": "img/shop/thumb/kav-elbrus-glacier.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-elbrus-glacier.webp",
+      "backL": "img/shop/back/kav-elbrus-glacier-l.webp",
+      "themes": [
+        "mountains",
+        "winter"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-pyramid",
+      "title": "Пирамида",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-pyramid.webp",
+      "thumb": "img/shop/thumb/kav-pyramid.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-pyramid.webp",
+      "backL": "img/shop/back/kav-pyramid-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-sharp-peak",
+      "title": "Острый пик",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-sharp-peak.webp",
+      "thumb": "img/shop/thumb/kav-sharp-peak.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains",
+        "sky"
+      ],
+      "back": "img/shop/back/kav-sharp-peak.webp",
+      "backL": "img/shop/back/kav-sharp-peak-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-snowfield",
+      "title": "Снежник",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-snowfield.webp",
+      "thumb": "img/shop/thumb/kav-snowfield.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-snowfield.webp",
+      "backL": "img/shop/back/kav-snowfield-l.webp",
+      "themes": [
+        "mountains",
+        "winter"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-elbrus-rocks",
+      "title": "Эльбрус между скал",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-elbrus-rocks.webp",
+      "thumb": "img/shop/thumb/kav-elbrus-rocks.webp",
+      "w": 7000,
+      "h": 4356,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-elbrus-rocks.webp",
+      "backL": "img/shop/back/kav-elbrus-rocks-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-crows",
+      "title": "Вороны над гребнем",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-crows.webp",
+      "thumb": "img/shop/thumb/kav-crows.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-crows.webp",
+      "backL": "img/shop/back/kav-crows-l.webp",
+      "themes": [
+        "mountains",
+        "animals"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-forest-slope",
+      "title": "Лес на склоне",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-forest-slope.webp",
+      "thumb": "img/shop/thumb/kav-forest-slope.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/kav-forest-slope.webp",
+      "backL": "img/shop/back/kav-forest-slope-l.webp",
+      "themes": [
+        "forest"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-forest-stream",
+      "title": "Ручей в лесу",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-forest-stream.webp",
+      "thumb": "img/shop/thumb/kav-forest-stream.webp",
+      "w": 7000,
+      "h": 10500,
+      "tags": [
+        "forest",
+        "sky"
+      ],
+      "back": "img/shop/back/kav-forest-stream.webp",
+      "backL": "img/shop/back/kav-forest-stream-l.webp",
+      "themes": [
+        "forest",
+        "water"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-pines-peak",
+      "title": "Вершина сквозь сосны",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-pines-peak.webp",
+      "thumb": "img/shop/thumb/kav-pines-peak.webp",
+      "w": 7000,
+      "h": 10500,
+      "tags": [
+        "mountains",
+        "forest"
+      ],
+      "back": "img/shop/back/kav-pines-peak.webp",
+      "backL": "img/shop/back/kav-pines-peak-l.webp",
+      "themes": [
+        "forest",
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-evening-clouds",
+      "title": "Вечер над облаками",
+      "caption": "Кавказ",
+      "img": "img/shop/kav-evening-clouds.webp",
+      "thumb": "img/shop/thumb/kav-evening-clouds.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [
+        "mountains",
+        "sky"
+      ],
+      "back": "img/shop/back/kav-evening-clouds.webp",
+      "backL": "img/shop/back/kav-evening-clouds-l.webp",
+      "themes": [
+        "sky",
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-valley-town",
+      "title": "Посёлок в долине",
+      "caption": "Кавказ",
+      "img": "img/shop/kav-valley-town.webp",
+      "thumb": "img/shop/thumb/kav-valley-town.webp",
+      "w": 5528,
+      "h": 3685,
+      "tags": [
+        "mountains",
+        "city"
+      ],
+      "back": "img/shop/back/kav-valley-town.webp",
+      "backL": "img/shop/back/kav-valley-town-l.webp",
+      "themes": [
+        "mountains",
+        "city"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-snow-peaks",
+      "title": "Снежные пирамиды",
+      "caption": "Кавказ",
+      "img": "img/shop/kav-snow-peaks.webp",
+      "thumb": "img/shop/thumb/kav-snow-peaks.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-snow-peaks.webp",
+      "backL": "img/shop/back/kav-snow-peaks-l.webp",
+      "themes": [
+        "mountains",
+        "winter"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-frost-leaves",
+      "title": "Иней на листьях",
+      "caption": "Кавказ",
+      "img": "img/shop/kav-frost-leaves.webp",
+      "thumb": "img/shop/thumb/kav-frost-leaves.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [],
+      "back": "img/shop/back/kav-frost-leaves.webp",
+      "backL": "img/shop/back/kav-frost-leaves-l.webp",
+      "themes": [
+        "macro",
+        "autumn"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-cable-car",
+      "title": "Красная кабина",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-cable-car.webp",
+      "thumb": "img/shop/thumb/kav-cable-car.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains"
+      ],
+      "back": "img/shop/back/kav-cable-car.webp",
+      "backL": "img/shop/back/kav-cable-car-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "kav-valley-clouds",
+      "title": "Долина",
+      "caption": "Приэльбрусье",
+      "img": "img/shop/kav-valley-clouds.webp",
+      "thumb": "img/shop/thumb/kav-valley-clouds.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "mountains",
+        "sky"
+      ],
+      "back": "img/shop/back/kav-valley-clouds.webp",
+      "backL": "img/shop/back/kav-valley-clouds-l.webp",
+      "themes": [
+        "sky",
+        "mountains"
+      ],
+      "region": "kavkaz"
+    },
+    {
+      "id": "yak-valley-above",
+      "title": "Чульман вечером",
+      "caption": "Якутия",
+      "img": "img/shop/yak-valley-above.webp",
+      "thumb": "img/shop/thumb/yak-valley-above.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "forest",
+        "sky"
+      ],
+      "back": "img/shop/back/yak-valley-above.webp",
+      "backL": "img/shop/back/yak-valley-above-l.webp",
+      "themes": [
+        "forest",
+        "water"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-larch-cliff",
+      "title": "Лиственница на скале",
+      "caption": "Якутия",
+      "img": "img/shop/yak-larch-cliff.webp",
+      "thumb": "img/shop/thumb/yak-larch-cliff.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "forest"
+      ],
+      "back": "img/shop/back/yak-larch-cliff.webp",
+      "backL": "img/shop/back/yak-larch-cliff-l.webp",
+      "themes": [
+        "forest"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-dry-clay",
+      "title": "Сухая глина",
+      "caption": "Якутия",
+      "img": "img/shop/yak-dry-clay.webp",
+      "thumb": "img/shop/thumb/yak-dry-clay.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [],
+      "back": "img/shop/back/yak-dry-clay.webp",
+      "backL": "img/shop/back/yak-dry-clay-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "yakutia"
+    },
+    {
+      "id": "yak-grass",
+      "title": "Трава",
+      "caption": "Якутия",
+      "img": "img/shop/yak-grass.webp",
+      "thumb": "img/shop/thumb/yak-grass.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [],
+      "back": "img/shop/back/yak-grass.webp",
+      "backL": "img/shop/back/yak-grass-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "yakutia"
+    },
     {
       "id": "yak-red-leaves",
       "title": "Красные листья",
@@ -3539,6 +4228,7 @@ window.SHOP_DATA = /*JSON-START*/{
     {
       "id": "kav-red-rocks",
       "title": "Гора Наушидза (Тёщины Зубы)",
+      "short": "Гора Наушидза",
       "caption": "Кавказ",
       "img": "img/shop/kav-red-rocks.webp",
       "thumb": "img/shop/thumb/kav-red-rocks.webp",
@@ -3579,7 +4269,7 @@ window.SHOP_DATA = /*JSON-START*/{
     {
       "id": "kav-white-shore",
       "title": "Белый берег",
-      "caption": "Гижгитское озеро",
+      "caption": "Озеро Гижгит",
       "img": "img/shop/kav-white-shore.webp",
       "thumb": "img/shop/thumb/kav-white-shore.webp",
       "w": 5775,
@@ -3597,8 +4287,8 @@ window.SHOP_DATA = /*JSON-START*/{
     },
     {
       "id": "kav-cliff-wall",
-      "title": "Скальная стена",
-      "caption": "Гижгитское озеро",
+      "title": "Скальный массив Букъа-къая",
+      "caption": "Кабардино-Балкария",
       "img": "img/shop/kav-cliff-wall.webp",
       "thumb": "img/shop/thumb/kav-cliff-wall.webp",
       "w": 7000,
@@ -3616,7 +4306,7 @@ window.SHOP_DATA = /*JSON-START*/{
     {
       "id": "kav-turquoise",
       "title": "Бирюзовое озеро",
-      "caption": "Гижгитское озеро",
+      "caption": "Озеро Гижгит",
       "img": "img/shop/kav-turquoise.webp",
       "thumb": "img/shop/thumb/kav-turquoise.webp",
       "w": 7000,
@@ -3818,7 +4508,7 @@ window.SHOP_DATA = /*JSON-START*/{
     },
     {
       "id": "kav-cloud-ridges",
-      "title": "Облако между гребнями",
+      "title": "Облачная гора",
       "caption": "Приэльбрусье",
       "img": "img/shop/kav-cloud-ridges.webp",
       "thumb": "img/shop/thumb/kav-cloud-ridges.webp",
@@ -3893,7 +4583,7 @@ window.SHOP_DATA = /*JSON-START*/{
     },
     {
       "id": "kav-elbrus-slope",
-      "title": "Склон Эльбруса",
+      "title": "Вид на Эльбрус с Чегета",
       "caption": "Приэльбрусье",
       "img": "img/shop/kav-elbrus-slope.webp",
       "thumb": "img/shop/thumb/kav-elbrus-slope.webp",
@@ -4062,7 +4752,7 @@ window.SHOP_DATA = /*JSON-START*/{
     },
     {
       "id": "kav-glacier-clouds",
-      "title": "Ледник под облаками",
+      "title": "Ледники Эльбруса",
       "caption": "Приэльбрусье",
       "img": "img/shop/kav-glacier-clouds.webp",
       "thumb": "img/shop/thumb/kav-glacier-clouds.webp",
