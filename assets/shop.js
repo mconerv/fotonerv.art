@@ -507,7 +507,7 @@
     var prods = (w.products || []).filter(function (id) { return C.sizesFor(D, w, id).length; });
     $('#cfgProductWrap').hidden = prods.length < 2;
     $('#cfgProduct').innerHTML = prods.map(function (id) {
-      return '<button type="button" data-p="' + id + '" aria-pressed="' + (id === cfg.product) + '">' + esc(product(id).title) + '</button>';
+      return '<button type="button" data-p="' + id + '" aria-pressed="' + (id === cfg.product) + '">' + esc(product(id).tab || product(id).title) + '</button>';
     }).join('');
     $('#cfgSizes').innerHTML = sizes.map(function (x) {
       var pr = optPrice(x.size), only = !(x.size.price[cfg.option] > 0) && pr > 0 ? ' · только натуральный' : '';
