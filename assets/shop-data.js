@@ -3243,7 +3243,7 @@ window.SHOP_DATA = /*JSON-START*/{
     },
     {
       "id": "kav-valley-town",
-      "title": "Посёлок в долине",
+      "title": "Тырныауз осенью",
       "caption": "Кавказ",
       "img": "img/shop/kav-valley-town.webp",
       "thumb": "img/shop/thumb/kav-valley-town.webp",
@@ -3299,7 +3299,7 @@ window.SHOP_DATA = /*JSON-START*/{
     },
     {
       "id": "kav-cable-car",
-      "title": "Красная кабина",
+      "title": "Путь на вершину",
       "caption": "Приэльбрусье",
       "img": "img/shop/kav-cable-car.webp",
       "thumb": "img/shop/thumb/kav-cable-car.webp",
@@ -4528,7 +4528,7 @@ window.SHOP_DATA = /*JSON-START*/{
     },
     {
       "id": "kav-snowball",
-      "title": "Снежный ком",
+      "title": "Снежник у Эльбруса",
       "caption": "Приэльбрусье",
       "img": "img/shop/kav-snowball.webp",
       "thumb": "img/shop/thumb/kav-snowball.webp",
@@ -4752,7 +4752,7 @@ window.SHOP_DATA = /*JSON-START*/{
     },
     {
       "id": "kav-glacier-clouds",
-      "title": "Ледники Эльбруса",
+      "title": "Склоны Эльбруса",
       "caption": "Приэльбрусье",
       "img": "img/shop/kav-glacier-clouds.webp",
       "thumb": "img/shop/thumb/kav-glacier-clouds.webp",
