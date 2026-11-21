@@ -438,7 +438,7 @@ body.noscroll{overflow:hidden}
 .pochta-box .cdek-x{top:auto;right:auto;bottom:12px;left:12px}
 
 /* плитка «Открытки»: россыпь на кофейном столике */
-.pc-vis.table{background:#3a2616 url(shop-table.webp) center/cover no-repeat}
+.pc-vis.table{background:#3a2616 url(shop-table-2.webp) center/cover no-repeat}
 .pc-mk.scatter .pc-card.front{border:0;border-radius:2px;box-shadow:0 .5cqw .9cqw rgba(20,10,4,.45),0 1.6cqw 3.2cqw rgba(20,10,4,.3)}
 .hub-tile:hover .pc-mk.scatter .pc-card:last-child{transform:translate(-2cqw,-4cqw) rotate(-6deg) scale(1.04)}
 
