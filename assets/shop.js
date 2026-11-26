@@ -893,9 +893,11 @@
     cv.list = list || []; cv.i = Math.max(0, cv.list.findIndex(function (c) { return c.id === id; }));
     cv.last = document.activeElement;
     cvShow(); $('#cardView').hidden = false; document.body.classList.add('noscroll'); $('#cvFlip').focus();
+    try { history.replaceState(null, '', '#' + id); } catch (e) { /* file:// */ }
   }
   function closeCardView() {
     $('#cardView').hidden = true;
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* file:// */ }
     if ($('#setView').hidden) document.body.classList.remove('noscroll');
     if (cv.last && cv.last.focus) cv.last.focus();
   }
@@ -1178,5 +1180,10 @@
     if (h === 'cards') { location.replace(product('postcard') ? 'shop-cards.html' : 'shop-wall.html'); return; }
   }
   if (h && work(h) && $('#cfg')) openCfg(h);
+  // прямая ссылка на открытку или набор: shop-cards.html#<id открытки> / #<id набора>
+  if (page === 'cards' && h && product('postcard') && $('#cardView')) {
+    if (C.byId(D.postcards, h)) openCardView(D.postcards, h);
+    else if (C.byId(product('postcard').sets || [], h)) openSetView(h);
+  }
   window.addEventListener('pageshow', function (e) { if (e.persisted) { co.busy = false; if (!cartEl.hidden) renderCart(); } });
 })();
