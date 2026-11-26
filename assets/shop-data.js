@@ -1640,6 +1640,7 @@ window.SHOP_DATA = /*JSON-START*/{
             "griboedov",
             "leaf-cobbles",
             "leaf-slabs",
+            "leaf-granite",
             "green-van",
             "van-mirror"
           ],
@@ -6278,6 +6279,26 @@ window.SHOP_DATA = /*JSON-START*/{
       ],
       "back": "img/shop/back/leaf-slabs.webp",
       "backL": "img/shop/back/leaf-slabs-l.webp",
+      "themes": [
+        "autumn",
+        "city",
+        "macro"
+      ],
+      "region": "spb"
+    },
+    {
+      "id": "leaf-granite",
+      "title": "Осень пришла IV",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/leaf-granite.webp",
+      "thumb": "img/shop/thumb/leaf-granite.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/leaf-granite.webp",
+      "backL": "img/shop/back/leaf-granite-l.webp",
       "themes": [
         "autumn",
         "city",
