@@ -228,8 +228,9 @@
         '<li>Открытка — ' + rubText(pc.price) + (any ? ', любые ' + any.n + ' — ' + rubText(any.price) + ' (скидка сама появится в корзине)' : '') + '</li>';
       var html = '';
       if ((pc.sets || []).length) {
+        var setsMain = pc.sets.filter(function (x) { return x.group !== '35awards'; }), setsAw = pc.sets.filter(function (x) { return x.group === '35awards'; });
         html += '<h3 class="pc-sub">Наборы</h3><div class="pgrid pc-sets">';
-        pc.sets.forEach(function (st) {
+        var setHTML = function (st) {
           var cards = C.setCards(D, st);
           if (!cards.length) return;
           html += '<div class="pcard pc-set"><button type="button" class="pcard-vis pc-vis" data-view-set="' + esc(st.id) + '" aria-label="Посмотреть открытки набора «' + esc(st.title) + '»">' + setMock(cards, st.cover) +
@@ -237,7 +238,12 @@
             '<span class="pcard-t">' + esc(st.title) + '</span><span class="pcard-m"><span>' + cards.length + ' ' + plural(cards.length, 'открытка', 'открытки', 'открыток') +
             (st.lead ? ' · ' + esc(st.lead) : '') + '</span><span><b>' + rub(st.price) + '</b></span></span>' +
             '<span class="pc-actions">' + qtyHTML(st.id) + '<button type="button" class="btn btn-solid" data-add-card="' + esc(st.id) + '">В корзину</button></span></div>';
-        });
+        };
+        setsMain.forEach(setHTML);
+        if (setsAw.length) {
+          html += '</div><h3 class="pc-sub" id="sets-35awards">Отмечены на 35Awards <small>кадры из тематических конкурсов</small></h3><div class="pgrid pc-sets">';
+          setsAw.forEach(setHTML);
+        }
         html += '</div><h3 class="pc-sub" id="singles">Поштучно' + (any ? ' <small>любые ' + any.n + ' — ' + rubText(any.price) + '</small>' : '') + '</h3>';
       }
       html += pcFilterHTML(pc) + '<div class="pgrid" id="pcSingles">';
@@ -880,7 +886,10 @@
     flip.classList.remove('flipped'); flip.classList.toggle('v', !land);
     $('#cvFront').src = c.img; $('#cvFront').alt = c.title + ' — лицевая сторона';
     $('#cvBack').src = c.backL || c.back || ''; $('#cvBack').alt = c.title + ' — оборот';
-    $('#cvTitle').textContent = c.title;
+    var aw = c.aw && (c.aw.best || c.aw.top <= 10) ? c.aw : null, awTag = aw ? (aw.best ? 'BEST' : 'ТОП‑' + aw.top + '%') : '';
+    $('#cvTitle').innerHTML = esc(c.title) + (aw ? ' <span class="aw-chip">' + awTag + ' · 35Awards</span>' : '');
+    var awl = $('#cvAw'); if (!awl) { awl = document.createElement('p'); awl.id = 'cvAw'; awl.className = 'aw-line'; $('#cvCap').insertAdjacentElement('afterend', awl); }
+    awl.textContent = aw ? (aw.best ? 'Лучшая работа конкурса «' + aw.c + '», 35Awards' : 'ТОП‑' + aw.top + '% конкурса «' + aw.c + '», 35Awards') : ''; awl.hidden = !aw;
     $('#cvCap').textContent = [c.caption && c.caption !== c.title ? c.caption : '', 'открытка 10 × 15 см', cv.list.length > 1 ? (cv.i + 1) + ' из ' + cv.list.length : ''].filter(Boolean).join(' · ');
     $('#cvPrice').innerHTML = rub(pc.price);
     $('#cvTurn').textContent = 'Оборот';

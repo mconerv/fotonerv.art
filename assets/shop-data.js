@@ -1824,11 +1824,245 @@ window.SHOP_DATA = /*JSON-START*/{
           "cover": "kav-elbrus-twin"
         },
         {
+          "id": "aw-best",
+          "title": "Лучшее с 35Awards",
+          "lead": "14 кадров: победитель «Стихийных бедствий» и ТОП‑5% конкурсов",
+          "cards": [
+            "aw-87",
+            "rain-valley",
+            "aw-63",
+            "aw-46",
+            "aw-11",
+            "aw-01",
+            "mw-branches",
+            "aw-21",
+            "aw-73",
+            "snow-ridge",
+            "aw-47",
+            "hut-field",
+            "aw-56",
+            "aw-57"
+          ],
+          "price": 2000,
+          "cover": "aw-87",
+          "group": "35awards"
+        },
+        {
+          "id": "aw-autumn",
+          "title": "Осень",
+          "lead": "краски осени, листва, лес",
+          "cards": [
+            "aw-01",
+            "aw-02",
+            "aw-03",
+            "aw-04",
+            "aw-05",
+            "aw-06",
+            "aw-07",
+            "aw-08",
+            "aw-09",
+            "aw-10"
+          ],
+          "price": 1600,
+          "cover": "aw-01",
+          "group": "35awards"
+        },
+        {
+          "id": "aw-winter",
+          "title": "Зима",
+          "lead": "иней, снег и свечи",
+          "cards": [
+            "aw-11",
+            "aw-12",
+            "aw-13",
+            "aw-14",
+            "aw-15",
+            "aw-16",
+            "aw-17",
+            "aw-18",
+            "aw-19",
+            "aw-20"
+          ],
+          "price": 1600,
+          "cover": "aw-11",
+          "group": "35awards"
+        },
+        {
+          "id": "aw-weather",
+          "title": "Непогода",
+          "lead": "дождь, облака и туман",
+          "cards": [
+            "aw-21",
+            "aw-22",
+            "aw-23",
+            "aw-24",
+            "aw-25",
+            "aw-26",
+            "aw-27",
+            "aw-28",
+            "aw-29",
+            "aw-30"
+          ],
+          "price": 1600,
+          "cover": "aw-21",
+          "group": "35awards"
+        },
+        {
+          "id": "aw-water",
+          "title": "Вода и свет",
+          "lead": "реки, закаты и луна",
+          "cards": [
+            "misty-river",
+            "aw-31",
+            "aw-32",
+            "aw-33",
+            "aw-34",
+            "yak-rail-bridge",
+            "aw-35",
+            "aw-36",
+            "aw-37",
+            "aw-38"
+          ],
+          "price": 1600,
+          "cover": "misty-river",
+          "group": "35awards"
+        },
+        {
+          "id": "aw-color",
+          "title": "Цвет",
+          "lead": "оранжевый, синий и зелёный",
+          "cards": [
+            "aw-39",
+            "aw-40",
+            "aw-41",
+            "yak-quiet-water",
+            "yak-cliffs-water",
+            "aw-42",
+            "aw-43",
+            "aw-44",
+            "aw-45",
+            "kav-baksan"
+          ],
+          "price": 1600,
+          "cover": "aw-39",
+          "group": "35awards"
+        },
+        {
+          "id": "aw-small",
+          "title": "Маленький мир",
+          "lead": "динозавры и цветы",
+          "cards": [
+            "aw-46",
+            "aw-47",
+            "aw-48",
+            "aw-49",
+            "aw-50",
+            "aw-51",
+            "aw-52",
+            "aw-53",
+            "aw-54",
+            "aw-55"
+          ],
+          "price": 1600,
+          "cover": "aw-46",
+          "group": "35awards"
+        },
+        {
+          "id": "aw-mobile",
+          "title": "Снято на телефон",
+          "lead": "мобильные кадры",
+          "cards": [
+            "rain-valley",
+            "snow-ridge",
+            "aw-56",
+            "aw-57",
+            "aw-58",
+            "aw-59",
+            "snow-peak",
+            "aw-60",
+            "aw-61",
+            "aw-62"
+          ],
+          "price": 1600,
+          "cover": "rain-valley",
+          "group": "35awards"
+        },
+        {
+          "id": "aw-pets",
+          "title": "Хвостатые",
+          "lead": "кошки, пёс и лошади",
+          "cards": [
+            "aw-63",
+            "aw-64",
+            "aw-65",
+            "aw-66",
+            "aw-67",
+            "aw-68",
+            "aw-69",
+            "aw-70",
+            "aw-71",
+            "aw-72"
+          ],
+          "price": 1600,
+          "cover": "aw-63",
+          "group": "35awards"
+        },
+        {
+          "id": "aw-birds",
+          "title": "Птицы",
+          "lead": "воробьи, голуби и утки",
+          "cards": [
+            "aw-73",
+            "aw-74",
+            "aw-75",
+            "aw-76",
+            "aw-77"
+          ],
+          "price": 850,
+          "cover": "aw-73",
+          "group": "35awards"
+        },
+        {
+          "id": "aw-town",
+          "title": "Город и деревня",
+          "lead": "улицы, деревни и деревья",
+          "cards": [
+            "mw-branches",
+            "hut-field",
+            "aw-78",
+            "isaac-night",
+            "aw-79",
+            "old-barn",
+            "bridge-fog",
+            "aw-80",
+            "gate-light",
+            "aw-81"
+          ],
+          "price": 1600,
+          "cover": "mw-branches",
+          "group": "35awards"
+        },
+        {
+          "id": "aw-people",
+          "title": "Человек в пейзаже",
+          "lead": "путники в горах и тундре",
+          "cards": [
+            "aw-82",
+            "aw-83",
+            "aw-84",
+            "aw-85",
+            "aw-86"
+          ],
+          "price": 850,
+          "cover": "aw-82",
+          "group": "35awards"
+        },
+        {
           "id": "set-all",
           "title": "Все открытки",
           "lead": "Полная коллекция",
           "cards": "all",
-          "price": 18000
+          "price": 25500
         }
       ],
       "pack": {
@@ -1853,6 +2087,15 @@ window.SHOP_DATA = /*JSON-START*/{
               "h": 3,
               "g": 30,
               "price": 60
+            },
+            {
+              "upTo": 400,
+              "l": 30,
+              "w": 20,
+              "h": 15,
+              "g": 350,
+              "price": 150,
+              "_note": "Больше 200 открыток — коробка Почты M 300×200×150 с наполнителем. g и price — оценка, сверить в отделении."
             }
           ],
           "bookpostUpTo": 5000
@@ -1940,6 +2183,14 @@ window.SHOP_DATA = /*JSON-START*/{
         [
           "magadan",
           "Магадан"
+        ],
+        [
+          "novosibirsk",
+          "Новосибирск"
+        ],
+        [
+          "altai",
+          "Алтай"
         ]
       ]
     }
@@ -2824,7 +3075,7 @@ window.SHOP_DATA = /*JSON-START*/{
   "postcards": [
     {
       "id": "kav-lone-tree",
-      "title": "Одинокое дерево",
+      "title": "Одинокое дерево I",
       "caption": "Приэльбрусье",
       "img": "img/shop/kav-lone-tree.webp",
       "thumb": "img/shop/thumb/kav-lone-tree.webp",
@@ -3163,7 +3414,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "forest",
         "water"
       ],
-      "region": "yakutia"
+      "region": "yakutia",
+      "aw": {
+        "c": "Пейзаж: Краски осени",
+        "top": 34
+      }
     },
     {
       "id": "yak-larch-cliff",
@@ -3439,7 +3694,11 @@ window.SHOP_DATA = /*JSON-START*/{
       "themes": [
         "water"
       ],
-      "region": "yakutia"
+      "region": "yakutia",
+      "aw": {
+        "c": "Синий + зеленый",
+        "top": 24
+      }
     },
     {
       "id": "yak-cliffs-water",
@@ -3458,11 +3717,15 @@ window.SHOP_DATA = /*JSON-START*/{
         "autumn",
         "water"
       ],
-      "region": "yakutia"
+      "region": "yakutia",
+      "aw": {
+        "c": "Синий + зеленый",
+        "top": 25
+      }
     },
     {
       "id": "yak-rail-bridge",
-      "title": "Железнодорожный мост",
+      "title": "Железнодорожный мост, Чульман",
       "caption": "Якутия",
       "img": "img/shop/yak-rail-bridge.webp",
       "thumb": "img/shop/thumb/yak-rail-bridge.webp",
@@ -3476,7 +3739,11 @@ window.SHOP_DATA = /*JSON-START*/{
       "themes": [
         "city"
       ],
-      "region": "yakutia"
+      "region": "yakutia",
+      "aw": {
+        "c": "Мосты",
+        "top": 15
+      }
     },
     {
       "id": "yak-red-aspen",
@@ -4153,7 +4420,7 @@ window.SHOP_DATA = /*JSON-START*/{
     },
     {
       "id": "kav-baksan",
-      "title": "Долина Баксана",
+      "title": "Долина Баксана. Эльбрус",
       "caption": "Приэльбрусье",
       "img": "img/shop/kav-baksan.webp",
       "thumb": "img/shop/thumb/kav-baksan.webp",
@@ -4167,11 +4434,15 @@ window.SHOP_DATA = /*JSON-START*/{
       "themes": [
         "mountains"
       ],
-      "region": "kavkaz"
+      "region": "kavkaz",
+      "aw": {
+        "c": "Синий + зеленый",
+        "top": 31
+      }
     },
     {
       "id": "kav-donguz-pine",
-      "title": "Донгуз-Орун",
+      "title": "Донгуз-Орун I",
       "caption": "Приэльбрусье",
       "img": "img/shop/kav-donguz-pine.webp",
       "thumb": "img/shop/thumb/kav-donguz-pine.webp",
@@ -4262,7 +4533,7 @@ window.SHOP_DATA = /*JSON-START*/{
     },
     {
       "id": "kav-donguz",
-      "title": "Донгуз-Орун",
+      "title": "Донгуз-Орун II",
       "caption": "Приэльбрусье",
       "img": "img/shop/kav-donguz.webp",
       "thumb": "img/shop/thumb/kav-donguz.webp",
@@ -4599,7 +4870,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "water",
         "bw"
       ],
-      "region": "yakutia"
+      "region": "yakutia",
+      "aw": {
+        "c": "Реки",
+        "top": 6
+      }
     },
     {
       "id": "isaac-night",
@@ -4620,7 +4895,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city",
         "bw"
       ],
-      "region": "spb"
+      "region": "spb",
+      "aw": {
+        "c": "Чёрно-белый город",
+        "top": 12
+      }
     },
     {
       "id": "isaac-autumn",
@@ -4641,7 +4920,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city",
         "bw"
       ],
-      "region": "spb"
+      "region": "spb",
+      "aw": {
+        "c": "Чёрно-белый город",
+        "top": 28
+      }
     },
     {
       "id": "isaac-summer",
@@ -4699,7 +4982,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "water",
         "sky"
       ],
-      "region": "kola"
+      "region": "kola",
+      "aw": {
+        "c": "Сюрреализм",
+        "top": 27
+      }
     },
     {
       "id": "gate-light",
@@ -4719,7 +5006,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "city",
         "bw"
       ],
-      "region": "ural"
+      "region": "ural",
+      "aw": {
+        "c": "Концептуальный минимализм",
+        "top": 26
+      }
     },
     {
       "id": "autumn-gate",
@@ -4775,7 +5066,11 @@ window.SHOP_DATA = /*JSON-START*/{
       "themes": [
         "village"
       ],
-      "region": "kola"
+      "region": "kola",
+      "aw": {
+        "c": "Деревенский пейзаж",
+        "top": 5
+      }
     },
     {
       "id": "old-barn",
@@ -4793,7 +5088,11 @@ window.SHOP_DATA = /*JSON-START*/{
       "themes": [
         "village"
       ],
-      "region": "kola"
+      "region": "kola",
+      "aw": {
+        "c": "Деревенский пейзаж",
+        "top": 14
+      }
     },
     {
       "id": "snow-peak",
@@ -4814,7 +5113,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "winter",
         "bw"
       ],
-      "region": "kamchatka"
+      "region": "kamchatka",
+      "aw": {
+        "c": "Черно-белый мобильный снимок",
+        "top": 12
+      }
     },
     {
       "id": "snow-ridge",
@@ -4835,7 +5138,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "winter",
         "bw"
       ],
-      "region": "kamchatka"
+      "region": "kamchatka",
+      "aw": {
+        "c": "Удачный мобильный снимок",
+        "top": 4
+      }
     },
     {
       "id": "bridge-fog",
@@ -4856,7 +5163,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "water",
         "city",
         "bw"
-      ]
+      ],
+      "aw": {
+        "c": "Чёрно-белый город",
+        "top": 22
+      }
     },
     {
       "id": "larch-ridge",
@@ -5216,7 +5527,11 @@ window.SHOP_DATA = /*JSON-START*/{
         "mountains",
         "sky"
       ],
-      "region": "kamchatka"
+      "region": "kamchatka",
+      "aw": {
+        "c": "Удачный мобильный снимок",
+        "top": 1
+      }
     },
     {
       "id": "aurora",
@@ -5406,7 +5721,11 @@ window.SHOP_DATA = /*JSON-START*/{
       "themes": [
         "sky"
       ],
-      "region": "kamchatka"
+      "region": "kamchatka",
+      "aw": {
+        "c": "Деревья",
+        "top": 3
+      }
     },
     {
       "id": "mw-crown",
@@ -5506,7 +5825,7 @@ window.SHOP_DATA = /*JSON-START*/{
     },
     {
       "id": "lone-tree",
-      "title": "Одинокое дерево",
+      "title": "Одинокое дерево II",
       "caption": "Кольский полуостров",
       "img": "img/shop/lone-tree.webp",
       "thumb": "img/shop/thumb/lone-tree.webp",
@@ -6677,6 +6996,1836 @@ window.SHOP_DATA = /*JSON-START*/{
         "macro"
       ],
       "region": "tomsk"
+    },
+    {
+      "id": "aw-01",
+      "title": "Парк в Ловозере",
+      "caption": "Ловозеро, Кольский полуостров",
+      "img": "img/shop/aw-01.webp",
+      "thumb": "img/shop/thumb/aw-01.webp",
+      "w": 3498,
+      "h": 1627,
+      "tags": [],
+      "back": "img/shop/back/aw-01.webp",
+      "backL": "img/shop/back/aw-01-l.webp",
+      "themes": [
+        "autumn",
+        "village"
+      ],
+      "region": "kola",
+      "aw": {
+        "c": "Осень в городе",
+        "top": 3
+      }
+    },
+    {
+      "id": "aw-02",
+      "title": "Осенняя долина",
+      "caption": "Камчатка",
+      "img": "img/shop/aw-02.webp",
+      "thumb": "img/shop/thumb/aw-02.webp",
+      "w": 3500,
+      "h": 2625,
+      "tags": [],
+      "back": "img/shop/back/aw-02.webp",
+      "backL": "img/shop/back/aw-02-l.webp",
+      "themes": [
+        "autumn",
+        "mountains"
+      ],
+      "region": "kamchatka",
+      "aw": {
+        "c": "Пейзаж: Краски осени",
+        "top": 7
+      }
+    },
+    {
+      "id": "aw-03",
+      "title": "Ручей в тумане",
+      "caption": "Якутия",
+      "img": "img/shop/aw-03.webp",
+      "thumb": "img/shop/thumb/aw-03.webp",
+      "w": 3076,
+      "h": 3500,
+      "tags": [
+        "bw"
+      ],
+      "back": "img/shop/back/aw-03.webp",
+      "backL": "img/shop/back/aw-03-l.webp",
+      "themes": [
+        "forest",
+        "water",
+        "bw"
+      ],
+      "region": "yakutia",
+      "aw": {
+        "c": "Лес",
+        "top": 9
+      }
+    },
+    {
+      "id": "aw-04",
+      "title": "Вдали",
+      "caption": "Камчатка",
+      "img": "img/shop/aw-04.webp",
+      "thumb": "img/shop/thumb/aw-04.webp",
+      "w": 3500,
+      "h": 2625,
+      "tags": [],
+      "back": "img/shop/back/aw-04.webp",
+      "backL": "img/shop/back/aw-04-l.webp",
+      "themes": [
+        "autumn",
+        "mountains"
+      ],
+      "region": "kamchatka",
+      "aw": {
+        "c": "Пейзаж: Краски осени",
+        "top": 9
+      }
+    },
+    {
+      "id": "aw-05",
+      "title": "Осень у вулкана",
+      "caption": "Камчатка",
+      "img": "img/shop/aw-05.webp",
+      "thumb": "img/shop/thumb/aw-05.webp",
+      "w": 3500,
+      "h": 2626,
+      "tags": [],
+      "back": "img/shop/back/aw-05.webp",
+      "backL": "img/shop/back/aw-05-l.webp",
+      "themes": [
+        "autumn",
+        "mountains"
+      ],
+      "region": "kamchatka",
+      "aw": {
+        "c": "Пейзаж: Краски осени",
+        "top": 9
+      }
+    },
+    {
+      "id": "aw-06",
+      "title": "Берёзовые листья",
+      "caption": "Камчатка",
+      "img": "img/shop/aw-06.webp",
+      "thumb": "img/shop/thumb/aw-06.webp",
+      "w": 3024,
+      "h": 4032,
+      "tags": [],
+      "back": "img/shop/back/aw-06.webp",
+      "backL": "img/shop/back/aw-06-l.webp",
+      "themes": [
+        "autumn",
+        "macro"
+      ],
+      "region": "kamchatka",
+      "aw": {
+        "c": "Листва",
+        "top": 10
+      }
+    },
+    {
+      "id": "aw-07",
+      "title": "Осень. Тырныауз",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-07.webp",
+      "thumb": "img/shop/thumb/aw-07.webp",
+      "w": 3084,
+      "h": 2056,
+      "tags": [],
+      "back": "img/shop/back/aw-07.webp",
+      "backL": "img/shop/back/aw-07-l.webp",
+      "themes": [
+        "autumn",
+        "mountains"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Пейзаж: Краски осени",
+        "top": 12
+      }
+    },
+    {
+      "id": "aw-08",
+      "title": "Осень на Камчатке",
+      "caption": "Камчатка",
+      "img": "img/shop/aw-08.webp",
+      "thumb": "img/shop/thumb/aw-08.webp",
+      "w": 3500,
+      "h": 2625,
+      "tags": [],
+      "back": "img/shop/back/aw-08.webp",
+      "backL": "img/shop/back/aw-08-l.webp",
+      "themes": [
+        "autumn",
+        "mountains"
+      ],
+      "region": "kamchatka",
+      "aw": {
+        "c": "Листва",
+        "top": 12
+      }
+    },
+    {
+      "id": "aw-09",
+      "title": "Бирюзовая Катунь в сентябре",
+      "caption": "Чемал, Алтай",
+      "img": "img/shop/aw-09.webp",
+      "thumb": "img/shop/thumb/aw-09.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-09.webp",
+      "backL": "img/shop/back/aw-09-l.webp",
+      "themes": [
+        "autumn",
+        "water",
+        "forest"
+      ],
+      "region": "altai",
+      "aw": {
+        "c": "Лес",
+        "top": 14
+      }
+    },
+    {
+      "id": "aw-10",
+      "title": "Чульманские скалы",
+      "caption": "Чульман, Якутия",
+      "img": "img/shop/aw-10.webp",
+      "thumb": "img/shop/thumb/aw-10.webp",
+      "w": 2333,
+      "h": 3500,
+      "tags": [],
+      "back": "img/shop/back/aw-10.webp",
+      "backL": "img/shop/back/aw-10-l.webp",
+      "themes": [
+        "forest",
+        "autumn"
+      ],
+      "region": "yakutia",
+      "aw": {
+        "c": "Лес",
+        "top": 14
+      }
+    },
+    {
+      "id": "aw-11",
+      "title": "Зимний вечер в Верхотурье",
+      "caption": "Верхотурье",
+      "img": "img/shop/aw-11.webp",
+      "thumb": "img/shop/thumb/aw-11.webp",
+      "w": 3500,
+      "h": 2164,
+      "tags": [],
+      "back": "img/shop/back/aw-11.webp",
+      "backL": "img/shop/back/aw-11-l.webp",
+      "themes": [
+        "winter",
+        "village"
+      ],
+      "region": "ural",
+      "aw": {
+        "c": "Деревенский пейзаж",
+        "top": 2
+      }
+    },
+    {
+      "id": "aw-12",
+      "title": "Морозное солнце",
+      "caption": "Серов",
+      "img": "img/shop/aw-12.webp",
+      "thumb": "img/shop/thumb/aw-12.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-12.webp",
+      "backL": "img/shop/back/aw-12-l.webp",
+      "themes": [
+        "winter",
+        "macro"
+      ],
+      "region": "ural",
+      "aw": {
+        "c": "Иней",
+        "top": 7
+      }
+    },
+    {
+      "id": "aw-13",
+      "title": "Солнце над тундрой",
+      "caption": "Колмозеро, Кольский полуостров",
+      "img": "img/shop/aw-13.webp",
+      "thumb": "img/shop/thumb/aw-13.webp",
+      "w": 3500,
+      "h": 1565,
+      "tags": [],
+      "back": "img/shop/back/aw-13.webp",
+      "backL": "img/shop/back/aw-13-l.webp",
+      "themes": [
+        "winter"
+      ],
+      "region": "kola",
+      "aw": {
+        "c": "Зимний пейзаж",
+        "top": 9
+      }
+    },
+    {
+      "id": "aw-14",
+      "title": "Вечерний чай I",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/aw-14.webp",
+      "thumb": "img/shop/thumb/aw-14.webp",
+      "w": 2625,
+      "h": 3500,
+      "tags": [],
+      "back": "img/shop/back/aw-14.webp",
+      "backL": "img/shop/back/aw-14-l.webp",
+      "themes": [
+        "winter"
+      ],
+      "region": "spb",
+      "aw": {
+        "c": "Зимний натюрморт",
+        "top": 11
+      }
+    },
+    {
+      "id": "aw-15",
+      "title": "Первые заморозки",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-15.webp",
+      "thumb": "img/shop/thumb/aw-15.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-15.webp",
+      "backL": "img/shop/back/aw-15-l.webp",
+      "themes": [
+        "winter",
+        "mountains"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Иней",
+        "top": 12
+      }
+    },
+    {
+      "id": "aw-16",
+      "title": "Зимний серпантин",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-16.webp",
+      "thumb": "img/shop/thumb/aw-16.webp",
+      "w": 3500,
+      "h": 2716,
+      "tags": [],
+      "back": "img/shop/back/aw-16.webp",
+      "backL": "img/shop/back/aw-16-l.webp",
+      "themes": [
+        "winter",
+        "mountains"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Зимний пейзаж",
+        "top": 13
+      }
+    },
+    {
+      "id": "aw-17",
+      "title": "Две свечи",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/aw-17.webp",
+      "thumb": "img/shop/thumb/aw-17.webp",
+      "w": 2333,
+      "h": 3500,
+      "tags": [],
+      "back": "img/shop/back/aw-17.webp",
+      "backL": "img/shop/back/aw-17-l.webp",
+      "themes": [
+        "winter"
+      ],
+      "region": "spb",
+      "aw": {
+        "c": "Зимний натюрморт",
+        "top": 14
+      }
+    },
+    {
+      "id": "aw-18",
+      "title": "Ветка в инее",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-18.webp",
+      "thumb": "img/shop/thumb/aw-18.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-18.webp",
+      "backL": "img/shop/back/aw-18-l.webp",
+      "themes": [
+        "winter",
+        "macro"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Иней",
+        "top": 16
+      }
+    },
+    {
+      "id": "aw-19",
+      "title": "Вечерний чай II",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/aw-19.webp",
+      "thumb": "img/shop/thumb/aw-19.webp",
+      "w": 4576,
+      "h": 6102,
+      "tags": [],
+      "back": "img/shop/back/aw-19.webp",
+      "backL": "img/shop/back/aw-19-l.webp",
+      "themes": [
+        "winter"
+      ],
+      "region": "spb",
+      "aw": {
+        "c": "Зимний натюрморт",
+        "top": 16
+      }
+    },
+    {
+      "id": "aw-20",
+      "title": "Морозный узор",
+      "caption": "Серов",
+      "img": "img/shop/aw-20.webp",
+      "thumb": "img/shop/thumb/aw-20.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-20.webp",
+      "backL": "img/shop/back/aw-20-l.webp",
+      "themes": [
+        "winter",
+        "macro"
+      ],
+      "region": "ural",
+      "aw": {
+        "c": "Иней",
+        "top": 18
+      }
+    },
+    {
+      "id": "aw-21",
+      "title": "Туман на склоне",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-21.webp",
+      "thumb": "img/shop/thumb/aw-21.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [
+        "bw"
+      ],
+      "back": "img/shop/back/aw-21.webp",
+      "backL": "img/shop/back/aw-21-l.webp",
+      "themes": [
+        "mountains",
+        "sky",
+        "bw"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Облака",
+        "top": 4
+      }
+    },
+    {
+      "id": "aw-22",
+      "title": "Облака над ущельем",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-22.webp",
+      "thumb": "img/shop/thumb/aw-22.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-22.webp",
+      "backL": "img/shop/back/aw-22-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Облака",
+        "top": 9
+      }
+    },
+    {
+      "id": "aw-23",
+      "title": "Летний дождь II",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-23.webp",
+      "thumb": "img/shop/thumb/aw-23.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/aw-23.webp",
+      "backL": "img/shop/back/aw-23-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Дождь",
+        "top": 16
+      }
+    },
+    {
+      "id": "aw-24",
+      "title": "Летний дождь III",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-24.webp",
+      "thumb": "img/shop/thumb/aw-24.webp",
+      "w": 3500,
+      "h": 2293,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/aw-24.webp",
+      "backL": "img/shop/back/aw-24-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Дождь",
+        "top": 16
+      }
+    },
+    {
+      "id": "aw-25",
+      "title": "Капли на лиственнице",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-25.webp",
+      "thumb": "img/shop/thumb/aw-25.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-25.webp",
+      "backL": "img/shop/back/aw-25-l.webp",
+      "themes": [
+        "macro",
+        "forest"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Дождь",
+        "top": 17
+      }
+    },
+    {
+      "id": "aw-26",
+      "title": "Летний дождь I",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-26.webp",
+      "thumb": "img/shop/thumb/aw-26.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/aw-26.webp",
+      "backL": "img/shop/back/aw-26-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Дождливые города и улицы",
+        "top": 19
+      }
+    },
+    {
+      "id": "aw-27",
+      "title": "Облака на закате",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-27.webp",
+      "thumb": "img/shop/thumb/aw-27.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-27.webp",
+      "backL": "img/shop/back/aw-27-l.webp",
+      "themes": [
+        "sky"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Облака",
+        "top": 21
+      }
+    },
+    {
+      "id": "aw-28",
+      "title": "Летний дождь IV",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-28.webp",
+      "thumb": "img/shop/thumb/aw-28.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/aw-28.webp",
+      "backL": "img/shop/back/aw-28-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Дождливые города и улицы",
+        "top": 22
+      }
+    },
+    {
+      "id": "aw-29",
+      "title": "Облака",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-29.webp",
+      "thumb": "img/shop/thumb/aw-29.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-29.webp",
+      "backL": "img/shop/back/aw-29-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Облака",
+        "top": 26
+      }
+    },
+    {
+      "id": "aw-30",
+      "title": "Туман над лесом",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-30.webp",
+      "thumb": "img/shop/thumb/aw-30.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-30.webp",
+      "backL": "img/shop/back/aw-30-l.webp",
+      "themes": [
+        "mountains",
+        "forest"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Облака",
+        "top": 27
+      }
+    },
+    {
+      "id": "aw-31",
+      "title": "Часовня на закате",
+      "caption": "Магаданская область",
+      "img": "img/shop/aw-31.webp",
+      "thumb": "img/shop/thumb/aw-31.webp",
+      "w": 2048,
+      "h": 1365,
+      "tags": [],
+      "back": "img/shop/back/aw-31.webp",
+      "backL": "img/shop/back/aw-31-l.webp",
+      "themes": [
+        "winter",
+        "village"
+      ],
+      "region": "magadan",
+      "aw": {
+        "c": "Рассветы и закаты",
+        "top": 7
+      }
+    },
+    {
+      "id": "aw-32",
+      "title": "Оранжевое солнце V",
+      "caption": "Магаданская область",
+      "img": "img/shop/aw-32.webp",
+      "thumb": "img/shop/thumb/aw-32.webp",
+      "w": 2048,
+      "h": 2048,
+      "tags": [],
+      "back": "img/shop/back/aw-32.webp",
+      "backL": "img/shop/back/aw-32-l.webp",
+      "themes": [
+        "winter",
+        "sky"
+      ],
+      "region": "magadan",
+      "aw": {
+        "c": "Рассветы и закаты",
+        "top": 8
+      }
+    },
+    {
+      "id": "aw-33",
+      "title": "Обь у Красного Яра",
+      "caption": "Новосибирская область",
+      "img": "img/shop/aw-33.webp",
+      "thumb": "img/shop/thumb/aw-33.webp",
+      "w": 3700,
+      "h": 2467,
+      "tags": [
+        "bw"
+      ],
+      "back": "img/shop/back/aw-33.webp",
+      "backL": "img/shop/back/aw-33-l.webp",
+      "themes": [
+        "water",
+        "bw"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Реки",
+        "top": 12
+      }
+    },
+    {
+      "id": "aw-34",
+      "title": "Ручей на Колмозере",
+      "caption": "Колмозеро, Кольский полуостров",
+      "img": "img/shop/aw-34.webp",
+      "thumb": "img/shop/thumb/aw-34.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-34.webp",
+      "backL": "img/shop/back/aw-34-l.webp",
+      "themes": [
+        "winter",
+        "water"
+      ],
+      "region": "kola",
+      "aw": {
+        "c": "Реки",
+        "top": 14
+      }
+    },
+    {
+      "id": "aw-35",
+      "title": "Дневная луна",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-35.webp",
+      "thumb": "img/shop/thumb/aw-35.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-35.webp",
+      "backL": "img/shop/back/aw-35-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Лунный пейзаж",
+        "top": 17
+      }
+    },
+    {
+      "id": "aw-36",
+      "title": "Закат над путями",
+      "caption": "Павино, Новосибирская область",
+      "img": "img/shop/aw-36.webp",
+      "thumb": "img/shop/thumb/aw-36.webp",
+      "w": 2500,
+      "h": 1666,
+      "tags": [],
+      "back": "img/shop/back/aw-36.webp",
+      "backL": "img/shop/back/aw-36-l.webp",
+      "themes": [
+        "sky"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Рассветы и закаты",
+        "top": 17
+      }
+    },
+    {
+      "id": "aw-37",
+      "title": "Река в тайге",
+      "caption": "Чульман, Якутия",
+      "img": "img/shop/aw-37.webp",
+      "thumb": "img/shop/thumb/aw-37.webp",
+      "w": 3500,
+      "h": 1750,
+      "tags": [],
+      "back": "img/shop/back/aw-37.webp",
+      "backL": "img/shop/back/aw-37-l.webp",
+      "themes": [
+        "forest",
+        "water"
+      ],
+      "region": "yakutia",
+      "aw": {
+        "c": "Реки",
+        "top": 18
+      }
+    },
+    {
+      "id": "aw-38",
+      "title": "Золотой ручей",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-38.webp",
+      "thumb": "img/shop/thumb/aw-38.webp",
+      "w": 1800,
+      "h": 1200,
+      "tags": [],
+      "back": "img/shop/back/aw-38.webp",
+      "backL": "img/shop/back/aw-38-l.webp",
+      "themes": [
+        "winter",
+        "water"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Реки",
+        "top": 20
+      }
+    },
+    {
+      "id": "aw-39",
+      "title": "Оранжевое солнце I",
+      "caption": "Магаданская область",
+      "img": "img/shop/aw-39.webp",
+      "thumb": "img/shop/thumb/aw-39.webp",
+      "w": 2048,
+      "h": 2048,
+      "tags": [],
+      "back": "img/shop/back/aw-39.webp",
+      "backL": "img/shop/back/aw-39-l.webp",
+      "themes": [
+        "winter",
+        "sky"
+      ],
+      "region": "magadan",
+      "aw": {
+        "c": "Оранжевый цвет",
+        "top": 13
+      }
+    },
+    {
+      "id": "aw-40",
+      "title": "Прострелы",
+      "caption": "Чульман, Якутия",
+      "img": "img/shop/aw-40.webp",
+      "thumb": "img/shop/thumb/aw-40.webp",
+      "w": 2625,
+      "h": 3500,
+      "tags": [],
+      "back": "img/shop/back/aw-40.webp",
+      "backL": "img/shop/back/aw-40-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "yakutia",
+      "aw": {
+        "c": "Цветы",
+        "top": 15
+      }
+    },
+    {
+      "id": "aw-41",
+      "title": "Оранжевое солнце II",
+      "caption": "Магаданская область",
+      "img": "img/shop/aw-41.webp",
+      "thumb": "img/shop/thumb/aw-41.webp",
+      "w": 2048,
+      "h": 1365,
+      "tags": [],
+      "back": "img/shop/back/aw-41.webp",
+      "backL": "img/shop/back/aw-41-l.webp",
+      "themes": [
+        "mountains",
+        "winter"
+      ],
+      "region": "magadan",
+      "aw": {
+        "c": "Оранжевый цвет",
+        "top": 19
+      }
+    },
+    {
+      "id": "aw-42",
+      "title": "Оранжевое солнце III",
+      "caption": "Магаданская область",
+      "img": "img/shop/aw-42.webp",
+      "thumb": "img/shop/thumb/aw-42.webp",
+      "w": 2048,
+      "h": 1365,
+      "tags": [],
+      "back": "img/shop/back/aw-42.webp",
+      "backL": "img/shop/back/aw-42-l.webp",
+      "themes": [
+        "mountains",
+        "winter"
+      ],
+      "region": "magadan",
+      "aw": {
+        "c": "Оранжевый цвет",
+        "top": 26
+      }
+    },
+    {
+      "id": "aw-43",
+      "title": "Безмятежность (Bliss) по-кавказски",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-43.webp",
+      "thumb": "img/shop/thumb/aw-43.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-43.webp",
+      "backL": "img/shop/back/aw-43-l.webp",
+      "themes": [
+        "sky",
+        "mountains"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Синий + зеленый",
+        "top": 30
+      }
+    },
+    {
+      "id": "aw-44",
+      "title": "Оранжевое солнце IV",
+      "caption": "Магаданская область",
+      "img": "img/shop/aw-44.webp",
+      "thumb": "img/shop/thumb/aw-44.webp",
+      "w": 1365,
+      "h": 2048,
+      "tags": [],
+      "back": "img/shop/back/aw-44.webp",
+      "backL": "img/shop/back/aw-44-l.webp",
+      "themes": [
+        "winter",
+        "sky"
+      ],
+      "region": "magadan",
+      "aw": {
+        "c": "Оранжевый цвет",
+        "top": 30
+      }
+    },
+    {
+      "id": "aw-45",
+      "title": "Сияние над Ловозером",
+      "caption": "Ловозеро, Кольский полуостров",
+      "img": "img/shop/aw-45.webp",
+      "thumb": "img/shop/thumb/aw-45.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-45.webp",
+      "backL": "img/shop/back/aw-45-l.webp",
+      "themes": [
+        "sky",
+        "water"
+      ],
+      "region": "kola",
+      "aw": {
+        "c": "Синий + зеленый",
+        "top": 31
+      }
+    },
+    {
+      "id": "aw-46",
+      "title": "Брахиозавры у воды",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-46.webp",
+      "thumb": "img/shop/thumb/aw-46.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-46.webp",
+      "backL": "img/shop/back/aw-46-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Миниатюрный мир",
+        "top": 2
+      }
+    },
+    {
+      "id": "aw-47",
+      "title": "Спинозавр на разливе",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-47.webp",
+      "thumb": "img/shop/thumb/aw-47.webp",
+      "w": 3500,
+      "h": 3500,
+      "tags": [],
+      "back": "img/shop/back/aw-47.webp",
+      "backL": "img/shop/back/aw-47-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Миниатюрный мир",
+        "top": 5
+      }
+    },
+    {
+      "id": "aw-48",
+      "title": "Белые соцветия",
+      "caption": "Серов",
+      "img": "img/shop/aw-48.webp",
+      "thumb": "img/shop/thumb/aw-48.webp",
+      "w": 3500,
+      "h": 2334,
+      "tags": [],
+      "back": "img/shop/back/aw-48.webp",
+      "backL": "img/shop/back/aw-48-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "ural",
+      "aw": {
+        "c": "Цветы",
+        "top": 7
+      }
+    },
+    {
+      "id": "aw-49",
+      "title": "Выход теризинозавра",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-49.webp",
+      "thumb": "img/shop/thumb/aw-49.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [],
+      "back": "img/shop/back/aw-49.webp",
+      "backL": "img/shop/back/aw-49-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Миниатюрный мир",
+        "top": 8
+      }
+    },
+    {
+      "id": "aw-50",
+      "title": "Спинозавр",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-50.webp",
+      "thumb": "img/shop/thumb/aw-50.webp",
+      "w": 3499,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-50.webp",
+      "backL": "img/shop/back/aw-50-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Миниатюрный мир",
+        "top": 9
+      }
+    },
+    {
+      "id": "aw-51",
+      "title": "Встреча на песке",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-51.webp",
+      "thumb": "img/shop/thumb/aw-51.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-51.webp",
+      "backL": "img/shop/back/aw-51-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Миниатюрный мир",
+        "top": 10
+      }
+    },
+    {
+      "id": "aw-52",
+      "title": "Спинозавр в реке",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-52.webp",
+      "thumb": "img/shop/thumb/aw-52.webp",
+      "w": 4619,
+      "h": 3080,
+      "tags": [],
+      "back": "img/shop/back/aw-52.webp",
+      "backL": "img/shop/back/aw-52-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Миниатюрный мир",
+        "top": 12
+      }
+    },
+    {
+      "id": "aw-53",
+      "title": "Луговые цветы",
+      "caption": "Пулково, Санкт-Петербург",
+      "img": "img/shop/aw-53.webp",
+      "thumb": "img/shop/thumb/aw-53.webp",
+      "w": 3500,
+      "h": 3500,
+      "tags": [],
+      "back": "img/shop/back/aw-53.webp",
+      "backL": "img/shop/back/aw-53-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "spb",
+      "aw": {
+        "c": "Цветы",
+        "top": 13
+      }
+    },
+    {
+      "id": "aw-54",
+      "title": "Рудбекия",
+      "caption": "Пулково, Санкт-Петербург",
+      "img": "img/shop/aw-54.webp",
+      "thumb": "img/shop/thumb/aw-54.webp",
+      "w": 3500,
+      "h": 2334,
+      "tags": [],
+      "back": "img/shop/back/aw-54.webp",
+      "backL": "img/shop/back/aw-54-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "spb",
+      "aw": {
+        "c": "Цветы",
+        "top": 14
+      }
+    },
+    {
+      "id": "aw-55",
+      "title": "Смертельный бой",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-55.webp",
+      "thumb": "img/shop/thumb/aw-55.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-55.webp",
+      "backL": "img/shop/back/aw-55-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Миниатюрный мир",
+        "top": 17
+      }
+    },
+    {
+      "id": "aw-56",
+      "title": "Галерея Гостиного двора",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/aw-56.webp",
+      "thumb": "img/shop/thumb/aw-56.webp",
+      "w": 3024,
+      "h": 4032,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/aw-56.webp",
+      "backL": "img/shop/back/aw-56-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "spb",
+      "aw": {
+        "c": "Удачный мобильный снимок",
+        "top": 5
+      }
+    },
+    {
+      "id": "aw-57",
+      "title": "Кроны",
+      "caption": "Петропавловск-Камчатский",
+      "img": "img/shop/aw-57.webp",
+      "thumb": "img/shop/thumb/aw-57.webp",
+      "w": 2625,
+      "h": 3500,
+      "tags": [
+        "bw"
+      ],
+      "back": "img/shop/back/aw-57.webp",
+      "backL": "img/shop/back/aw-57-l.webp",
+      "themes": [
+        "forest",
+        "bw"
+      ],
+      "region": "kamchatka",
+      "aw": {
+        "c": "Деревья",
+        "top": 5
+      }
+    },
+    {
+      "id": "aw-58",
+      "title": "Хребты",
+      "caption": "Камчатка",
+      "img": "img/shop/aw-58.webp",
+      "thumb": "img/shop/thumb/aw-58.webp",
+      "w": 3024,
+      "h": 4032,
+      "tags": [
+        "bw"
+      ],
+      "back": "img/shop/back/aw-58.webp",
+      "backL": "img/shop/back/aw-58-l.webp",
+      "themes": [
+        "mountains",
+        "bw"
+      ],
+      "region": "kamchatka",
+      "aw": {
+        "c": "Удачный мобильный снимок",
+        "top": 8
+      }
+    },
+    {
+      "id": "aw-59",
+      "title": "Дорога к перевалу",
+      "caption": "Камчатка",
+      "img": "img/shop/aw-59.webp",
+      "thumb": "img/shop/thumb/aw-59.webp",
+      "w": 3500,
+      "h": 2625,
+      "tags": [
+        "bw"
+      ],
+      "back": "img/shop/back/aw-59.webp",
+      "backL": "img/shop/back/aw-59-l.webp",
+      "themes": [
+        "mountains",
+        "bw"
+      ],
+      "region": "kamchatka",
+      "aw": {
+        "c": "Черно-белый мобильный снимок",
+        "top": 10
+      }
+    },
+    {
+      "id": "aw-60",
+      "title": "Улитка",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-60.webp",
+      "thumb": "img/shop/thumb/aw-60.webp",
+      "w": 4032,
+      "h": 3024,
+      "tags": [],
+      "back": "img/shop/back/aw-60.webp",
+      "backL": "img/shop/back/aw-60-l.webp",
+      "themes": [
+        "macro",
+        "animals"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Мобильное фото: Движение",
+        "top": 13
+      }
+    },
+    {
+      "id": "aw-61",
+      "title": "Пригородный вокзал",
+      "caption": "Новосибирск",
+      "img": "img/shop/aw-61.webp",
+      "thumb": "img/shop/thumb/aw-61.webp",
+      "w": 2997,
+      "h": 3996,
+      "tags": [
+        "bw",
+        "city"
+      ],
+      "back": "img/shop/back/aw-61.webp",
+      "backL": "img/shop/back/aw-61-l.webp",
+      "themes": [
+        "city",
+        "bw"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Черно-белый мобильный снимок",
+        "top": 22
+      }
+    },
+    {
+      "id": "aw-62",
+      "title": "«Метла» у керна",
+      "caption": "Камчатка",
+      "img": "img/shop/aw-62.webp",
+      "thumb": "img/shop/thumb/aw-62.webp",
+      "w": 2625,
+      "h": 3500,
+      "tags": [
+        "bw"
+      ],
+      "back": "img/shop/back/aw-62.webp",
+      "backL": "img/shop/back/aw-62-l.webp",
+      "themes": [
+        "bw"
+      ],
+      "region": "kamchatka",
+      "aw": {
+        "c": "Черно-белый мобильный снимок",
+        "top": 22
+      }
+    },
+    {
+      "id": "aw-63",
+      "title": "Доброго утра!",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-63.webp",
+      "thumb": "img/shop/thumb/aw-63.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [],
+      "back": "img/shop/back/aw-63.webp",
+      "backL": "img/shop/back/aw-63-l.webp",
+      "themes": [
+        "animals"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Кошки",
+        "top": 2
+      }
+    },
+    {
+      "id": "aw-64",
+      "title": "Полосатый кот",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-64.webp",
+      "thumb": "img/shop/thumb/aw-64.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-64.webp",
+      "backL": "img/shop/back/aw-64-l.webp",
+      "themes": [
+        "animals"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Кошки",
+        "top": 12
+      }
+    },
+    {
+      "id": "aw-65",
+      "title": "Кошачье семейство",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-65.webp",
+      "thumb": "img/shop/thumb/aw-65.webp",
+      "w": 2925,
+      "h": 2925,
+      "tags": [],
+      "back": "img/shop/back/aw-65.webp",
+      "backL": "img/shop/back/aw-65-l.webp",
+      "themes": [
+        "animals"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Домашние животные с потомством",
+        "top": 15
+      }
+    },
+    {
+      "id": "aw-66",
+      "title": "Белый Бим Чёрное ухо",
+      "caption": "Камчатка",
+      "img": "img/shop/aw-66.webp",
+      "thumb": "img/shop/thumb/aw-66.webp",
+      "w": 2334,
+      "h": 3500,
+      "tags": [],
+      "back": "img/shop/back/aw-66.webp",
+      "backL": "img/shop/back/aw-66-l.webp",
+      "themes": [
+        "animals"
+      ],
+      "region": "kamchatka",
+      "aw": {
+        "c": "Собаки",
+        "top": 15
+      }
+    },
+    {
+      "id": "aw-67",
+      "title": "Утро в Приэльбрусье",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-67.webp",
+      "thumb": "img/shop/thumb/aw-67.webp",
+      "w": 3500,
+      "h": 2334,
+      "tags": [],
+      "back": "img/shop/back/aw-67.webp",
+      "backL": "img/shop/back/aw-67-l.webp",
+      "themes": [
+        "animals",
+        "village"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Домашние животные с потомством",
+        "top": 20
+      }
+    },
+    {
+      "id": "aw-68",
+      "title": "Дворовые кошки",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-68.webp",
+      "thumb": "img/shop/thumb/aw-68.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [],
+      "back": "img/shop/back/aw-68.webp",
+      "backL": "img/shop/back/aw-68-l.webp",
+      "themes": [
+        "animals"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Кошки",
+        "top": 20
+      }
+    },
+    {
+      "id": "aw-69",
+      "title": "Трое у забора",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-69.webp",
+      "thumb": "img/shop/thumb/aw-69.webp",
+      "w": 5463,
+      "h": 3642,
+      "tags": [],
+      "back": "img/shop/back/aw-69.webp",
+      "backL": "img/shop/back/aw-69-l.webp",
+      "themes": [
+        "animals"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Кошки",
+        "top": 22
+      }
+    },
+    {
+      "id": "aw-70",
+      "title": "Взгляд",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-70.webp",
+      "thumb": "img/shop/thumb/aw-70.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [],
+      "back": "img/shop/back/aw-70.webp",
+      "backL": "img/shop/back/aw-70-l.webp",
+      "themes": [
+        "animals"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Кошки",
+        "top": 25
+      }
+    },
+    {
+      "id": "aw-71",
+      "title": "Дружба",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-71.webp",
+      "thumb": "img/shop/thumb/aw-71.webp",
+      "w": 4029,
+      "h": 2686,
+      "tags": [],
+      "back": "img/shop/back/aw-71.webp",
+      "backL": "img/shop/back/aw-71-l.webp",
+      "themes": [
+        "animals"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Кошки",
+        "top": 25
+      }
+    },
+    {
+      "id": "aw-72",
+      "title": "Привет!",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-72.webp",
+      "thumb": "img/shop/thumb/aw-72.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [],
+      "back": "img/shop/back/aw-72.webp",
+      "backL": "img/shop/back/aw-72-l.webp",
+      "themes": [
+        "animals"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Кошки",
+        "top": 26
+      }
+    },
+    {
+      "id": "aw-73",
+      "title": "Жара в городе",
+      "caption": "Томск",
+      "img": "img/shop/aw-73.webp",
+      "thumb": "img/shop/thumb/aw-73.webp",
+      "w": 3500,
+      "h": 2500,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/aw-73.webp",
+      "backL": "img/shop/back/aw-73-l.webp",
+      "themes": [
+        "animals",
+        "city"
+      ],
+      "region": "tomsk",
+      "aw": {
+        "c": "Птицы в городе",
+        "top": 4
+      }
+    },
+    {
+      "id": "aw-74",
+      "title": "Воробей у фонтана",
+      "caption": "Томск",
+      "img": "img/shop/aw-74.webp",
+      "thumb": "img/shop/thumb/aw-74.webp",
+      "w": 3500,
+      "h": 2500,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/aw-74.webp",
+      "backL": "img/shop/back/aw-74-l.webp",
+      "themes": [
+        "animals",
+        "city"
+      ],
+      "region": "tomsk",
+      "aw": {
+        "c": "Птицы в городе",
+        "top": 8
+      }
+    },
+    {
+      "id": "aw-75",
+      "title": "Гало над Невой",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/aw-75.webp",
+      "thumb": "img/shop/thumb/aw-75.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-75.webp",
+      "backL": "img/shop/back/aw-75-l.webp",
+      "themes": [
+        "animals",
+        "winter",
+        "water"
+      ],
+      "region": "spb",
+      "aw": {
+        "c": "Птицы в городе",
+        "top": 13
+      }
+    },
+    {
+      "id": "aw-76",
+      "title": "Голубь под мостом",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/aw-76.webp",
+      "thumb": "img/shop/thumb/aw-76.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/aw-76.webp",
+      "backL": "img/shop/back/aw-76-l.webp",
+      "themes": [
+        "animals",
+        "city"
+      ],
+      "region": "spb",
+      "aw": {
+        "c": "Птицы в городе",
+        "top": 15
+      }
+    },
+    {
+      "id": "aw-77",
+      "title": "На взлёт!",
+      "caption": "Серов",
+      "img": "img/shop/aw-77.webp",
+      "thumb": "img/shop/thumb/aw-77.webp",
+      "w": 3500,
+      "h": 2500,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/aw-77.webp",
+      "backL": "img/shop/back/aw-77-l.webp",
+      "themes": [
+        "animals",
+        "city"
+      ],
+      "region": "ural",
+      "aw": {
+        "c": "Птицы в городе",
+        "top": 19
+      }
+    },
+    {
+      "id": "aw-78",
+      "title": "Река сверху",
+      "caption": "Камчатка",
+      "img": "img/shop/aw-78.webp",
+      "thumb": "img/shop/thumb/aw-78.webp",
+      "w": 3500,
+      "h": 2625,
+      "tags": [],
+      "back": "img/shop/back/aw-78.webp",
+      "backL": "img/shop/back/aw-78-l.webp",
+      "themes": [
+        "winter",
+        "water"
+      ],
+      "region": "kamchatka",
+      "aw": {
+        "c": "Деревья",
+        "top": 6
+      }
+    },
+    {
+      "id": "aw-79",
+      "title": "Деревня зимой",
+      "caption": "Верхотурье",
+      "img": "img/shop/aw-79.webp",
+      "thumb": "img/shop/thumb/aw-79.webp",
+      "w": 3500,
+      "h": 1233,
+      "tags": [],
+      "back": "img/shop/back/aw-79.webp",
+      "backL": "img/shop/back/aw-79-l.webp",
+      "themes": [
+        "winter",
+        "village"
+      ],
+      "region": "ural",
+      "aw": {
+        "c": "Деревенский пейзаж",
+        "top": 13
+      }
+    },
+    {
+      "id": "aw-80",
+      "title": "Росток в трещине",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-80.webp",
+      "thumb": "img/shop/thumb/aw-80.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-80.webp",
+      "backL": "img/shop/back/aw-80-l.webp",
+      "themes": [
+        "macro"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Концептуальный кадр без обработки",
+        "top": 25
+      }
+    },
+    {
+      "id": "aw-81",
+      "title": "Кроссовки на проводе",
+      "caption": "Серов",
+      "img": "img/shop/aw-81.webp",
+      "thumb": "img/shop/thumb/aw-81.webp",
+      "w": 6955,
+      "h": 4637,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/aw-81.webp",
+      "backL": "img/shop/back/aw-81-l.webp",
+      "themes": [
+        "city"
+      ],
+      "region": "ural",
+      "aw": {
+        "c": "Концептуальный кадр без обработки",
+        "top": 27
+      }
+    },
+    {
+      "id": "aw-82",
+      "title": "Тропа на водопад Терскол",
+      "caption": "Терскол, Приэльбрусье",
+      "img": "img/shop/aw-82.webp",
+      "thumb": "img/shop/thumb/aw-82.webp",
+      "w": 3500,
+      "h": 2216,
+      "tags": [],
+      "back": "img/shop/back/aw-82.webp",
+      "backL": "img/shop/back/aw-82-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Человек и пейзаж",
+        "top": 18
+      }
+    },
+    {
+      "id": "aw-83",
+      "title": "Путник на гряде",
+      "caption": "Колмозеро, Кольский полуостров",
+      "img": "img/shop/aw-83.webp",
+      "thumb": "img/shop/thumb/aw-83.webp",
+      "w": 6000,
+      "h": 4000,
+      "tags": [],
+      "back": "img/shop/back/aw-83.webp",
+      "backL": "img/shop/back/aw-83-l.webp",
+      "themes": [
+        "sky"
+      ],
+      "region": "kola",
+      "aw": {
+        "c": "Путешественники",
+        "top": 22
+      }
+    },
+    {
+      "id": "aw-84",
+      "title": "По снегу",
+      "caption": "Колмозеро, Кольский полуостров",
+      "img": "img/shop/aw-84.webp",
+      "thumb": "img/shop/thumb/aw-84.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-84.webp",
+      "backL": "img/shop/back/aw-84-l.webp",
+      "themes": [
+        "winter"
+      ],
+      "region": "kola",
+      "aw": {
+        "c": "Человек и пейзаж",
+        "top": 25
+      }
+    },
+    {
+      "id": "aw-85",
+      "title": "Привал с лошадьми",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-85.webp",
+      "thumb": "img/shop/thumb/aw-85.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-85.webp",
+      "backL": "img/shop/back/aw-85-l.webp",
+      "themes": [
+        "mountains",
+        "animals"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Путешественники",
+        "top": 25
+      }
+    },
+    {
+      "id": "aw-86",
+      "title": "Подъём на Чегет",
+      "caption": "Чегет, Приэльбрусье",
+      "img": "img/shop/aw-86.webp",
+      "thumb": "img/shop/thumb/aw-86.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-86.webp",
+      "backL": "img/shop/back/aw-86-l.webp",
+      "themes": [
+        "mountains"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Путешественники",
+        "top": 29
+      }
+    },
+    {
+      "id": "aw-87",
+      "title": "Пожар на горе",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-87.webp",
+      "thumb": "img/shop/thumb/aw-87.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-87.webp",
+      "backL": "img/shop/back/aw-87-l.webp",
+      "themes": [
+        "mountains",
+        "sky"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Стихийные бедствия",
+        "best": true
+      }
     }
   ],
   "delivery": {
