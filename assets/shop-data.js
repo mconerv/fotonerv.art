@@ -2062,7 +2062,7 @@ window.SHOP_DATA = /*JSON-START*/{
           "title": "Все открытки",
           "lead": "Полная коллекция",
           "cards": "all",
-          "price": 25500
+          "price": 26000
         }
       ],
       "pack": {
@@ -4897,8 +4897,8 @@ window.SHOP_DATA = /*JSON-START*/{
       ],
       "region": "spb",
       "aw": {
-        "c": "Чёрно-белый город",
-        "top": 12
+        "c": "Первый снег",
+        "top": 7
       }
     },
     {
@@ -8825,6 +8825,73 @@ window.SHOP_DATA = /*JSON-START*/{
       "aw": {
         "c": "Стихийные бедствия",
         "best": true
+      }
+    },
+    {
+      "id": "aw-88",
+      "title": "Детская железная дорога",
+      "caption": "Заельцовский парк, Новосибирск",
+      "img": "img/shop/aw-88.webp",
+      "thumb": "img/shop/thumb/aw-88.webp",
+      "w": 7000,
+      "h": 4667,
+      "tags": [],
+      "back": "img/shop/back/aw-88.webp",
+      "backL": "img/shop/back/aw-88-l.webp",
+      "themes": [
+        "autumn",
+        "winter",
+        "forest"
+      ],
+      "region": "novosibirsk",
+      "aw": {
+        "c": "Городские парки",
+        "top": 13
+      }
+    },
+    {
+      "id": "aw-92",
+      "title": "Пастбище в горах",
+      "caption": "Тырныауз, Приэльбрусье",
+      "img": "img/shop/aw-92.webp",
+      "thumb": "img/shop/thumb/aw-92.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-92.webp",
+      "backL": "img/shop/back/aw-92-l.webp",
+      "themes": [
+        "winter",
+        "mountains",
+        "animals"
+      ],
+      "region": "kavkaz",
+      "aw": {
+        "c": "Первый снег",
+        "top": 25
+      }
+    },
+    {
+      "id": "aw-93",
+      "title": "Метель",
+      "caption": "Санкт-Петербург",
+      "img": "img/shop/aw-93.webp",
+      "thumb": "img/shop/thumb/aw-93.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [
+        "city"
+      ],
+      "back": "img/shop/back/aw-93.webp",
+      "backL": "img/shop/back/aw-93-l.webp",
+      "themes": [
+        "winter",
+        "city"
+      ],
+      "region": "spb",
+      "aw": {
+        "c": "Первый снег",
+        "top": 32
       }
     }
   ],
