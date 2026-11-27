@@ -9005,7 +9005,7 @@ window.SHOP_DATA = /*JSON-START*/{
     },
     {
       "id": "aw-102",
-      "title": "Метель на Колмозере",
+      "title": "Метель на Колмозере I",
       "caption": "Кольский полуостров",
       "img": "img/shop/aw-102.webp",
       "thumb": "img/shop/thumb/aw-102.webp",
@@ -9310,6 +9310,27 @@ window.SHOP_DATA = /*JSON-START*/{
       "aw": {
         "c": "Пейзаж: Краски осени",
         "top": 15
+      }
+    },
+    {
+      "id": "aw-117",
+      "title": "Метель на Колмозере II",
+      "caption": "Кольский полуостров",
+      "img": "img/shop/aw-117.webp",
+      "thumb": "img/shop/thumb/aw-117.webp",
+      "w": 3500,
+      "h": 2333,
+      "tags": [],
+      "back": "img/shop/back/aw-117.webp",
+      "backL": "img/shop/back/aw-117-l.webp",
+      "themes": [
+        "winter",
+        "forest"
+      ],
+      "region": "kola",
+      "aw": {
+        "c": "Деревья",
+        "top": 29
       }
     }
   ],
