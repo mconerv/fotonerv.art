@@ -1410,9 +1410,9 @@ window.SHOP_DATA = /*JSON-START*/{
           "cards": [
             "yak-stones-reflection",
             "yak-reflection",
-            "yak-cliff-reflection",
             "yak-quiet-water",
-            "yak-evening-channel"
+            "yak-evening-channel",
+            "yak-cliffs-water"
           ],
           "price": 850,
           "cover": "yak-reflection"
@@ -1717,7 +1717,6 @@ window.SHOP_DATA = /*JSON-START*/{
             "yak-plane",
             "yak-asters",
             "yak-fireweed",
-            "yak-cliff-reflection",
             "yak-cliff-clouds",
             "yak-quiet-water",
             "yak-cliffs-water",
@@ -1854,7 +1853,7 @@ window.SHOP_DATA = /*JSON-START*/{
           "cards": [
             "aw-01",
             "aw-02",
-            "aw-03",
+            "aw-116",
             "aw-04",
             "aw-05",
             "aw-06",
@@ -1933,7 +1932,7 @@ window.SHOP_DATA = /*JSON-START*/{
           "lead": "оранжевый, синий и зелёный",
           "cards": [
             "aw-39",
-            "aw-40",
+            "yak-pasque",
             "aw-41",
             "yak-quiet-water",
             "yak-cliffs-water",
@@ -2062,7 +2061,7 @@ window.SHOP_DATA = /*JSON-START*/{
           "title": "Все открытки",
           "lead": "Полная коллекция",
           "cards": "all",
-          "price": 28000
+          "price": 27500
         }
       ],
       "pack": {
@@ -3207,7 +3206,7 @@ window.SHOP_DATA = /*JSON-START*/{
     },
     {
       "id": "kav-crows",
-      "title": "Вороны над гребнем",
+      "title": "Галки над Чегетом",
       "caption": "Приэльбрусье",
       "img": "img/shop/kav-crows.webp",
       "thumb": "img/shop/thumb/kav-crows.webp",
@@ -3637,24 +3636,6 @@ window.SHOP_DATA = /*JSON-START*/{
       "themes": [
         "autumn",
         "macro"
-      ],
-      "region": "yakutia"
-    },
-    {
-      "id": "yak-cliff-reflection",
-      "title": "Скалы над Чульманом",
-      "caption": "Якутия",
-      "img": "img/shop/yak-cliff-reflection.webp",
-      "thumb": "img/shop/thumb/yak-cliff-reflection.webp",
-      "w": 7000,
-      "h": 5061,
-      "tags": [
-        "mountains"
-      ],
-      "back": "img/shop/back/yak-cliff-reflection.webp",
-      "backL": "img/shop/back/yak-cliff-reflection-l.webp",
-      "themes": [
-        "water"
       ],
       "region": "yakutia"
     },
@@ -7040,30 +7021,6 @@ window.SHOP_DATA = /*JSON-START*/{
       }
     },
     {
-      "id": "aw-03",
-      "title": "Ручей в тумане",
-      "caption": "Якутия",
-      "img": "img/shop/aw-03.webp",
-      "thumb": "img/shop/thumb/aw-03.webp",
-      "w": 3076,
-      "h": 3500,
-      "tags": [
-        "bw"
-      ],
-      "back": "img/shop/back/aw-03.webp",
-      "backL": "img/shop/back/aw-03-l.webp",
-      "themes": [
-        "forest",
-        "water",
-        "bw"
-      ],
-      "region": "yakutia",
-      "aw": {
-        "c": "Лес",
-        "top": 9
-      }
-    },
-    {
       "id": "aw-04",
       "title": "Вдали",
       "caption": "Камчатка",
@@ -7256,7 +7213,7 @@ window.SHOP_DATA = /*JSON-START*/{
     {
       "id": "aw-13",
       "title": "Солнце над тундрой",
-      "caption": "Колмозеро, Кольский полуостров",
+      "caption": "Кольский полуостров",
       "img": "img/shop/aw-13.webp",
       "thumb": "img/shop/thumb/aw-13.webp",
       "w": 3500,
@@ -7701,7 +7658,7 @@ window.SHOP_DATA = /*JSON-START*/{
     {
       "id": "aw-34",
       "title": "Ручей на Колмозере",
-      "caption": "Колмозеро, Кольский полуостров",
+      "caption": "Кольский полуостров",
       "img": "img/shop/aw-34.webp",
       "thumb": "img/shop/thumb/aw-34.webp",
       "w": 3500,
@@ -7824,26 +7781,6 @@ window.SHOP_DATA = /*JSON-START*/{
       }
     },
     {
-      "id": "aw-40",
-      "title": "Прострелы",
-      "caption": "Чульман, Якутия",
-      "img": "img/shop/aw-40.webp",
-      "thumb": "img/shop/thumb/aw-40.webp",
-      "w": 2625,
-      "h": 3500,
-      "tags": [],
-      "back": "img/shop/back/aw-40.webp",
-      "backL": "img/shop/back/aw-40-l.webp",
-      "themes": [
-        "macro"
-      ],
-      "region": "yakutia",
-      "aw": {
-        "c": "Цветы",
-        "top": 15
-      }
-    },
-    {
       "id": "aw-41",
       "title": "Оранжевое солнце II",
       "caption": "Магаданская область",
@@ -7887,7 +7824,7 @@ window.SHOP_DATA = /*JSON-START*/{
     },
     {
       "id": "aw-43",
-      "title": "Безмятежность (Bliss) по-кавказски",
+      "title": "Безмятежность",
       "caption": "Тырныауз, Приэльбрусье",
       "img": "img/shop/aw-43.webp",
       "thumb": "img/shop/thumb/aw-43.webp",
@@ -8728,7 +8665,7 @@ window.SHOP_DATA = /*JSON-START*/{
     {
       "id": "aw-83",
       "title": "Путник на гряде",
-      "caption": "Колмозеро, Кольский полуостров",
+      "caption": "Кольский полуостров",
       "img": "img/shop/aw-83.webp",
       "thumb": "img/shop/thumb/aw-83.webp",
       "w": 6000,
@@ -8748,7 +8685,7 @@ window.SHOP_DATA = /*JSON-START*/{
     {
       "id": "aw-84",
       "title": "По снегу",
-      "caption": "Колмозеро, Кольский полуостров",
+      "caption": "Кольский полуостров",
       "img": "img/shop/aw-84.webp",
       "thumb": "img/shop/thumb/aw-84.webp",
       "w": 3500,
@@ -9069,7 +9006,7 @@ window.SHOP_DATA = /*JSON-START*/{
     {
       "id": "aw-102",
       "title": "Метель на Колмозере",
-      "caption": "Колмозеро, Кольский полуостров",
+      "caption": "Кольский полуостров",
       "img": "img/shop/aw-102.webp",
       "thumb": "img/shop/thumb/aw-102.webp",
       "w": 3500,
